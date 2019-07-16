@@ -1,0 +1,39 @@
+{
+  "name": "frigobar",
+  "version": "1.0.0",
+  "description": "A component library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allyssonsantos/frigobar.git"
+  },
+  "keywords": [
+    "component",
+    "library",
+    "react",
+    "styled-components"
+  ],
+  "author": "Allysson Santos <aallysson0@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/allyssonsantos/frigobar/issues"
+  },
+  "homepage": "https://github.com/allyssonsantos/frigobar#readme",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/react": "^5.1.9",
+    "babel-loader": "^8.0.6"
+  }
+}
