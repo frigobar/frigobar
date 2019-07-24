@@ -7,10 +7,10 @@ import { linkTo } from '@storybook/addon-links';
 import { Button, Welcome } from '@storybook/react/demo';
 
 storiesOf('Welcome', module).add('to Storybook', () => (
-  <Welcome showApp={linkTo('Button')} />
+  <Welcome showApp={linkTo('Botao', 'Com alguns emojis')} />
 ));
 
-storiesOf('História do Button', module)
+storiesOf('Botao', module)
   .add('Com um texto de Hello Button', () => (
     <Button onClick={action('HelloButton clicked')}>Hello Button</Button>
   ))
