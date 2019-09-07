@@ -1,2 +1,3 @@
 # frigobar
-A component library to use on posts of my blog https://allysson.me
+
+Frigobar is a simple component library built with [React](https://reactjs.org/ 'React').
