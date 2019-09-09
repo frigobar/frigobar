@@ -1,0 +1,19 @@
+{
+  "presets": [
+    "@babel/preset-react",
+    [
+      "@babel/env",
+      {
+        "modules": false
+      }
+    ]
+  ],
+  "env": {
+    "production": {
+      "ignore": [
+        "./components/**/*.test.jsx",
+        "./components/**/*/__snapshots__"
+      ]
+    }
+  }
+}

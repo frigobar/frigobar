@@ -2,12 +2,14 @@
   "name": "frigobar",
   "version": "1.0.0",
   "description": "A component library",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/esm/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "commitizen": "git-cz"
+    "commitizen": "git-cz",
+    "build": "babel ./components --extensions '.js,.jsx' --out-dir ./build/esm"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,7 @@
     "react",
     "styled-components"
   ],
+  "sideEffects": false,
   "author": "Allysson Santos <aallysson0@gmail.com>",
   "license": "MIT",
   "bugs": {
@@ -31,7 +34,10 @@
     "styled-components": "^4.3.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.6.0",
     "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
     "@storybook/addon-actions": "^5.1.9",
     "@storybook/addon-links": "^5.1.9",
     "@storybook/addons": "^5.1.9",
