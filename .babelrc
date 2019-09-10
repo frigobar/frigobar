@@ -2,7 +2,7 @@
   "presets": [
     "@babel/preset-react",
     [
-      "@babel/env",
+      "@babel/preset-env",
       {
         "modules": false
       }
@@ -10,10 +10,7 @@
   ],
   "env": {
     "production": {
-      "ignore": [
-        "./components/**/*.test.jsx",
-        "./components/**/*/__snapshots__"
-      ]
+      "ignore": ["./components/**/*.test.js", "./components/**/*/__snapshots__"]
     }
   }
 }

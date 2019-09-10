@@ -1,19 +1,22 @@
 {
   "name": "frigobar",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "A component library",
-  "main": "./dist/esm/index.js",
-  "module": "./dist/esm/index.js",
   "scripts": {
+    "clean:build": "rm -rf ./build",
+    "copy-files": "babel-node ./scripts/copy-files.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "commitizen": "git-cz",
-    "build": "babel ./components --extensions '.js,.jsx' --out-dir ./build/esm"
+    "build": "cross-env NODE_ENV=production babel ./components --extensions '.js,.jsx' --out-dir ./build/esm",
+    "prebuild": "npm run clean:build",
+    "postbuild": "cross-env NODE_ENV=production npm run copy-files",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/allyssonsantos/frigobar.git"
+    "url": "https://github.com/allyssonsantos/frigobar.git"
   },
   "keywords": [
     "component",
@@ -36,15 +39,20 @@
   "devDependencies": {
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.5.4",
+    "@babel/node": "^7.6.1",
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
+    "@semantic-release/commit-analyzer": "^6.3.0",
+    "@semantic-release/npm": "^5.1.15",
     "@storybook/addon-actions": "^5.1.9",
     "@storybook/addon-links": "^5.1.9",
     "@storybook/addons": "^5.1.9",
     "@storybook/react": "^5.1.9",
     "babel-loader": "^8.0.6",
     "commitizen": "^4.0.3",
-    "cz-conventional-changelog": "^3.0.2"
+    "cross-env": "^5.2.1",
+    "cz-conventional-changelog": "^3.0.2",
+    "semantic-release": "^15.13.24"
   },
   "config": {
     "commitizen": {
