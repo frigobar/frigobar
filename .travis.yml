@@ -1,0 +1,18 @@
+language: node_js
+
+branches:
+  only:
+    - master
+
+jobs:
+  include:
+    - stage: release
+      node_js: lts/*
+
+      script: npm run build
+
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npm run semantic-release
