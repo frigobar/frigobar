@@ -3,13 +3,13 @@
   "version": "0.0.0-development",
   "description": "A component library",
   "scripts": {
-    "clean:build": "rm -rf ./build",
+    "clean:build": "rm -rf ./dist",
     "copy-files": "babel-node ./scripts/copy-files.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "commitizen": "git-cz",
-    "build": "cross-env NODE_ENV=production babel ./components --extensions '.js,.jsx' --out-dir ./build/esm",
+    "build": "cross-env NODE_ENV=production babel ./components --extensions '.js,.jsx' --out-dir ./dist/esm",
     "prebuild": "npm run clean:build",
     "postbuild": "cross-env NODE_ENV=production npm run copy-files",
     "semantic-release": "semantic-release"
@@ -31,11 +31,7 @@
     "url": "https://github.com/allyssonsantos/frigobar/issues"
   },
   "homepage": "https://github.com/allyssonsantos/frigobar#readme",
-  "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "styled-components": "^4.3.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.5.4",
@@ -52,11 +48,35 @@
     "commitizen": "^4.0.3",
     "cross-env": "^5.2.1",
     "cz-conventional-changelog": "^3.0.2",
-    "semantic-release": "^15.13.24"
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "semantic-release": "^15.13.24",
+    "styled-components": "^4.3.2"
+  },
+  "peerDependencies": {
+    "react": "16.x",
+    "react-dom": "16.x",
+    "styled-components": "4.x"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "./dist"
+        }
+      ],
+      "@semantic-release/github"
+    ]
   }
 }

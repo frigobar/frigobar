@@ -5,11 +5,11 @@ const pkg = require('../package.json');
 const copyFile = file => {
   const buildPath = path.resolve(
     __dirname,
-    '../build/esm/',
-    path.basename(file),
+    '../dist/esm/',
+    path.basename(file)
   );
   fs.copyFile(file, buildPath, () =>
-    console.log(`Copied ${file} to ${buildPath}`),
+    console.log(`Copied ${file} to ${buildPath}`)
   );
 };
 
@@ -32,7 +32,7 @@ const createPackageJson = () => {
     private: false,
   };
 
-  const buildPath = path.resolve(__dirname, '../build/esm/package.json');
+  const buildPath = path.resolve(__dirname, '../dist/esm/package.json');
 
   fs.writeFileSync(buildPath, JSON.stringify(newPackageData, null, 2), 'utf8');
   console.log(`Created package.json in ${buildPath}`);
