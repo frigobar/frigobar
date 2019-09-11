@@ -6,10 +6,10 @@ const copyFile = file => {
   const buildPath = path.resolve(
     __dirname,
     '../dist/esm/',
-    path.basename(file)
+    path.basename(file),
   );
   fs.copyFile(file, buildPath, () =>
-    console.log(`Copied ${file} to ${buildPath}`)
+    console.log(`Copied ${file} to ${buildPath}`),
   );
 };
 
@@ -27,8 +27,8 @@ const createPackageJson = () => {
 
   const newPackageData = {
     ...packageDataOther,
-    main: './index.js',
-    module: './index.js',
+    main: './components/index.js',
+    module: './components/index.js',
     private: false,
   };
 

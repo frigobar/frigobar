@@ -9,7 +9,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "commitizen": "git-cz",
-    "build": "cross-env NODE_ENV=production babel ./components --extensions '.js,.jsx' --out-dir ./dist/esm",
+    "build": "cross-env NODE_ENV=production babel ./src --extensions '.js,.jsx' --out-dir ./dist/esm --copy-files",
     "prebuild": "npm run clean:build",
     "postbuild": "cross-env NODE_ENV=production npm run copy-files",
     "semantic-release": "semantic-release"
