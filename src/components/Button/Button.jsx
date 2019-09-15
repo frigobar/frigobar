@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { defaultTheme as theme } from '../../theme';
 
 import skins from './skins';
+import defaultTheme from '../../theme';
 
 const Button = styled.button`
   border: none;
@@ -12,7 +12,7 @@ const Button = styled.button`
   transition: all 200ms ease-in-out;
 
   &:hover {
-    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.4);
   }
 
   ${({ theme, skin }) => `
@@ -22,7 +22,7 @@ const Button = styled.button`
 `;
 
 Button.defaultProps = {
-  theme,
+  theme: defaultTheme,
   skin: 'neutral',
 };
 
