@@ -41,6 +41,7 @@
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
     "@semantic-release/commit-analyzer": "^6.3.0",
+    "@semantic-release/exec": "^3.3.6",
     "@semantic-release/npm": "^5.1.15",
     "@storybook/addon-actions": "^5.1.9",
     "@storybook/addon-links": "^5.1.9",
@@ -94,7 +95,13 @@
           "pkgRoot": "./dist/esm"
         }
       ],
-      "@semantic-release/github"
+      "@semantic-release/github",
+      [
+        "@semantic-release/exec",
+        {
+          "successCmd": "npm run deploy-storybook -- --ci"
+        }
+      ]
     ]
   },
   "husky": {

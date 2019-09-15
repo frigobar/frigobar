@@ -9,6 +9,24 @@
 
 Frigobar is a simple component library built with [React](https://reactjs.org/ 'React').
 
+You can check all available components at our [storybook](https://allyssonsantos.github.io/frigobar/).
+
+## Install
+
+You can install Frigobar using either of the methods below.
+
+For npm users:
+
+```shell
+  $ npm install frigobar styled-components --save
+```
+
+For Yarn users:
+
+```shell
+  $ yarn add frigobar styled-components
+```
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
