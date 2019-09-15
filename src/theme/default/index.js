@@ -6,6 +6,4 @@ const theme = {
   button,
 };
 
-console.log(theme);
-
 export default theme;
