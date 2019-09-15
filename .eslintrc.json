@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "jest": true
   },
   "extends": ["airbnb", "prettier"],
   "globals": {
@@ -22,7 +23,13 @@
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": [".storybook/**", "stories/**"]
+        "devDependencies": [
+          ".storybook/**",
+          "stories/**",
+          "**/*.test.js",
+          "**/*.test.jsx",
+          "config/setupTest.js"
+        ]
       }
     ]
   }
