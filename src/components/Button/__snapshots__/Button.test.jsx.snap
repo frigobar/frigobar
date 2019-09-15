@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> Snapshots should match snapshot with all skins 1`] = `
+.c0 {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 6px 14px;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  background-color: #999999;
+  color: #ffffff;
+}
+
+.c0:hover {
+  box-shadow: 0px 1px 3px 0px #999;
+}
+
+<div>
+  <button
+    class="c0"
+  />
+</div>
+`;
+
+exports[`<Button /> Snapshots should match snapshot with all skins 2`] = `
+.c0 {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 6px 14px;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  background-color: #598aed;
+  color: #ffffff;
+}
+
+.c0:hover {
+  box-shadow: 0px 1px 3px 0px #999;
+}
+
+<div>
+  <button
+    class="c0"
+  />
+</div>
+`;
+
+exports[`<Button /> Snapshots should match snapshot with all skins 3`] = `
+.c0 {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 6px 14px;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  background-color: #25387f;
+  color: #ffffff;
+}
+
+.c0:hover {
+  box-shadow: 0px 1px 3px 0px #999;
+}
+
+<div>
+  <button
+    class="c0"
+  />
+</div>
+`;
+
+exports[`<Button /> Snapshots should match snapshot with all skins 4`] = `
+.c0 {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 6px 14px;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  background-color: #50a47f;
+  color: #ffffff;
+}
+
+.c0:hover {
+  box-shadow: 0px 1px 3px 0px #999;
+}
+
+<div>
+  <button
+    class="c0"
+  />
+</div>
+`;
+
+exports[`<Button /> Snapshots should match snapshot with all skins 5`] = `
+.c0 {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 6px 14px;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  background-color: #cd9447;
+  color: #ffffff;
+}
+
+.c0:hover {
+  box-shadow: 0px 1px 3px 0px #999;
+}
+
+<div>
+  <button
+    class="c0"
+  />
+</div>
+`;
+
+exports[`<Button /> Snapshots should match snapshot with all skins 6`] = `
+.c0 {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 6px 14px;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  background-color: #f44336;
+  color: #ffffff;
+}
+
+.c0:hover {
+  box-shadow: 0px 1px 3px 0px #999;
+}
+
+<div>
+  <button
+    class="c0"
+  />
+</div>
+`;
