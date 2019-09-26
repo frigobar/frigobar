@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import skins from './skins';
@@ -20,6 +21,11 @@ const Button = styled.button`
     color: ${skins(theme)[skin].textColor};
   `}
 `;
+
+Button.propTypes = {
+  theme: PropTypes.object,
+  skin: PropTypes.oneOf(['primary', 'secondary']),
+}
 
 Button.defaultProps = {
   theme: defaultTheme,
