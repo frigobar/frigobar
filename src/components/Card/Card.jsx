@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { defaultTheme as theme } from '../../theme'
+import defaultTheme from '../../theme'
 
 const Card = styled.section`
   border-radius: 4px;
@@ -12,7 +12,7 @@ const Card = styled.section`
 `;
 
 Card.defaultProps = {
-  theme,
+  theme: defaultTheme,
 };
 
 export default Card;

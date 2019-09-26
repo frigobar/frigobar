@@ -5,7 +5,27 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 [![StyledComponents](https://camo.githubusercontent.com/83915eaa262cfa89f70f2d4eb2ec55c0cbe7c615/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7374796c652d2546302539462539322538352532307374796c65642d2d636f6d706f6e656e74732d6f72616e67652e7376673f636f6c6f72423d64616133353726636f6c6f72413d646237343865)](https://github.com/styled-components/styled-components)
 
+<img src="/static/icon.svg" width="200" />
+
 Frigobar is a simple component library built with [React](https://reactjs.org/ 'React').
+
+You can check all available components at our [storybook](https://allyssonsantos.github.io/frigobar/).
+
+## Install
+
+You can install Frigobar using either of the methods below.
+
+For npm users:
+
+```shell
+  $ npm install frigobar styled-components --save
+```
+
+For Yarn users:
+
+```shell
+  $ yarn add frigobar styled-components
+```
 
 ## Contributors ✨
 
