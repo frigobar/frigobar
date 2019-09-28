@@ -1,6 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
-import defaultTheme from '../../theme'
+import defaultTheme from '../../theme';
 
 const Card = styled.section`
   border-radius: 4px;

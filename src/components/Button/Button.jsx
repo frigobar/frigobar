@@ -23,9 +23,8 @@ const Button = styled.button`
 `;
 
 Button.propTypes = {
-  theme: PropTypes.object,
-  skin: PropTypes.oneOf(['primary', 'secondary']),
-}
+  skin: PropTypes.oneOf(['primary', 'info', 'success', 'danger', 'warning', 'neutral']),
+};
 
 Button.defaultProps = {
   theme: defaultTheme,

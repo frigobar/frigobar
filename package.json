@@ -33,7 +33,9 @@
     "url": "https://github.com/allyssonsantos/frigobar/issues"
   },
   "homepage": "https://github.com/allyssonsantos/frigobar#readme",
-  "dependencies": {},
+  "dependencies": {
+    "prop-types": "^15.7.2"
+  },
   "devDependencies": {
     "@babel/cli": "^7.6.2",
     "@babel/core": "^7.6.2",
