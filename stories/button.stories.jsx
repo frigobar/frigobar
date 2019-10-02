@@ -1,12 +1,14 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-
 import { Button } from '../src/components';
 
-storiesOf('Button', module)
-  .add('Neutral', () => <Button>Hello Button </Button>)
-  .add('Primary', () => <Button skin="primary">Primary Button</Button>)
-  .add('Info', () => <Button skin="info">Info Button</Button>)
-  .add('Success', () => <Button skin="success">Success Button</Button>)
-  .add('Warning', () => <Button skin="warning">Warning Button</Button>)
-  .add('Danger', () => <Button skin="danger">Danger Button</Button>);
+export default {
+  title: 'Design System|Atoms/Button',
+  component: Button,
+};
+
+export const primary = () => <Button skin="primary">Hello</Button>;
+export const info = () => <Button skin="info">Info</Button>;
+export const success = () => <Button skin="success">Success</Button>;
+export const warning = () => <Button skin="warning">Warning</Button>;
+export const danger = () => <Button skin="danger">Danger</Button>;
+export const neutral = () => <Button skin="neutral">Neutral</Button>;
