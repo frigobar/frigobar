@@ -3,13 +3,11 @@ const getButtonColors = (colors, skin) => ({
   textColor: colors.neutral[50],
 });
 
-const skins = ({ colors }) => ({
-  primary: getButtonColors(colors, 'primary'),
-  info: getButtonColors(colors, 'info'),
-  success: getButtonColors(colors, 'success'),
-  warning: getButtonColors(colors, 'warning'),
-  danger: getButtonColors(colors, 'danger'),
-  neutral: getButtonColors(colors, 'neutral'),
-});
+const skins = ({ colors }) =>
+  Object.keys(colors).reduce((acc, current) => {
+    acc[current] = getButtonColors(colors, current);
+
+    return acc;
+  }, {});
 
 export default skins;
