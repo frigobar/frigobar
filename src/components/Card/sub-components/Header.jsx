@@ -1,35 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Avatar from './Avatar';
 
 const Wrapper = styled.header`
+  align-items: center;
+  display: flex;
   padding: 16px 16px 8px;
 `;
 
-const Title = styled.h2`
-  font-size: 1.25rem;
-  margin: 0;
+const ChildrenWrapper = styled.div`
+  ${({ hasAvatar }) => hasAvatar && 'padding-left: 12px;'}
 `;
 
-const Subtitle = styled.h3`
-  font-size: 0.875rem;
-  margin: 0;
-`;
-
-const Header = ({ title, subtitle, ...props }) => (
+const Header = ({ children, avatar, avatarRounded, ...props }) => (
   <Wrapper {...props}>
-    <Title>{title}</Title>
-    {subtitle && <Subtitle>{subtitle}</Subtitle>}
+    {avatar && <Avatar src={avatar} rounded={avatarRounded} />}
+    <ChildrenWrapper hasAvatar={avatar}>{children}</ChildrenWrapper>
   </Wrapper>
 );
 
 Header.propTypes = {
-  title: PropTypes.node.isRequired,
-  subtitle: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  avatar: PropTypes.string,
+  avatarRounded: PropTypes.bool,
 };
 
 Header.defaultProps = {
-  subtitle: undefined,
+  avatar: undefined,
+  avatarRounded: undefined,
 };
 
 Header.displayName = 'Card.Header';
