@@ -31,6 +31,7 @@
           "config/setupTest.js"
         ]
       }
-    ]
+    ],
+    "react/jsx-props-no-spreading": 0
   }
 }

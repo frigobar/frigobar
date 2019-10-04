@@ -5,7 +5,7 @@ exports[`<Button /> Snapshots should match snapshot with all skins 1`] = `
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.875rem;
   padding: 6px 14px;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
@@ -29,7 +29,7 @@ exports[`<Button /> Snapshots should match snapshot with all skins 2`] = `
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.875rem;
   padding: 6px 14px;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
@@ -53,7 +53,7 @@ exports[`<Button /> Snapshots should match snapshot with all skins 3`] = `
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.875rem;
   padding: 6px 14px;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
@@ -77,7 +77,7 @@ exports[`<Button /> Snapshots should match snapshot with all skins 4`] = `
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.875rem;
   padding: 6px 14px;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
@@ -101,7 +101,7 @@ exports[`<Button /> Snapshots should match snapshot with all skins 5`] = `
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.875rem;
   padding: 6px 14px;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
@@ -125,7 +125,7 @@ exports[`<Button /> Snapshots should match snapshot with all skins 6`] = `
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.875rem;
   padding: 6px 14px;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;

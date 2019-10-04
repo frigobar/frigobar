@@ -33,21 +33,25 @@
     "url": "https://github.com/allyssonsantos/frigobar/issues"
   },
   "homepage": "https://github.com/allyssonsantos/frigobar#readme",
-  "dependencies": {},
+  "dependencies": {
+    "prop-types": "^15.7.2"
+  },
   "devDependencies": {
-    "@babel/cli": "^7.6.0",
-    "@babel/core": "^7.5.4",
-    "@babel/node": "^7.6.1",
-    "@babel/preset-env": "^7.6.0",
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/node": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
     "@semantic-release/commit-analyzer": "^6.3.0",
     "@semantic-release/exec": "^3.3.6",
     "@semantic-release/npm": "^5.1.15",
-    "@storybook/addon-actions": "^5.1.9",
-    "@storybook/addon-links": "^5.1.9",
-    "@storybook/addons": "^5.1.9",
-    "@storybook/react": "^5.1.9",
+    "@storybook/addon-actions": "^5.2.1",
+    "@storybook/addon-docs": "^5.2.1",
+    "@storybook/addon-links": "^5.2.1",
+    "@storybook/addons": "^5.2.1",
+    "@storybook/react": "^5.2.1",
     "@storybook/storybook-deployer": "^2.8.1",
+    "@storybook/theming": "^5.2.1",
     "@testing-library/react": "^9.1.4",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
@@ -70,7 +74,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "semantic-release": "^15.13.24",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.4.0"
   },
   "peerDependencies": {
     "react": "16.x",

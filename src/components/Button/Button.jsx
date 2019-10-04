@@ -1,11 +1,14 @@
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
+import skins from './skins';
 import defaultTheme from '../../theme';
 
 const Button = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.875rem;
   padding: 6px 14px;
   transition: all 200ms ease-in-out;
 
@@ -14,10 +17,14 @@ const Button = styled.button`
   }
 
   ${({ theme, skin }) => `
-    background-color: ${theme.button[skin].bgColor}
-    color: ${theme.button[skin].textColor}
+    background-color: ${skins(theme)[skin].bgColor};
+    color: ${skins(theme)[skin].textColor};
   `}
 `;
+
+Button.propTypes = {
+  skin: PropTypes.oneOf(['primary', 'info', 'success', 'danger', 'warning', 'neutral']),
+};
 
 Button.defaultProps = {
   theme: defaultTheme,
