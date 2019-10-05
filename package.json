@@ -34,6 +34,8 @@
   },
   "homepage": "https://github.com/allyssonsantos/frigobar#readme",
   "dependencies": {
+    "@material-ui/core": "^4.5.0",
+    "@material-ui/icons": "^4.4.3",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
