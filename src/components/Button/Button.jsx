@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Icon from '@material-ui/core/Icon';
 
-import skins from './skins';
 import defaultTheme from '../../theme';
 
 const StyledIcon = styled(Icon)`
@@ -35,15 +34,25 @@ const Btn = styled.button`
   font-size: 0.875rem;
   transition: all 200ms ease-in-out;
 
-  &:hover {
-    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.4);
-  }
-
-  ${({ theme, skin, icon, size }) => `
-    background-color: ${skins(theme)[skin].bgColor};
-    color: ${skins(theme)[skin].textColor};
+  ${({ theme, skin, icon, size, disabled }) => `
+    background-color: ${theme.colors[skin][500]};
+    color: ${theme.colors.neutral[50]};
     font-size: ${ButtonSizes[size].fontSize};
     padding: ${ButtonSizes[size].paddings};
+
+    ${
+      disabled
+        ? `
+      background-color: ${theme.colors.neutral[100]};
+      color: ${theme.colors.neutral[400]};
+      cursor: not-allowed;
+    `
+        : `
+        &:hover {
+          box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.4);
+        }
+        `
+    }
 
     ${StyledIcon} {
       font-size: ${ButtonSizes[size].iconSize};
@@ -71,6 +80,7 @@ const Button = ({ children, icon, theme, size, ...props }) => (
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   skin: PropTypes.oneOf(['primary', 'info', 'success', 'danger', 'warning', 'neutral']),
+  disabled: PropTypes.bool,
   icon: PropTypes.string,
   theme: PropTypes.shape({}),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
@@ -79,6 +89,7 @@ Button.propTypes = {
 Button.defaultProps = {
   theme: defaultTheme,
   skin: 'neutral',
+  disabled: false,
   icon: undefined,
   size: 'small',
 };

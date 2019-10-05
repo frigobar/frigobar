@@ -12,6 +12,11 @@ export const success = () => <Button skin="success">Success</Button>;
 export const warning = () => <Button skin="warning">Warning</Button>;
 export const danger = () => <Button skin="danger">Danger</Button>;
 export const neutral = () => <Button skin="neutral">Neutral</Button>;
+export const Disabled = () => (
+  <Button skin="primary" disabled>
+    Disabled
+  </Button>
+);
 export const small = () => (
   <Button skin="primary" size="small">
     Small
