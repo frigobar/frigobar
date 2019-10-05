@@ -49,12 +49,15 @@ const Btn = styled.button`
       font-size: ${ButtonSizes[size].iconSize};
     }
 
-    ${icon &&
-      `
+    ${
+      icon
+        ? `
       display: flex;
       align-items: center;
       justify-content: center;
-    `}
+    `
+        : ''
+    }
   `}
 `;
 
