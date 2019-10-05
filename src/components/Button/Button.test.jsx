@@ -20,6 +20,7 @@ describe('<Button />', () => {
         <Button size="large" icon="face">
           Button
         </Button>,
+        <Button full>Button</Button>,
         <Button skin="primary">Button</Button>,
         <Button skin="info">Button</Button>,
         <Button skin="success">Button</Button>,

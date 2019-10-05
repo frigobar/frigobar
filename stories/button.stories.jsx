@@ -32,6 +32,11 @@ export const large = () => (
     Large Button
   </Button>
 );
+export const full = () => (
+  <Button skin="primary" full>
+    Full Button
+  </Button>
+);
 export const withIconSmall = () => (
   <Button skin="primary" icon="face">
     With Icon
