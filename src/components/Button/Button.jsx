@@ -34,7 +34,7 @@ const Btn = styled.button`
   font-size: 0.875rem;
   transition: all 200ms ease-in-out;
 
-  ${({ theme, skin, icon, size, disabled }) => `
+  ${({ theme, skin, icon, size, disabled, full }) => `
     background-color: ${theme.colors[skin][500]};
     color: ${theme.colors.neutral[50]};
     font-size: ${ButtonSizes[size].fontSize};
@@ -67,10 +67,12 @@ const Btn = styled.button`
     `
         : ''
     }
+
+    ${full ? 'width: 100%;' : ''}
   `}
 `;
 
-const Button = ({ children, icon, theme, size, ...props }) => (
+const Button = ({ children, icon, theme, size, full, ...props }) => (
   <Btn icon={icon} theme={theme} size={size} {...props}>
     {icon && <StyledIcon size={size}>{icon}</StyledIcon>}
     {children}
@@ -84,6 +86,7 @@ Button.propTypes = {
   icon: PropTypes.string,
   theme: PropTypes.shape({}),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
+  full: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -92,6 +95,7 @@ Button.defaultProps = {
   disabled: false,
   icon: undefined,
   size: 'small',
+  full: false,
 };
 
 export default Button;
