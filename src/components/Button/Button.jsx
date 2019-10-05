@@ -73,7 +73,7 @@ const Btn = styled.button`
 `;
 
 const Button = ({ children, icon, theme, size, full, ...props }) => (
-  <Btn icon={icon} theme={theme} size={size} {...props}>
+  <Btn icon={icon} theme={theme} size={size} full={full} {...props}>
     {icon && <StyledIcon size={size}>{icon}</StyledIcon>}
     {children}
   </Btn>
