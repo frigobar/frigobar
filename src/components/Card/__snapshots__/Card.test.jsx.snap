@@ -77,15 +77,20 @@ exports[`<Card /> Snapshots should match snapshot 1`] = `
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.875rem;
-  padding: 6px 14px;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
   background-color: #598aed;
   color: #ffffff;
+  font-size: 0.875rem;
+  padding: 6px 14px;
 }
 
 .c10:hover {
   box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
+}
+
+.c10 .c11 {
+  font-size: 1rem;
 }
 
 <div>

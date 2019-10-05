@@ -7,12 +7,24 @@ describe('<Button />', () => {
   describe('Snapshots', () => {
     it('should match snapshot with all skins', () => {
       const buttons = [
-        <Button />,
-        <Button skin="primary" />,
-        <Button skin="info" />,
-        <Button skin="success" />,
-        <Button skin="warning" />,
-        <Button skin="danger" />,
+        <Button>Button</Button>,
+        <Button size="small">Button</Button>,
+        <Button size="medium">Button</Button>,
+        <Button size="large">Button</Button>,
+        <Button size="small" icon="face">
+          Button
+        </Button>,
+        <Button size="medium" icon="face">
+          Button
+        </Button>,
+        <Button size="large" icon="face">
+          Button
+        </Button>,
+        <Button skin="primary">Button</Button>,
+        <Button skin="info">Button</Button>,
+        <Button skin="success">Button</Button>,
+        <Button skin="warning">Button</Button>,
+        <Button skin="danger">Button</Button>,
       ];
 
       buttons.forEach(Component => {
