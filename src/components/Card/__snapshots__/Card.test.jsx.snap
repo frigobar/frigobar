@@ -68,7 +68,7 @@ exports[`<Card /> Snapshots should match snapshot 1`] = `
   border-radius: 4px;
   display: inline-block;
   max-width: 400px;
-  box-shadow: 0px 2px 5px 0px #cccccc;
+  box-shadow: 0px 2px 5px 0px #ccc;
   width: 100%;
 }
 
@@ -80,7 +80,7 @@ exports[`<Card /> Snapshots should match snapshot 1`] = `
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
   background-color: #598aed;
-  color: #ffffff;
+  color: #fdfdfd;
   font-size: 0.875rem;
   padding: 6px 14px;
 }
