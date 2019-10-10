@@ -33,5 +33,13 @@
       }
     ],
     "react/jsx-props-no-spreading": 0
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.jsx", "**/*.test.js"],
+      "rules": {
+        "react/prop-types": "off"
+      }
+    }
+  ]
 }
