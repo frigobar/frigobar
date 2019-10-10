@@ -14,12 +14,33 @@ const CloseButton = styled.button`
   justify-content: center;
   padding: 5px;
   position: absolute;
+  right: 10px;
   transition: background-color 0.2s ease-in-out;
+  top: 10px;
 
   &:hover,
   &:focus {
     background-color: rgba(0, 0, 0, 0.1);
   }
+
+  ${({
+    withText,
+    theme: {
+      colors: { neutral },
+    },
+  }) =>
+    withText &&
+    `
+    border-radius: none;
+    color: ${neutral[700]};
+    padding: 0;
+    top: 12px;
+
+    &:hover, &:focus {
+      background-color: transparent;
+      color: ${neutral[900]};
+    }
+  `}
 `;
 
 const Wrapper = styled.div`
@@ -32,45 +53,51 @@ const Wrapper = styled.div`
     border: 1px solid ${theme.colors[type][200]};
     color: ${theme.colors.black};
   `}
-
-  ${CloseButton} {
-    top: 10px;
-    right: 10px;
-  }
 `;
 
-const Close = ({ onClick, ...props }) => (
-  <CloseButton onClick={onClick}>
-    <CloseIcon width="10" height="10" {...props} />
+const Close = ({ onClick, text, theme, ...props }) => (
+  <CloseButton onClick={onClick} withText={text} theme={theme} {...props}>
+    {!text ? <CloseIcon width="10" height="10" /> : text}
   </CloseButton>
 );
 
 Close.propTypes = {
   onClick: PropTypes.func.isRequired,
+  theme: PropTypes.shape({}).isRequired,
+  text: PropTypes.string,
 };
 
-const Alert = ({ message, type, closable, theme, onClose, ...props }) => {
-  const [closed, setClosed] = useState(closable);
+Close.defaultProps = {
+  text: undefined,
+};
+
+const Alert = ({ children, type, closable, theme, onClose, closeText, ...props }) => {
+  const [closed, setClosed] = useState(false);
+
   return !closed ? (
     <Wrapper theme={theme} type={type} {...props}>
-      <Close
-        theme={theme}
-        onClick={e => {
-          setClosed(true);
-          onClose(e);
-        }}
-      />
-      {message}
+      {closable && (
+        <Close
+          text={closeText}
+          theme={theme}
+          onClick={e => {
+            setClosed(true);
+            onClose(e);
+          }}
+        />
+      )}
+      {children}
     </Wrapper>
   ) : null;
 };
 
 Alert.propTypes = {
-  message: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
   type: PropTypes.oneOf(['success', 'info', 'danger', 'warning', 'neutral']),
   theme: PropTypes.shape({}),
   closable: PropTypes.bool,
   onClose: PropTypes.func,
+  closeText: PropTypes.string,
 };
 
 Alert.defaultProps = {
@@ -78,6 +105,7 @@ Alert.defaultProps = {
   theme: defaultTheme,
   closable: undefined,
   onClose: () => {},
+  closeText: undefined,
 };
 
 export default Alert;
