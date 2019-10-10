@@ -7,8 +7,18 @@ export default {
   component: Alert,
 };
 
-export const Neutral = () => <Alert type="neutral" message="Simple alert" />;
-export const Success = () => <Alert type="success" message="Simple alert" />;
-export const Danger = () => <Alert type="danger" message="Simple alert" />;
-export const Warning = () => <Alert type="warning" message="Simple alert" />;
-export const Info = () => <Alert type="info" message="Simple alert" />;
+export const Neutral = () => <Alert type="neutral">Simple Alert</Alert>;
+export const Success = () => <Alert type="success">Simple alert</Alert>;
+export const Danger = () => <Alert type="danger">Simple alert</Alert>;
+export const Warning = () => <Alert type="warning">Simple alert</Alert>;
+export const Info = () => <Alert type="info">Simple alert</Alert>;
+export const Closable = () => (
+  <Alert type="success" closable>
+    Simple alert
+  </Alert>
+);
+export const ClosableWithText = () => (
+  <Alert type="info" closable closeText="Close now">
+    Simple alert
+  </Alert>
+);
