@@ -26,6 +26,7 @@ describe('<Button />', () => {
         <Button skin="success">Button</Button>,
         <Button skin="warning">Button</Button>,
         <Button skin="danger">Button</Button>,
+        <Button disabled>Button</Button>,
       ];
 
       buttons.forEach(Component => {

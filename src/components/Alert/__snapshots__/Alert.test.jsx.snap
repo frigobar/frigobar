@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Alert /> Snapshots should match snapshot with all types 1`] = `
+.c0 {
+  border-radius: 4px;
+  font-size: 0.875rem;
+  padding: 10px;
+  position: relative;
+  background-color: #fdfdfd;
+  border: 1px solid #ccc;
+  color: #000;
+}
+
+<div>
+  <div
+    class="c0"
+    type="neutral"
+  >
+    Alert
+  </div>
+</div>
+`;
+
+exports[`<Alert /> Snapshots should match snapshot with all types 2`] = `
+.c0 {
+  border-radius: 4px;
+  font-size: 0.875rem;
+  padding: 10px;
+  position: relative;
+  background-color: #e5e7f0;
+  border: 1px solid #929cbf;
+  color: #000;
+}
+
+<div>
+  <div
+    class="c0"
+    type="info"
+  >
+    Alert
+  </div>
+</div>
+`;
+
+exports[`<Alert /> Snapshots should match snapshot with all types 3`] = `
+.c0 {
+  border-radius: 4px;
+  font-size: 0.875rem;
+  padding: 10px;
+  position: relative;
+  background-color: #f9f2e9;
+  border: 1px solid #e6caa3;
+  color: #000;
+}
+
+<div>
+  <div
+    class="c0"
+    type="warning"
+  >
+    Alert
+  </div>
+</div>
+`;
+
+exports[`<Alert /> Snapshots should match snapshot with all types 4`] = `
+.c0 {
+  border-radius: 4px;
+  font-size: 0.875rem;
+  padding: 10px;
+  position: relative;
+  background-color: #fee8e7;
+  border: 1px solid #faa19b;
+  color: #000;
+}
+
+<div>
+  <div
+    class="c0"
+    type="danger"
+  >
+    Alert
+  </div>
+</div>
+`;
+
+exports[`<Alert /> Snapshots should match snapshot with all types 5`] = `
+.c0 {
+  border-radius: 4px;
+  font-size: 0.875rem;
+  padding: 10px;
+  position: relative;
+  background-color: #eaf4f0;
+  border: 1px solid #a8d2bf;
+  color: #000;
+}
+
+<div>
+  <div
+    class="c0"
+    type="success"
+  >
+    Alert
+  </div>
+</div>
+`;
+
+exports[`<Alert /> Snapshots should match snapshot with closable 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 5px;
+  position: absolute;
+  right: 10px;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  top: 10px;
+}
+
+.c1:hover,
+.c1:focus {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.c0 {
+  border-radius: 4px;
+  font-size: 0.875rem;
+  padding: 10px;
+  position: relative;
+  background-color: #fdfdfd;
+  border: 1px solid #ccc;
+  color: #000;
+}
+
+<div>
+  <div
+    class="c0"
+    type="neutral"
+  >
+    <button
+      class="c1"
+    >
+      <test-file-stub
+        height="10"
+        width="10"
+      />
+    </button>
+    Alert
+  </div>
+</div>
+`;
+
+exports[`<Alert /> Snapshots should match snapshot with closable and closeText 1`] = `
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 5px;
+  position: absolute;
+  right: 10px;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  top: 10px;
+  border-radius: none;
+  color: #666;
+  padding: 0;
+  top: 12px;
+}
+
+.c1:hover,
+.c1:focus {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.c1:hover,
+.c1:focus {
+  background-color: transparent;
+  color: #111;
+}
+
+.c0 {
+  border-radius: 4px;
+  font-size: 0.875rem;
+  padding: 10px;
+  position: relative;
+  background-color: #fdfdfd;
+  border: 1px solid #ccc;
+  color: #000;
+}
+
+<div>
+  <div
+    class="c0"
+    type="neutral"
+  >
+    <button
+      class="c1"
+    >
+      Close Now
+    </button>
+    Alert
+  </div>
+</div>
+`;

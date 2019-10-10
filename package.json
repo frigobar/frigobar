@@ -75,8 +75,11 @@
     "prettier": "^1.18.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-svg-loader": "^3.0.3",
     "semantic-release": "^15.13.24",
-    "styled-components": "^4.4.0"
+    "styled-components": "^4.4.0",
+    "svg-react-loader": "^0.4.6",
+    "url-loader": "^2.2.0"
   },
   "peerDependencies": {
     "react": "16.x",
