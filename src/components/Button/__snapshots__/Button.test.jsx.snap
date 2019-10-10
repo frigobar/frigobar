@@ -517,3 +517,34 @@ exports[`<Button /> Snapshots should match snapshot with all skins 13`] = `
   </button>
 </div>
 `;
+
+exports[`<Button /> Snapshots should match snapshot with all skins 14`] = `
+.c0 {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  background-color: #999;
+  color: #fdfdfd;
+  font-size: 0.875rem;
+  padding: 6px 14px;
+  background-color: #f2f2f2;
+  color: #a8a8a8;
+  cursor: not-allowed;
+}
+
+.c0 .c1 {
+  font-size: 1rem;
+}
+
+<div>
+  <button
+    class="c0"
+    disabled=""
+  >
+    Button
+  </button>
+</div>
+`;
