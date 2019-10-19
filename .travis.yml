@@ -1,3 +1,4 @@
+sudo: false
 language: node_js
 
 branches:
@@ -9,10 +10,18 @@ jobs:
     - stage: release
       node_js: lts/*
 
-      script: npm run build
+      script:
+        - lerna run lint:all
+        - lerna run test
+
+      after_success:
+        - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+        - git remote set-url origin https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
+        - git checkout master
 
       deploy:
         provider: script
         skip_cleanup: true
+        keep_history: true
         script:
-          - npm run semantic-release
+          - lerna publish -y
