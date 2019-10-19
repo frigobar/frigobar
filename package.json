@@ -1,42 +1,14 @@
 {
-  "name": "frigobar",
-  "version": "0.0.0-development",
-  "description": "A component library",
-  "scripts": {
-    "clean:build": "rm -rf ./dist",
-    "copy-files": "babel-node ./scripts/copy-files.js",
-    "test": "jest",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "commitizen": "git-cz",
-    "build": "cross-env NODE_ENV=production babel ./src --extensions '.js,.jsx' --out-dir ./dist/esm --copy-files",
-    "prebuild": "npm run clean:build",
-    "postbuild": "cross-env NODE_ENV=production npm run copy-files",
-    "lint": "eslint ./ --ext .js,.jsx",
-    "semantic-release": "semantic-release",
-    "deploy-storybook": "storybook-to-ghpages"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/allyssonsantos/frigobar.git"
-  },
-  "keywords": [
-    "component",
-    "library",
-    "react",
-    "styled-components"
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
   ],
-  "sideEffects": false,
-  "author": "Allysson Santos <aallysson0@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/allyssonsantos/frigobar/issues"
-  },
-  "homepage": "https://github.com/allyssonsantos/frigobar#readme",
-  "dependencies": {
-    "@material-ui/core": "^4.5.0",
-    "@material-ui/icons": "^4.4.3",
-    "prop-types": "^15.7.2"
+  "scripts": {
+    "test": "lerna run test",
+    "dev": "lerna run storybook --scope=@frigobar/core --stream",
+    "lint": "lerna run eslint ./ --ext .js,.jsx",
+    "commitizen": "git-cz"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.2",
@@ -72,6 +44,7 @@
     "husky": "^3.0.5",
     "jest": "^24.9.0",
     "jest-styled-components": "^6.3.3",
+    "lerna": "^3.17.0",
     "prettier": "^1.18.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -81,42 +54,9 @@
     "svg-react-loader": "^0.4.6",
     "url-loader": "^2.2.0"
   },
-  "peerDependencies": {
-    "react": "16.x",
-    "react-dom": "16.x",
-    "styled-components": "4.x"
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "release": {
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      [
-        "@semantic-release/npm",
-        {
-          "pkgRoot": "./dist/esm"
-        }
-      ],
-      "@semantic-release/github",
-      [
-        "@semantic-release/exec",
-        {
-          "successCmd": "npm run deploy-storybook -- --ci"
-        }
-      ]
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm test"
     }
   }
 }

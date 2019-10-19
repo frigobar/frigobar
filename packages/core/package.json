@@ -1,0 +1,57 @@
+{
+  "name": "@frigobar/core",
+  "version": "0.0.0-development",
+  "description": "A component library",
+  "scripts": {
+    "clean:build": "rm -rf ./dist",
+    "copy-files": "babel-node ./scripts/copy-files.js",
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "build": "cross-env NODE_ENV=production babel ./src --extensions '.js,.jsx' --out-dir ./dist/esm --copy-files",
+    "prebuild": "npm run clean:build",
+    "postbuild": "cross-env NODE_ENV=production npm run copy-files",
+    "lint": "eslint ./ --ext .js,.jsx",
+    "semantic-release": "semantic-release",
+    "prepublish": "yarn build",
+    "postpublish": "yarn deploy-storybook --ci",
+    "deploy-storybook": "storybook-to-ghpages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/allyssonsantos/frigobar.git"
+  },
+  "keywords": [
+    "component",
+    "library",
+    "react",
+    "styled-components"
+  ],
+  "sideEffects": false,
+  "author": "Allysson Santos <aallysson0@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/allyssonsantos/frigobar/issues"
+  },
+  "homepage": "https://github.com/allyssonsantos/frigobar#readme",
+  "dependencies": {
+    "@material-ui/core": "^4.5.0",
+    "@material-ui/icons": "^4.4.3",
+    "prop-types": "^15.7.2"
+  },
+  "peerDependencies": {
+    "react": "16.x",
+    "react-dom": "16.x",
+    "styled-components": "4.x"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist/esm"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm test"
+    }
+  }
+}
