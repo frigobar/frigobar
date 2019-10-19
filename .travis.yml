@@ -8,7 +8,7 @@ branches:
 jobs:
   include:
     - stage: release
-      node_js: lts/*
+      node_js: node
 
       script:
         - lerna run lint:all
