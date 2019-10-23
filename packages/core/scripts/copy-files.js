@@ -3,7 +3,7 @@ const fs = require('fs');
 const pkg = require('../package.json');
 
 const copyFile = file => {
-  const buildPath = path.resolve(__dirname, '../dist/esm/', path.basename(file));
+  const buildPath = path.resolve(__dirname, '../dist/', path.basename(file));
   fs.copyFile(
     file,
     buildPath,
