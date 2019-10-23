@@ -46,7 +46,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "directory": "esm"
+    "directory": "dist"
   },
   "husky": {
     "hooks": {
