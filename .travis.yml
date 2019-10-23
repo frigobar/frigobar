@@ -8,7 +8,7 @@ branches:
 jobs:
   include:
     - stage: release
-      node_js: node
+      node_js: lts/*
 
       before_install:
         - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.19.1
