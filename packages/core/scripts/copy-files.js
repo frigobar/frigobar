@@ -18,19 +18,18 @@ const createPackageJson = () => {
     'lint-staged': lintStaged,
     jest,
     config,
-    publishConfig,
     release,
     ...packageDataOther
   } = pkg;
 
   const newPackageData = {
     ...packageDataOther,
-    main: './components/index.js',
-    module: './components/index.js',
+    main: './esm/components/index.js',
+    module: './esm/components/index.js',
     private: false,
   };
 
-  const buildPath = path.resolve(__dirname, '../dist/esm/package.json');
+  const buildPath = path.resolve(__dirname, '../dist/package.json');
 
   fs.writeFileSync(buildPath, JSON.stringify(newPackageData, null, 2), 'utf8');
   console.log(`Created package.json in ${buildPath}`); // eslint-disable-line no-console
