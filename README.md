@@ -18,13 +18,13 @@ You can install Frigobar using either of the methods below.
 For npm users:
 
 ```shell
-  $ npm install frigobar styled-components --save
+  $ npm install @frigobar/core styled-components --save
 ```
 
 For Yarn users:
 
 ```shell
-  $ yarn add frigobar styled-components
+  $ yarn add @frigobar/core styled-components
 ```
 
 ## Contributors ✨
