@@ -9,24 +9,6 @@ const StyledIcon = styled(Icon)`
   margin-right: ${({ size }) => (size === 'large' ? '8px' : '6px')};
 `;
 
-const ButtonSizes = {
-  small: {
-    fontSize: '0.875rem',
-    iconSize: '1rem',
-    paddings: '6px 14px',
-  },
-  medium: {
-    fontSize: '1rem',
-    iconSize: '1.275rem',
-    paddings: '10px 18px',
-  },
-  large: {
-    fontSize: '1.275rem',
-    iconSize: '1.5rem',
-    paddings: '12px 20px',
-  },
-};
-
 const Btn = styled.button`
   border: none;
   border-radius: 4px;
