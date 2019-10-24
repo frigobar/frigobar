@@ -34,17 +34,30 @@ const Btn = styled.button`
   font-size: 0.875rem;
   transition: all 200ms ease-in-out;
 
-  ${({ theme, skin, icon, size, disabled, full }) => `
-    background-color: ${theme.colors[skin][500]};
-    color: ${theme.colors.neutral[50]};
-    font-size: ${ButtonSizes[size].fontSize};
-    padding: ${ButtonSizes[size].paddings};
+  ${({
+    theme: {
+      components: {
+        button: { backgroundColor, textColor, sizes },
+      },
+    },
+    skin,
+    icon,
+    size,
+    disabled,
+    full,
+  }) => `
+    background-color: ${backgroundColor[skin]};
+    color: ${textColor.enabled};
+    font-size: ${sizes[size].font}rem;
+    padding: ${sizes[size].padding.top}px ${sizes[size].padding.right}px ${
+    sizes[size].padding.bottom
+  }px ${sizes[size].padding.left}px;
 
     ${
       disabled
         ? `
-      background-color: ${theme.colors.neutral[100]};
-      color: ${theme.colors.neutral[400]};
+      background-color: ${backgroundColor.disabled};
+      color: ${textColor.disabled};
       cursor: not-allowed;
     `
         : `
@@ -55,7 +68,7 @@ const Btn = styled.button`
     }
 
     ${StyledIcon} {
-      font-size: ${ButtonSizes[size].iconSize};
+      font-size: ${sizes[size].icon}rem;
     }
 
     ${
