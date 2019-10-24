@@ -6,6 +6,7 @@
   ],
   "scripts": {
     "test": "lerna run test",
+    "test:update": "lerna run test:update",
     "dev": "lerna run storybook --scope=@frigobar/core --stream",
     "lint": "lerna run eslint ./ --ext .js,.jsx",
     "commitizen": "git-cz"

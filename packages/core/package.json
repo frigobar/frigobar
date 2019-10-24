@@ -6,6 +6,7 @@
     "clean:build": "rm -rf ./dist",
     "copy-files": "babel-node ./scripts/copy-files.js",
     "test": "jest",
+    "test:update": "jest -u",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "cross-env NODE_ENV=production babel ./src --extensions '.js,.jsx' --out-dir ./dist/esm --copy-files",

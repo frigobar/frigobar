@@ -82,7 +82,7 @@ exports[`<Card /> Snapshots should match snapshot 1`] = `
   background-color: #598aed;
   color: #fdfdfd;
   font-size: 0.875rem;
-  padding: 6px 14px;
+  padding: 4px 12px 4px 12px;
 }
 
 .c10:hover {
@@ -233,7 +233,7 @@ exports[`<Card /> Snapshots should match snapshot with rounded avatar 1`] = `
   background-color: #598aed;
   color: #fdfdfd;
   font-size: 0.875rem;
-  padding: 6px 14px;
+  padding: 4px 12px 4px 12px;
 }
 
 .c10:hover {
