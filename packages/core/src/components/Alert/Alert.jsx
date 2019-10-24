@@ -50,14 +50,20 @@ const Wrapper = styled.div`
   ${({
     theme: {
       colors,
-      spacings: { small },
+      components: {
+        alert: {
+          backgroundColor,
+          border: { width, color: borderColor },
+          padding: { top, right, bottom, left },
+        },
+      },
     },
     type,
   }) => `
-    background-color: ${colors[type][50]};
-    border: 1px solid ${colors[type][200]};
+    background-color: ${backgroundColor[type]};
+    border: ${width}px solid ${borderColor[type]};
     color: ${colors.black};
-    padding: ${small}px;
+    padding: ${top}px ${right}px ${bottom}px ${left}px;
   `}
 `;
 
