@@ -1,6 +1,6 @@
 {
   "name": "@frigobar/core",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A component library",
   "scripts": {
     "clean:build": "rm -rf ./dist",
