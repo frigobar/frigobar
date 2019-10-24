@@ -46,12 +46,18 @@ const CloseButton = styled.button`
 const Wrapper = styled.div`
   border-radius: 4px;
   font-size: 0.875rem;
-  padding: 10px;
   position: relative;
-  ${({ theme, type }) => `
-    background-color: ${theme.colors[type][50]};
-    border: 1px solid ${theme.colors[type][200]};
-    color: ${theme.colors.black};
+  ${({
+    theme: {
+      colors,
+      spacings: { small },
+    },
+    type,
+  }) => `
+    background-color: ${colors[type][50]};
+    border: 1px solid ${colors[type][200]};
+    color: ${colors.black};
+    padding: ${small}px;
   `}
 `;
 
