@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.1.0...@frigobar/core@0.1.1) (2019-11-16)
+
+
+### Bug Fixes
+
+* **frigobar/core:** use babel-plugin-inline-react-svg to handle svg files ([4fd1f64](https://github.com/allyssonsantos/frigobar/commit/4fd1f6440563ad121e3b3fee3c410905bcda346d))
+
+
+
+
+
 # [0.1.0](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.0.5...@frigobar/core@0.1.0) (2019-10-24)
 
 
