@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import CloseIcon from '../../assets/close.svg';
+import { ReactComponent as CloseIcon } from '../../assets/close.svg';
 import defaultTheme from '../../theme';
 
 const CloseButton = styled.button`

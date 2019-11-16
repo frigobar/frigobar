@@ -31,6 +31,7 @@
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-inline-react-svg": "^1.1.0",
     "commitizen": "^4.0.3",
     "cross-env": "^5.2.1",
     "cz-conventional-changelog": "^3.0.2",

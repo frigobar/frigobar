@@ -8,6 +8,7 @@ module.exports = {
       },
     ],
   ],
+  plugins: ['inline-react-svg'],
   env: {
     production: {
       ignore: ['./components/**/*.test.js', './components/**/*/__snapshots__'],
