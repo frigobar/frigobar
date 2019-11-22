@@ -1,6 +1,8 @@
 import colors from './colors';
 import spacings from './spacings';
 import borders from './borders';
+import radius from './radius';
+import baseFontSize from './fontSize';
 
 const components = {
   alert: {
@@ -73,6 +75,18 @@ const components = {
           left: spacings.large,
         },
       },
+    },
+  },
+  badge: {
+    border: {
+      radius: radius[1],
+    },
+    padding: {
+      right: spacings.xxsmall,
+      left: spacings.xxsmall,
+    },
+    font: {
+      size: baseFontSize * 0.75,
     },
   },
 };
