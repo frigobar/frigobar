@@ -69,6 +69,8 @@ const Badge = ({ children, color, theme, content, alignment }) => (
       theme={theme}
       color={color}
       role="status"
+      aria-live="polite"
+      aria-atomic="true"
       hasChildren={Boolean(React.Children.count(children))}
       alignment={alignment}
     >
