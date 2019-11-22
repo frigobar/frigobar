@@ -12,6 +12,7 @@ const Root = styled.span`
 const StyledBadge = styled.span(
   ({
     color,
+    hasChildren,
     theme: {
       colors,
       components: { badge },
@@ -26,13 +27,29 @@ const StyledBadge = styled.span(
     justify-content: center;
     padding-left: ${badge.padding.left}px;
     padding-right: ${badge.padding.right}px;
+    ${
+      hasChildren
+        ? `
+            position: absolute;
+            right: 0;
+            top: 0;
+            transform: translate(50%, -50%);
+          `
+        : ''
+    }
   `,
 );
 
-const Badge = ({ children, color, theme }) => (
+const Badge = ({ children, color, theme, content }) => (
   <Root>
-    <StyledBadge theme={theme} color={color}>
-      {children}
+    {children}
+    <StyledBadge
+      theme={theme}
+      color={color}
+      role="status"
+      hasChildren={Boolean(React.Children.count(children))}
+    >
+      {content}
     </StyledBadge>
   </Root>
 );

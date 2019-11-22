@@ -1,10 +1,14 @@
 import React from 'react';
 
-import { Badge } from '../src/components';
+import { Badge, Button } from '../src/components';
 
 export default {
   title: 'Badge',
   component: Badge,
 };
 
-export const Default = () => <Badge>10</Badge>;
+export const Default = () => (
+  <Badge content={10}>
+    <Button>Alou</Button>
+  </Badge>
+);
