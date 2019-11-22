@@ -8,7 +8,7 @@ export default {
 };
 
 export const Default = () => (
-  <Badge content={10}>
-    <Button>Alou</Button>
+  <Badge content={10} alignment="top-right">
+    <Button>Button</Button>
   </Badge>
 );
