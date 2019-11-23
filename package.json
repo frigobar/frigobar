@@ -5,8 +5,8 @@
     "packages/*"
   ],
   "scripts": {
-    "test": "lerna run test",
-    "test:update": "lerna run test:update",
+    "test": "lerna run test --stream",
+    "test:update": "lerna run test:update --stream",
     "dev": "lerna run storybook --scope=@frigobar/core --stream",
     "lint": "lerna run eslint ./ --ext .js,.jsx",
     "commitizen": "git-cz"
