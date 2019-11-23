@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.1.1...@frigobar/core@0.2.0) (2019-11-23)
+
+
+### Features
+
+* **frigobar/badge:** create badge component ([dbc7278](https://github.com/allyssonsantos/frigobar/commit/dbc727856a53480d1701c08a6b661afcce94040b))
+* **frigobar/theme:** create new theme properties ([9dccc4a](https://github.com/allyssonsantos/frigobar/commit/9dccc4ac297152a2553cb8cca211847d236439dd))
+
+
+
+
+
 ## [0.1.1](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.1.0...@frigobar/core@0.1.1) (2019-11-16)
 
 
