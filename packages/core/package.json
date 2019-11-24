@@ -12,7 +12,6 @@
     "build": "cross-env NODE_ENV=production babel ./src --extensions '.js,.jsx' --out-dir ./dist/esm --copy-files",
     "prebuild": "npm run clean:build",
     "postbuild": "cross-env NODE_ENV=production npm run copy-files",
-    "lint": "eslint ./ --ext .js,.jsx",
     "semantic-release": "semantic-release",
     "prepublish": "yarn build",
     "postpublish": "yarn deploy-storybook --ci",

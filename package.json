@@ -8,7 +8,7 @@
     "test": "lerna run test --stream",
     "test:update": "lerna run test:update --stream",
     "dev": "lerna run storybook --scope=@frigobar/core --stream",
-    "lint": "lerna run eslint ./ --ext .js,.jsx",
+    "lint": "eslint ./packages --ext .js,.jsx",
     "commitizen": "git-cz"
   },
   "devDependencies": {
