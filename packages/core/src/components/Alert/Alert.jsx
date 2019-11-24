@@ -67,9 +67,15 @@ const Wrapper = styled.div`
   `}
 `;
 
-const Close = ({ onClick, text, theme, ...props }) => (
-  <CloseButton onClick={onClick} withText={text} theme={theme} {...props}>
-    {!text ? <CloseIcon width="10" height="10" /> : text}
+const Close = ({ onClick, text, theme, ariaLabel, ...props }) => (
+  <CloseButton
+    {...props}
+    onClick={onClick}
+    withText={text}
+    aria-label={text ? undefined : ariaLabel}
+    theme={theme}
+  >
+    {!text ? <CloseIcon width="10" height="10" aria-hidden="true" /> : <span>{text}</span>}
   </CloseButton>
 );
 
@@ -77,21 +83,33 @@ Close.propTypes = {
   onClick: PropTypes.func.isRequired,
   theme: PropTypes.shape({}).isRequired,
   text: PropTypes.string,
+  ariaLabel: PropTypes.string,
 };
 
 Close.defaultProps = {
   text: undefined,
+  ariaLabel: 'close',
 };
 
-const Alert = ({ children, type, closable, theme, onClose, closeText, ...props }) => {
+const Alert = ({
+  children,
+  type,
+  closable,
+  theme,
+  onClose,
+  closeText,
+  closeIconAriaLabel,
+  ...props
+}) => {
   const [closed, setClosed] = useState(false);
 
   return !closed ? (
-    <Wrapper theme={theme} type={type} {...props}>
+    <Wrapper {...props} theme={theme} type={type} role="alert">
       {closable && (
         <Close
           text={closeText}
           theme={theme}
+          ariaLabel={closeIconAriaLabel}
           onClick={e => {
             setClosed(true);
             onClose(e);
@@ -110,6 +128,7 @@ Alert.propTypes = {
   closable: PropTypes.bool,
   onClose: PropTypes.func,
   closeText: PropTypes.string,
+  closeIconAriaLabel: PropTypes.string,
 };
 
 Alert.defaultProps = {
@@ -118,6 +137,7 @@ Alert.defaultProps = {
   closable: undefined,
   onClose: () => {},
   closeText: undefined,
+  closeIconAriaLabel: undefined,
 };
 
 export default Alert;
