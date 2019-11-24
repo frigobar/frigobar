@@ -14,6 +14,7 @@ exports[`<Alert /> Snapshots should match snapshot with all types 1`] = `
 <div>
   <div
     class="c0"
+    role="alert"
     type="neutral"
   >
     Alert
@@ -35,6 +36,7 @@ exports[`<Alert /> Snapshots should match snapshot with all types 2`] = `
 <div>
   <div
     class="c0"
+    role="alert"
     type="info"
   >
     Alert
@@ -56,6 +58,7 @@ exports[`<Alert /> Snapshots should match snapshot with all types 3`] = `
 <div>
   <div
     class="c0"
+    role="alert"
     type="warning"
   >
     Alert
@@ -77,6 +80,7 @@ exports[`<Alert /> Snapshots should match snapshot with all types 4`] = `
 <div>
   <div
     class="c0"
+    role="alert"
     type="danger"
   >
     Alert
@@ -98,6 +102,7 @@ exports[`<Alert /> Snapshots should match snapshot with all types 5`] = `
 <div>
   <div
     class="c0"
+    role="alert"
     type="success"
   >
     Alert
@@ -149,12 +154,15 @@ exports[`<Alert /> Snapshots should match snapshot with closable 1`] = `
 <div>
   <div
     class="c0"
+    role="alert"
     type="neutral"
   >
     <button
+      aria-label="close"
       class="c1"
     >
       <svg
+        aria-hidden="true"
         height="10"
         viewBox="0 0 47.971 47.971"
         width="10"
@@ -224,12 +232,15 @@ exports[`<Alert /> Snapshots should match snapshot with closable and closeText 1
 <div>
   <div
     class="c0"
+    role="alert"
     type="neutral"
   >
     <button
       class="c1"
     >
-      Close Now
+      <span>
+        Close Now
+      </span>
     </button>
     Alert
   </div>
