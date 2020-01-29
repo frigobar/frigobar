@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.3.0...@frigobar/core@0.4.0) (2020-01-29)
+
+
+### Features
+
+* **cli:** create a cli to create components ([3930880](https://github.com/allyssonsantos/frigobar/commit/3930880ec475cb8a1b133c6707f1cf554b15283e))
+
+
+
+
+
 # [0.3.0](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.2.1...@frigobar/core@0.3.0) (2020-01-29)
 
 
