@@ -21,7 +21,8 @@
   "rules": {
     "prettier/prettier": ["error"],
     "import/no-extraneous-dependencies": 0,
-    "react/jsx-props-no-spreading": 0
+    "react/jsx-props-no-spreading": 0,
+    "react/prop-types": [2, { "ignore": ["theme"] }]
   },
   "overrides": [
     {

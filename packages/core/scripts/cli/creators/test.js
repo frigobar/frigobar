@@ -1,10 +1,7 @@
 const { test } = require('../templates');
-const { createDirectory, createFile } = require('../utils');
+const { createFile } = require('../utils');
 
-const createTest = (name, { components }) => {
-  const componentPath = `${components}/${name}`;
-
+const createTest = (name, { components }) =>
   createFile(`${components}/${name}/${name}.test.jsx`, test(name));
-};
 
 module.exports = createTest;

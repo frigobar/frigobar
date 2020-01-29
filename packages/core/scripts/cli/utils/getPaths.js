@@ -1,4 +1,4 @@
-const getPaths = name => {
+const getPaths = () => {
   const base = `${process.cwd()}/packages/core`;
   const paths = {
     story: `${base}/stories`,
