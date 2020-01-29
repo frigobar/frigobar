@@ -9,7 +9,8 @@
     "test:update": "lerna run test:update --stream",
     "dev": "lerna run storybook --scope=@frigobar/core --stream",
     "lint": "eslint ./packages --ext .js,.jsx",
-    "commitizen": "git-cz"
+    "commitizen": "git-cz",
+    "new": "node ./packages/core/scripts/cli/index.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.2",
