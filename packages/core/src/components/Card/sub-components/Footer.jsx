@@ -8,11 +8,23 @@ const alignDictionary = {
   'space-around': 'space-around',
 };
 
-const Footer = styled.footer`
+const Footer = styled.footer(
+  ({
+    align,
+    theme: {
+      components: { card },
+    },
+  }) => `
   display: flex;
-  padding: 8px 16px 16px;
-  ${({ align }) => `justify-content: ${alignDictionary[align]};`}
-`;
+  padding:
+    ${card.footer.padding.top}px
+    ${card.footer.padding.right}px
+    ${card.footer.padding.bottom}px
+    ${card.footer.padding.left}px;
+
+  justify-content: ${alignDictionary[align]};
+`,
+);
 
 Footer.displayName = 'Card.Footer';
 

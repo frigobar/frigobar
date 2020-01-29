@@ -2,13 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  margin-bottom: 8px;
-  margin-top: 8px;
+const Wrapper = styled.div(
+  ({
+    theme: {
+      components: { card },
+    },
+  }) => `
+  margin-top: ${card.media.margin.top}px;
+  margin-bottom: ${card.media.margin.bottom}px;
   overflow: hidden;
   padding-bottom: 56.25%;
   position: relative;
-`;
+`,
+);
 const Image = styled.img`
   position: absolute;
   top: 50%;

@@ -89,6 +89,55 @@ const components = {
       size: baseFontSize * 0.75,
     },
   },
+  card: {
+    border: {
+      radius: radius[1],
+    },
+    header: {
+      padding: {
+        top: spacings.medium,
+        right: spacings.medium,
+        bottom: spacings.xsmall,
+        left: spacings.medium,
+      },
+    },
+    title: {
+      font: {
+        size: 1.5,
+      },
+    },
+    subtitle: {
+      font: {
+        size: 1,
+      },
+    },
+    avatar: {
+      radius: radius[1],
+      size: 72,
+    },
+    media: {
+      margin: {
+        top: spacings.xsmall,
+        bottom: spacings.xsmall,
+      },
+    },
+    content: {
+      padding: {
+        top: spacings.xsmall,
+        right: spacings.medium,
+        bottom: spacings.xsmall,
+        left: spacings.medium,
+      },
+    },
+    footer: {
+      padding: {
+        top: spacings.xsmall,
+        right: spacings.medium,
+        bottom: spacings.medium,
+        left: spacings.medium,
+      },
+    },
+  },
 };
 
 export default components;

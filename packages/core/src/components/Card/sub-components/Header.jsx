@@ -1,21 +1,49 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
+
 import Avatar from './Avatar';
 
-const Wrapper = styled.header`
+const Wrapper = styled.header(
+  ({
+    theme: {
+      components: { card },
+    },
+  }) => `
   align-items: center;
   display: flex;
-  padding: 16px 16px 8px;
-`;
+  padding:
+    ${card.header.padding.top}px
+    ${card.header.padding.right}px
+    ${card.header.padding.bottom}px
+    ${card.header.padding.left}px;
+`,
+);
 
-const ChildrenWrapper = styled.div`
-  ${({ hasAvatar }) => hasAvatar && 'padding-left: 12px;'}
-`;
+const ChildrenWrapper = styled.div(
+  ({ hasAvatar, theme: { spacings } }) => `
+  ${hasAvatar && `margin-left: ${spacings.small}px;`}
+`,
+);
 
-const Header = ({ children, avatar, avatarRounded, ...props }) => (
+const Header = ({
+  children,
+  avatar,
+  avatarRounded,
+  theme: {
+    components: { card },
+  },
+  ...props
+}) => (
   <Wrapper {...props}>
-    {avatar && <Avatar src={avatar} rounded={avatarRounded} />}
+    {avatar && (
+      <Avatar
+        src={avatar}
+        rounded={avatarRounded}
+        width={card.avatar.size}
+        height={card.avatar.size}
+      />
+    )}
     <ChildrenWrapper hasAvatar={avatar}>{children}</ChildrenWrapper>
   </Wrapper>
 );
@@ -33,4 +61,4 @@ Header.defaultProps = {
 
 Header.displayName = 'Card.Header';
 
-export default Header;
+export default withTheme(Header);
