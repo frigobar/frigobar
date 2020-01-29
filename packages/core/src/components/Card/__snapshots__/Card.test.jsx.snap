@@ -14,15 +14,15 @@ exports[`<Card /> Snapshots should match snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 16px 16px 8px;
+  padding: 16px 16px 8px 16px;
 }
 
 .c3 {
-  padding-left: 12px;
+  margin-left: 12px;
 }
 
 .c8 {
-  padding: 8px 16px;
+  padding: 8px 16px 8px 16px;
 }
 
 .c9 {
@@ -30,7 +30,7 @@ exports[`<Card /> Snapshots should match snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 8px 16px 16px;
+  padding: 8px 16px 16px 16px;
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
@@ -38,8 +38,8 @@ exports[`<Card /> Snapshots should match snapshot 1`] = `
 }
 
 .c6 {
-  margin-bottom: 8px;
   margin-top: 8px;
+  margin-bottom: 8px;
   overflow: hidden;
   padding-bottom: 56.25%;
   position: relative;
@@ -102,7 +102,9 @@ exports[`<Card /> Snapshots should match snapshot 1`] = `
     >
       <img
         class="c2"
+        height="72"
         src="https://dummyimage.com/72x72"
+        width="72"
       />
       <div
         class="c3"
@@ -153,7 +155,7 @@ exports[`<Card /> Snapshots should match snapshot 1`] = `
 
 exports[`<Card /> Snapshots should match snapshot with rounded avatar 1`] = `
 .c2 {
-  border-radius: 50%;
+  border-radius: 9999px;
 }
 
 .c1 {
@@ -165,15 +167,15 @@ exports[`<Card /> Snapshots should match snapshot with rounded avatar 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 16px 16px 8px;
+  padding: 16px 16px 8px 16px;
 }
 
 .c3 {
-  padding-left: 12px;
+  margin-left: 12px;
 }
 
 .c8 {
-  padding: 8px 16px;
+  padding: 8px 16px 8px 16px;
 }
 
 .c9 {
@@ -181,7 +183,7 @@ exports[`<Card /> Snapshots should match snapshot with rounded avatar 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 8px 16px 16px;
+  padding: 8px 16px 16px 16px;
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
@@ -189,8 +191,8 @@ exports[`<Card /> Snapshots should match snapshot with rounded avatar 1`] = `
 }
 
 .c6 {
-  margin-bottom: 8px;
   margin-top: 8px;
+  margin-bottom: 8px;
   overflow: hidden;
   padding-bottom: 56.25%;
   position: relative;
@@ -253,7 +255,9 @@ exports[`<Card /> Snapshots should match snapshot with rounded avatar 1`] = `
     >
       <img
         class="c2"
+        height="72"
         src="https://dummyimage.com/72x72"
+        width="72"
       />
       <div
         class="c3"

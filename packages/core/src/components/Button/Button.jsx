@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Icon from '@material-ui/core/Icon';
 
-import defaultTheme from '../../theme';
-
 const StyledIcon = styled(Icon)`
   margin-right: ${({ size }) => (size === 'large' ? '8px' : '6px')};
 `;
@@ -79,13 +77,11 @@ Button.propTypes = {
   skin: PropTypes.oneOf(['primary', 'info', 'success', 'danger', 'warning', 'neutral']),
   disabled: PropTypes.bool,
   icon: PropTypes.string,
-  theme: PropTypes.shape({}),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   full: PropTypes.bool,
 };
 
 Button.defaultProps = {
-  theme: defaultTheme,
   skin: 'neutral',
   disabled: false,
   icon: undefined,

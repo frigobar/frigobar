@@ -6,7 +6,7 @@ const Subtitle = styled.h3(
       components: { card },
     },
   }) => `
-  font-size: ${card.subtitle.font}rem;
+  font-size: ${card.subtitle.font.size}rem;
   margin: 0;
 `,
 );

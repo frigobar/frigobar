@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { ReactComponent as CloseIcon } from '../../assets/close.svg';
-import defaultTheme from '../../theme';
 
 const CloseButton = styled.button`
   align-items: center;
@@ -81,7 +80,6 @@ const Close = ({ onClick, text, theme, ariaLabel, ...props }) => (
 
 Close.propTypes = {
   onClick: PropTypes.func.isRequired,
-  theme: PropTypes.shape({}).isRequired,
   text: PropTypes.string,
   ariaLabel: PropTypes.string,
 };
@@ -124,7 +122,6 @@ const Alert = ({
 Alert.propTypes = {
   children: PropTypes.node.isRequired,
   type: PropTypes.oneOf(['success', 'info', 'danger', 'warning', 'neutral']),
-  theme: PropTypes.shape({}),
   closable: PropTypes.bool,
   onClose: PropTypes.func,
   closeText: PropTypes.string,
@@ -133,7 +130,6 @@ Alert.propTypes = {
 
 Alert.defaultProps = {
   type: 'neutral',
-  theme: defaultTheme,
   closable: undefined,
   onClose: () => {},
   closeText: undefined,

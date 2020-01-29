@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import defaultTheme from '../../theme';
-
 const badgeAlignment = {
   'top-left': `
     top: 0;
@@ -80,7 +78,6 @@ const Badge = ({ children, color, theme, content, alignment }) => (
 );
 
 Badge.defaultProps = {
-  theme: defaultTheme,
   color: 'primary',
   children: undefined,
   content: undefined,
@@ -88,8 +85,6 @@ Badge.defaultProps = {
 };
 
 Badge.propTypes = {
-  theme: PropTypes.shape({}),
-  color: PropTypes.oneOf(Object.keys(defaultTheme.colors)),
   children: PropTypes.node,
   content: PropTypes.number,
   alignment: PropTypes.oneOf(['top-left', 'top-right', 'bottom-left', 'bottom-right']),
