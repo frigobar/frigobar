@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.2.1...@frigobar/core@0.3.0) (2020-01-29)
+
+
+### Features
+
+* **card:** add themification to card components ([ec095c2](https://github.com/allyssonsantos/frigobar/commit/ec095c23a03e96083e93c171e85081b2d763a6f3))
+
+
+
+
+
 ## [0.2.1](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.2.0...@frigobar/core@0.2.1) (2019-11-24)
 
 **Note:** Version bump only for package @frigobar/core
