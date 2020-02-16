@@ -65,12 +65,12 @@ const Btn = styled.button`
   `}
 `;
 
-const Button = ({ children, icon, theme, size, full, ...props }) => (
-  <Btn icon={icon} theme={theme} size={size} full={full} {...props}>
+const Button = React.forwardRef(({ children, icon, theme, size, full, ...props }, ref) => (
+  <Btn icon={icon} theme={theme} size={size} full={full} ref={ref} {...props}>
     {icon && <StyledIcon size={size}>{icon}</StyledIcon>}
     {children}
   </Btn>
-);
+));
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
