@@ -65,27 +65,22 @@ const Fade = ({ show, children }) => {
   );
 };
 
-const Menu = ({ anchorElement, placement, open, ...props }) => {
+const Menu = ({ anchorElement, placement, open, handleClickAway, ...props }) => {
   const [anchorPosition, setAnchorPosition] = useState({});
-  const [openned, setOpenned] = useState(open);
 
   const menuRef = useRef(null);
 
-  const handleClickAway = event => {
+  const clickAway = event => {
     if (!menuRef.current?.contains(event.target) && !anchorElement.current.contains(event.target)) {
-      setOpenned(false);
+      handleClickAway(event);
     }
   };
 
   useEffect(() => {
-    open && setOpenned(true);
-  }, [open]);
-
-  useEffect(() => {
-    window.addEventListener('click', handleClickAway);
+    window.addEventListener('click', clickAway);
 
     return () => {
-      window.removeEventListener('click', handleClickAway);
+      window.removeEventListener('click', clickAway);
     };
   }, []);
 
@@ -96,7 +91,7 @@ const Menu = ({ anchorElement, placement, open, ...props }) => {
   }, [anchorElement]);
 
   return createPortal(
-    <Fade show={openned}>
+    <Fade show={open}>
       <Wrapper ref={menuRef} top={anchorPosition.top} left={anchorPosition.left} {...props}>
         <Item>Item 1</Item>
         <Item>Item 2</Item>
