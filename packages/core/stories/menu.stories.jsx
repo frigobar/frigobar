@@ -13,7 +13,12 @@ export const Default = () => {
 
   return (
     <div>
-      <Menu anchorElement={buttonRef} open={open} handleClickAway={() => toggleOpen(false)}>
+      <Menu
+        anchorElement={buttonRef}
+        open={open}
+        handleClickAway={() => toggleOpen(false)}
+        fadeDuration={1000}
+      >
         Menu
       </Menu>
       <Button ref={buttonRef} onClick={() => toggleOpen(!open)}>

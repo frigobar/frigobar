@@ -39,13 +39,13 @@ const fadeOut = keyframes`
 `;
 
 const Effect = styled.div(
-  ({ show }) => css`
-    animation: ${show ? fadeIn : fadeOut} 0.3s;
+  ({ show, duration }) => css`
+    animation: ${show ? fadeIn : fadeOut} ${duration}ms;
   `,
 );
 const Item = styled.li``;
 
-const Fade = ({ show, children }) => {
+const Fade = ({ show, children, duration }) => {
   const [shouldRender, setShouldRender] = useState(show);
 
   useEffect(() => {
@@ -58,14 +58,14 @@ const Fade = ({ show, children }) => {
 
   return (
     shouldRender && (
-      <Effect show={show} onAnimationEnd={onAnimationEnd}>
+      <Effect show={show} onAnimationEnd={onAnimationEnd} duration={duration}>
         {children}
       </Effect>
     )
   );
 };
 
-const Menu = ({ anchorElement, placement, open, handleClickAway, ...props }) => {
+const Menu = ({ anchorElement, placement, open, handleClickAway, fadeDuration, ...props }) => {
   const [anchorPosition, setAnchorPosition] = useState({});
 
   const menuRef = useRef(null);
@@ -91,21 +91,34 @@ const Menu = ({ anchorElement, placement, open, handleClickAway, ...props }) => 
   }, [anchorElement]);
 
   return createPortal(
-    <Fade show={open}>
-      <Wrapper ref={menuRef} top={anchorPosition.top} left={anchorPosition.left} {...props}>
-        <Item>Item 1</Item>
-        <Item>Item 2</Item>
-      </Wrapper>
-    </Fade>,
+    <Wrapper
+      as={Fade}
+      show={open}
+      duration={fadeDuration}
+      ref={menuRef}
+      top={anchorPosition.top}
+      left={anchorPosition.left}
+      {...props}
+    >
+      <Item>Item 1</Item>
+      <Item>Item 2</Item>
+    </Wrapper>,
     document.body,
   );
 };
 
 Menu.propTypes = {
+  anchorElement: PropTypes.node.isRequired,
+  fadeDuration: PropTypes.number,
+  handleClickAway: PropTypes.func,
+  open: PropTypes.bool,
   placement: PropTypes.oneOf(['top', 'bottom']),
 };
 
 Menu.defaultProps = {
+  fadeDuration: 300,
+  handleClickAway: () => {},
+  open: false,
   placement: 'top',
 };
 
