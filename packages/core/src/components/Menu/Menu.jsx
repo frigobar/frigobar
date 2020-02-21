@@ -65,13 +65,23 @@ const Fade = ({ show, children, duration }) => {
   );
 };
 
-const Menu = ({ anchorElement, placement, open, handleClickAway, fadeDuration, ...props }) => {
+const Menu = ({
+  anchorElement,
+  placement,
+  open,
+  handleClickAway,
+  fadeDuration,
+  ...props
+}) => {
   const [anchorPosition, setAnchorPosition] = useState({});
 
   const menuRef = useRef(null);
 
   const clickAway = event => {
-    if (!menuRef.current?.contains(event.target) && !anchorElement.current.contains(event.target)) {
+    if (
+      !menuRef.current?.contains(event.target) &&
+      !anchorElement.current.contains(event.target)
+    ) {
       handleClickAway(event);
     }
   };
@@ -85,7 +95,11 @@ const Menu = ({ anchorElement, placement, open, handleClickAway, fadeDuration, .
   }, []);
 
   useEffect(() => {
-    const { top, left, height } = anchorElement.current?.getBoundingClientRect();
+    const {
+      top,
+      left,
+      height,
+    } = anchorElement.current?.getBoundingClientRect();
 
     setAnchorPosition({ top: top + height, left });
   }, [anchorElement]);
