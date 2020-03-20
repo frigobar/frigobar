@@ -16,7 +16,15 @@
     "type": "git",
     "url": "git+https://github.com/frigobar/frigobar.git"
   },
-  "scripts": {},
+  "scripts": {
+    "clean:build": "rm -rf ./dist",
+    "copy-files": "babel-node ./scripts/copy-files.js",
+    "test": "jest --env=jest-environment-jsdom-sixteen",
+    "build": "cross-env NODE_ENV=production babel ./src --extensions '.js,.jsx' --out-dir ./dist/esm --copy-files",
+    "prebuild": "yarn run clean:build",
+    "postbuild": "cross-env NODE_ENV=production yarn run copy-files",
+    "prepublish": "yarn build"
+  },
   "bugs": {
     "url": "https://github.com/frigobar/frigobar/issues"
   },
@@ -24,5 +32,13 @@
   "publishConfig": {
     "access": "public",
     "directory": "dist"
+  },
+  "peerDependencies": {
+    "react": "16.x",
+    "react-dom": "16.x",
+    "styled-components": "4.x"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2"
   }
 }
