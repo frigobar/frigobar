@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { ReactComponent as CloseIcon } from '../../assets/close.svg';
+import withFade from '../../hocs/withFade';
 
 const CloseButton = styled.button`
   align-items: center;
@@ -42,7 +43,7 @@ const CloseButton = styled.button`
   `}
 `;
 
-const Wrapper = styled.div`
+const Wrapper = withFade(styled.div`
   border-radius: 4px;
   font-size: 0.875rem;
   position: relative;
@@ -64,7 +65,7 @@ const Wrapper = styled.div`
     color: ${colors.black};
     padding: ${top}px ${right}px ${bottom}px ${left}px;
   `}
-`;
+`);
 
 const Close = ({ onClick, text, theme, ariaLabel, ...props }) => (
   <CloseButton
@@ -74,7 +75,11 @@ const Close = ({ onClick, text, theme, ariaLabel, ...props }) => (
     aria-label={text ? undefined : ariaLabel}
     theme={theme}
   >
-    {!text ? <CloseIcon width="10" height="10" aria-hidden="true" /> : <span>{text}</span>}
+    {!text ? (
+      <CloseIcon width="10" height="10" aria-hidden="true" />
+    ) : (
+      <span>{text}</span>
+    )}
   </CloseButton>
 );
 
@@ -99,24 +104,24 @@ const Alert = ({
   closeIconAriaLabel,
   ...props
 }) => {
-  const [closed, setClosed] = useState(false);
+  const [show, toggleShow] = useState(true);
 
-  return !closed ? (
-    <Wrapper {...props} theme={theme} type={type} role="alert">
+  return (
+    <Wrapper {...props} theme={theme} show={show} type={type} role="alert">
       {closable && (
         <Close
           text={closeText}
           theme={theme}
           ariaLabel={closeIconAriaLabel}
           onClick={e => {
-            setClosed(true);
+            toggleShow(false);
             onClose(e);
           }}
         />
       )}
       {children}
     </Wrapper>
-  ) : null;
+  );
 };
 
 Alert.propTypes = {
