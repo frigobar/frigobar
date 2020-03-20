@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.4.0...@frigobar/core@0.5.0) (2020-03-20)
+
+
+### Features
+
+* **alert:** add withFade ([3a5d9b4](https://github.com/allyssonsantos/frigobar/commit/3a5d9b4b27b475d2259716cc30bb0b4926455dec))
+* **button:** add withFade hoc ([798f002](https://github.com/allyssonsantos/frigobar/commit/798f00207e2671b30efb8c1c099d92450fcf47e0))
+* **menu:** add handleClickAway as a prop ([2f4bb0f](https://github.com/allyssonsantos/frigobar/commit/2f4bb0fe33a5ca5dae393ac97b1f8fbb9ddb8a6d))
+* **menu:** add handleClickAway as prop ([e51d6b0](https://github.com/allyssonsantos/frigobar/commit/e51d6b091fc34399a5d1168f31638d5fd7042bd1))
+* **menu:** create menu component structure via CLI ([3e37396](https://github.com/allyssonsantos/frigobar/commit/3e373960d1e822383c9c8674554b6cad5162be7c))
+* **menu:** create new Menu component and withFade hoc ([0b836d2](https://github.com/allyssonsantos/frigobar/commit/0b836d275c1ca6a8b66f6367738c1e8f7127aa3b))
+
+
+
+
+
 # [0.4.0](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.3.0...@frigobar/core@0.4.0) (2020-01-29)
 
 
