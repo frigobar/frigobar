@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.5.0...@frigobar/core@0.6.0) (2020-03-20)
+
+
+### Features
+
+* **animation:** create animation package ([137b54d](https://github.com/allyssonsantos/frigobar/commit/137b54d821cbf54ac2f688a24efdbfcd61b8875a))
+
+
+
+
+
 # [0.5.0](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.4.0...@frigobar/core@0.5.0) (2020-03-20)
 
 
