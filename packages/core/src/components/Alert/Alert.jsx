@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { withFade } from '@frigobar/animation';
+
 import { ReactComponent as CloseIcon } from '../../assets/close.svg';
-import withFade from '../../hocs/withFade';
 
 const CloseButton = styled.button`
   align-items: center;
