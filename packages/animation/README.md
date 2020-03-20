@@ -1,11 +1,14 @@
-# `animation`
+# `@frigobar/animation`
 
-> TODO: description
+Easily add CSS animation to your react components via HOCs.
 
 ## Usage
 
 ```
-const animation = require('animation');
+import { withFade } from '@frigobar/animation';
 
-// TODO: DEMONSTRATE API
+const Button = (props) => <button {...props}></button>;
+
+export default withFade(Button);
+
 ```
