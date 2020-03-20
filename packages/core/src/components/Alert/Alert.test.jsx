@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '../../../testUtils';
+import { render, fireEvent, waitFor } from '../../../testUtils';
 
 import Alert from './Alert';
 
@@ -33,7 +33,7 @@ describe('<Alert />', () => {
     });
   });
   describe('Closable feature', () => {
-    it('should close alert when click on close button', () => {
+    it('should close alert when click on close button', async () => {
       const { getByText, queryByText } = render(
         <Alert closable closeText="Close Now">
           Alert
@@ -44,7 +44,9 @@ describe('<Alert />', () => {
 
       fireEvent.click(getByText('Close Now'));
 
-      expect(queryByText('Alert')).toBe(null);
+      waitFor(() => {
+        expect(queryByText('Alert')).toBeFalsy();
+      });
     });
   });
   describe('onClose function', () => {

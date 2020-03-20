@@ -27,41 +27,49 @@ const fadeOut = keyframes`
  * visible or hidden.
  */
 const withFade = Component => {
-  const FadedComponent = forwardRef(({ duration, show, ...props }, ref) => {
-    const [shouldRender, setShouldRender] = useState(show);
+  const FadedComponent = forwardRef(
+    ({ duration, show, onAnimationEnd, ...props }, ref) => {
+      const [shouldRender, setShouldRender] = useState(show);
 
-    useEffect(() => {
-      if (show) setShouldRender(true);
-    }, [show]);
+      useEffect(() => {
+        if (show) setShouldRender(true);
+      }, [show]);
 
-    const onAnimationEnd = () => {
-      if (!show) setShouldRender(false);
-    };
+      const renderControl = e => {
+        if (!show) {
+          setShouldRender(false);
+          onAnimationEnd(e);
+        }
+      };
 
-    const EffectComponent = styled(Component)(
-      ({ animationVisible, animationDuration }) => css`
-        animation: ${animationVisible ? fadeIn : fadeOut} ${animationDuration}ms;
-      `,
-    );
+      const EffectComponent = styled(Component)(
+        ({ animationVisible, animationDuration }) => css`
+          animation: ${animationVisible ? fadeIn : fadeOut}
+            ${animationDuration}ms;
+        `,
+      );
 
-    return shouldRender ? (
-      <EffectComponent
-        animationDuration={duration}
-        animationVisible={show}
-        onAnimationEnd={onAnimationEnd}
-        ref={ref}
-        {...props}
-      />
-    ) : null;
-  });
+      return shouldRender ? (
+        <EffectComponent
+          animationDuration={duration}
+          animationVisible={show}
+          onAnimationEnd={renderControl}
+          ref={ref}
+          {...props}
+        />
+      ) : null;
+    },
+  );
 
   FadedComponent.propTypes = {
     duration: PropTypes.number,
     show: PropTypes.bool,
+    onAnimationEnd: PropTypes.func,
   };
   FadedComponent.defaultProps = {
     duration: 300,
     show: false,
+    onAnimationEnd: () => {},
   };
 
   return FadedComponent;
