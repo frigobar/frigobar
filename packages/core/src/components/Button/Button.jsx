@@ -65,16 +65,25 @@ const Btn = styled.button`
   `}
 `;
 
-const Button = React.forwardRef(({ children, icon, theme, size, full, ...props }, ref) => (
-  <Btn icon={icon} theme={theme} size={size} full={full} ref={ref} {...props}>
-    {icon && <StyledIcon size={size}>{icon}</StyledIcon>}
-    {children}
-  </Btn>
-));
+const Button = React.forwardRef(
+  ({ children, icon, theme, size, full, ...props }, ref) => (
+    <Btn icon={icon} theme={theme} size={size} full={full} ref={ref} {...props}>
+      {icon && <StyledIcon size={size}>{icon}</StyledIcon>}
+      {children}
+    </Btn>
+  ),
+);
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
-  skin: PropTypes.oneOf(['primary', 'info', 'success', 'danger', 'warning', 'neutral']),
+  skin: PropTypes.oneOf([
+    'primary',
+    'info',
+    'success',
+    'danger',
+    'warning',
+    'neutral',
+  ]),
   disabled: PropTypes.bool,
   icon: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
