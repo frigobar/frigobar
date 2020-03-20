@@ -13,7 +13,7 @@
     "prebuild": "npm run clean:build",
     "postbuild": "cross-env NODE_ENV=production npm run copy-files",
     "semantic-release": "semantic-release",
-    "prepublish": "yarn build",
+    "prepublishOnly": "yarn build",
     "postpublish": "yarn deploy-storybook --ci",
     "deploy-storybook": "storybook-to-ghpages"
   },
