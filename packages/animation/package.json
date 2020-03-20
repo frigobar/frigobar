@@ -19,7 +19,6 @@
   "scripts": {
     "clean:build": "rm -rf ./dist",
     "copy-files": "babel-node ./scripts/copy-files.js",
-    "test": "jest --env=jest-environment-jsdom-sixteen",
     "build": "cross-env NODE_ENV=production babel ./src --extensions '.js,.jsx' --out-dir ./dist/esm --copy-files",
     "prebuild": "yarn run clean:build",
     "postbuild": "cross-env NODE_ENV=production yarn run copy-files",
