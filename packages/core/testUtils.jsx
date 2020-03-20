@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, waitFor } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 
 import theme from './src/theme';
@@ -13,10 +13,11 @@ Providers.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-const customRender = (ui, options) => render(ui, { wrapper: Providers, ...options });
+const customRender = (ui, options) =>
+  render(ui, { wrapper: Providers, ...options });
 
 // re-export everything
 export * from '@testing-library/react';
 
 // override render method
-export { customRender as render, fireEvent };
+export { customRender as render, fireEvent, waitFor };

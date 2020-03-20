@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { withFade } from '@frigobar/animation';
 
 import portalContainer from './portalContainer';
-import withFade from '../../hocs/withFade';
 
 const PORTAL_CONTAINER_NAME = 'frigobar-menu';
 

@@ -88,7 +88,12 @@ Badge.propTypes = {
   color: PropTypes.string,
   children: PropTypes.node,
   content: PropTypes.number,
-  alignment: PropTypes.oneOf(['top-left', 'top-right', 'bottom-left', 'bottom-right']),
+  alignment: PropTypes.oneOf([
+    'top-left',
+    'top-right',
+    'bottom-left',
+    'bottom-right',
+  ]),
 };
 
 export default Badge;

@@ -13,7 +13,7 @@
     "prebuild": "npm run clean:build",
     "postbuild": "cross-env NODE_ENV=production npm run copy-files",
     "semantic-release": "semantic-release",
-    "prepublish": "yarn build",
+    "prepublishOnly": "yarn build",
     "postpublish": "yarn deploy-storybook --ci",
     "deploy-storybook": "storybook-to-ghpages"
   },
@@ -35,6 +35,7 @@
   },
   "homepage": "https://github.com/allyssonsantos/frigobar#readme",
   "dependencies": {
+    "@frigobar/animation": "0.0.1",
     "@material-ui/core": "^4.5.0",
     "@material-ui/icons": "^4.4.3",
     "prop-types": "^15.7.2"
@@ -47,12 +48,6 @@
   "publishConfig": {
     "access": "public",
     "directory": "dist"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm test"
-    }
   },
   "devDependencies": {
     "styled-components": "4.4.1"

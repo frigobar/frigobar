@@ -7,4 +7,6 @@ export default {
   component: Link,
 };
 
-export const Default = () => <Link href="/?path=/story/link--default">Simple Link</Link>;
+export const Default = () => (
+  <Link href="/?path=/story/link--default">Simple Link</Link>
+);
