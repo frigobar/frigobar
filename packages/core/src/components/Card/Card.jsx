@@ -1,5 +1,13 @@
 import styled from 'styled-components';
-import { Content, Footer, Header, Media, Avatar, Title, Subtitle } from './sub-components';
+import {
+  Content,
+  Footer,
+  Header,
+  Media,
+  Avatar,
+  Title,
+  Subtitle,
+} from './sub-components';
 import defaultTheme from '../../theme';
 
 const Card = styled.section(

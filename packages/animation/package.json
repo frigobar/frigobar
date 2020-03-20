@@ -1,0 +1,28 @@
+{
+  "name": "@frigobar/animation",
+  "version": "0.0.1",
+  "description": "A styled-components based animation package",
+  "keywords": [
+    "react",
+    "styled-components",
+    "animation",
+    "component"
+  ],
+  "author": "Allysson Santos <aallysson0@gmail.com>",
+  "homepage": "https://frigobar.github.io/frigobar/",
+  "license": "MIT",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frigobar/frigobar.git"
+  },
+  "scripts": {},
+  "bugs": {
+    "url": "https://github.com/frigobar/frigobar/issues"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  }
+}

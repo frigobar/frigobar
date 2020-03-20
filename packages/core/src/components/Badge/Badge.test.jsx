@@ -26,22 +26,30 @@ describe('<Badge />', () => {
 
     describe('alignments', () => {
       it('should match snapshot with top-left alignment', () => {
-        const { container } = render(<Badge content={10} alignment="top-left" />);
+        const { container } = render(
+          <Badge content={10} alignment="top-left" />,
+        );
         expect(container).toMatchSnapshot();
       });
 
       it('should match snapshot with top-right alignment', () => {
-        const { container } = render(<Badge content={10} alignment="top-right" />);
+        const { container } = render(
+          <Badge content={10} alignment="top-right" />,
+        );
         expect(container).toMatchSnapshot();
       });
 
       it('should match snapshot with bottom-left alignment', () => {
-        const { container } = render(<Badge content={10} alignment="bottom-left" />);
+        const { container } = render(
+          <Badge content={10} alignment="bottom-left" />,
+        );
         expect(container).toMatchSnapshot();
       });
 
       it('should match snapshot with bottom-right alignment', () => {
-        const { container } = render(<Badge content={10} alignment="bottom-right" />);
+        const { container } = render(
+          <Badge content={10} alignment="bottom-right" />,
+        );
         expect(container).toMatchSnapshot();
       });
     });

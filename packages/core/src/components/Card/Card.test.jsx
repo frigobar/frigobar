@@ -8,7 +8,10 @@ describe('<Card />', () => {
   describe('Snapshots', () => {
     const Component = ({ rounded }) => (
       <Card maxWidth="400px">
-        <Card.Header avatarRounded={rounded} avatar="https://dummyimage.com/72x72">
+        <Card.Header
+          avatarRounded={rounded}
+          avatar="https://dummyimage.com/72x72"
+        >
           <Card.Title>Title</Card.Title>
           <Card.Subtitle>Subtitle</Card.Subtitle>
         </Card.Header>

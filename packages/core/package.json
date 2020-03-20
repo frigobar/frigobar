@@ -48,12 +48,6 @@
     "access": "public",
     "directory": "dist"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm test"
-    }
-  },
   "devDependencies": {
     "styled-components": "4.4.1"
   }
