@@ -1,73 +1,72 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
-import styled, { css, keyframes } from 'styled-components';
+import styled from 'styled-components';
 
-const Wrapper = styled.ul(
-  ({ top, left, theme: { colors, radius } }) => `
+import portalContainer from './portalContainer';
+import withFade from '../../hocs/withFade';
+
+const PORTAL_CONTAINER_NAME = 'frigobar-menu';
+
+const List = withFade(
+  styled.ul(
+    ({
+      top,
+      left,
+      theme: {
+        components: { menu },
+      },
+    }) => `
     position: absolute;
     top: ${top}px;
     left: ${left}px;
+    z-index: 999;
 
     margin: 0;
     padding: 0;
 
-    list-style: none;
-    border-radius: ${radius[1]}px;
-    background-color: ${colors.white};
-
+    background-color: ${menu.backgroundColor};
+    border-radius: ${menu.radius}px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+
+    list-style: none;
+    overflow: hidden;
+
+    li {
+      margin: 0;
+      padding: 0;
+    }
   `,
+  ),
 );
 
-const fadeIn = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-`;
+const Item = styled.a(
+  ({
+    theme: {
+      components: { menu },
+    },
+  }) => `
+  display: block;
+  padding:
+    ${menu.item.padding.top}px
+    ${menu.item.padding.right}px
+    ${menu.item.padding.bottom}px
+    ${menu.item.padding.left}px;
 
-const fadeOut = keyframes`
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-`;
+  color: inherit;
 
-const Effect = styled.div(
-  ({ show, duration }) => css`
-    animation: ${show ? fadeIn : fadeOut} ${duration}ms;
-  `,
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    background-color: ${menu.item.hoverColor};
+  }
+`,
 );
-const Item = styled.li``;
-
-const Fade = ({ show, children, duration }) => {
-  const [shouldRender, setShouldRender] = useState(show);
-
-  useEffect(() => {
-    if (show) setShouldRender(true);
-  }, [show]);
-
-  const onAnimationEnd = () => {
-    if (!show) setShouldRender(false);
-  };
-
-  return (
-    shouldRender && (
-      <Effect show={show} onAnimationEnd={onAnimationEnd} duration={duration}>
-        {children}
-      </Effect>
-    )
-  );
-};
 
 const Menu = ({
+  children,
   anchorElement,
-  placement,
   open,
   handleClickAway,
   fadeDuration,
@@ -77,22 +76,29 @@ const Menu = ({
 
   const menuRef = useRef(null);
 
-  const clickAway = event => {
-    if (
-      !menuRef.current?.contains(event.target) &&
-      !anchorElement.current.contains(event.target)
-    ) {
-      handleClickAway(event);
-    }
-  };
+  const clickAway = useCallback(
+    event => {
+      if (
+        !menuRef.current?.contains(event.target) &&
+        !anchorElement.current.contains(event.target)
+      ) {
+        handleClickAway(event);
+      }
+    },
+    [open],
+  );
 
   useEffect(() => {
-    window.addEventListener('click', clickAway);
+    if (open) {
+      window.addEventListener('click', clickAway);
+    } else {
+      window.removeEventListener('click', clickAway);
+    }
 
     return () => {
       window.removeEventListener('click', clickAway);
     };
-  }, []);
+  }, [clickAway]);
 
   useEffect(() => {
     const {
@@ -101,12 +107,11 @@ const Menu = ({
       height,
     } = anchorElement.current?.getBoundingClientRect();
 
-    setAnchorPosition({ top: top + height, left });
+    setAnchorPosition({ top: top + height - 3, left: left + 3 });
   }, [anchorElement]);
 
   return createPortal(
-    <Wrapper
-      as={Fade}
+    <List
       show={open}
       duration={fadeDuration}
       ref={menuRef}
@@ -114,26 +119,31 @@ const Menu = ({
       left={anchorPosition.left}
       {...props}
     >
-      <Item>Item 1</Item>
-      <Item>Item 2</Item>
-    </Wrapper>,
-    document.body,
+      {React.Children.map(children, child => (
+        <li>{child}</li>
+      ))}
+    </List>,
+    portalContainer(PORTAL_CONTAINER_NAME),
   );
 };
 
+List.displayName = 'Menu';
+Item.displayName = 'Menu.Item';
+
+Menu.Item = Item;
+
 Menu.propTypes = {
-  anchorElement: PropTypes.node.isRequired,
+  anchorElement: PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+    .isRequired,
   fadeDuration: PropTypes.number,
   handleClickAway: PropTypes.func,
   open: PropTypes.bool,
-  placement: PropTypes.oneOf(['top', 'bottom']),
 };
 
 Menu.defaultProps = {
   fadeDuration: 300,
   handleClickAway: () => {},
   open: false,
-  placement: 'top',
 };
 
 export default Menu;

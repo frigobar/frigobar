@@ -138,6 +138,19 @@ const components = {
       },
     },
   },
+  menu: {
+    backgroundColor: colors.white,
+    radius: radius[1],
+    item: {
+      padding: {
+        top: spacings.xsmall,
+        right: spacings.xsmall,
+        bottom: spacings.xsmall,
+        left: spacings.xsmall,
+      },
+      hoverColor: colors.primary[200],
+    },
+  },
 };
 
 export default components;

@@ -16,12 +16,14 @@ export const Default = () => {
       <Menu
         anchorElement={buttonRef}
         open={open}
-        handleClickAway={() => toggleOpen(false)}
-        fadeDuration={1000}
+        handleClickAway={() => {
+          toggleOpen(false);
+        }}
       >
-        Menu
+        <Menu.Item href="#">Item 1</Menu.Item>
+        <Menu.Item href="#">Item 2</Menu.Item>
       </Menu>
-      <Button ref={buttonRef} onClick={() => toggleOpen(!open)}>
+      <Button ref={buttonRef} onClick={() => toggleOpen(true)}>
         Billton
       </Button>
     </div>
