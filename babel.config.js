@@ -8,13 +8,21 @@ module.exports = {
       },
     ],
   ],
-  plugins: ['inline-react-svg'],
+  plugins: [['inline-react-svg']],
   env: {
     production: {
       ignore: ['./components/**/*.test.js', './components/**/*/__snapshots__'],
     },
     test: {
       presets: ['@babel/preset-react', ['@babel/preset-env']],
+      plugins: [
+        [
+          '@babel/plugin-transform-runtime',
+          {
+            regenerator: true,
+          },
+        ],
+      ],
     },
   },
 };

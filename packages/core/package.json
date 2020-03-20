@@ -5,7 +5,7 @@
   "scripts": {
     "clean:build": "rm -rf ./dist",
     "copy-files": "babel-node ./scripts/copy-files.js",
-    "test": "jest",
+    "test": "jest --env=jest-environment-jsdom-sixteen",
     "test:update": "jest -u",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
@@ -53,5 +53,8 @@
       "pre-commit": "npm run lint",
       "pre-push": "npm test"
     }
+  },
+  "devDependencies": {
+    "styled-components": "4.4.1"
   }
 }
