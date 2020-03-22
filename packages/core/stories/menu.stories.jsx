@@ -24,7 +24,7 @@ export const Default = () => {
         <Menu.Item href="#">Item 2</Menu.Item>
       </Menu>
       <Button ref={buttonRef} onClick={() => toggleOpen(true)}>
-        Billton
+        Open menu
       </Button>
     </div>
   );
