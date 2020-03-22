@@ -112,8 +112,10 @@ const Menu = ({
 
   return createPortal(
     <List
-      show={open}
-      duration={fadeDuration}
+      renderControl={open}
+      fadeDuration={fadeDuration}
+      fadeIn
+      fadeOut
       ref={menuRef}
       top={anchorPosition.top}
       left={anchorPosition.left}
