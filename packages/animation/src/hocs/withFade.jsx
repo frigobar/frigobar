@@ -2,7 +2,7 @@ import React, { useState, useEffect, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import styled, { css, keyframes } from 'styled-components';
 
-const fadeIn = keyframes`
+const fadeInAnimation = keyframes`
   0% {
     opacity: 0;
   }
@@ -11,7 +11,7 @@ const fadeIn = keyframes`
   }
 `;
 
-const fadeOut = keyframes`
+const fadeOutAnimation = keyframes`
   0% {
     opacity: 1;
   }
@@ -23,37 +23,54 @@ const fadeOut = keyframes`
 /**
  * Returns a new Component with opacity keyframes to change from 0 to 1.
  * @param {ReactComponent} Component -  Add two new props to the returned
- * Component. duration: {String} Animation duration. show: {Boolean} Init
- * visible or hidden.
+ * Component. fadeDuration: {Number} Animation duration. renderControl:
+ * {Boolean} Starts the animation when true
  */
 const withFade = Component => {
   const FadedComponent = forwardRef(
-    ({ duration, show, onAnimationEnd, ...props }, ref) => {
-      const [shouldRender, setShouldRender] = useState(show);
+    (
+      { fadeDuration, renderControl, fadeIn, fadeOut, onFadeEnd, ...props },
+      ref,
+    ) => {
+      const [shouldRender, setShouldRender] = useState(renderControl);
 
       useEffect(() => {
-        if (show) setShouldRender(true);
-      }, [show]);
+        if (renderControl) setShouldRender(true);
+        if (!fadeOut && !renderControl) setShouldRender(false);
+      }, [renderControl]);
 
-      const renderControl = e => {
-        if (!show) {
+      const renderConditional = e => {
+        if (!renderControl) {
           setShouldRender(false);
-          onAnimationEnd(e);
+          onFadeEnd(e);
         }
       };
 
-      const EffectComponent = styled(Component)(
-        ({ animationVisible, animationDuration }) => css`
-          animation: ${animationVisible ? fadeIn : fadeOut}
-            ${animationDuration}ms;
-        `,
-      );
+      const EffectComponent = styled(Component)(() => {
+        if (fadeIn && fadeOut) {
+          return css`
+            animation: ${renderControl ? fadeInAnimation : fadeOutAnimation}
+              ${fadeDuration}ms;
+          `;
+        }
+        if (renderControl && fadeIn) {
+          return css`
+            animation: ${fadeInAnimation} ${fadeDuration}ms;
+          `;
+        }
+
+        if (!renderControl && fadeOut) {
+          return css`
+            animation: ${fadeOutAnimation} ${fadeDuration}ms;
+          `;
+        }
+
+        return null;
+      });
 
       return shouldRender ? (
         <EffectComponent
-          animationDuration={duration}
-          animationVisible={show}
-          onAnimationEnd={renderControl}
+          onAnimationEnd={renderConditional}
           ref={ref}
           {...props}
         />
@@ -62,14 +79,18 @@ const withFade = Component => {
   );
 
   FadedComponent.propTypes = {
-    duration: PropTypes.number,
-    show: PropTypes.bool,
-    onAnimationEnd: PropTypes.func,
+    fadeDuration: PropTypes.number,
+    renderControl: PropTypes.bool,
+    fadeIn: PropTypes.bool,
+    fadeOut: PropTypes.bool,
+    onFadeEnd: PropTypes.func,
   };
   FadedComponent.defaultProps = {
-    duration: 300,
-    show: false,
-    onAnimationEnd: () => {},
+    fadeDuration: 300,
+    renderControl: true,
+    fadeIn: false,
+    fadeOut: false,
+    onFadeEnd: () => {},
   };
 
   return FadedComponent;
