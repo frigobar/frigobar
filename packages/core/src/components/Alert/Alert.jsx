@@ -108,7 +108,15 @@ const Alert = ({
   const [show, toggleShow] = useState(true);
 
   return (
-    <Wrapper {...props} theme={theme} show={show} type={type} role="alert">
+    <Wrapper
+      {...props}
+      theme={theme}
+      renderControl={show}
+      fadeIn
+      fadeOut
+      type={type}
+      role="alert"
+    >
       {closable && (
         <Close
           text={closeText}

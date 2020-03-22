@@ -1,4 +1,4 @@
-/* eslint-disable */
 import withFade from './withFade';
+import withFlash from './withFlash';
 
-export { withFade };
+export { withFade, withFlash };
