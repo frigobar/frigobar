@@ -9,7 +9,7 @@
 
 Frigobar is a simple component library built with [React](https://reactjs.org/ 'React').
 
-You can check all available components at our [storybook](https://allyssonsantos.github.io/frigobar/).
+You can check all available components at our [storybook](https://frigobar.github.io/frigobar/).
 
 ## Install
 
