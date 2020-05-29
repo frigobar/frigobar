@@ -32,13 +32,17 @@ For Yarn users:
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://twitter.com/_allyssonsantos"><img src="https://avatars1.githubusercontent.com/u/13424727?v=4" width="100px;" alt="Allysson dos Santos"/><br /><sub><b>Allysson dos Santos</b></sub></a><br /><a href="https://github.com/allyssonsantos/frigobar/commits?author=allyssonsantos" title="Code">💻</a> <a href="https://github.com/allyssonsantos/frigobar/commits?author=allyssonsantos" title="Documentation">📖</a> <a href="#design-allyssonsantos" title="Design">🎨</a> <a href="#ideas-allyssonsantos" title="Ideas, Planning, & Feedback">🤔</a> <a href="#review-allyssonsantos" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://twitter.com/_allyssonsantos"><img src="https://avatars1.githubusercontent.com/u/13424727?v=4" width="100px;" alt=""/><br /><sub><b>Allysson dos Santos</b></sub></a><br /><a href="https://github.com/frigobar/frigobar/commits?author=allyssonsantos" title="Code">💻</a> <a href="https://github.com/frigobar/frigobar/commits?author=allyssonsantos" title="Documentation">📖</a> <a href="#design-allyssonsantos" title="Design">🎨</a> <a href="#ideas-allyssonsantos" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/frigobar/frigobar/pulls?q=is%3Apr+reviewed-by%3Aallyssonsantos" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="http://kaiofelipejs.dev"><img src="https://avatars2.githubusercontent.com/u/41922744?v=4" width="100px;" alt=""/><br /><sub><b>Kaio Felipe Silva</b></sub></a><br /><a href="https://github.com/frigobar/frigobar/commits?author=kaiofelipejs" title="Documentation">📖</a></td>
   </tr>
 </table>
 
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
