@@ -17,11 +17,21 @@
         "ideas",
         "review"
       ]
+    },
+    {
+      "login": "kaiofelipejs",
+      "name": "Kaio Felipe Silva",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/41922744?v=4",
+      "profile": "http://kaiofelipejs.dev",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
   "projectName": "frigobar",
-  "projectOwner": "allyssonsantos",
+  "projectOwner": "frigobar",
   "repoType": "github",
-  "repoHost": "https://github.com"
+  "repoHost": "https://github.com",
+  "skipCi": true
 }
