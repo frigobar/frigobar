@@ -41,7 +41,7 @@ You need to follow a simple structure pattern:
 
 - When you finish your work, you'll need to commit with messages following [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) pattern. The easiest way to do this is running
 
--To make the commits I also leave a suggestion of [semantic commits](https://github.com/fteem/git-semantic-commits)
+- To make the commits I also leave a suggestion of [semantic commits](https://github.com/fteem/git-semantic-commits)
 
 # Awesome Project
 
