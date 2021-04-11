@@ -4,4 +4,4 @@ import 'typeface-merriweather';
 
 import wrap from './wrap-root-element';
 
-export const wrapRootElement = wrap;
+export const wrapRootElement = wrap; // eslint-disable-line
