@@ -2,21 +2,20 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { withFade } from '@frigobar/animation';
+import { useFade } from '@frigobar/animation';
 
-import portalContainer from './portalContainer';
+import usePortalContainer from './portalContainer';
 
 const PORTAL_CONTAINER_NAME = 'frigobar-menu';
 
-const List = withFade(
-  styled.ul(
-    ({
-      top,
-      left,
-      theme: {
-        components: { menu },
-      },
-    }) => `
+const List = styled.ul(
+  ({
+    top,
+    left,
+    theme: {
+      components: { menu },
+    },
+  }) => `
     position: absolute;
     top: ${top}px;
     left: ${left}px;
@@ -37,7 +36,6 @@ const List = withFade(
       padding: 0;
     }
   `,
-  ),
 );
 
 const Item = styled.a(
@@ -73,6 +71,13 @@ const Menu = ({
   ...props
 }) => {
   const [anchorPosition, setAnchorPosition] = useState({});
+  const [{ animation, state }, toggleFade] = useFade({
+    duration: fadeDuration,
+  });
+
+  const safeHandleClickAway = useCallback(event => handleClickAway(event), [
+    handleClickAway,
+  ]);
 
   const menuRef = useRef(null);
 
@@ -82,11 +87,15 @@ const Menu = ({
         !menuRef.current?.contains(event.target) &&
         !anchorElement.current.contains(event.target)
       ) {
-        handleClickAway(event);
+        safeHandleClickAway(event);
       }
     },
-    [open],
+    [anchorElement, safeHandleClickAway],
   );
+
+  useEffect(() => {
+    toggleFade(open);
+  }, [open, toggleFade]);
 
   useEffect(() => {
     if (open) {
@@ -98,7 +107,7 @@ const Menu = ({
     return () => {
       window.removeEventListener('click', clickAway);
     };
-  }, [clickAway]);
+  }, [clickAway, open]);
 
   useEffect(() => {
     const {
@@ -111,21 +120,22 @@ const Menu = ({
   }, [anchorElement]);
 
   return createPortal(
-    <List
-      renderControl={open}
-      fadeDuration={fadeDuration}
-      fadeIn
-      fadeOut
-      ref={menuRef}
-      top={anchorPosition.top}
-      left={anchorPosition.left}
-      {...props}
-    >
-      {React.Children.map(children, child => (
-        <li>{child}</li>
-      ))}
-    </List>,
-    portalContainer(PORTAL_CONTAINER_NAME),
+    state ? (
+      <List
+        css={`
+          animation: ${animation};
+        `}
+        ref={menuRef}
+        top={anchorPosition.top}
+        left={anchorPosition.left}
+        {...props}
+      >
+        {React.Children.map(children, child => (
+          <li>{child}</li>
+        ))}
+      </List>
+    ) : null,
+    usePortalContainer(PORTAL_CONTAINER_NAME),
   );
 };
 
