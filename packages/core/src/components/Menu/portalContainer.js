@@ -23,7 +23,7 @@ function addRootElement(rootElem) {
  * Creates or return the current container DOM element to be the portal root.
  * @param {String} id
  */
-const portalContainer = id => {
+const usePortalContainer = id => {
   const [rootElement] = useState(createRootElement(id));
 
   useEffect(() => {
@@ -36,9 +36,9 @@ const portalContainer = id => {
     return function removeElement() {
       rootElement.remove();
     };
-  }, []);
+  }, [id, rootElement]);
 
   return rootElement;
 };
 
-export default portalContainer;
+export default usePortalContainer;
