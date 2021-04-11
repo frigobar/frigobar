@@ -64,3 +64,4 @@ typings/
 # build files
 build
 dist
+.cache
