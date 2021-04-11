@@ -37,6 +37,9 @@
     "react-dom": "16.x",
     "styled-components": "4.x"
   },
+  "devDependencies": {
+    "jest-styled-components": "^7.0.3"
+  },
   "dependencies": {
     "prop-types": "^15.7.2"
   }
