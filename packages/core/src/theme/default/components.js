@@ -81,10 +81,7 @@ const components = {
     border: {
       radius: radius[1],
     },
-    padding: {
-      right: spacings.xxsmall,
-      left: spacings.xxsmall,
-    },
+    padding: spacings.xxsmall,
     font: {
       size: baseFontSize * 0.75,
     },
