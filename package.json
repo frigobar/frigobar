@@ -7,7 +7,7 @@
   "scripts": {
     "test": "lerna run test --stream",
     "test:update": "lerna run test:update --stream",
-    "dev": "lerna run storybook --scope=@frigobar/core --stream",
+    "dev": "lerna run dev --scope=@frigobar/documentation --stream",
     "lint": "eslint ./packages --ext .js,.jsx",
     "commitizen": "git-cz",
     "new": "node ./packages/core/scripts/cli/index.js"
