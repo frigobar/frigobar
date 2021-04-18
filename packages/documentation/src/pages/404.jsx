@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Layout from '../components/Layout';
-import SEO from '../components/seo';
+import { Layout, SEO } from '../components';
 
 function NotFoundPage({ location }) {
   return (
