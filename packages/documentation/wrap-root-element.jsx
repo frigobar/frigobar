@@ -1,7 +1,9 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import { preToCodeBlock } from 'mdx-utils';
-import Code from './src/components/code';
+import * as frigobar from '@frigobar/core';
+
+import { Code } from './src/components';
 
 // components is its own object outside of render so that the references to
 // components are stable
@@ -15,6 +17,7 @@ const components = {
     // it's possible to have a pre without a code in it
     return <pre {...preProps} />;
   },
+  ...frigobar,
 };
 
 const wrapRootElement = ({ element }) => (
