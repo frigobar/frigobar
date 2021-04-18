@@ -1,34 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import { ThemeProvider } from 'styled-components';
-import { Button, theme } from '@frigobar/core';
+import { Button } from '@frigobar/core';
 import { useFade } from '@frigobar/animation';
 
-import Layout from '../components/Layout';
+import { Layout } from '../components';
 
 const Index = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title;
   const [{ animation, state }, toggle] = useFade();
 
   return (
-    <ThemeProvider theme={theme}>
-      <Layout title={siteTitle}>
-        <Button onClick={() => toggle(!state)}>Toggle</Button>
-        {state && (
-          <div
-            css={`
-              animation: ${animation};
-              background-color: red;
-              width: 200px;
-              height: 200px;
-            `}
-          >
-            Test
-          </div>
-        )}
-      </Layout>
-    </ThemeProvider>
+    <Layout title={siteTitle}>
+      <Button onClick={() => toggle(!state)}>Toggle</Button>
+      {state && (
+        <div
+          css={`
+            animation: ${animation};
+            background-color: red;
+            width: 200px;
+            height: 200px;
+          `}
+        >
+          Test
+        </div>
+      )}
+    </Layout>
   );
 };
 
@@ -54,7 +51,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___title], order: DESC }) {
       edges {
         node {
           excerpt
@@ -62,7 +59,6 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
             title
           }
         }
