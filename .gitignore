@@ -65,3 +65,4 @@ typings/
 build
 dist
 .cache
+public
