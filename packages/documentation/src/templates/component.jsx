@@ -1,64 +1,51 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
+import styled from 'styled-components';
+import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import Layout from '../components/Layout';
-import SEO from '../components/seo';
-import { rhythm, scale } from '../utils/typography';
+import { Layout, SEO, Navigation, Header, Footer } from '../components';
 
-function ComponentTemplate({ data, pageContext, location }) {
-  const post = data.mdx;
+const Content = styled.div`
+  grid-area: content;
+`;
+
+function ComponentTemplate({
+  data,
+  pageContext: { categories = [], navigation = [] },
+  location,
+}) {
+  const component = data.mdx;
   const siteTitle = data.site.siteMetadata.title;
-  const { previous, next } = pageContext;
+  const navigationItems = navigation
+    .map(item => {
+      if (categories.includes(item.category)) {
+        const obj = {
+          category: item.category,
+          pages: [{ name: item.name, url: item.url }],
+        };
+
+        return obj;
+      }
+
+      return null;
+    })
+    .filter(item => item)
+    .sort(item => (item.category === 'guide' ? -1 : 1));
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title={post.frontmatter.title} description={post.excerpt} />
-      <h1>{post.frontmatter.title}</h1>
-      <p
-        style={{
-          ...scale(-1 / 5),
-          display: `block`,
-          marginBottom: rhythm(1),
-          marginTop: rhythm(-1),
-        }}
-      >
-        {post.frontmatter.date}
-      </p>
-      <MDXRenderer>{post.body}</MDXRenderer>
-      <hr
-        style={{
-          marginBottom: rhythm(1),
-        }}
+      <SEO
+        title={component.frontmatter.title}
+        description={component.excerpt}
       />
-
-      <ul
-        style={{
-          display: `flex`,
-          flexWrap: `wrap`,
-          justifyContent: `space-between`,
-          listStyle: `none`,
-          padding: 0,
-        }}
-      >
-        <li>
-          {previous && (
-            <Link to={previous.fields.slug} rel="prev">
-              <>←</>
-              {previous.frontmatter.title}
-            </Link>
-          )}
-        </li>
-        <li>
-          {next && (
-            <Link to={next.fields.slug} rel="next">
-              {next.frontmatter.title}
-              <>→</>
-            </Link>
-          )}
-        </li>
-      </ul>
+      <Header>header</Header>
+      <Navigation items={navigationItems} />
+      <Content>
+        <h1>{component.frontmatter.title}</h1>
+        <MDXRenderer>{component.body}</MDXRenderer>
+      </Content>
+      <Footer>footer</Footer>
     </Layout>
   );
 }
@@ -67,7 +54,7 @@ ComponentTemplate.propTypes = {
   data: PropTypes.shape({
     mdx: PropTypes.shape({
       excerpt: PropTypes.string,
-      body: PropTypes.func,
+      body: PropTypes.string,
       frontmatter: PropTypes.shape({
         title: PropTypes.string,
         date: PropTypes.string,
@@ -80,14 +67,14 @@ ComponentTemplate.propTypes = {
     }),
   }).isRequired,
   pageContext: PropTypes.shape({
-    previous: PropTypes.shape({
-      frontmatter: PropTypes.shape({ title: PropTypes.string }),
-      fields: PropTypes.shape({ slug: PropTypes.string }),
-    }),
-    next: PropTypes.shape({
-      frontmatter: PropTypes.shape({ title: PropTypes.string }),
-      fields: PropTypes.shape({ slug: PropTypes.string }),
-    }),
+    categories: PropTypes.arrayOf(PropTypes.string),
+    navigation: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        category: PropTypes.string,
+        url: PropTypes.string,
+      }),
+    ),
   }).isRequired,
   location: PropTypes.shape({}).isRequired,
 };
@@ -107,7 +94,7 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        menu
       }
       body
     }
