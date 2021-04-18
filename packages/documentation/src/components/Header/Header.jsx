@@ -1,13 +1,24 @@
 import React from 'react';
+import { Link as GatsbyLink } from 'gatsby';
+import { Link } from '@frigobar/core';
+
+import { Wrapper, Brand, Links } from './styles';
 
 function Header(props) {
   return (
-    <header
-      css={`
-        grid-area: header;
-      `}
-      {...props}
-    />
+    <Wrapper {...props}>
+      <Brand as={GatsbyLink} to="/">
+        Frigobar
+      </Brand>
+      <Links>
+        <Link as={GatsbyLink} to="/getting-started/">
+          Components
+        </Link>
+        <Link href="https://github.com/frigobar/frigobar" target="_blank">
+          Github
+        </Link>
+      </Links>
+    </Wrapper>
   );
 }
 
