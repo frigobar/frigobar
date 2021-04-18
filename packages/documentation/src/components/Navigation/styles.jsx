@@ -1,12 +1,37 @@
 import styled from 'styled-components';
 import { Link as GatsbyLink } from 'gatsby';
 
-const Nav = styled.nav`
+const Aside = styled.aside`
   grid-area: navigation;
 `;
-const Title = styled.h3``;
-const Link = styled(GatsbyLink)``;
-const List = styled.ul``;
-const ListItem = styled.li``;
+const Nav = styled.nav`
+  padding: ${({ theme: { spacings } }) => `0 ${spacings.large}px`};
+`;
+const Title = styled.h3`
+  text-transform: capitalize;
+`;
+const Link = styled(GatsbyLink)`
+  text-decoration: none;
 
-export { Nav, Title, Link, List, ListItem };
+  ${({ theme: { borders, colors, spacings } }) => `
+    padding-left: ${spacings.small}px;
+    color: ${colors.neutral[700]};
+
+    &.current {
+      border-left: ${borders.medium}px solid ${colors.primary[900]};
+      color: ${colors.primary[500]};
+    }
+  `}
+`;
+const List = styled.ul`
+  list-style: none;
+  padding-left: 0;
+`;
+const ListItem = styled.li`
+  ${({ theme: { spacings } }) => `
+    margin-top: ${spacings.large}px;
+    margin-bottom: ${spacings.large}px;
+  `}
+`;
+
+export { Aside, Nav, Title, Link, List, ListItem };

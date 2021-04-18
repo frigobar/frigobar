@@ -17,21 +17,15 @@ function ComponentTemplate({
 }) {
   const component = data.mdx;
   const siteTitle = data.site.siteMetadata.title;
-  const navigationItems = navigation
-    .map(item => {
-      if (categories.includes(item.category)) {
-        const obj = {
-          category: item.category,
-          pages: [{ name: item.name, url: item.url }],
-        };
-
-        return obj;
+  const navigationItems = categories.reduce((acc, category) => {
+    navigation.forEach(item => {
+      if (item.category === category) {
+        acc[category] = [...(acc[category] ? acc[category] : []), item];
       }
+    });
 
-      return null;
-    })
-    .filter(item => item)
-    .sort(item => (item.category === 'guide' ? -1 : 1));
+    return acc;
+  }, {});
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -39,13 +33,13 @@ function ComponentTemplate({
         title={component.frontmatter.title}
         description={component.excerpt}
       />
-      <Header>header</Header>
+      <Header />
       <Navigation items={navigationItems} />
       <Content>
         <h1>{component.frontmatter.title}</h1>
         <MDXRenderer>{component.body}</MDXRenderer>
       </Content>
-      <Footer>footer</Footer>
+      <Footer />
     </Layout>
   );
 }

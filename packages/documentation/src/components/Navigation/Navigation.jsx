@@ -1,38 +1,47 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as Styles from './styles';
+import { Aside, Nav, Title, List, ListItem, Link } from './styles';
 
 function Navigation({ items }) {
   return (
-    <Styles.Nav>
-      {items.map(({ category, pages }) => (
-        <React.Fragment key={category}>
-          <Styles.Title>{category}</Styles.Title>
-          <Styles.List>
-            {pages.map(({ name, url }) => (
-              <Styles.ListItem key={name}>
-                <Styles.Link to={url}>{name}</Styles.Link>
-              </Styles.ListItem>
-            ))}
-          </Styles.List>
-        </React.Fragment>
-      ))}
-    </Styles.Nav>
+    <Aside>
+      <Nav>
+        {Object.keys(items).map(category => (
+          <React.Fragment key={category}>
+            <Title>{category}</Title>
+            <List>
+              {items[category].map(({ name, url }) => (
+                <ListItem key={name}>
+                  <Link to={url} activeClassName="current">
+                    {name}
+                  </Link>
+                </ListItem>
+              ))}
+            </List>
+          </React.Fragment>
+        ))}
+      </Nav>
+    </Aside>
   );
 }
 
 Navigation.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      category: PropTypes.string,
-      pages: PropTypes.arrayOf(
-        PropTypes.shape({
-          name: PropTypes.string,
-          url: PropTypes.string,
-        }),
-      ),
-    }),
-  ).isRequired,
+  items: PropTypes.shape({
+    guide: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        category: PropTypes.string,
+        url: PropTypes.string,
+      }),
+    ),
+    components: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        category: PropTypes.string,
+        url: PropTypes.string,
+      }),
+    ),
+  }).isRequired,
 };
 
 export default Navigation;
