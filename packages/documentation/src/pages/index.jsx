@@ -1,30 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import { Button } from '@frigobar/core';
-import { useFade } from '@frigobar/animation';
 
-import { Layout } from '../components';
+import { Layout, Header } from '../components';
 
 const Index = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title;
-  const [{ animation, state }, toggle] = useFade();
 
   return (
     <Layout title={siteTitle}>
-      <Button onClick={() => toggle(!state)}>Toggle</Button>
-      {state && (
-        <div
-          css={`
-            animation: ${animation};
-            background-color: red;
-            width: 200px;
-            height: 200px;
-          `}
-        >
-          Test
-        </div>
-      )}
+      <Header />
     </Layout>
   );
 };
