@@ -21,23 +21,14 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
+        path: `${__dirname}/content/components`,
+        name: `components`,
       },
     },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: ['.mdx', '.md'],
-        // a workaround to solve mdx-remark plugin compat issue
-        // https://github.com/gatsbyjs/gatsby/issues/15486
         plugins: [`gatsby-remark-images`],
         gatsbyRemarkPlugins: [
           {
@@ -91,7 +82,6 @@ module.exports = {
                 return {
                   ...edge.node.frontmatter,
                   description: edge.node.excerpt,
-                  data: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   custom_elements: [{ 'content:encoded': edge.node.html }],
@@ -109,14 +99,14 @@ module.exports = {
             {
               allMdx(
                 limit: 1000,
-                sort: { order: DESC, fields: [frontmatter___date] },
+                sort: { order: DESC, fields: [frontmatter___title] },
               ) {
                 edges {
                   node {
                     fields { slug }
                     frontmatter {
                       title
-                      date
+                      menu
                     }
                     html
                   }
@@ -139,15 +129,19 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `static/icon.svg`,
       },
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: `gatsby-plugin-web-font-loader`,
       options: {
-        pathToConfigModule: `src/utils/typography`,
+        google: {
+          families: [
+            'Noto Sans JP:300,400,500,700,900,300i,400i,500i,700i,900i',
+          ],
+        },
       },
     },
   ],

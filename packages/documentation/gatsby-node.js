@@ -9,7 +9,7 @@ exports.createPages = ({ graphql, actions }) => {
     `
       {
         allMdx(
-          sort: { fields: [frontmatter___date], order: DESC }
+          sort: { fields: [frontmatter___title], order: DESC }
           limit: 1000
         ) {
           edges {
@@ -20,6 +20,7 @@ exports.createPages = ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                menu
               }
               body
             }
@@ -32,21 +33,35 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors;
     }
 
-    // Create blog posts pages.
-    const posts = result.data.allMdx.edges;
+    // Create components pages.
+    const components = result.data.allMdx.edges;
+    const categories = components.map(item => {
+      const category = item.node.frontmatter.menu;
+      return category;
+    });
 
-    posts.forEach((post, index) => {
-      const previous =
-        index === posts.length - 1 ? null : posts[index + 1].node;
-      const next = index === 0 ? null : posts[index - 1].node;
+    const uniqueCategories = [...new Set(categories)].filter(uniq => uniq);
 
+    const navigationMenu = components.map(item => {
+      const name = item.node.frontmatter.title;
+      const category = item.node.frontmatter.menu;
+      const url = item.node.fields.slug.toLowerCase();
+
+      return {
+        name,
+        category,
+        url,
+      };
+    });
+
+    components.forEach(post => {
       createPage({
-        path: post.node.fields.slug,
+        path: post.node.fields.slug.toLowerCase(),
         component,
         context: {
           slug: post.node.fields.slug,
-          previous,
-          next,
+          categories: uniqueCategories,
+          navigation: navigationMenu,
         },
       });
     });
