@@ -145,8 +145,9 @@ Item.displayName = 'Menu.Item';
 Menu.Item = Item;
 
 Menu.propTypes = {
-  anchorElement: PropTypes.shape({ current: PropTypes.instanceOf(Element) })
-    .isRequired,
+  anchorElement: PropTypes.shape({
+    current: PropTypes.node,
+  }).isRequired,
   fadeDuration: PropTypes.number,
   handleClickAway: PropTypes.func,
   open: PropTypes.bool,
