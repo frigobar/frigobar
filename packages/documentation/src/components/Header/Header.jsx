@@ -11,7 +11,10 @@ function Header(props) {
         Frigobar
       </Brand>
       <Links>
-        <Link as={GatsbyLink} to="/getting-started/">
+        <Link as={GatsbyLink} to="/animation/getting-started/">
+          Animation
+        </Link>
+        <Link as={GatsbyLink} to="/components/getting-started/">
           Components
         </Link>
         <Link href="https://github.com/frigobar/frigobar" target="_blank">

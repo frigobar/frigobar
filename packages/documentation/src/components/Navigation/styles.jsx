@@ -5,7 +5,7 @@ const Aside = styled.aside`
   grid-area: navigation;
 `;
 const Nav = styled.nav`
-  padding: ${({ theme: { spacings } }) => `0 ${spacings.large}px`};
+  padding-left: ${({ theme: { spacings } }) => `${spacings.large}px`};
 `;
 const Title = styled.h3`
   text-transform: capitalize;

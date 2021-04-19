@@ -1,23 +1,23 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
-const FontStyle = createGlobalStyle`
-  html, body {
+const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;  
+  }
+
+  html, body, #___gatsby, #gatsby-focus-wrapper {
     padding: 0;
     margin: 0;
+    height: 100%;
   }
 
   html, body, button {
     font-family: 'Noto Sans JP', sans-serif;
   }
+
+  pre {
+    padding: 8px;
+  }
 `;
 
-const Grid = styled.main`
-  display: grid;
-  grid-template-areas:
-    'header header'
-    'navigation content'
-    'footer footer';
-  grid-template-columns: 280px 1fr;
-`;
-
-export { FontStyle, Grid };
+export { GlobalStyle };

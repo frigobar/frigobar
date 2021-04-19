@@ -1,16 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '@frigobar/core';
 
-import { FontStyle, Grid } from './styles';
+import { GlobalStyle } from './styles';
 
-function Layout(props) {
+function Layout({ children }) {
   return (
     <ThemeProvider theme={theme}>
-      <FontStyle />
-      <Grid {...props} />
+      <GlobalStyle />
+      {children}
     </ThemeProvider>
   );
 }
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default Layout;
