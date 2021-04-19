@@ -1,3 +1,5 @@
+const styledResolver = require('react-docgen-styled-component-resolver');
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Blog MDX`,
@@ -11,6 +13,13 @@ module.exports = {
   plugins: [
     'gatsby-plugin-styled-components',
     {
+      resolve: 'gatsby-transformer-react-docgen',
+      options: {
+        resolver: styledResolver,
+        babelrcRoots: ['../../'],
+      },
+    },
+    {
       resolve: `gatsby-plugin-react-svg`,
       options: {
         rule: {
@@ -21,8 +30,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/components`,
-        name: `components`,
+        path: `${__dirname}/content`,
+        name: `content`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `../core/src/components`,
+        name: `core`,
       },
     },
     {

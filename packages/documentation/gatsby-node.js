@@ -60,6 +60,7 @@ exports.createPages = ({ graphql, actions }) => {
         component,
         context: {
           slug: post.node.fields.slug,
+          name: post.node.frontmatter.title,
           categories: uniqueCategories,
           navigation: navigationMenu,
         },
@@ -77,6 +78,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       name: `slug`,
       node,
       value,
+    });
+    createNodeField({
+      name: 'name',
+      node,
+      value: node.frontmatter.title,
     });
   }
 };
