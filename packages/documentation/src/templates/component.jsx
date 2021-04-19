@@ -4,10 +4,22 @@ import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import { Layout, SEO, Navigation, Header, Footer } from '../components';
+import {
+  Layout,
+  SEO,
+  Navigation,
+  Header,
+  Footer,
+  PropsTable,
+} from '../components';
+import { Grid } from './styles';
 
 const Content = styled.div`
   grid-area: content;
+
+  margin: 0 auto;
+
+  width: 100%;
 `;
 
 function ComponentTemplate({
@@ -16,10 +28,16 @@ function ComponentTemplate({
   location,
 }) {
   const component = data.mdx;
+  const metaData = data.componentMetadata;
+  console.log(metaData);
   const siteTitle = data.site.siteMetadata.title;
   const navigationItems = categories.reduce((acc, category) => {
     navigation.forEach(item => {
-      if (item.category === category) {
+      const [, section] = item.url.split('/');
+      if (
+        item.category === category &&
+        window.location.pathname.search(section) !== -1
+      ) {
         acc[category] = [...(acc[category] ? acc[category] : []), item];
       }
     });
@@ -29,17 +47,30 @@ function ComponentTemplate({
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO
-        title={component.frontmatter.title}
-        description={component.excerpt}
-      />
-      <Header />
-      <Navigation items={navigationItems} />
-      <Content>
-        <h1>{component.frontmatter.title}</h1>
-        <MDXRenderer>{component.body}</MDXRenderer>
-      </Content>
-      <Footer />
+      <Grid>
+        <SEO
+          title={component.frontmatter.title}
+          description={component.excerpt || metaData.description.text}
+        />
+        <Header />
+        <Navigation items={navigationItems} />
+        <Content>
+          <div>
+            <h1>{component.frontmatter.title}</h1>
+            {metaData && <p>{metaData.description.text}</p>}
+            <MDXRenderer>{component.body}</MDXRenderer>
+            {metaData && metaData.props && (
+              <PropsTable properties={metaData.props} />
+            )}
+          </div>
+        </Content>
+        <div
+          css={`
+            grid-area: table;
+          `}
+        />
+        <Footer />
+      </Grid>
     </Layout>
   );
 }
@@ -59,6 +90,30 @@ ComponentTemplate.propTypes = {
         title: PropTypes.string,
       }),
     }),
+    componentMetadata: PropTypes.shape({
+      description: PropTypes.shape({ text: PropTypes.string }),
+      displayName: PropTypes.string,
+      props: PropTypes.arrayOf(
+        PropTypes.shape({
+          name: PropTypes.string,
+          defaultValue: PropTypes.shape({
+            value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+          }),
+          description: PropTypes.shape({
+            text: PropTypes.string,
+          }),
+          required: PropTypes.bool,
+          type: PropTypes.shape({
+            name: PropTypes.string,
+            value: PropTypes.oneOfType([
+              PropTypes.string,
+              PropTypes.number,
+              PropTypes.array,
+            ]),
+          }),
+        }),
+      ),
+    }),
   }).isRequired,
   pageContext: PropTypes.shape({
     categories: PropTypes.arrayOf(PropTypes.string),
@@ -76,7 +131,7 @@ ComponentTemplate.propTypes = {
 export default ComponentTemplate;
 
 export const pageQuery = graphql`
-  query($slug: String!) {
+  query($slug: String!, $name: String) {
     site {
       siteMetadata {
         title
@@ -91,6 +146,26 @@ export const pageQuery = graphql`
         menu
       }
       body
+    }
+    componentMetadata(displayName: { eq: $name }) {
+      props {
+        name
+        type {
+          name
+          value
+        }
+        required
+        description {
+          text
+        }
+        defaultValue {
+          value
+        }
+      }
+      displayName
+      description {
+        text
+      }
     }
   }
 `;
