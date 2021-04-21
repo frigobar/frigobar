@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.footer`
+const Wrapper = styled.footer(
+  ({ theme: { spacings } }) => `
   grid-area: footer;
 
-  padding: ${({ theme: { spacings } }) => `${spacings.medium}px`};
+  padding-right: ${spacings.small}px;
+  padding-bottom: ${spacings.large}px;
+  padding-left: ${spacings.small}px;
 
   text-align: center;
-`;
+`,
+);
 
 export default Wrapper;
