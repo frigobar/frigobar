@@ -12,7 +12,7 @@ import {
   Footer,
   PropsTable,
 } from '../components';
-import { Grid } from './styles';
+import Grid from './styles';
 
 import ComponentProvider from '../contexts/component';
 

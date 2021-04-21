@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '@frigobar/core';
 
-import { GlobalStyle } from './styles';
+import GlobalStyle from './styles';
 
 function Layout({ children }) {
   return (

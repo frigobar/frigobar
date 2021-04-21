@@ -15,4 +15,4 @@ const Grid = styled.main(
 `,
 );
 
-export { Grid };
+export default Grid;
