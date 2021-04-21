@@ -146,7 +146,7 @@ Menu.Item = Item;
 
 Menu.propTypes = {
   anchorElement: PropTypes.shape({
-    current: PropTypes.node,
+    current: PropTypes.instanceOf(Element === 'undefined' ? Object : Element),
   }).isRequired,
   fadeDuration: PropTypes.number,
   handleClickAway: PropTypes.func,
