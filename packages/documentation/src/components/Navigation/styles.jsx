@@ -11,6 +11,8 @@ const Title = styled.h3`
   text-transform: capitalize;
 `;
 const Link = styled(GatsbyLink)`
+  display: inline-block;
+  width: 100%;
   text-decoration: none;
 
   ${({ theme: { borders, colors, spacings } }) => `

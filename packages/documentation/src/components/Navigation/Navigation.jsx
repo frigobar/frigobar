@@ -6,20 +6,24 @@ function Navigation({ items }) {
   return (
     <Aside>
       <Nav>
-        {Object.keys(items).map(category => (
-          <React.Fragment key={category}>
-            <Title>{category}</Title>
-            <List>
-              {items[category].map(({ name, url }) => (
-                <ListItem key={name}>
-                  <Link to={url} activeClassName="current">
-                    {name}
-                  </Link>
-                </ListItem>
-              ))}
-            </List>
-          </React.Fragment>
-        ))}
+        {Object.keys(items)
+          .sort(item => (item === 'guide' ? -1 : 1))
+          .map(category => (
+            <React.Fragment key={category}>
+              <Title>{category}</Title>
+              <List>
+                {items[category]
+                  .sort((a, b) => (a.name < b.name ? -1 : 1))
+                  .map(({ name, url }) => (
+                    <ListItem key={name}>
+                      <Link to={url} activeClassName="current">
+                        {name}
+                      </Link>
+                    </ListItem>
+                  ))}
+              </List>
+            </React.Fragment>
+          ))}
       </Nav>
     </Aside>
   );
