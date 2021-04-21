@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+
+import Query from './query';
 import { Wrapper, Table, Thead, Tbody, Th, Tr, Td, List } from './styles';
 
-function PropsTable({ properties }) {
+function PropsTable({ component, properties }) {
+  const [propss, setProps] = useState([]);
+
+  if (!properties && component && !propss.length) {
+    const {
+      allComponentMetadata: { edges },
+    } = Query();
+
+    const [componentProps] = edges.filter(
+      ({ node }) => node.displayName === component,
+    );
+
+    const {
+      node: { props: componentProp },
+    } = componentProps;
+
+    setProps(componentProp);
+  }
+
+  const componentProps = properties || propss;
+
   return (
     <Wrapper>
       <Table>
@@ -16,15 +38,15 @@ function PropsTable({ properties }) {
           </Tr>
         </Thead>
         <Tbody>
-          {Boolean(properties.length) &&
-            properties.map(
+          {Boolean(componentProps.length) &&
+            componentProps.map(
               ({ name, required, type, description, defaultValue }) => (
                 <Tr key={name}>
                   <Td>{name && name}</Td>
                   <Td>{description && description.text}</Td>
                   <Td>
                     {type && type.name}
-                    {Array.isArray(type.value) && (
+                    {type && Array.isArray(type.value) && (
                       <List>
                         {type.value.map(val => (
                           <li key={val.value}>{val.value.replace(/'/g, '')}</li>
@@ -49,8 +71,12 @@ function PropsTable({ properties }) {
 
 PropsTable.propTypes = {
   properties: PropTypes.arrayOf(PropTypes.shape({})),
+  component: PropTypes.string,
 };
 
-PropsTable.defaultProps = {};
+PropsTable.defaultProps = {
+  properties: undefined,
+  component: undefined,
+};
 
 export default PropsTable;
