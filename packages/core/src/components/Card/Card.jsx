@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {
   Content,
@@ -18,11 +19,14 @@ const Card = styled.section(
       components: { card },
     },
   }) => `
-  border-radius: ${card.border.radius}px;
   display: inline-block;
   max-width: ${maxWidth};
-  box-shadow: 0px 2px 5px 0px ${colors.neutral[200]};
   width: 100%;
+
+  border-radius: ${card.border.radius}px;
+  
+  background-color: ${colors.white};
+  box-shadow: 0px 2px 5px 0px ${colors.neutral[200]};
 `,
 );
 
@@ -34,7 +38,14 @@ Card.Avatar = Avatar;
 Card.Title = Title;
 Card.Subtitle = Subtitle;
 
+Card.displayName = 'Card';
+
+Card.propTypes = {
+  maxWidth: PropTypes.string,
+};
+
 Card.defaultProps = {
+  maxWidth: '400px',
   theme: defaultTheme,
 };
 
