@@ -14,12 +14,15 @@ import {
 } from '../components';
 import { Grid } from './styles';
 
+import ComponentProvider from '../contexts/component';
+
 const Content = styled.div`
   grid-area: content;
 
   margin: 0 auto;
 
   width: 100%;
+  padding-right: 20px;
 `;
 
 function ComponentTemplate({
@@ -29,7 +32,7 @@ function ComponentTemplate({
 }) {
   const component = data.mdx;
   const metaData = data.componentMetadata;
-  console.log(metaData);
+
   const siteTitle = data.site.siteMetadata.title;
   const navigationItems = categories.reduce((acc, category) => {
     navigation.forEach(item => {
@@ -54,21 +57,26 @@ function ComponentTemplate({
         />
         <Header />
         <Navigation items={navigationItems} />
-        <Content>
-          <div>
-            <h1>{component.frontmatter.title}</h1>
-            {metaData && <p>{metaData.description.text}</p>}
-            <MDXRenderer>{component.body}</MDXRenderer>
-            {metaData && metaData.props && (
-              <PropsTable properties={metaData.props} />
-            )}
-          </div>
-        </Content>
-        <div
-          css={`
-            grid-area: table;
-          `}
-        />
+        <ComponentProvider
+          value={{ name: component.frontmatter.title, props: metaData?.props }}
+        >
+          <Content>
+            <div>
+              <h1>{component.frontmatter.title}</h1>
+              {metaData && <p>{metaData.description.text}</p>}
+              <MDXRenderer>{component.body}</MDXRenderer>
+              {metaData && metaData.props && (
+                <>
+                  <h3>
+                    {component.frontmatter.title}
+                    props
+                  </h3>
+                  <PropsTable properties={metaData.props} />
+                </>
+              )}
+            </div>
+          </Content>
+        </ComponentProvider>
         <Footer />
       </Grid>
     </Layout>
@@ -109,6 +117,9 @@ ComponentTemplate.propTypes = {
               PropTypes.string,
               PropTypes.number,
               PropTypes.array,
+              PropTypes.func,
+              PropTypes.bool,
+              PropTypes.object,
             ]),
           }),
         }),

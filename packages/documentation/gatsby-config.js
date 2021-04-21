@@ -156,6 +156,7 @@ module.exports = {
         google: {
           families: [
             'Noto Sans JP:300,400,500,700,900,300i,400i,500i,700i,900i',
+            'Fira Code:400,700',
           ],
         },
       },

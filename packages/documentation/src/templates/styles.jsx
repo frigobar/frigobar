@@ -1,13 +1,18 @@
 import styled from 'styled-components';
 
-const Grid = styled.main`
+const Grid = styled.main(
+  ({ theme: { spacings } }) => `
   display: grid;
   grid-template-areas:
-    'header header header'
-    'navigation content table'
-    'footer footer footer';
-  grid-template-columns: 1fr 3fr 1fr;
-  grid-gap: 10px;
-`;
+    'header header'
+    'navigation content'
+    'footer footer';
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: max-content 1fr max-content;
+  grid-gap: ${spacings.small}px;
+
+  height: 100%;
+`,
+);
 
 export { Grid };
