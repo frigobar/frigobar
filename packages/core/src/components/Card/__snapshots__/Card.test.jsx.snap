@@ -65,11 +65,12 @@ exports[`<Card /> Snapshots should match snapshot 1`] = `
 }
 
 .c0 {
-  border-radius: 4px;
   display: inline-block;
   max-width: 400px;
-  box-shadow: 0px 2px 5px 0px #ccc;
   width: 100%;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px 0px #ccc;
 }
 
 .c10 {
@@ -89,7 +90,7 @@ exports[`<Card /> Snapshots should match snapshot 1`] = `
   box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
 }
 
-.c10 .c11 {
+.c10 .Button__StyledIcon-kt5dmp-0 {
   font-size: 1rem;
 }
 
@@ -218,11 +219,12 @@ exports[`<Card /> Snapshots should match snapshot with rounded avatar 1`] = `
 }
 
 .c0 {
-  border-radius: 4px;
   display: inline-block;
   max-width: 400px;
-  box-shadow: 0px 2px 5px 0px #ccc;
   width: 100%;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px 0px #ccc;
 }
 
 .c10 {
@@ -242,7 +244,7 @@ exports[`<Card /> Snapshots should match snapshot with rounded avatar 1`] = `
   box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
 }
 
-.c10 .c11 {
+.c10 .Button__StyledIcon-kt5dmp-0 {
   font-size: 1rem;
 }
 
