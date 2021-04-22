@@ -65,12 +65,9 @@ function ComponentTemplate({
               <h1>{component.frontmatter.title}</h1>
               {metaData && <p>{metaData.description.text}</p>}
               <MDXRenderer>{component.body}</MDXRenderer>
-              {metaData && metaData.props && (
+              {metaData && Boolean(metaData.props.length) && (
                 <>
-                  <h3>
-                    {component.frontmatter.title}
-                    props
-                  </h3>
+                  <h3>{component.frontmatter.title} props</h3>
                   <PropsTable properties={metaData.props} />
                 </>
               )}
