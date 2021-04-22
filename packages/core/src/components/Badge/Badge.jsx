@@ -88,9 +88,13 @@ Badge.defaultProps = {
 };
 
 Badge.propTypes = {
+  /** change badge color, it can be any color theme property, like "primary", "info", "success", etc. Or a custom name/hex color (#000) */
   color: PropTypes.string,
+  /** where badge will be displayed */
   children: PropTypes.node,
+  /** the number to be displayed inside badge */
   content: PropTypes.number,
+  /** in which component corner to align the badge */
   alignment: PropTypes.oneOf([
     'top-left',
     'top-right',

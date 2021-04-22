@@ -138,12 +138,19 @@ const Alert = ({
 };
 
 Alert.propTypes = {
+  /** content to be displayed inside alert */
   children: PropTypes.node.isRequired,
+  /** change the colors of the wrapper */
   type: PropTypes.oneOf(['success', 'info', 'danger', 'warning', 'neutral']),
+  /** display close button */
   closable: PropTypes.bool,
+  /** function when close button is clicked */
   onClose: PropTypes.func,
+  /** if you want to display a text instead of the "X" button */
   closeText: PropTypes.string,
+  /** aria-label to be in close button */
   closeIconAriaLabel: PropTypes.string,
+  /** shows alert if true */
   show: PropTypes.bool,
 };
 

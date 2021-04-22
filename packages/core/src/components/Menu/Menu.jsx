@@ -145,11 +145,17 @@ Item.displayName = 'Menu.Item';
 Menu.Item = Item;
 
 Menu.propTypes = {
+  /** a react component ref to be the anchor of the menu items */
   anchorElement: PropTypes.shape({
-    current: PropTypes.instanceOf(Element === 'undefined' ? Object : Element),
+    current: PropTypes.instanceOf(
+      typeof Element === 'undefined' ? Object : Element,
+    ),
   }).isRequired,
+  /** duration of the fade in/out animation */
   fadeDuration: PropTypes.number,
+  /** function called when user clicks outside the menu */
   handleClickAway: PropTypes.func,
+  /** whether the menu is visible or not */
   open: PropTypes.bool,
 };
 

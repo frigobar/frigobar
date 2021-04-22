@@ -76,6 +76,7 @@ const Button = React.forwardRef(
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
+  /** change background-color */
   skin: PropTypes.oneOf([
     'primary',
     'info',
@@ -84,9 +85,13 @@ Button.propTypes = {
     'warning',
     'neutral',
   ]),
+  /** disabled state of the button */
   disabled: PropTypes.bool,
+  /** adds an icon in the left side of button */
   icon: PropTypes.string,
+  /** change the width, height and font-size values */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
+  /** 100% width */
   full: PropTypes.bool,
 };
 

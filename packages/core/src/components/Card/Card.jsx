@@ -9,7 +9,6 @@ import {
   Title,
   Subtitle,
 } from './sub-components';
-import defaultTheme from '../../theme';
 
 const Card = styled.section(
   ({
@@ -41,12 +40,12 @@ Card.Subtitle = Subtitle;
 Card.displayName = 'Card';
 
 Card.propTypes = {
+  /** sets max-width of the card wrapper */
   maxWidth: PropTypes.string,
 };
 
 Card.defaultProps = {
   maxWidth: '400px',
-  theme: defaultTheme,
 };
 
 export default Card;
