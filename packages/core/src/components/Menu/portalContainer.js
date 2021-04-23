@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react';
-
 /**
  * Creates DOM element to be used as React root.
  * @returns {HTMLElement}
@@ -23,22 +21,16 @@ function addRootElement(rootElem) {
  * Creates or return the current container DOM element to be the portal root.
  * @param {String} id
  */
-const usePortalContainer = id => {
-  const [rootElement] = useState(createRootElement(id));
+const portalContainer = id => {
+  const rootElement = createRootElement(id);
 
-  useEffect(() => {
-    const parent = document.querySelector(`#${id}`);
+  const parent = document.querySelector(`#${id}`);
 
-    if (!parent) {
-      addRootElement(rootElement);
-    }
-
-    return function removeElement() {
-      rootElement.remove();
-    };
-  }, [id, rootElement]);
+  if (!parent) {
+    addRootElement(rootElement);
+  }
 
   return rootElement;
 };
 
-export default usePortalContainer;
+export default portalContainer;

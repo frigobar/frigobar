@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { useFade } from '@frigobar/animation';
 
-import usePortalContainer from './portalContainer';
+import portalContainer from './portalContainer';
 
 const PORTAL_CONTAINER_NAME = 'frigobar-menu';
 
@@ -70,6 +70,7 @@ const Menu = ({
   fadeDuration,
   ...props
 }) => {
+  const [mounted, setMounted] = useState(false);
   const [anchorPosition, setAnchorPosition] = useState({});
   const [{ animation, state }, toggleFade] = useFade({
     duration: fadeDuration,
@@ -92,6 +93,10 @@ const Menu = ({
     },
     [anchorElement, safeHandleClickAway],
   );
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     toggleFade(open);
@@ -119,24 +124,30 @@ const Menu = ({
     setAnchorPosition({ top: top + height - 3, left: left + 3 });
   }, [anchorElement]);
 
-  return createPortal(
-    state ? (
-      <List
-        css={`
-          animation: ${animation};
-        `}
-        ref={menuRef}
-        top={anchorPosition.top}
-        left={anchorPosition.left}
-        {...props}
-      >
-        {React.Children.map(children, child => (
-          <li>{child}</li>
-        ))}
-      </List>
-    ) : null,
-    usePortalContainer(PORTAL_CONTAINER_NAME),
-  );
+  if (mounted) {
+    portalContainer(PORTAL_CONTAINER_NAME);
+  }
+
+  return mounted
+    ? createPortal(
+        state ? (
+          <List
+            css={`
+              animation: ${animation};
+            `}
+            ref={menuRef}
+            top={anchorPosition.top}
+            left={anchorPosition.left}
+            {...props}
+          >
+            {React.Children.map(children, child => (
+              <li>{child}</li>
+            ))}
+          </List>
+        ) : null,
+        document.querySelector('#frigobar-menu'),
+      )
+    : null;
 };
 
 List.displayName = 'Menu';
