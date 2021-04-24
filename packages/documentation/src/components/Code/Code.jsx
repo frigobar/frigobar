@@ -22,7 +22,7 @@ const Code = ({
   noInline,
   height,
 }) => {
-  const { name } = useComponent();
+  const { name = '' } = useComponent() || {};
 
   if (reactLive) {
     return (

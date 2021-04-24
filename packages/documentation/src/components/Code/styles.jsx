@@ -9,12 +9,11 @@ const Container = styled.div(
     position: relative;
     margin-top: ${spacings.xxlarge}px;
     width: 100%;
-    height: ${height}px;
+    min-height: ${height}px;
   `,
 );
 
 const sharedStyle = css`
-  height: 100%;
   flex-basis: 50%;
 `;
 
