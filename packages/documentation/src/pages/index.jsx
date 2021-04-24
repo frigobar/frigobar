@@ -5,7 +5,7 @@ import { graphql, Link } from 'gatsby';
 import { Card } from '@frigobar/core';
 import { useFlash, useFade } from '@frigobar/animation';
 
-import { Layout, Header, Footer } from '../components';
+import { Header, Footer } from '../components';
 
 const Wrapper = styled.div`
   display: grid;
@@ -60,8 +60,7 @@ const Title = styled.h2`
   text-align: center;
 `;
 
-const Index = ({ data }) => {
-  const siteTitle = data.site.siteMetadata.title;
+const Index = () => {
   const [{ animation: fadeAnimation }] = useFade({
     startOnRender: true,
     fadeOut: false,
@@ -73,40 +72,38 @@ const Index = ({ data }) => {
   });
 
   return (
-    <Layout title={siteTitle}>
-      <Wrapper
-        css={`
-          animation: ${fadeAnimation};
-        `}
-      >
-        <Header />
-        <Main>
-          <Card maxWidth="400px">
-            <Link to="/animation/getting-started/">
-              <Card.Content>
-                <Title
-                  css={`
-                    animation: ${flashAnimation};
-                  `}
-                >
-                  Animation
-                </Title>
-                Animation Hooks to bring some fancy moves for your components
-              </Card.Content>
-            </Link>
-          </Card>
-          <Card maxWidth="400px">
-            <Link to="/components/getting-started/">
-              <Card.Content>
-                <Title>Components</Title>A collection of simple UI components
-                made with React
-              </Card.Content>
-            </Link>
-          </Card>
-        </Main>
-        <Footer />
-      </Wrapper>
-    </Layout>
+    <Wrapper
+      css={`
+        animation: ${fadeAnimation};
+      `}
+    >
+      <Header />
+      <Main>
+        <Card maxWidth="400px">
+          <Link to="/animation/getting-started/">
+            <Card.Content>
+              <Title
+                css={`
+                  animation: ${flashAnimation};
+                `}
+              >
+                Animation
+              </Title>
+              Animation Hooks to bring some fancy moves for your components
+            </Card.Content>
+          </Link>
+        </Card>
+        <Card maxWidth="400px">
+          <Link to="/components/getting-started/">
+            <Card.Content>
+              <Title>Components</Title>A collection of simple UI components made
+              with React
+            </Card.Content>
+          </Link>
+        </Card>
+      </Main>
+      <Footer />
+    </Wrapper>
   );
 };
 
@@ -114,11 +111,6 @@ Index.propTypes = {
   data: PropTypes.shape({
     allMdx: PropTypes.shape({
       edges: PropTypes.arrayOf(PropTypes.shape({})),
-    }),
-    site: PropTypes.shape({
-      siteMetadata: PropTypes.shape({
-        title: PropTypes.string,
-      }),
     }),
   }).isRequired,
 };

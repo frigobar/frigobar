@@ -1,9 +1,10 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import { preToCodeBlock } from 'mdx-utils';
+import { ThemeProvider } from 'styled-components';
 import * as frigobar from '@frigobar/core';
 
-import { Code, PropsTable } from './src/components';
+import { Code, PropsTable, GlobalStyle } from './src/components';
 
 // components is its own object outside of render so that the references to
 // components are stable
@@ -22,7 +23,10 @@ const components = {
 };
 
 const wrapRootElement = ({ element }) => (
-  <MDXProvider components={components}>{element}</MDXProvider>
+  <ThemeProvider theme={frigobar.theme}>
+    <GlobalStyle />
+    <MDXProvider components={components}>{element}</MDXProvider>
+  </ThemeProvider>
 );
 
 export default wrapRootElement;

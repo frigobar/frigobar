@@ -4,14 +4,7 @@ import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import {
-  Layout,
-  SEO,
-  Navigation,
-  Header,
-  Footer,
-  PropsTable,
-} from '../components';
+import { SEO, Navigation, Header, Footer, PropsTable } from '../components';
 import Grid from './styles';
 
 import ComponentProvider from '../contexts/component';
@@ -28,16 +21,15 @@ const Content = styled.div`
 function ComponentTemplate({
   data,
   pageContext: { categories = [], navigation = [] },
-  location,
 }) {
   const component = data.mdx;
   const metaData = data.componentMetadata;
 
-  const siteTitle = data.site.siteMetadata.title;
   const navigationItems = categories.reduce((acc, category) => {
     navigation.forEach(item => {
       const [, section] = item.url.split('/');
       if (
+        typeof window !== 'undefined' &&
         item.category === category &&
         window.location.pathname.search(section) !== -1
       ) {
@@ -48,35 +40,32 @@ function ComponentTemplate({
     return acc;
   }, {});
 
+  const description = component?.excerpt || metaData?.description?.text;
+
   return (
-    <Layout location={location} title={siteTitle}>
-      <Grid>
-        <SEO
-          title={component.frontmatter.title}
-          description={component.excerpt || metaData.description.text}
-        />
-        <Header />
-        <Navigation items={navigationItems} />
-        <ComponentProvider
-          value={{ name: component.frontmatter.title, props: metaData?.props }}
-        >
-          <Content>
-            <div>
-              <h1>{component.frontmatter.title}</h1>
-              {metaData && <p>{metaData.description.text}</p>}
-              <MDXRenderer>{component.body}</MDXRenderer>
-              {metaData && Boolean(metaData.props.length) && (
-                <>
-                  <h3>{component.frontmatter.title} props</h3>
-                  <PropsTable properties={metaData.props} />
-                </>
-              )}
-            </div>
-          </Content>
-        </ComponentProvider>
-        <Footer />
-      </Grid>
-    </Layout>
+    <Grid>
+      <SEO title={component.frontmatter.title} description={description} />
+      <Header />
+      <Navigation items={navigationItems} />
+      <ComponentProvider
+        value={{ name: component.frontmatter.title, props: metaData?.props }}
+      >
+        <Content>
+          <div>
+            <h1>{component.frontmatter.title}</h1>
+            {metaData && <p>{metaData.description.text}</p>}
+            <MDXRenderer>{component.body}</MDXRenderer>
+            {Boolean(metaData?.props) && (
+              <>
+                <h3>{component.frontmatter.title} props</h3>
+                <PropsTable properties={metaData.props} />
+              </>
+            )}
+          </div>
+        </Content>
+      </ComponentProvider>
+      <Footer />
+    </Grid>
   );
 }
 
