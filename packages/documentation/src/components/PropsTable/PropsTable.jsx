@@ -25,6 +25,10 @@ function PropsTable({ component, properties }) {
 
   const componentProps = properties || propss;
 
+  if (!componentProps.length) {
+    return 'This component does not have props';
+  }
+
   return (
     <Wrapper>
       <Table>
