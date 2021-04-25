@@ -17,6 +17,10 @@ const sharedStyle = css`
   flex-basis: 50%;
 `;
 
+const HighlightBackground = styled.div`
+  font-size: 1.231rem;
+`;
+
 const ComponentBackground = styled.div(
   ({ theme: { spacings } }) => `
   ${sharedStyle}
@@ -46,6 +50,10 @@ const EditorBackground = styled.div(
   ({ theme: { spacings } }) => `
     ${sharedStyle}
 
+    div, textarea, pre {
+      font-size: 1rem !important;
+    }
+    
     textarea, pre {
       padding: ${spacings.medium}px !important;
     }
@@ -120,4 +128,11 @@ const Error = () => {
   );
 };
 
-export { Container, ComponentBackground, EditorBackground, Tab, Error };
+export {
+  Container,
+  ComponentBackground,
+  EditorBackground,
+  Tab,
+  Error,
+  HighlightBackground,
+};
