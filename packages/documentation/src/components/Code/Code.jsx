@@ -28,10 +28,6 @@ const Code = ({
   if (reactLive) {
     return (
       <Container height={height}>
-        <Tab>
-          {name}
-          .jsx
-        </Tab>
         <MDXContext.Consumer>
           {scope => (
             <LiveProvider
@@ -43,7 +39,12 @@ const Code = ({
               <ComponentBackground>
                 <LivePreview />
               </ComponentBackground>
+
               <EditorBackground>
+                <Tab>
+                  {name}
+                  .jsx
+                </Tab>
                 <LiveEditor style={{ height: '100%', fontSize: 14 }} />
               </EditorBackground>
               <Error>

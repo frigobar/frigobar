@@ -10,48 +10,59 @@ const Container = styled.div(
     margin-top: ${spacings.xxlarge}px;
     width: 100%;
     min-height: ${height}px;
+
+    @media (max-width: 830px) {
+      display: block;
+    }
   `,
 );
 
 const sharedStyle = css`
   flex-basis: 50%;
+  flex-shrink: 0;
+
+  @media (max-width: 830px) {
+    min-height: 250px;
+    height: 100%;
+  }
 `;
 
 const HighlightBackground = styled.div`
-  font-size: 1.231rem;
+  font-size: 1rem;
 `;
 
 const ComponentBackground = styled.div(
   ({ theme: { spacings } }) => `
-  ${sharedStyle}
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  padding: ${spacings.medium}px;
-
-  background-image: linear-gradient(45deg, #eff2f6 25%, transparent 25%),
-    linear-gradient(-45deg, #eff2f6 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, #eff2f6 75%),
-    linear-gradient(-45deg, transparent 75%, #eff2f6 75%);
-  background-size: 20px 20px;
-  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-
-  > div {
-    width: 100%;
+    ${sharedStyle}
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-`,
+    
+    padding: ${spacings.medium}px;
+
+    background-image: linear-gradient(45deg, #eff2f6 25%, transparent 25%),
+      linear-gradient(-45deg, #eff2f6 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #eff2f6 75%),
+      linear-gradient(-45deg, transparent 75%, #eff2f6 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+
+    > div {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  `,
 );
 
 const EditorBackground = styled.div(
   ({ theme: { spacings } }) => `
+    position: relative;
     ${sharedStyle}
 
     div, textarea, pre {
-      font-size: 1rem !important;
+      font-size: 0.875rem !important;
     }
     
     textarea, pre {
@@ -63,7 +74,7 @@ const EditorBackground = styled.div(
 const Tab = styled.div(
   ({ theme: { spacings, radius } }) => `
     position: absolute;
-    left: 50%;
+    left: 0;
     top: -${spacings.xlarge}px;
     z-index: 1;
 
@@ -83,6 +94,10 @@ const Tab = styled.div(
     border-top-left-radius: ${radius[2]}px;
 
     background-color: #282a36;
+
+    + div {
+      min-height: 250px;
+    }
 
     &:before {
       content: '';
