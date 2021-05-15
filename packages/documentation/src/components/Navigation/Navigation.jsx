@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
+import { createGlobalStyle } from 'styled-components';
 import PropTypes from 'prop-types';
 import { Aside, Nav, Title, List, ListItem, Link } from './styles';
 
-function Navigation({ items }) {
+const BodyOverflow = createGlobalStyle`
+  html, body, #___gatsby, #gatsby-focus-wrapper {
+    overflow-y: hidden;
+  }
+`;
+const Navigation = forwardRef(({ items, show, ...props }, ref) => {
   return (
-    <Aside>
-      <Nav>
+    <Aside show={show} {...props} ref={ref}>
+      {show && <BodyOverflow />}
+      <Nav show={show}>
         {Object.keys(items)
           .sort(item => (item === 'guide' ? -1 : 1))
           .map(category => (
@@ -27,9 +34,11 @@ function Navigation({ items }) {
       </Nav>
     </Aside>
   );
-}
+});
 
 Navigation.propTypes = {
+  show: PropTypes.bool.isRequired,
+  onToggle: PropTypes.func.isRequired,
   items: PropTypes.shape({
     guide: PropTypes.arrayOf(
       PropTypes.shape({
