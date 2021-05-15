@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     height: 100%;
+    overflow-x: hidden;
   }
 
   html, body, button {
@@ -17,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
 
   pre {
     padding: 8px;
+    overflow: auto;
   }
 `;
 
