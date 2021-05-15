@@ -18,19 +18,28 @@ const Table = styled.table`
 const Thead = styled.thead`
   font-family: 'Noto Sans JP', sans-serif;
 `;
-const Th = styled.th`
+const Th = styled.th(
+  ({ theme: { colors, spacings } }) => `
+  padding: ${spacings.small}px ${spacings.small}px ${spacings.small}px;
+
+  background-color: ${colors.neutral[50]};
   border: none;
-  font-size: 16px;
+
+  font-size: 1rem;
   font-weight: 500;
-  padding: 14px 12px 12px;
   text-align: left;
+`,
+);
+const Tr = styled.tr`
+  transition: background-color 0.3s ease;
 `;
-const Tr = styled.tr``;
-const Tbody = styled.tbody`
-  ${Tr}:nth-child(odd) {
-    background-color: #f6f6f6;
+const Tbody = styled.tbody(
+  ({ theme: { colors } }) => `
+  ${Tr}:hover {
+    background-color: ${colors.neutral[100]};
   }
-`;
+`,
+);
 const Td = styled.td(
   ({ theme: { colors } }) => `
     border: none;
