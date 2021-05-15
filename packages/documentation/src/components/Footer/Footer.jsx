@@ -6,9 +6,9 @@ import Wrapper from './styles';
 function Footer(props) {
   return (
     <Wrapper {...props}>
-      Copyright ©{new Date().getFullYear()}{' '}
+      copyright ©{new Date().getFullYear()}{' '}
       <Link as={GatsbyLink} to="/">
-        Frigobar
+        frigobar
       </Link>
     </Wrapper>
   );
