@@ -9,7 +9,7 @@ const Grid = styled.main(
     'header header'
     'navigation content'
     'navigation footer';
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 280px 1fr;
   grid-template-rows: max-content auto max-content;
   grid-gap: ${spacings.small}px;
   height: 100%;
