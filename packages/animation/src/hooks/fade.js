@@ -47,7 +47,7 @@ function useFade({
   fadeIn = true,
   fadeOut = true,
   duration = 300,
-  startOnRender,
+  startOnRender = true,
 } = {}) {
   const [start, setStart] = useState(Boolean(startOnRender));
   const [animationState, setAnimationState] = useState(Boolean(startOnRender));
