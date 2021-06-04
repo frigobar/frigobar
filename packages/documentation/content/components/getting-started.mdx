@@ -3,7 +3,8 @@ title: Getting Started
 menu: guide
 ---
 
-Frigobar is a simple component library built with [React](https://reactjs.org/ 'React').
+Frigobar is a simple component library built with
+[React](https://reactjs.org/ 'React') and [styled-components](https://styled-components.com/ 'styled components').
 
 ## Install
 
@@ -19,4 +20,23 @@ For Yarn users:
 
 ```shell
   yarn add @frigobar/core styled-components
+```
+
+_ styled-components is a peerDependency of all frigobar packages, so, make sure
+to [install styled-components](https://styled-components.com/docs/basics#installation) aswell._
+
+## Usage
+
+It's very easy to start using frigobar in your react application:
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Button } from '@frigobar/core';
+
+function App() {
+  return <Button>Button</Button>;
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
 ```
