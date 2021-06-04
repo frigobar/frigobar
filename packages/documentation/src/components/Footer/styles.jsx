@@ -7,6 +7,7 @@ const Wrapper = styled.footer(
   padding-right: ${spacings.small}px;
   padding-bottom: ${spacings.large}px;
   padding-left: ${spacings.small}px;
+  padding-top: ${spacings.large}px;
 
   text-align: center;
 `,
