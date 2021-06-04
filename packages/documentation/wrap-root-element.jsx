@@ -1,10 +1,19 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import { preToCodeBlock } from 'mdx-utils';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider, css } from 'styled-components';
 import * as frigobar from '@frigobar/core';
+import * as animations from '@frigobar/animation';
 
-import { Code, PropsTable, GlobalStyle } from './src/components';
+import { Code, PropsTable, GlobalStyle, InlineCode } from './src/components';
+import {
+  Table,
+  Thead,
+  Tbody,
+  Th,
+  Tr,
+  Td,
+} from './src/components/PropsTable/styles';
 
 // components is its own object outside of render so that the references to
 // components are stable
@@ -18,8 +27,17 @@ const components = {
     // it's possible to have a pre without a code in it
     return <pre {...preProps} />;
   },
+  inlineCode: InlineCode,
+  table: Table,
+  thead: Thead,
+  tbody: Tbody,
+  th: Th,
+  tr: Tr,
+  td: Td,
   PropsTable,
   ...frigobar,
+  ...animations,
+  css,
 };
 
 const wrapRootElement = ({ element }) => (
