@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { graphql, Link } from 'gatsby';
-import { Card } from '@frigobar/core';
 import { useFlash, useFade } from '@frigobar/animation';
 
 import { Header, Footer } from '../components';
@@ -17,54 +16,71 @@ const Wrapper = styled.div`
   height: 100%;
 `;
 
-const Main = styled.main(
-  ({ theme: { spacings } }) => `
-    grid-area: content;
+const Card = styled.div(
+  ({ theme: { colors, spacings } }) => `
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-grow: 1;
+    flex-shrink: 0;
 
     padding: ${spacings.large}px;
 
-    ${Card} {
-      margin-right: ${spacings.large}px;
+    background-color: ${colors.primary[50]};
+    &:hover {
+      background-color: ${colors.primary[100]};
+    }
 
-      &:last-child {
-        margin-right: 0;
+    &:nth-child(2) {
+      background-color: ${colors.primary[200]};
+
+      &:hover {
+        background-color: ${colors.primary[300]};
       }
     }
+
+    transition: background-color 0.3s ease;
 
     a {
-      text-decoration: none;
-      color: inherit;
-    }
+      width: 100%;
+      height: 100%;
 
-    @media (max-width: 850px) {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
       flex-direction: column;
 
-      ${Card} {
-        margin-right: 0;
-        margin-bottom: ${spacings.large}px;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
+      text-decoration: none;
+      color: inherit;
     }
   `,
 );
 
+const Main = styled.main`
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Cards = styled.section`
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
+`;
+
 const Title = styled.h2`
+  margin: 0;
+
   font-size: 3rem;
   font-weight: 300;
   text-align: center;
 `;
 
 const Index = () => {
-  const [{ animation: fadeAnimation }] = useFade({
-    startOnRender: true,
-    fadeOut: false,
-  });
+  const [{ animation: fadeAnimation }] = useFade();
   const [{ animation: flashAnimation }] = useFlash({
     start: true,
     infinity: true,
@@ -79,9 +95,17 @@ const Index = () => {
     >
       <Header />
       <Main>
-        <Card maxWidth="400px">
-          <Link to="/animation/getting-started/">
-            <Card.Content>
+        <div
+          style={{
+            backgroundColor: '#ccc',
+            height: 480,
+            width: '100%',
+            flexShrink: 0,
+          }}
+        />
+        <Cards>
+          <Card>
+            <Link to="/animation/getting-started/">
               <Title
                 css={`
                   animation: ${flashAnimation};
@@ -90,17 +114,15 @@ const Index = () => {
                 Animation
               </Title>
               Animation Hooks to bring some fancy moves for your components
-            </Card.Content>
-          </Link>
-        </Card>
-        <Card maxWidth="400px">
-          <Link to="/components/getting-started/">
-            <Card.Content>
+            </Link>
+          </Card>
+          <Card>
+            <Link to="/components/getting-started/">
               <Title>Components</Title>A collection of simple UI components made
               with React
-            </Card.Content>
-          </Link>
-        </Card>
+            </Link>
+          </Card>
+        </Cards>
       </Main>
       <Footer />
     </Wrapper>
