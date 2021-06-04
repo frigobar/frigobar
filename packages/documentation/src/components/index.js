@@ -5,5 +5,15 @@ import GlobalStyle from './GlobalStyle';
 import Navigation from './Navigation';
 import PropsTable from './PropsTable';
 import SEO from './Seo';
+import InlineCode from './InlineCode';
 
-export { Code, Footer, Header, GlobalStyle, Navigation, PropsTable, SEO };
+export {
+  Code,
+  Footer,
+  Header,
+  GlobalStyle,
+  Navigation,
+  PropsTable,
+  SEO,
+  InlineCode,
+};
