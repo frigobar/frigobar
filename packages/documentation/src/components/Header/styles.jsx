@@ -25,6 +25,16 @@ const Wrapper = styled.header`
       padding: ${spacings.large}px ${spacings.xxlarge}px;
       transform: translateX(0);
     }
+
+    ${
+      home
+        ? `
+        max-width: 1440px;
+        margin: 0 auto;
+        width: 100%;
+      `
+        : ''
+    }
   `}
 `;
 

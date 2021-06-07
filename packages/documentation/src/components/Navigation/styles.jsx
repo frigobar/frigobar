@@ -87,8 +87,8 @@ const Link = styled(GatsbyLink)`
     color: ${colors.neutral[700]};
 
     &.current {
-      color: ${colors.primary[500]};
-      background-color: ${colors.primary[50]};
+      color: ${colors.secondary[500]};
+      background-color: ${colors.secondary[50]};
     }
   `}
 `;
