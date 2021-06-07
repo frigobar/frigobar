@@ -47,7 +47,6 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-svg-loader": "^3.0.3",
-    "semantic-release": "^15.13.24",
     "svg-react-loader": "^0.4.6",
     "url-loader": "^2.2.0"
   },
