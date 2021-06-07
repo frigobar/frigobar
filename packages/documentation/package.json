@@ -64,8 +64,10 @@
     "url": "git+https://github.com/frigobar/frigobar.git"
   },
   "scripts": {
+    "prebuild": "gatsby clean",
     "dev": "gatsby develop",
     "build": "gatsby build",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "deploy": "gh-pages -d public"
   }
 }
