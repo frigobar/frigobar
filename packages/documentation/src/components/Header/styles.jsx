@@ -28,11 +28,14 @@ const Wrapper = styled.header`
 `;
 
 const Brand = styled(Link)`
-  font-size: 1.125rem;
-  font-weight: 900;
-  text-transform: lowercase;
+  background-image: url('/frigobar.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 115px;
 
-  color: ${({ theme: { colors } }) => colors.primary[900]};
+  font-size: 1.125rem;
+  text-indent: -9999px;
+  width: 115px;
 
   @media (max-width: 830px) {
     font-size: 1rem;
