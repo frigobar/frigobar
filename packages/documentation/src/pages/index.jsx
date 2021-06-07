@@ -16,7 +16,7 @@ import {
   Icon,
   StudyDesktop,
   StudyMobile,
-} from './styles';
+} from '../components/Home/styles';
 
 const Index = () => {
   const [{ animation: fadeAnimation }] = useFade();
