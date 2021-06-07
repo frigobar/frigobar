@@ -68,7 +68,7 @@
   "scripts": {
     "prebuild": "gatsby clean",
     "dev": "gatsby develop",
-    "build": "gatsby build --prefix-paths",
+    "build": "gatsby build",
     "serve": "gatsby serve",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d public"

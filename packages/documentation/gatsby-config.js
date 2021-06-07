@@ -10,7 +10,6 @@ module.exports = {
       twitter: `_allyssonsantos`,
     },
   },
-  pathPrefix: '/frigobar',
   plugins: [
     'gatsby-plugin-cname',
     'gatsby-plugin-styled-components',

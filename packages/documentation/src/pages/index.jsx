@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql, Link, withPrefix } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { Button } from '@frigobar/core';
 import { useFade } from '@frigobar/animation';
 
@@ -31,14 +31,14 @@ const Index = () => {
       <Main>
         <Section>
           <div>
-            <Logo src={withPrefix('/logo-text.svg')} alt="Frigobar logo" />
+            <Logo src="/logo-text.svg" alt="Frigobar logo" />
             <Description big>
               A simple set of UI packages to simplify your life when building
               react applications.
             </Description>
           </div>
           <Card>
-            <Icon src={withPrefix('/icons/dance.svg')} />
+            <Icon src="/icons/dance.svg" />
             <div>
               <Title>Animation</Title>
               <div>
@@ -68,7 +68,7 @@ const Index = () => {
             </Description>
           </StudyDesktop>
           <Card>
-            <Icon src={withPrefix('/icons/stacked.svg')} />
+            <Icon src="/icons/stacked.svg" />
             <div>
               <Title>Components</Title>
               <div>
