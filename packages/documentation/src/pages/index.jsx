@@ -1,91 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { graphql, Link } from 'gatsby';
-import { useFlash, useFade } from '@frigobar/animation';
+import { Button } from '@frigobar/core';
+import { useFade } from '@frigobar/animation';
 
 import { Header, Footer } from '../components';
-
-const Wrapper = styled.div`
-  display: grid;
-  grid-template-areas:
-    'header'
-    'content'
-    'footer';
-  grid-template-rows: min-content auto min-content;
-  height: 100%;
-`;
-
-const Card = styled.div(
-  ({ theme: { colors, spacings } }) => `
-    display: flex;
-    flex-grow: 1;
-    flex-shrink: 0;
-
-    padding: ${spacings.large}px;
-
-    background-color: ${colors.primary[50]};
-    &:hover {
-      background-color: ${colors.primary[100]};
-    }
-
-    &:nth-child(2) {
-      background-color: ${colors.primary[200]};
-
-      &:hover {
-        background-color: ${colors.primary[300]};
-      }
-    }
-
-    transition: background-color 0.3s ease;
-
-    a {
-      width: 100%;
-      height: 100%;
-
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex-direction: column;
-
-      text-decoration: none;
-      color: inherit;
-    }
-  `,
-);
-
-const Main = styled.main`
-  grid-area: content;
-  display: flex;
-  flex-direction: column;
-`;
-
-const Cards = styled.section`
-  display: flex;
-  flex-direction: column;
-
-  height: 100%;
-
-  @media (max-width: 850px) {
-    flex-direction: column;
-  }
-`;
-
-const Title = styled.h2`
-  margin: 0;
-
-  font-size: 3rem;
-  font-weight: 300;
-  text-align: center;
-`;
+import {
+  Wrapper,
+  Main,
+  Logo,
+  Section,
+  Title,
+  Card,
+  Description,
+  Icon,
+  StudyDesktop,
+  StudyMobile,
+} from './styles';
 
 const Index = () => {
   const [{ animation: fadeAnimation }] = useFade();
-  const [{ animation: flashAnimation }] = useFlash({
-    start: true,
-    infinity: true,
-    duration: 600,
-  });
 
   return (
     <Wrapper
@@ -93,38 +27,77 @@ const Index = () => {
         animation: ${fadeAnimation};
       `}
     >
-      <Header />
+      <Header home />
       <Main>
-        <div
-          style={{
-            backgroundColor: '#ccc',
-            height: 480,
-            width: '100%',
-            flexShrink: 0,
-          }}
-        />
-        <Cards>
+        <Section>
+          <div>
+            <Logo src="/logo-text.svg" alt="Frigobar logo" />
+            <Description big>
+              A simple set of UI packages to simplify your life when building
+              react applications.
+            </Description>
+          </div>
           <Card>
-            <Link to="/animation/getting-started/">
-              <Title
-                css={`
-                  animation: ${flashAnimation};
-                `}
-              >
-                Animation
-              </Title>
-              Animation Hooks to bring some fancy moves for your components
-            </Link>
+            <Icon src="/icons/dance.svg" />
+            <div>
+              <Title>Animation</Title>
+              <div>
+                <Description>
+                  Animation Hooks to bring some fancy effects for your
+                  components
+                </Description>
+                <Button
+                  skin="primary"
+                  rounded
+                  large
+                  as={Link}
+                  to="/animation/getting-started/"
+                >
+                  Get started
+                </Button>
+              </div>
+            </div>
           </Card>
+        </Section>
+        <Section>
+          <StudyDesktop>
+            <Title bordered>Study project</Title>
+            <Description>
+              The main objective of this project is learning, so,{' '}
+              <strong>use it at your own risk</strong>.
+            </Description>
+          </StudyDesktop>
           <Card>
-            <Link to="/components/getting-started/">
-              <Title>Components</Title>A collection of simple UI components made
-              with React
-            </Link>
+            <Icon src="/icons/stacked.svg" />
+            <div>
+              <Title>Components</Title>
+              <div>
+                <Description>
+                  A collection of simple UI components made with React
+                </Description>
+                <Button
+                  skin="primary"
+                  rounded
+                  large
+                  as={Link}
+                  to="/components/getting-started/"
+                >
+                  Get started
+                </Button>
+              </div>
+            </div>
           </Card>
-        </Cards>
+        </Section>
       </Main>
-      <Footer />
+      <Footer home>
+        <StudyMobile>
+          <Title bordered>Study project</Title>
+          <Description>
+            The main objective of this project is learning, so,{' '}
+            <strong>use it at your own risk</strong>.
+          </Description>
+        </StudyMobile>
+      </Footer>
     </Wrapper>
   );
 };

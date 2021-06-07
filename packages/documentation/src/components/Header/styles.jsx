@@ -11,10 +11,11 @@ const Wrapper = styled.header`
   justify-content: space-between;
 
   background-color: white;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
 
-  ${({ show, theme: { spacings } }) => `
+  ${({ show, home, theme: { spacings } }) => `
     padding: ${spacings.small}px ${spacings.large}px;
+
+    box-shadow: ${home ? 'none' : '0px 1px 3px rgba(0, 0, 0, 0.1)'};
 
     transition: transform 0.3s ease;
     transform: translateX(${show ? '280px' : '0'});
