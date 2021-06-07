@@ -33,6 +33,7 @@ const components = {
   button: {
     backgroundColor: {
       primary: colors.primary[500],
+      secondary: colors.secondary[500],
       info: colors.info[500],
       success: colors.success[500],
       danger: colors.danger[500],
