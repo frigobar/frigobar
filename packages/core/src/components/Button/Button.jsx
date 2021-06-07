@@ -13,9 +13,11 @@ const Btn = styled.button`
   cursor: pointer;
   font-size: 0.875rem;
   transition: all 200ms ease-in-out;
+  text-decoration: none;
 
   ${({
     theme: {
+      radius,
       components: {
         button: { backgroundColor, textColor, sizes },
       },
@@ -25,13 +27,25 @@ const Btn = styled.button`
     size,
     disabled,
     full,
+    rounded,
+    large,
   }) => `
     background-color: ${backgroundColor[skin]};
     color: ${textColor.enabled};
-    font-size: ${sizes[size].font}rem;
-    padding: ${sizes[size].padding.top}px ${sizes[size].padding.right}px ${
-    sizes[size].padding.bottom
-  }px ${sizes[size].padding.left}px;
+    font-size: ${large ? '1.125' : sizes[size].font}rem;
+    padding: ${
+      large
+        ? `${sizes[size].padding.top * 2}px
+           ${sizes[size].padding.right * 2}px
+           ${sizes[size].padding.bottom * 2}px
+           ${sizes[size].padding.left * 2}px
+        `
+        : `${sizes[size].padding.top}px
+           ${sizes[size].padding.right}px
+           ${sizes[size].padding.bottom}px
+           ${sizes[size].padding.left}px
+        `
+    };
 
     ${
       disabled
@@ -62,6 +76,7 @@ const Btn = styled.button`
     }
 
     ${full ? 'width: 100%;' : ''}
+    ${rounded ? `border-radius: ${radius[3]}px` : ''}
   `}
 `;
 
@@ -93,6 +108,10 @@ Button.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   /** 100% width */
   full: PropTypes.bool,
+  /** add border-radius circle */
+  rounded: PropTypes.bool,
+  /** large button */
+  large: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -100,7 +119,9 @@ Button.defaultProps = {
   disabled: false,
   icon: undefined,
   size: 'small',
-  full: false,
+  full: undefined,
+  rounded: undefined,
+  large: undefined,
 };
 
 export default Button;
