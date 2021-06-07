@@ -68,7 +68,7 @@ function ComponentTemplate({
     }
 
     return () => window.removeEventListener('click', handleClickAway);
-  }, [show]);
+  }, [show, handleClickAway]);
 
   return (
     <Grid>
