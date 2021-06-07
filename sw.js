@@ -26,7 +26,7 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-83514698e256d840c871.js"
+    "url": "webpack-runtime-b6fd099ab7336b13579e.js"
   },
   {
     "url": "framework-546feb12f33459f59076.js"
@@ -45,7 +45,7 @@ self.__precacheManifest = [
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "a5263529df2350af8a5f6908ea9e1bba"
+    "revision": "30d6a219621a42c10877ddeaa9d19cdb"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
@@ -61,7 +61,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "b90630ebee2eba8e6fa608795e2b4ee1"
+    "revision": "d05761b610612e4f0a177cf16166231b"
   },
   {
     "url": "polyfill-03f59bc194f5d16c7290.js"
@@ -92,7 +92,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/frigobar/app-44f3a3b657f25159d795.js`))) {
+  if (!resources || !(await caches.match(`/frigobar/app-1013e5949973d7f4c181.js`))) {
     return await fetch(event.request)
   }
 
