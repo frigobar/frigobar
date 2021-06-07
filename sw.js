@@ -26,7 +26,7 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-af2b16091657321b30ad.js"
+    "url": "webpack-runtime-83514698e256d840c871.js"
   },
   {
     "url": "framework-546feb12f33459f59076.js"
@@ -45,14 +45,30 @@ self.__precacheManifest = [
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "9b59cd0434e2b46ace7df941f3614235"
+    "revision": "a5263529df2350af8a5f6908ea9e1bba"
+  },
+  {
+    "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
+    "revision": "926842c6715e75eaab6c761c7282275a"
+  },
+  {
+    "url": "page-data/sq/d/1665597935.json",
+    "revision": "12ea6e6ce398c7aaac90bd849a70784b"
+  },
+  {
+    "url": "page-data/sq/d/3128451518.json",
+    "revision": "304ef86187e03c11d6284fb923196950"
+  },
+  {
+    "url": "page-data/app-data.json",
+    "revision": "b90630ebee2eba8e6fa608795e2b4ee1"
   },
   {
     "url": "polyfill-03f59bc194f5d16c7290.js"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "7ae4c2c99056e5f3976adb2debf8a929"
+    "revision": "cefbcefc1b204006ad254abe6c3c234c"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
@@ -71,12 +87,12 @@ const { NavigationRoute } = workbox.routing
 
 const navigationRoute = new NavigationRoute(async ({ event }) => {
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^`), ``)
+  pathname = pathname.replace(new RegExp(`^/frigobar`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-3b9e8a128583b40d1248.js`))) {
+  if (!resources || !(await caches.match(`/frigobar/app-44f3a3b657f25159d795.js`))) {
     return await fetch(event.request)
   }
 
@@ -89,7 +105,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/frigobar/offline-plugin-app-shell-fallback/index.html`
   return await caches.match(offlineShell)
 })
 
