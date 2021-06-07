@@ -24,7 +24,7 @@ exports[`<Badge /> Snapshots alignments should match snapshot with bottom-left a
   justify-content: center;
   padding: 4px;
   border-radius: 4px;
-  background-color: #598aed;
+  background-color: #008d96;
   color: #fff;
   font-size: 12px;
   line-height: 12px;
@@ -71,7 +71,7 @@ exports[`<Badge /> Snapshots alignments should match snapshot with bottom-right 
   justify-content: center;
   padding: 4px;
   border-radius: 4px;
-  background-color: #598aed;
+  background-color: #008d96;
   color: #fff;
   font-size: 12px;
   line-height: 12px;
@@ -118,7 +118,7 @@ exports[`<Badge /> Snapshots alignments should match snapshot with top-left alig
   justify-content: center;
   padding: 4px;
   border-radius: 4px;
-  background-color: #598aed;
+  background-color: #008d96;
   color: #fff;
   font-size: 12px;
   line-height: 12px;
@@ -165,7 +165,7 @@ exports[`<Badge /> Snapshots alignments should match snapshot with top-right ali
   justify-content: center;
   padding: 4px;
   border-radius: 4px;
-  background-color: #598aed;
+  background-color: #008d96;
   color: #fff;
   font-size: 12px;
   line-height: 12px;
@@ -212,7 +212,7 @@ exports[`<Badge /> Snapshots should match snapshot with children 1`] = `
   justify-content: center;
   padding: 4px;
   border-radius: 4px;
-  background-color: #598aed;
+  background-color: #008d96;
   color: #fff;
   font-size: 12px;
   line-height: 12px;
@@ -270,7 +270,7 @@ exports[`<Badge /> Snapshots should match snapshot with default badge 1`] = `
   justify-content: center;
   padding: 4px;
   border-radius: 4px;
-  background-color: #598aed;
+  background-color: #008d96;
   color: #fff;
   font-size: 12px;
   line-height: 12px;

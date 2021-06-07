@@ -80,7 +80,9 @@ exports[`<Card /> Snapshots should match snapshot 1`] = `
   font-size: 0.875rem;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
-  background-color: #598aed;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background-color: #008d96;
   color: #fdfdfd;
   font-size: 0.875rem;
   padding: 4px 12px 4px 12px;
@@ -234,7 +236,9 @@ exports[`<Card /> Snapshots should match snapshot with rounded avatar 1`] = `
   font-size: 0.875rem;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
-  background-color: #598aed;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background-color: #008d96;
   color: #fdfdfd;
   font-size: 0.875rem;
   padding: 4px 12px 4px 12px;

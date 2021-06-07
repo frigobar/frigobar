@@ -4,11 +4,11 @@ exports[`<Link /> Snapshots should match snapshot 1`] = `
 .c0 {
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: #729cf0;
+  color: #269ea6;
 }
 
 .c0:hover {
-  color: #acc5f6;
+  color: #80c6cb;
 }
 
 <div>

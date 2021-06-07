@@ -35,7 +35,7 @@ exports[`<Menu /> snapshots should match 1`] = `
 }
 
 .c2:hover {
-  background-color: #acc5f6;
+  background-color: #80c6cb;
 }
 
 <body>
