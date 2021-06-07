@@ -68,6 +68,7 @@
     "dev": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d public"
   }
 }

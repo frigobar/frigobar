@@ -8,15 +8,11 @@
     "copy-files": "babel-node ./scripts/copy-files.js",
     "test": "jest --env=jest-environment-jsdom-sixteen",
     "test:update": "jest -u",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
     "build": "cross-env NODE_ENV=production babel ./src --extensions '.js,.jsx' --out-dir ./dist/esm --copy-files",
     "prebuild": "npm run clean:build",
     "postbuild": "cross-env NODE_ENV=production npm run copy-files",
     "semantic-release": "semantic-release",
-    "prepublishOnly": "yarn build",
-    "postpublish": "yarn deploy-storybook --ci",
-    "deploy-storybook": "storybook-to-ghpages"
+    "prepublishOnly": "yarn build"
   },
   "repository": {
     "type": "git",
