@@ -8,6 +8,8 @@ exports[`<Button /> Snapshots should match snapshot with all skins 1`] = `
   font-size: 0.875rem;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   background-color: #999;
   color: #fdfdfd;
   font-size: 0.875rem;
@@ -18,7 +20,7 @@ exports[`<Button /> Snapshots should match snapshot with all skins 1`] = `
   box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
 }
 
-.c0 .c1 {
+.c0 .Button__StyledIcon-kt5dmp-0 {
   font-size: 1rem;
 }
 
@@ -39,6 +41,8 @@ exports[`<Button /> Snapshots should match snapshot with all skins 2`] = `
   font-size: 0.875rem;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   background-color: #999;
   color: #fdfdfd;
   font-size: 0.875rem;
@@ -49,7 +53,7 @@ exports[`<Button /> Snapshots should match snapshot with all skins 2`] = `
   box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
 }
 
-.c0 .c1 {
+.c0 .Button__StyledIcon-kt5dmp-0 {
   font-size: 1rem;
 }
 
@@ -70,6 +74,8 @@ exports[`<Button /> Snapshots should match snapshot with all skins 3`] = `
   font-size: 0.875rem;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   background-color: #999;
   color: #fdfdfd;
   font-size: 1rem;
@@ -80,7 +86,7 @@ exports[`<Button /> Snapshots should match snapshot with all skins 3`] = `
   box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
 }
 
-.c0 .c1 {
+.c0 .Button__StyledIcon-kt5dmp-0 {
   font-size: 1.275rem;
 }
 
@@ -101,6 +107,8 @@ exports[`<Button /> Snapshots should match snapshot with all skins 4`] = `
   font-size: 0.875rem;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   background-color: #999;
   color: #fdfdfd;
   font-size: 1.275rem;
@@ -111,7 +119,7 @@ exports[`<Button /> Snapshots should match snapshot with all skins 4`] = `
   box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
 }
 
-.c0 .c1 {
+.c0 .Button__StyledIcon-kt5dmp-0 {
   font-size: 1.5rem;
 }
 
@@ -148,6 +156,8 @@ exports[`<Button /> Snapshots should match snapshot with all skins 5`] = `
   font-size: 0.875rem;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   background-color: #999;
   color: #fdfdfd;
   font-size: 0.875rem;
@@ -217,6 +227,8 @@ exports[`<Button /> Snapshots should match snapshot with all skins 6`] = `
   font-size: 0.875rem;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   background-color: #999;
   color: #fdfdfd;
   font-size: 1rem;
@@ -290,6 +302,8 @@ exports[`<Button /> Snapshots should match snapshot with all skins 7`] = `
   font-size: 0.875rem;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   background-color: #999;
   color: #fdfdfd;
   font-size: 1.275rem;
@@ -339,6 +353,8 @@ exports[`<Button /> Snapshots should match snapshot with all skins 8`] = `
   font-size: 0.875rem;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   background-color: #999;
   color: #fdfdfd;
   font-size: 0.875rem;
@@ -371,7 +387,9 @@ exports[`<Button /> Snapshots should match snapshot with all skins 9`] = `
   font-size: 0.875rem;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
-  background-color: #598aed;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background-color: #008d96;
   color: #fdfdfd;
   font-size: 0.875rem;
   padding: 4px 12px 4px 12px;
@@ -402,6 +420,8 @@ exports[`<Button /> Snapshots should match snapshot with all skins 10`] = `
   font-size: 0.875rem;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   background-color: #25387f;
   color: #fdfdfd;
   font-size: 0.875rem;
@@ -433,6 +453,8 @@ exports[`<Button /> Snapshots should match snapshot with all skins 11`] = `
   font-size: 0.875rem;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   background-color: #50a47f;
   color: #fdfdfd;
   font-size: 0.875rem;
@@ -464,6 +486,8 @@ exports[`<Button /> Snapshots should match snapshot with all skins 12`] = `
   font-size: 0.875rem;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   background-color: #cd9447;
   color: #fdfdfd;
   font-size: 0.875rem;
@@ -495,6 +519,8 @@ exports[`<Button /> Snapshots should match snapshot with all skins 13`] = `
   font-size: 0.875rem;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   background-color: #f44336;
   color: #fdfdfd;
   font-size: 0.875rem;
@@ -526,6 +552,8 @@ exports[`<Button /> Snapshots should match snapshot with all skins 14`] = `
   font-size: 0.875rem;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   background-color: #999;
   color: #fdfdfd;
   font-size: 0.875rem;

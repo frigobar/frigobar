@@ -1,19 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Menu /> snapshots should match 1`] = `
-.c1 {
-  display: block;
-  padding: 8px 8px 8px 8px;
-  color: inherit;
-  cursor: pointer;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c1:hover {
-  background-color: #acc5f6;
-}
-
 .c0 {
   position: absolute;
   top: -3px;
@@ -26,13 +13,29 @@ exports[`<Menu /> snapshots should match 1`] = `
   box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
   list-style: none;
   overflow: hidden;
-  -webkit-animation: bcCCNc 300ms;
-  animation: bcCCNc 300ms;
 }
 
 .c0 li {
   margin: 0;
   padding: 0;
+}
+
+.c1 {
+  -webkit-animation: lbWRkT 300ms forwards;
+  animation: lbWRkT 300ms forwards;
+}
+
+.c2 {
+  display: block;
+  padding: 8px 8px 8px 8px;
+  color: inherit;
+  cursor: pointer;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2:hover {
+  background-color: #80c6cb;
 }
 
 <body>
@@ -47,18 +50,18 @@ exports[`<Menu /> snapshots should match 1`] = `
     id="frigobar-menu"
   >
     <ul
-      class="c0"
+      class="c0 c1"
     >
       <li>
         <a
-          class="c1"
+          class="c2"
         >
           Item 1
         </a>
       </li>
       <li>
         <a
-          class="c1"
+          class="c2"
         >
           Item 2
         </a>

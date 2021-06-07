@@ -2,21 +2,20 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { withFade } from '@frigobar/animation';
+import { useFade } from '@frigobar/animation';
 
 import portalContainer from './portalContainer';
 
 const PORTAL_CONTAINER_NAME = 'frigobar-menu';
 
-const List = withFade(
-  styled.ul(
-    ({
-      top,
-      left,
-      theme: {
-        components: { menu },
-      },
-    }) => `
+const List = styled.ul(
+  ({
+    top,
+    left,
+    theme: {
+      components: { menu },
+    },
+  }) => `
     position: absolute;
     top: ${top}px;
     left: ${left}px;
@@ -37,7 +36,6 @@ const List = withFade(
       padding: 0;
     }
   `,
-  ),
 );
 
 const Item = styled.a(
@@ -72,7 +70,15 @@ const Menu = ({
   fadeDuration,
   ...props
 }) => {
+  const [mounted, setMounted] = useState(false);
   const [anchorPosition, setAnchorPosition] = useState({});
+  const [{ animation, state }, toggleFade] = useFade({
+    duration: fadeDuration,
+  });
+
+  const safeHandleClickAway = useCallback(event => handleClickAway(event), [
+    handleClickAway,
+  ]);
 
   const menuRef = useRef(null);
 
@@ -82,11 +88,19 @@ const Menu = ({
         !menuRef.current?.contains(event.target) &&
         !anchorElement.current.contains(event.target)
       ) {
-        handleClickAway(event);
+        safeHandleClickAway(event);
       }
     },
-    [open],
+    [anchorElement, safeHandleClickAway],
   );
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    toggleFade(open);
+  }, [open, toggleFade]);
 
   useEffect(() => {
     if (open) {
@@ -98,7 +112,7 @@ const Menu = ({
     return () => {
       window.removeEventListener('click', clickAway);
     };
-  }, [clickAway]);
+  }, [clickAway, open]);
 
   useEffect(() => {
     const {
@@ -110,23 +124,30 @@ const Menu = ({
     setAnchorPosition({ top: top + height - 3, left: left + 3 });
   }, [anchorElement]);
 
-  return createPortal(
-    <List
-      renderControl={open}
-      fadeDuration={fadeDuration}
-      fadeIn
-      fadeOut
-      ref={menuRef}
-      top={anchorPosition.top}
-      left={anchorPosition.left}
-      {...props}
-    >
-      {React.Children.map(children, child => (
-        <li>{child}</li>
-      ))}
-    </List>,
-    portalContainer(PORTAL_CONTAINER_NAME),
-  );
+  if (mounted) {
+    portalContainer(PORTAL_CONTAINER_NAME);
+  }
+
+  return mounted
+    ? createPortal(
+        state ? (
+          <List
+            css={`
+              animation: ${animation};
+            `}
+            ref={menuRef}
+            top={anchorPosition.top}
+            left={anchorPosition.left}
+            {...props}
+          >
+            {React.Children.map(children, child => (
+              <li>{child}</li>
+            ))}
+          </List>
+        ) : null,
+        document.querySelector('#frigobar-menu'),
+      )
+    : null;
 };
 
 List.displayName = 'Menu';
@@ -135,10 +156,17 @@ Item.displayName = 'Menu.Item';
 Menu.Item = Item;
 
 Menu.propTypes = {
-  anchorElement: PropTypes.shape({ current: PropTypes.instanceOf(Element) })
-    .isRequired,
+  /** a react component ref to be the anchor of the menu items */
+  anchorElement: PropTypes.shape({
+    current: PropTypes.instanceOf(
+      typeof Element === 'undefined' ? Object : Element,
+    ),
+  }).isRequired,
+  /** duration of the fade in/out animation */
   fadeDuration: PropTypes.number,
+  /** function called when user clicks outside the menu */
   handleClickAway: PropTypes.func,
+  /** whether the menu is visible or not */
   open: PropTypes.bool,
 };
 

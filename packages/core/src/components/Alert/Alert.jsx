@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { withFade } from '@frigobar/animation';
+import { useFade } from '@frigobar/animation';
 
-import { ReactComponent as CloseIcon } from '../../assets/close.svg';
+import CloseIcon from '../../assets/close.svg';
 
 const CloseButton = styled.button`
   align-items: center;
@@ -44,7 +44,7 @@ const CloseButton = styled.button`
   `}
 `;
 
-const Wrapper = withFade(styled.div`
+const Wrapper = styled.div`
   border-radius: 4px;
   font-size: 0.875rem;
   position: relative;
@@ -66,7 +66,7 @@ const Wrapper = withFade(styled.div`
     color: ${colors.black};
     padding: ${top}px ${right}px ${bottom}px ${left}px;
   `}
-`);
+`;
 
 const Close = ({ onClick, text, theme, ariaLabel, ...props }) => (
   <CloseButton
@@ -103,19 +103,24 @@ const Alert = ({
   onClose,
   closeText,
   closeIconAriaLabel,
+  show,
   ...props
 }) => {
-  const [show, toggleShow] = useState(true);
+  const [{ animation, state }, toggle] = useFade({ startOnRender: show });
 
-  return (
+  useEffect(() => {
+    toggle(show);
+  }, [show, toggle]);
+
+  return state ? (
     <Wrapper
       {...props}
       theme={theme}
-      renderControl={show}
-      fadeIn
-      fadeOut
       type={type}
       role="alert"
+      css={`
+        animation: ${animation};
+      `}
     >
       {closable && (
         <Close
@@ -123,23 +128,30 @@ const Alert = ({
           theme={theme}
           ariaLabel={closeIconAriaLabel}
           onClick={e => {
-            toggleShow(false);
             onClose(e);
           }}
         />
       )}
       {children}
     </Wrapper>
-  );
+  ) : null;
 };
 
 Alert.propTypes = {
+  /** content to be displayed inside alert */
   children: PropTypes.node.isRequired,
+  /** change the colors of the wrapper */
   type: PropTypes.oneOf(['success', 'info', 'danger', 'warning', 'neutral']),
+  /** display close button */
   closable: PropTypes.bool,
+  /** function when close button is clicked */
   onClose: PropTypes.func,
+  /** if you want to display a text instead of the "X" button */
   closeText: PropTypes.string,
+  /** aria-label to be in close button */
   closeIconAriaLabel: PropTypes.string,
+  /** shows alert if true */
+  show: PropTypes.bool,
 };
 
 Alert.defaultProps = {
@@ -148,6 +160,7 @@ Alert.defaultProps = {
   onClose: () => {},
   closeText: undefined,
   closeIconAriaLabel: undefined,
+  show: undefined,
 };
 
 export default Alert;

@@ -40,15 +40,18 @@ const StyledBadge = styled.span(
       components: { badge },
     },
   }) => `
-    align-items: center;
-    background-color: ${colors[color][500]};
-    border-radius: ${badge.border.radius}px;
-    color: ${colors.white};
     display: flex;
-    font-size: ${badge.font.size}px;
+    align-items: center;
     justify-content: center;
-    padding-left: ${badge.padding.left}px;
-    padding-right: ${badge.padding.right}px;
+
+    padding: ${badge.padding}px;
+
+    border-radius: ${badge.border.radius}px;
+    background-color: ${(colors[color] && colors[color][500]) || color};
+
+    color: ${colors.white};
+    font-size: ${badge.font.size}px;
+    line-height: ${badge.font.size}px;
     ${
       hasChildren
         ? `
@@ -85,9 +88,13 @@ Badge.defaultProps = {
 };
 
 Badge.propTypes = {
+  /** change badge color, it can be any color theme property, like "primary", "info", "success", etc. Or a custom name/hex color (#000) */
   color: PropTypes.string,
+  /** where badge will be displayed */
   children: PropTypes.node,
+  /** the number to be displayed inside badge */
   content: PropTypes.number,
+  /** in which component corner to align the badge */
   alignment: PropTypes.oneOf([
     'top-left',
     'top-right',

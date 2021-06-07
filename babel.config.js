@@ -16,6 +16,7 @@ module.exports = {
     test: {
       presets: ['@babel/preset-react', ['@babel/preset-env']],
       plugins: [
+        'babel-plugin-styled-components',
         [
           '@babel/plugin-transform-runtime',
           {

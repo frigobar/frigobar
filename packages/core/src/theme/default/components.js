@@ -33,6 +33,7 @@ const components = {
   button: {
     backgroundColor: {
       primary: colors.primary[500],
+      secondary: colors.secondary[500],
       info: colors.info[500],
       success: colors.success[500],
       danger: colors.danger[500],
@@ -81,10 +82,7 @@ const components = {
     border: {
       radius: radius[1],
     },
-    padding: {
-      right: spacings.xxsmall,
-      left: spacings.xxsmall,
-    },
+    padding: spacings.xxsmall,
     font: {
       size: baseFontSize * 0.75,
     },

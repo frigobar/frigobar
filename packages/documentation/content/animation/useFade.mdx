@@ -1,0 +1,91 @@
+---
+title: useFade
+menu: Hooks
+---
+
+This animation perform a fade to the component, you can specify if it will be a
+fade in, fade out or both.
+
+You can also **control the render** with the animation state property.
+
+#### Options object:
+
+useFade receives an object for custom configurations, like:
+
+<!-- prettier-ignore -->
+| **property** | **description** | **type** | **default value** |
+| ------------- | --------------- | ----------------- | ---- |
+| startOnRender | start `fadeIn` on first component render  | `bool` | `true` |
+| duration | the duration of the fade effect, it is a `ms` value | `number` | `300` |
+| fadeIn | apply the fade in animation when the animation state is true | `bool` | `true` |
+| fadeOut | apply the fade out animation when the animation state is false | `bool` | `true` |
+
+#### Returned values:
+
+useFade hook return a pair of values, the animation object and a function to
+toggle the animation state.
+
+**animation properties**:
+
+<!-- prettier-ignore -->
+| **property** | **description** |
+| ------------- | --------------- |
+| animation | animation css property value |
+| state | animation state value (after fade ends) |
+| instantState | animation state value that updates right before it changes (without waiting the fade to end) |
+
+**toggle function**:
+
+Second value returned from `useFade` hook is a function to toggle the fade
+animation, the initial state value is `true` (if you didn't change the
+`startOnRender` property) and it will perform a fade in animation by default.
+
+If you want to change the animation state to `false` to perform a fade out, just
+call the function passing `false` as an argument.
+
+Example:
+
+```jsx react-live=true noInline fileName=fade.jsx
+function App() {
+  /** default options object */
+  const options = {
+    startOnRender: true,
+    duration: 300,
+    fadeIn: true,
+    fadeOut: true,
+  };
+  const [{ animation, state, instantState }, toggleFade] = useFade(options);
+
+  return (
+    <div style={{ height: 200 }}>
+      <Button
+        skin={instantState ? 'danger' : 'success'}
+        onClick={() => toggleFade(!state)}
+      >
+        {instantState ? 'hide' : 'show'} card
+      </Button>
+      <p>
+        The animation state is: <strong>{state.toString()}</strong>
+      </p>
+      <p>
+        The animation instantState is:{' '}
+        <strong>{instantState.toString()}</strong>
+      </p>
+      {state && (
+        <Card
+          css={`
+            animation: ${animation};
+          `}
+        >
+          <Card.Content>Frigobar card</Card.Content>
+        </Card>
+      )}
+    </div>
+  );
+}
+
+render(App);
+```
+
+Take a look that we are using the `state` property to **control the render** and
+make sure that our `Card` component **only unmounts when `fadeOut` finishes**.

@@ -10,24 +10,24 @@ exports[`<Badge /> Snapshots alignments should match snapshot with bottom-left a
 }
 
 .c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #598aed;
-  border-radius: 4px;
-  color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #008d96;
+  color: #fff;
+  font-size: 12px;
+  line-height: 12px;
 }
 
 <div>
@@ -57,24 +57,24 @@ exports[`<Badge /> Snapshots alignments should match snapshot with bottom-right 
 }
 
 .c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #598aed;
-  border-radius: 4px;
-  color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #008d96;
+  color: #fff;
+  font-size: 12px;
+  line-height: 12px;
 }
 
 <div>
@@ -104,24 +104,24 @@ exports[`<Badge /> Snapshots alignments should match snapshot with top-left alig
 }
 
 .c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #598aed;
-  border-radius: 4px;
-  color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #008d96;
+  color: #fff;
+  font-size: 12px;
+  line-height: 12px;
 }
 
 <div>
@@ -151,24 +151,24 @@ exports[`<Badge /> Snapshots alignments should match snapshot with top-right ali
 }
 
 .c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #598aed;
-  border-radius: 4px;
-  color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #008d96;
+  color: #fff;
+  font-size: 12px;
+  line-height: 12px;
 }
 
 <div>
@@ -198,24 +198,24 @@ exports[`<Badge /> Snapshots should match snapshot with children 1`] = `
 }
 
 .c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #598aed;
-  border-radius: 4px;
-  color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #008d96;
+  color: #fff;
+  font-size: 12px;
+  line-height: 12px;
   position: absolute;
   top: 0;
   right: 0;
@@ -256,24 +256,24 @@ exports[`<Badge /> Snapshots should match snapshot with default badge 1`] = `
 }
 
 .c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #598aed;
-  border-radius: 4px;
-  color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #008d96;
+  color: #fff;
+  font-size: 12px;
+  line-height: 12px;
 }
 
 <div>
@@ -303,24 +303,24 @@ exports[`<Badge /> Snapshots should match snapshot with different color 1`] = `
 }
 
 .c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #50a47f;
-  border-radius: 4px;
-  color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #50a47f;
+  color: #fff;
+  font-size: 12px;
+  line-height: 12px;
 }
 
 <div>

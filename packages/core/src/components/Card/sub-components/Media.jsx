@@ -29,6 +29,7 @@ const Media = ({ src, ...props }) => (
 );
 
 Media.propTypes = {
+  /** an image url to display the media */
   src: PropTypes.string.isRequired,
 };
 

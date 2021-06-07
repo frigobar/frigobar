@@ -2,20 +2,17 @@
   "name": "@frigobar/core",
   "version": "0.6.1",
   "description": "A component library",
+  "main": "./src/index.js",
   "scripts": {
     "clean:build": "rm -rf ./dist",
     "copy-files": "babel-node ./scripts/copy-files.js",
     "test": "jest --env=jest-environment-jsdom-sixteen",
     "test:update": "jest -u",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
     "build": "cross-env NODE_ENV=production babel ./src --extensions '.js,.jsx' --out-dir ./dist/esm --copy-files",
     "prebuild": "npm run clean:build",
     "postbuild": "cross-env NODE_ENV=production npm run copy-files",
     "semantic-release": "semantic-release",
-    "prepublishOnly": "yarn build",
-    "postpublish": "yarn deploy-storybook --ci",
-    "deploy-storybook": "storybook-to-ghpages"
+    "prepublishOnly": "yarn build"
   },
   "repository": {
     "type": "git",
@@ -42,14 +39,14 @@
   },
   "peerDependencies": {
     "react": "16.x",
-    "react-dom": "16.x",
-    "styled-components": "4.x"
+    "react-dom": "16.x"
   },
   "publishConfig": {
     "access": "public",
     "directory": "dist"
   },
   "devDependencies": {
-    "styled-components": "4.4.1"
+    "babel-plugin-styled-components": "^1.12.0",
+    "styled-components": "^5.2.3"
   }
 }

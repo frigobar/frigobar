@@ -28,4 +28,6 @@ jobs:
         skip_cleanup: true
         keep_history: true
         script:
-          - lerna publish -y
+          - lerna publish --conventional-prerelease -y
+      after_deploy:
+        - yarn workspace @frigobar/documentation deploy

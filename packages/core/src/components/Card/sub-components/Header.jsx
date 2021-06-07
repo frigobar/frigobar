@@ -50,7 +50,9 @@ const Header = ({
 
 Header.propTypes = {
   children: PropTypes.node.isRequired,
+  /** an image url to be displayed as an avatar */
   avatar: PropTypes.string,
+  /** change border-radius to 9999 */
   avatarRounded: PropTypes.bool,
 };
 
