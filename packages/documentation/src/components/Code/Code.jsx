@@ -46,23 +46,30 @@ const Code = ({
               noInline={noInline}
               theme={dracula}
               transformCode={code => {
-                const transformed = transform(code, {
-                  plugins: [
-                    require('@babel/plugin-syntax-jsx'),
-                    require('babel-plugin-styled-components'),
-                  ],
-                }).code;
+                if (
+                  typeof document !== 'undefined' &&
+                  typeof window !== 'undefined'
+                ) {
+                  const transformed = transform(code, {
+                    plugins: [
+                      require('@babel/plugin-syntax-jsx'),
+                      require('babel-plugin-styled-components'),
+                    ],
+                  }).code;
 
-                const withoutImport = transformed.replace(
-                  'import _styled from "styled-components";',
-                  '',
-                );
-                const withoutStyled = withoutImport.replace(
-                  /_Styled/g,
-                  'Styled',
-                );
+                  const withoutImport = transformed.replace(
+                    'import _styled from "styled-components";',
+                    '',
+                  );
+                  const withoutStyled = withoutImport.replace(
+                    /_Styled/g,
+                    'Styled',
+                  );
 
-                return withoutStyled;
+                  return withoutStyled;
+                }
+
+                return undefined;
               }}
             >
               <ComponentBackground>
