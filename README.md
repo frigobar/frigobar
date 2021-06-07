@@ -1,21 +1,16 @@
-# frigobar
+<div align="center">
+  <img src="/static/frigobar.svg" width="300" />
+  <h1>frigobar</h1>
 
 [![Build Status](https://travis-ci.org/frigobar/frigobar.svg?branch=master)](https://travis-ci.org/frigobar/frigobar)
-[![Commitizen Friendly](https://camo.githubusercontent.com/6080f52144977b8b2b20e42408379ce68371aafd/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f6d6d6974697a656e2d667269656e646c792d627269676874677265656e2e737667)](https://github.com/commitizen/cz-cli)
+[![Commitizen Friendly](https://camo.githubusercontent.com/6080f52144977b8b2b20e42408379ce68371aafd/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f6d6d6974697a656e2d667269656e646c792d627269676874677265656e2e737667)](https://github.com/commitizen/cz-cli)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END --> [![StyledComponents](https://camo.githubusercontent.com/83915eaa262cfa89f70f2d4eb2ec55c0cbe7c615/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7374796c652d2546302539462539322538352532307374796c65642d2d636f6d706f6e656e74732d6f72616e67652e7376673f636f6c6f72423d64616133353726636f6c6f72413d646237343865)](https://github.com/styled-components/styled-components)
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+</div>
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors)
+Frigobar is a simple set of UI tools for your react application.
 
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-
-[![StyledComponents](https://camo.githubusercontent.com/83915eaa262cfa89f70f2d4eb2ec55c0cbe7c615/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7374796c652d2546302539462539322538352532307374796c65642d2d636f6d706f6e656e74732d6f72616e67652e7376673f636f6c6f72423d64616133353726636f6c6f72413d646237343865)](https://github.com/styled-components/styled-components)
-
-<img src="/static/frigobar.svg" width="200" />
-
-Frigobar is a simple component library built with [React](https://reactjs.org/ 'React').
-
-You can check all available components at our [storybook](https://frigobar.github.io/frigobar/).
+You can check everything at our [website](https://frigobar.io/).
 
 ## Install
 
