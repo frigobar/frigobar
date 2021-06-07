@@ -16,6 +16,7 @@
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^2.14.4",
     "gatsby-image": "^2.0.22",
+    "gatsby-plugin-cname": "^1.0.0",
     "gatsby-plugin-feed": "^2.0.8",
     "gatsby-plugin-google-analytics": "^2.0.5",
     "gatsby-plugin-manifest": "^2.0.5",
@@ -51,6 +52,7 @@
     "babel-plugin-styled-components": "^1.12.0",
     "eslint": "^6.2.2",
     "eslint-plugin-react": "^7.11.1",
+    "gh-pages": "^3.2.0",
     "prettier": "^1.14.2"
   },
   "homepage": "https://github.com/frigobar/frigobar#readme",
@@ -66,7 +68,7 @@
   "scripts": {
     "prebuild": "gatsby clean",
     "dev": "gatsby develop",
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "serve": "gatsby serve",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d public"

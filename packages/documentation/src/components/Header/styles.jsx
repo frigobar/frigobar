@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { withPrefix } from 'gatsby';
 import { Link } from '@frigobar/core';
 
 const Wrapper = styled.header`
@@ -39,7 +40,7 @@ const Wrapper = styled.header`
 `;
 
 const Brand = styled(Link)`
-  background-image: url('/frigobar.svg');
+  background-image: url(${withPrefix('/frigobar.svg')});
   background-position: center;
   background-repeat: no-repeat;
   background-size: 115px;

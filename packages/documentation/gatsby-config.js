@@ -2,15 +2,17 @@ const styledResolver = require('react-docgen-styled-component-resolver');
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog MDX`,
-    author: `Matt Hagner`,
-    description: `An extension of the gatsby starter blog, with support for MDX`,
-    siteUrl: `https://gatsby-starter-blog-mdx-demo.netlify.com/`,
+    title: `Frigobar`,
+    author: `Allysson Santos`,
+    description: `A simple set of UI packages to simplify your life when building react applications.`,
+    siteUrl: `http://frigobar.io/`,
     social: {
-      twitter: `mattinthecouch`,
+      twitter: `_allyssonsantos`,
     },
   },
+  pathPrefix: '/frigobar',
   plugins: [
+    'gatsby-plugin-cname',
     'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-transformer-react-docgen',
