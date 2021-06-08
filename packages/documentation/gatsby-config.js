@@ -5,7 +5,7 @@ module.exports = {
     title: `Frigobar`,
     author: `Allysson Santos`,
     description: `A simple set of UI packages to simplify your life when building react applications.`,
-    siteUrl: `http://frigobar.io/`,
+    siteUrl: `https://frigobar.io/`,
     social: {
       twitter: `_allyssonsantos`,
     },
@@ -140,13 +140,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Frigobar documentation website`,
+        short_name: `Frigobar`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#008D96`,
         display: `minimal-ui`,
-        icon: `static/icon.svg`,
+        icon: `static/favicon.png`,
       },
     },
     `gatsby-plugin-offline`,

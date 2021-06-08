@@ -4,7 +4,7 @@ import { graphql, Link } from 'gatsby';
 import { Button } from '@frigobar/core';
 import { useFade } from '@frigobar/animation';
 
-import { Header, Footer } from '../components';
+import { Header, Footer, SEO } from '../components';
 import {
   Wrapper,
   Main,
@@ -27,6 +27,10 @@ const Index = () => {
         animation: ${fadeAnimation};
       `}
     >
+      <SEO
+        title="Frigobar - A simple set of UI tools for your react application."
+        titleTemplate=""
+      />
       <Header home />
       <Main>
         <Section>
