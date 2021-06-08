@@ -6,6 +6,7 @@ import Navigation from './Navigation';
 import PropsTable from './PropsTable';
 import SEO from './Seo';
 import InlineCode from './InlineCode';
+import Blockquote from './Blockquote';
 
 export {
   Code,
@@ -16,4 +17,5 @@ export {
   PropsTable,
   SEO,
   InlineCode,
+  Blockquote,
 };

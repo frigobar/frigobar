@@ -59,12 +59,11 @@ const Title = styled.h2(
 
     margin: 0;
     margin-bottom: 8px;
-    padding-top: 15px;
 
     color: #363636;
     font-size: 1.5rem;
     font-weight: 700;
-    line-height: 35px;
+    line-height: 1.5rem;
 
     @media (max-width: 768px) {
       font-size: 1.125rem;
@@ -76,16 +75,26 @@ const Title = styled.h2(
     ${
       bordered
         ? `
+          margin-top: 15px;
+
+          @media (max-width: 768px) {
+            margin-top: 0;
+          }
+
           &:before {
             content: '';
 
             position: absolute;
-            top: 0;
+            top: -20px;
             
             width: 60px;
             height: 8px;
 
             background-color: #E47171;
+
+            @media (max-width: 768px) {
+              top: -5px;
+            }
           }
         `
         : ''
