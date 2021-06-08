@@ -20,10 +20,6 @@ exports[`<Button /> Snapshots should match snapshot with all skins 1`] = `
   box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
 }
 
-.c0 .Button__StyledIcon-kt5dmp-0 {
-  font-size: 1rem;
-}
-
 <div>
   <button
     class="c0"
@@ -51,10 +47,6 @@ exports[`<Button /> Snapshots should match snapshot with all skins 2`] = `
 
 .c0:hover {
   box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
-}
-
-.c0 .Button__StyledIcon-kt5dmp-0 {
-  font-size: 1rem;
 }
 
 <div>
@@ -86,10 +78,6 @@ exports[`<Button /> Snapshots should match snapshot with all skins 3`] = `
   box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
 }
 
-.c0 .Button__StyledIcon-kt5dmp-0 {
-  font-size: 1.275rem;
-}
-
 <div>
   <button
     class="c0"
@@ -119,10 +107,6 @@ exports[`<Button /> Snapshots should match snapshot with all skins 4`] = `
   box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
 }
 
-.c0 .Button__StyledIcon-kt5dmp-0 {
-  font-size: 1.5rem;
-}
-
 <div>
   <button
     class="c0"
@@ -133,219 +117,6 @@ exports[`<Button /> Snapshots should match snapshot with all skins 4`] = `
 `;
 
 exports[`<Button /> Snapshots should match snapshot with all skins 5`] = `
-.c2 {
-  margin-right: 6px;
-}
-
-.c3 .c1 {
-  font-size: 1rem;
-}
-
-.c4 .c1 {
-  font-size: 1.275rem;
-}
-
-.c5 .c1 {
-  font-size: 1.5rem;
-}
-
-.c0 {
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.875rem;
-  -webkit-transition: all 200ms ease-in-out;
-  transition: all 200ms ease-in-out;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  background-color: #999;
-  color: #fdfdfd;
-  font-size: 0.875rem;
-  padding: 4px 12px 4px 12px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c0:hover {
-  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
-}
-
-.c0 .c1 {
-  font-size: 1rem;
-}
-
-<div>
-  <button
-    class="c0"
-  >
-    <span
-      aria-hidden="true"
-      class="material-icons MuiIcon-root c1 c2"
-    >
-      face
-    </span>
-    Button
-  </button>
-</div>
-`;
-
-exports[`<Button /> Snapshots should match snapshot with all skins 6`] = `
-.c2 {
-  margin-right: 6px;
-}
-
-.c3 .c1 {
-  font-size: 1rem;
-}
-
-.c4 .c1 {
-  font-size: 1.275rem;
-}
-
-.c5 .c1 {
-  font-size: 1.5rem;
-}
-
-.c6 .c1 {
-  font-size: 1rem;
-}
-
-.c0 {
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.875rem;
-  -webkit-transition: all 200ms ease-in-out;
-  transition: all 200ms ease-in-out;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  background-color: #999;
-  color: #fdfdfd;
-  font-size: 1rem;
-  padding: 8px 16px 8px 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c0:hover {
-  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
-}
-
-.c0 .c1 {
-  font-size: 1.275rem;
-}
-
-<div>
-  <button
-    class="c0"
-  >
-    <span
-      aria-hidden="true"
-      class="material-icons MuiIcon-root c1 c2"
-    >
-      face
-    </span>
-    Button
-  </button>
-</div>
-`;
-
-exports[`<Button /> Snapshots should match snapshot with all skins 7`] = `
-.c2 {
-  margin-right: 8px;
-}
-
-.c3 .c1 {
-  font-size: 1rem;
-}
-
-.c4 .c1 {
-  font-size: 1.275rem;
-}
-
-.c5 .c1 {
-  font-size: 1.5rem;
-}
-
-.c6 .c1 {
-  font-size: 1rem;
-}
-
-.c7 .c1 {
-  font-size: 1.275rem;
-}
-
-.c0 {
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.875rem;
-  -webkit-transition: all 200ms ease-in-out;
-  transition: all 200ms ease-in-out;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  background-color: #999;
-  color: #fdfdfd;
-  font-size: 1.275rem;
-  padding: 12px 20px 12px 20px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c0:hover {
-  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
-}
-
-.c0 .c1 {
-  font-size: 1.5rem;
-}
-
-<div>
-  <button
-    class="c0"
-  >
-    <span
-      aria-hidden="true"
-      class="material-icons MuiIcon-root c1 c2"
-    >
-      face
-    </span>
-    Button
-  </button>
-</div>
-`;
-
-exports[`<Button /> Snapshots should match snapshot with all skins 8`] = `
 .c0 {
   border: none;
   border-radius: 4px;
@@ -366,8 +137,91 @@ exports[`<Button /> Snapshots should match snapshot with all skins 8`] = `
   box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
 }
 
-.c0 .c1 {
-  font-size: 1rem;
+<div>
+  <button
+    class="c0"
+  >
+    Button
+  </button>
+</div>
+`;
+
+exports[`<Button /> Snapshots should match snapshot with all skins 6`] = `
+.c0 {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background-color: #008d96;
+  color: #fdfdfd;
+  font-size: 0.875rem;
+  padding: 4px 12px 4px 12px;
+}
+
+.c0:hover {
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
+}
+
+<div>
+  <button
+    class="c0"
+  >
+    Button
+  </button>
+</div>
+`;
+
+exports[`<Button /> Snapshots should match snapshot with all skins 7`] = `
+.c0 {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background-color: #25387f;
+  color: #fdfdfd;
+  font-size: 0.875rem;
+  padding: 4px 12px 4px 12px;
+}
+
+.c0:hover {
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
+}
+
+<div>
+  <button
+    class="c0"
+  >
+    Button
+  </button>
+</div>
+`;
+
+exports[`<Button /> Snapshots should match snapshot with all skins 8`] = `
+.c0 {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background-color: #50a47f;
+  color: #fdfdfd;
+  font-size: 0.875rem;
+  padding: 4px 12px 4px 12px;
+}
+
+.c0:hover {
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
 }
 
 <div>
@@ -389,7 +243,7 @@ exports[`<Button /> Snapshots should match snapshot with all skins 9`] = `
   transition: all 200ms ease-in-out;
   -webkit-text-decoration: none;
   text-decoration: none;
-  background-color: #008d96;
+  background-color: #cd9447;
   color: #fdfdfd;
   font-size: 0.875rem;
   padding: 4px 12px 4px 12px;
@@ -397,10 +251,6 @@ exports[`<Button /> Snapshots should match snapshot with all skins 9`] = `
 
 .c0:hover {
   box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
-}
-
-.c0 .c1 {
-  font-size: 1rem;
 }
 
 <div>
@@ -422,7 +272,7 @@ exports[`<Button /> Snapshots should match snapshot with all skins 10`] = `
   transition: all 200ms ease-in-out;
   -webkit-text-decoration: none;
   text-decoration: none;
-  background-color: #25387f;
+  background-color: #f44336;
   color: #fdfdfd;
   font-size: 0.875rem;
   padding: 4px 12px 4px 12px;
@@ -430,10 +280,6 @@ exports[`<Button /> Snapshots should match snapshot with all skins 10`] = `
 
 .c0:hover {
   box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
-}
-
-.c0 .c1 {
-  font-size: 1rem;
 }
 
 <div>
@@ -455,105 +301,6 @@ exports[`<Button /> Snapshots should match snapshot with all skins 11`] = `
   transition: all 200ms ease-in-out;
   -webkit-text-decoration: none;
   text-decoration: none;
-  background-color: #50a47f;
-  color: #fdfdfd;
-  font-size: 0.875rem;
-  padding: 4px 12px 4px 12px;
-}
-
-.c0:hover {
-  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
-}
-
-.c0 .c1 {
-  font-size: 1rem;
-}
-
-<div>
-  <button
-    class="c0"
-  >
-    Button
-  </button>
-</div>
-`;
-
-exports[`<Button /> Snapshots should match snapshot with all skins 12`] = `
-.c0 {
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.875rem;
-  -webkit-transition: all 200ms ease-in-out;
-  transition: all 200ms ease-in-out;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  background-color: #cd9447;
-  color: #fdfdfd;
-  font-size: 0.875rem;
-  padding: 4px 12px 4px 12px;
-}
-
-.c0:hover {
-  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
-}
-
-.c0 .c1 {
-  font-size: 1rem;
-}
-
-<div>
-  <button
-    class="c0"
-  >
-    Button
-  </button>
-</div>
-`;
-
-exports[`<Button /> Snapshots should match snapshot with all skins 13`] = `
-.c0 {
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.875rem;
-  -webkit-transition: all 200ms ease-in-out;
-  transition: all 200ms ease-in-out;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  background-color: #f44336;
-  color: #fdfdfd;
-  font-size: 0.875rem;
-  padding: 4px 12px 4px 12px;
-}
-
-.c0:hover {
-  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
-}
-
-.c0 .c1 {
-  font-size: 1rem;
-}
-
-<div>
-  <button
-    class="c0"
-  >
-    Button
-  </button>
-</div>
-`;
-
-exports[`<Button /> Snapshots should match snapshot with all skins 14`] = `
-.c0 {
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.875rem;
-  -webkit-transition: all 200ms ease-in-out;
-  transition: all 200ms ease-in-out;
-  -webkit-text-decoration: none;
-  text-decoration: none;
   background-color: #999;
   color: #fdfdfd;
   font-size: 0.875rem;
@@ -561,10 +308,6 @@ exports[`<Button /> Snapshots should match snapshot with all skins 14`] = `
   background-color: #f2f2f2;
   color: #a8a8a8;
   cursor: not-allowed;
-}
-
-.c0 .c1 {
-  font-size: 1rem;
 }
 
 <div>

@@ -11,15 +11,6 @@ describe('<Button />', () => {
         <Button size="small">Button</Button>,
         <Button size="medium">Button</Button>,
         <Button size="large">Button</Button>,
-        <Button size="small" icon="face">
-          Button
-        </Button>,
-        <Button size="medium" icon="face">
-          Button
-        </Button>,
-        <Button size="large" icon="face">
-          Button
-        </Button>,
         <Button full>Button</Button>,
         <Button skin="primary">Button</Button>,
         <Button skin="info">Button</Button>,
