@@ -2,7 +2,7 @@
   "name": "@frigobar/documentation",
   "private": true,
   "description": "Frigobar website",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "author": "Allysson Santos <aallysson0@gmail.com>",
   "bugs": {
     "url": "https://github.com/frigobar/frigobar/issues"
