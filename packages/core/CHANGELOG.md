@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.7.0...@frigobar/core@0.8.0) (2021-06-08)
+
+
+### Bug Fixes
+
+* **core:** fix dependencies ([299563c](https://github.com/allyssonsantos/frigobar/commit/299563cf8143f214e2c7742314c47a862fa8a48d))
+
+
+### Features
+
+* **core:** remove icon prop from button component ([0b477af](https://github.com/allyssonsantos/frigobar/commit/0b477af786c6d26e1704923a6b965157b863cfe4))
+
+
+### BREAKING CHANGES
+
+* **core:** The "icon" prop will not work anymore in the Button component.
+
+
+
+
+
 # [0.7.0](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.6.1...@frigobar/core@0.7.0) (2021-06-08)
 
 

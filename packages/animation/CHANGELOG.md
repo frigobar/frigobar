@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/frigobar/frigobar/compare/@frigobar/animation@2.0.0...@frigobar/animation@2.0.1) (2021-06-08)
+
+
+### Bug Fixes
+
+* **animation:** fix dependencies ([9259c1e](https://github.com/frigobar/frigobar/commit/9259c1e4d3afe4e5ab21f7dd83f2445848184f8c))
+
+
+
+
+
 # [2.0.0](https://github.com/frigobar/frigobar/compare/@frigobar/animation@1.0.0...@frigobar/animation@2.0.0) (2021-06-08)
 
 
