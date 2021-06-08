@@ -33,14 +33,12 @@
     "directory": "dist"
   },
   "peerDependencies": {
-    "react": "16.x",
-    "react-dom": "16.x",
-    "styled-components": "4.x"
-  },
-  "devDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
     "styled-components": "^5.2.3"
   },
-  "dependencies": {
+  "devDependencies": {
+    "styled-components": "^5.2.3",
     "prop-types": "^15.7.2"
   }
 }
