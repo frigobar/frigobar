@@ -5,7 +5,13 @@ import { ThemeProvider, css } from 'styled-components';
 import * as frigobar from '@frigobar/core';
 import * as animations from '@frigobar/animation';
 
-import { Code, PropsTable, GlobalStyle, InlineCode } from './src/components';
+import {
+  Code,
+  PropsTable,
+  GlobalStyle,
+  InlineCode,
+  Blockquote,
+} from './src/components';
 import {
   Table,
   Thead,
@@ -35,6 +41,7 @@ const components = {
   tr: Tr,
   td: Td,
   PropsTable,
+  blockquote: Blockquote,
   ...frigobar,
   ...animations,
   css,
