@@ -92,10 +92,6 @@ exports[`<Card /> Snapshots should match snapshot 1`] = `
   box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
 }
 
-.c10 .Button__StyledIcon-kt5dmp-0 {
-  font-size: 1rem;
-}
-
 <div>
   <section
     class="c0"
@@ -246,10 +242,6 @@ exports[`<Card /> Snapshots should match snapshot with rounded avatar 1`] = `
 
 .c10:hover {
   box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
-}
-
-.c10 .Button__StyledIcon-kt5dmp-0 {
-  font-size: 1rem;
 }
 
 <div>

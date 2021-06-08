@@ -1,11 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Icon from '@material-ui/core/Icon';
-
-const StyledIcon = styled(Icon)`
-  margin-right: ${({ size }) => (size === 'large' ? '8px' : '6px')};
-`;
 
 const Btn = styled.button`
   border: none;
@@ -23,7 +18,6 @@ const Btn = styled.button`
       },
     },
     skin,
-    icon,
     size,
     disabled,
     full,
@@ -61,29 +55,14 @@ const Btn = styled.button`
         `
     }
 
-    ${StyledIcon} {
-      font-size: ${sizes[size].icon}rem;
-    }
-
-    ${
-      icon
-        ? `
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    `
-        : ''
-    }
-
     ${full ? 'width: 100%;' : ''}
     ${rounded ? `border-radius: ${radius[3]}px` : ''}
   `}
 `;
 
 const Button = React.forwardRef(
-  ({ children, icon, theme, size, full, ...props }, ref) => (
-    <Btn icon={icon} theme={theme} size={size} full={full} ref={ref} {...props}>
-      {icon && <StyledIcon size={size}>{icon}</StyledIcon>}
+  ({ children, theme, size, full, ...props }, ref) => (
+    <Btn theme={theme} size={size} full={full} ref={ref} {...props}>
       {children}
     </Btn>
   ),
@@ -102,8 +81,6 @@ Button.propTypes = {
   ]),
   /** disabled state of the button */
   disabled: PropTypes.bool,
-  /** adds an icon in the left side of button */
-  icon: PropTypes.string,
   /** change the width, height and font-size values */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   /** 100% width */
@@ -117,7 +94,6 @@ Button.propTypes = {
 Button.defaultProps = {
   skin: 'neutral',
   disabled: false,
-  icon: undefined,
   size: 'small',
   full: undefined,
   rounded: undefined,
