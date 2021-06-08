@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.6.1...@frigobar/core@0.7.0) (2021-06-08)
+
+
+### Bug Fixes
+
+* **core:** make Menu component works on ssr ([d47df8b](https://github.com/allyssonsantos/frigobar/commit/d47df8b33194091b15ba2f87b18f02f7184f8cee))
+
+
+### Features
+
+* **core:** add new Borders token ([b81d3f3](https://github.com/allyssonsantos/frigobar/commit/b81d3f3321478f1b5dd6ebec3a108fa52ad2cd85))
+* **core:** add rounded and large props to Button component ([04fe940](https://github.com/allyssonsantos/frigobar/commit/04fe940ed27bbd2cedcaf0950110b7dafa7b1b29))
+* **core:** Badge accepts raw and theme colors ([b9d88a2](https://github.com/allyssonsantos/frigobar/commit/b9d88a27123d5ae94cfa620392044b071f13c7ac))
+* **core:** change primary colors, add new secondary color ([b5fd90f](https://github.com/allyssonsantos/frigobar/commit/b5fd90fa3fa5ec0baa0455df7112c49cd45c1e16))
+* **documentation:** update home page layout ([e587e44](https://github.com/allyssonsantos/frigobar/commit/e587e44345faf62cdaa3fa0495a71c07c52e8815))
+
+
+
+
+
 ## [0.6.1](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.6.0...@frigobar/core@0.6.1) (2020-03-22)
 
 **Note:** Version bump only for package @frigobar/core

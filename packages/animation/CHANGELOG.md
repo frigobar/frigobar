@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/frigobar/frigobar/compare/@frigobar/animation@1.0.0...@frigobar/animation@2.0.0) (2021-06-08)
+
+
+### Features
+
+* **animation:** add hook way animations ([fc76ce4](https://github.com/frigobar/frigobar/commit/fc76ce4e7554458d14522f14874b2ad5370bfafa))
+* **animation:** add true as startOnRender option default value ([67ce278](https://github.com/frigobar/frigobar/commit/67ce2780ba50cb1a39c2aff2c19e6f75882fa034))
+
+
+### BREAKING CHANGES
+
+* **animation:** Remove HOCS animation (withFade and withFlash) and add hooks to do it now, for now
+we have only the useFade hook.
+
+
+
+
+
 # [1.0.0](https://github.com/frigobar/frigobar/compare/@frigobar/animation@0.1.0...@frigobar/animation@1.0.0) (2020-03-22)
 
 

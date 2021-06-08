@@ -2,14 +2,14 @@
   "name": "@frigobar/documentation",
   "private": true,
   "description": "Frigobar website",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Allysson Santos <aallysson0@gmail.com>",
   "bugs": {
     "url": "https://github.com/frigobar/frigobar/issues"
   },
   "dependencies": {
-    "@frigobar/animation": "1.0.0",
-    "@frigobar/core": "0.6.1",
+    "@frigobar/animation": "^2.0.0",
+    "@frigobar/core": "^0.7.0",
     "@mdx-js/mdx": "^1.4.0",
     "@mdx-js/react": "^1.4.0",
     "@mdx-js/tag": "^0.20.3",
