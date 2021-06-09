@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/frigobar/frigobar/compare/@frigobar/documentation@0.3.0...@frigobar/documentation@0.4.0) (2021-06-09)
+
+
+### Bug Fixes
+
+* **documentation:** add try/catch to avoid breaking app, switch editor/preview panels ([fa03218](https://github.com/frigobar/frigobar/commit/fa03218a634257d83d4bb8183667831c76eaeb31))
+
+
+### Features
+
+* **documentation:** update code example and preview styles ([66dab40](https://github.com/frigobar/frigobar/commit/66dab401c828853af84ba18069434d21539a539f))
+
+
+
+
+
 # [0.3.0](https://github.com/frigobar/frigobar/compare/@frigobar/documentation@0.2.1...@frigobar/documentation@0.3.0) (2021-06-08)
 
 
