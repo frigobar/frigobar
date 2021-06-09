@@ -11,6 +11,9 @@ const Container = styled.div(
     width: 100%;
     min-height: ${height}px;
 
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 30%);
+    border-radius: 8px;
+
     @media (max-width: 830px) {
       display: block;
     }
@@ -28,7 +31,14 @@ const sharedStyle = css`
 `;
 
 const HighlightBackground = styled.div`
-  font-size: 1rem;
+  font-size: 0.75rem !important;
+
+  box-shadow: 0px 0px 20px rgb(0 0 0 / 30%);
+  border-radius: 8px;
+
+  .prism-code {
+    border-radius: 8px;
+  }
 `;
 
 const ComponentBackground = styled.div(
@@ -47,6 +57,9 @@ const ComponentBackground = styled.div(
     background-size: 20px 20px;
     background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
 
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+
     > div {
       width: 100%;
       display: flex;
@@ -62,7 +75,11 @@ const EditorBackground = styled.div(
     ${sharedStyle}
 
     div, textarea, pre {
-      font-size: 0.875rem !important;
+      font-size: 0.75rem !important;
+    }
+
+    .live-editor {
+      border-bottom-left-radius: 8px;
     }
     
     textarea, pre {
@@ -93,7 +110,7 @@ const Tab = styled.div(
     border-top-right-radius: ${radius[2]}px;
     border-top-left-radius: ${radius[2]}px;
 
-    background-color: #282a36;
+    background-color: #011627;
 
     + div {
       min-height: 250px;
@@ -114,10 +131,10 @@ const Tab = styled.div(
 
 const ErrorWrapper = styled(Alert)`
   position: absolute;
-  width: 98%;
-  left: 50%;
+  width: 48%;
+  right: 2%;
   bottom: 20px;
-  transform: translateX(-50%);
+  transform: translateX(2%);
 
   pre {
     margin: 0;

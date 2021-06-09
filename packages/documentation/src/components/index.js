@@ -7,6 +7,7 @@ import PropsTable from './PropsTable';
 import SEO from './Seo';
 import InlineCode from './InlineCode';
 import Blockquote from './Blockquote';
+import Wrapper from './Wrapper';
 
 export {
   Code,
@@ -18,4 +19,5 @@ export {
   SEO,
   InlineCode,
   Blockquote,
+  Wrapper,
 };

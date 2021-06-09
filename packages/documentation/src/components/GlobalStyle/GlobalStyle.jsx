@@ -20,6 +20,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 8px;
     overflow: auto;
   }
+
+  pre, textarea, code {
+    font-family: 'Fira Code', monospace !important;
+  }
 `;
 
 export default GlobalStyle;

@@ -11,6 +11,7 @@ import {
   GlobalStyle,
   InlineCode,
   Blockquote,
+  Wrapper,
 } from './src/components';
 import {
   Table,
@@ -42,6 +43,7 @@ const components = {
   td: Td,
   PropsTable,
   blockquote: Blockquote,
+  Wrapper,
   ...frigobar,
   ...animations,
   css,
