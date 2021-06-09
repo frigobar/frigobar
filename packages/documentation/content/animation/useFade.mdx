@@ -47,30 +47,32 @@ Example:
 
 ```jsx react-live=true noInline fileName=fade.jsx
 function App() {
-  /** default options object */
-  const options = {
+  const [{ animation, state, instantState }, toggleFade] = useFade({
     startOnRender: true,
     duration: 300,
     fadeIn: true,
     fadeOut: true,
-  };
-  const [{ animation, state, instantState }, toggleFade] = useFade(options);
+  });
+
+  function handleClick() {
+    toggleFade(!state);
+  }
 
   return (
-    <div style={{ height: 200 }}>
-      <Button
-        skin={instantState ? 'danger' : 'success'}
-        onClick={() => toggleFade(!state)}
-      >
-        {instantState ? 'hide' : 'show'} card
+    <Wrapper height="200px">
+      <div>
+        <p>
+          state: <code>{state.toString()}</code>
+        </p>
+        <p>
+          instantState: <code>{instantState.toString()}</code>
+        </p>
+      </div>
+
+      <Button skin={instantState ? 'danger' : 'success'} onClick={handleClick}>
+        Toggle card
       </Button>
-      <p>
-        The animation state is: <strong>{state.toString()}</strong>
-      </p>
-      <p>
-        The animation instantState is:{' '}
-        <strong>{instantState.toString()}</strong>
-      </p>
+
       {state && (
         <Card
           css={`
@@ -80,7 +82,7 @@ function App() {
           <Card.Content>Frigobar card</Card.Content>
         </Card>
       )}
-    </div>
+    </Wrapper>
   );
 }
 
