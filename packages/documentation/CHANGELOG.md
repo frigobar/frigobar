@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/frigobar/frigobar/compare/@frigobar/documentation@0.2.1...@frigobar/documentation@0.3.0) (2021-06-08)
+
+
+### Features
+
+* **documentation:** add Blockquote custom component ([9958734](https://github.com/frigobar/frigobar/commit/995873461800ea2efcb0d242e7abd383a109af48))
+* **documentation:** adjust some spacing on home page css ([37a5722](https://github.com/frigobar/frigobar/commit/37a5722a2b465a57bf85d86c0340ce6c2c86f19c))
+
+
+
+
+
 ## [0.2.1](https://github.com/frigobar/frigobar/compare/@frigobar/documentation@0.2.0...@frigobar/documentation@0.2.1) (2021-06-08)
 
 **Note:** Version bump only for package @frigobar/documentation
