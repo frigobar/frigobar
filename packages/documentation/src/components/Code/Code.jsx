@@ -74,7 +74,7 @@ const Code = ({
                   return code;
                 }
 
-                return code;
+                return undefined;
               }}
             >
               <EditorBackground>
