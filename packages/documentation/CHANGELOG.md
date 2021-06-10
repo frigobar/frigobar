@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/frigobar/frigobar/compare/@frigobar/documentation@0.4.0...@frigobar/documentation@0.4.1) (2021-06-10)
+
+
+### Bug Fixes
+
+* **documentation:** return undefined on transformCode to avoid errors ([650f693](https://github.com/frigobar/frigobar/commit/650f693999286a6a7ba6c994615c0f2d87eba215))
+
+
+
+
+
 # [0.4.0](https://github.com/frigobar/frigobar/compare/@frigobar/documentation@0.3.0...@frigobar/documentation@0.4.0) (2021-06-09)
 
 
