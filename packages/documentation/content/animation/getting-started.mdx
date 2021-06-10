@@ -44,14 +44,13 @@ Example:
 import React from 'react';
 import { useFade } from '@frigobar/animation';
 
-const Button = props => {
+const Button = () => {
   const [{ animation }] = useFade({
     startOnRender: true,
   });
 
   return (
     <button
-      {...props}
       css={`
         animation: ${animation};
       `}
