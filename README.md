@@ -13,21 +13,17 @@ Frigobar is a simple set of UI tools for your react application.
 
 You can check everything at our [website](https://frigobar.io/).
 
-## Install
+## Packages
 
-You can install Frigobar using either of the methods below.
+Individually versioned libraries, take a look at:
 
-For npm users:
-
-```shell
-  $ npm install @frigobar/core styled-components --save
-```
-
-For Yarn users:
-
-```shell
-  $ yarn add @frigobar/core styled-components
-```
+<!-- prettier-ignore-start -->
+||Package|Description|Version|Size|
+|-|-------|-----------|-------|----|
+|<img src="https://frigobar.io/icons/dance.svg" alt="frigobar animation package" width="150" />|[@frigobar/animation](https://github.com/frigobar/frigobar/tree/master/packages/animation)|Easily add CSS animation to your react styled components via custom hooks.|[![npm version](https://badgen.net/npm/v/@frigobar/animation)](https://www.npmjs.com/package/@frigobar/animation)|[![Bundle size](https://badgen.net/bundlephobia/minzip/@frigobar/animation)](https://bundlephobia.com/result?p=@frigobar/animation)|
+|<img src="https://frigobar.io/icons/stacked.svg" alt="frigobar core package" width="150" />|[@frigobar/core](https://github.com/frigobar/frigobar/tree/master/packages/core)|A collection of simple UI components made with React|[![npm version](https://badgen.net/npm/v/@frigobar/core)](https://www.npmjs.com/package/@frigobar/core)|[![Bundle size](https://badgen.net/bundlephobia/minzip/@frigobar/core)](https://bundlephobia.com/result?p=@frigobar/core)|
+|<img src="https://frigobar.io/logo-text.svg" alt="frigobar animation package" width="150" />|[@frigobar/documentation](https://github.com/frigobar/frigobar/tree/master/packages/documentation)|frigobar.io website|-|-|
+<!-- prettier-ignore-end -->
 
 ## Contributors ✨
 
