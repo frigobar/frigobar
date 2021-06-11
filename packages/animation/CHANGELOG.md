@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.3](https://github.com/frigobar/frigobar/compare/@frigobar/animation@2.0.2...@frigobar/animation@2.0.3) (2021-06-11)
+
+**Note:** Version bump only for package @frigobar/animation
+
+
+
+
+
+## [2.0.2](https://github.com/frigobar/frigobar/compare/@frigobar/animation@2.0.1...@frigobar/animation@2.0.2) (2021-06-11)
+
+
+### Bug Fixes
+
+* **animation:** remove unnecessary semicolon ([675d91a](https://github.com/frigobar/frigobar/commit/675d91aa84f11f3cee97f0103cbbfbbedc90eb92))
+
+
+
+
+
 ## [2.0.1](https://github.com/frigobar/frigobar/compare/@frigobar/animation@2.0.0...@frigobar/animation@2.0.1) (2021-06-08)
 
 

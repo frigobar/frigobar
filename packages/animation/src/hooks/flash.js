@@ -28,7 +28,7 @@ function useFlash({ duration = 300, start = false, infinity, times = 2 }) {
           animation: css`
             ${animation} ${duration}ms ${
             infinity ? 'infinite' : times * 2
-          } alternate-reverse;
+          } alternate-reverse
     `,
           state: animationStart,
         },
