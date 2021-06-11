@@ -22,11 +22,7 @@ const Index = () => {
   const [{ animation: fadeAnimation }] = useFade();
 
   return (
-    <Wrapper
-      css={`
-        animation: ${fadeAnimation};
-      `}
-    >
+    <Wrapper animation={fadeAnimation}>
       <SEO
         title="Frigobar - A simple set of UI tools for your react application."
         titleTemplate=""
