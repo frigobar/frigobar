@@ -24,7 +24,7 @@ const createPackageJson = () => {
 
   const newPackageData = {
     ...packageDataOther,
-    main: './esm/index.js',
+    main: './cjs/index.js',
     module: './esm/index.js',
     private: false,
   };
