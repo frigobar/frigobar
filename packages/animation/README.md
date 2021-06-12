@@ -13,13 +13,13 @@ You can install `@frigobar/animation` using either of the methods below.
 For npm users:
 
 ```shell
-$ npm install @frigobar/animation --save
+npm install @frigobar/animation --save
 ```
 
 For Yarn users:
 
 ```shell
-$ yarn add @frigobar/animation
+yarn add @frigobar/animation
 ```
 
 An important note is that the **styled-components** is a peerDependency
@@ -32,7 +32,22 @@ you dont have styled-components installed you'll
 You can simply import the desired animation from the package and use it in any
 component.
 
+It's highly recommended to install the [babel-plugin](https://github.com/frigobar/frigobar/tree/master/packages/babel-plugin)
+to use the `animation` prop to apply your animations.
+
 Example:
+
+```jsx
+import { useFade } from '@frigobar/animation';
+
+const App = () => {
+  const [{ animation }] = useFade();
+
+  return <div animation={animation}>fade</div>;
+};
+```
+
+Example without `animation` prop:
 
 ```javascript
 import React from 'react';
