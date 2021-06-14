@@ -55,12 +55,13 @@ const Code = ({
                     const transformed = transform(code, {
                       plugins: [
                         require('@babel/plugin-syntax-jsx'),
+                        require('@frigobar/babel-plugin'),
                         require('babel-plugin-styled-components'),
                       ],
                     }).code;
 
                     const withoutImport = transformed.replace(
-                      'import _styled from "styled-components";',
+                      /import _?styled[0-9]? from "styled-components"/gi,
                       '',
                     );
                     const withoutStyled = withoutImport.replace(
