@@ -49,9 +49,6 @@ Example:
 function App() {
   const [{ animation, state, instantState }, toggleFade] = useFade({
     startOnRender: true,
-    duration: 300,
-    fadeIn: true,
-    fadeOut: true,
   });
 
   function handleClick() {
@@ -74,11 +71,7 @@ function App() {
       </Button>
 
       {state && (
-        <Card
-          css={`
-            animation: ${animation};
-          `}
-        >
+        <Card animation={animation}>
           <Card.Content>Frigobar card</Card.Content>
         </Card>
       )}
