@@ -32,10 +32,15 @@ It's very easy to start using frigobar in your react application:
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button } from '@frigobar/core';
+import { ThemeProvider } from 'styled-components';
+import { theme, Button } from '@frigobar/core';
 
 function App() {
-  return <Button>Button</Button>;
+  return (
+    <ThemeProvider theme={theme}>
+      <Button>Button</Button>
+    </ThemeProvider>
+  );
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
