@@ -1,0 +1,49 @@
+---
+title: Babel plugin
+menu: guide
+---
+
+Easily use `@frigobar/animation` animation hooks through an `animation` prop.
+
+Just add the animation prop directly on the component with the desired
+animation to apply it.
+
+```jsx
+function App() {
+  const [{ animation }] = useFade({ duration: 1000 });
+
+  return <div animation={animation}>Fade animation</div>;
+}
+```
+
+## Installation
+
+You can install `@frigobar/babel-plugin` using either of the methods below.
+
+For npm users:
+
+```shell
+npm install @frigobar/babel-plugin babel-plugin-styled-components --save-dev
+```
+
+For Yarn users:
+
+```shell
+yarn add @frigobar/babel-plugin babel-plugin-styled-components --dev
+```
+
+Make sure to also install the
+[babel-plugin-styled-components](https://github.com/styled-components/babel-plugin-styled-components)
+
+## Usage
+
+Just include `@frigobar/babel-plugin` on your `.babelrc` or `babel.config.js`.
+
+Also add `babel-plugin-styled-components`.
+
+```js
+{
+  "plugins": ["babel-plugin-styled-components", "@frigobar/babel-plugin"]
+}
+
+```
