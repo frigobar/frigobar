@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/frigobar/frigobar/compare/@frigobar/documentation@0.4.3...@frigobar/documentation@0.5.0) (2021-06-14)
+
+
+### Features
+
+* **documentation:** add "Babel plugin" page ([5efcab4](https://github.com/frigobar/frigobar/commit/5efcab4e6d764a091bd953396042487ebc4f5a1e))
+* **documentation:** add @frigobar/babel-plugin on transformCode from LiveProvider ([6e112bf](https://github.com/frigobar/frigobar/commit/6e112bfe5ddfced24b20ccdfbe941aaa5ab66b1d))
+
+
+
+
+
 ## [0.4.3](https://github.com/frigobar/frigobar/compare/@frigobar/documentation@0.4.2...@frigobar/documentation@0.4.3) (2021-06-11)
 
 **Note:** Version bump only for package @frigobar/documentation
