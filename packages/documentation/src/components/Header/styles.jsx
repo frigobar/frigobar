@@ -49,7 +49,12 @@ const Brand = styled(Link)`
   width: 115px;
 
   @media (max-width: 830px) {
+    width: 105px;
+    min-height: 25px;
+
     font-size: 1rem;
+
+    background-size: 105px;
   }
 `;
 

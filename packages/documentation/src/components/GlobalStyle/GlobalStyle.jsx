@@ -16,6 +16,12 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Noto Sans JP', sans-serif;
   }
 
+  html {
+    @media (max-width: 768px) {
+      font-size: 80%;
+    }
+  }
+
   pre {
     padding: 8px;
     overflow: auto;
