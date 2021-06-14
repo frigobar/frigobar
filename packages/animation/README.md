@@ -1,6 +1,6 @@
 # `@frigobar/animation`
 
-Easily add CSS animation to your react styled components via custom
+Easily add CSS animation to your react components via custom
 [hooks](https://reactjs.org/docs/hooks-custom.html).
 
 > All the animations are created with
