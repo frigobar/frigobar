@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/frigobar/frigobar/compare/@frigobar/documentation@0.5.0...@frigobar/documentation@0.6.0) (2021-06-14)
+
+
+### Features
+
+* **documentation:** font-size 80% on small resolutions ([e961cef](https://github.com/frigobar/frigobar/commit/e961cef88ba59ed65635dc2f1301678883ec00b2))
+
+
+
+
+
 # [0.5.0](https://github.com/frigobar/frigobar/compare/@frigobar/documentation@0.4.3...@frigobar/documentation@0.5.0) (2021-06-14)
 
 
