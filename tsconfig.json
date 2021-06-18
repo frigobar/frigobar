@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@frigobar/animation": ["packages/animation/src"],
+      "@frigobar/babel-plugin": ["packages/babel-plugin/src"],
+      "@frigobar/core": ["packages/core/src"],
+    },
+    "allowJs": true,
+    "baseUrl": ".",
+    "sourceMap": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true,
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "lib": ["dom"],
+    "strict": true
+  },
+  "exclude": ["node_modules", "static"]
+}
