@@ -27,6 +27,7 @@ const createPackageJson = () => {
     main: './cjs/index.js',
     module: './esm/index.js',
     private: false,
+    types: './@types/index.d.ts',
   };
 
   const buildPath = path.resolve(__dirname, '../dist/package.json');
