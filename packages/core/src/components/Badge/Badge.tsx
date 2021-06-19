@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const badgeAlignment = {
@@ -68,7 +67,9 @@ const StyledBadge = styled.span<{
 );
 
 interface BadgeProps {
+  /** where badge will be displayed */
   children?: React.ReactNode;
+  /** change badge color, it can be any color theme property, like "primary", "info", "success", etc. Or a custom name/hex color (#000) */
   color:
     | 'primary'
     | 'secondary'
@@ -77,7 +78,9 @@ interface BadgeProps {
     | 'warning'
     | 'danger'
     | 'neutral';
+  /** the number to be displayed inside badge */
   content: number;
+  /** in which component corner to align the badge */
   alignment: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 }
 
@@ -107,22 +110,6 @@ Badge.defaultProps = {
   children: undefined,
   content: undefined,
   alignment: 'top-right',
-};
-
-Badge.propTypes = {
-  /** change badge color, it can be any color theme property, like "primary", "info", "success", etc. Or a custom name/hex color (#000) */
-  color: PropTypes.string,
-  /** where badge will be displayed */
-  children: PropTypes.node,
-  /** the number to be displayed inside badge */
-  content: PropTypes.number,
-  /** in which component corner to align the badge */
-  alignment: PropTypes.oneOf([
-    'top-left',
-    'top-right',
-    'bottom-left',
-    'bottom-right',
-  ]),
 };
 
 export default Badge;
