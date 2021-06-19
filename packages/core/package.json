@@ -2,7 +2,7 @@
   "name": "@frigobar/core",
   "version": "0.8.1",
   "description": "A component library",
-  "main": "./src/index.js",
+  "main": "./src/index.ts",
   "scripts": {
     "clean:build": "rm -rf ./dist",
     "copy-files": "babel-node ./scripts/copy-files.js",
@@ -45,6 +45,7 @@
     "directory": "dist"
   },
   "devDependencies": {
+    "@types/styled-components": "^5.1.10",
     "babel-plugin-styled-components": "^1.12.0",
     "prop-types": "^15.7.2",
     "styled-components": "^5.2.3"
