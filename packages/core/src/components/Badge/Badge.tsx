@@ -30,7 +30,11 @@ const Root = styled.span`
   position: relative;
 `;
 
-const StyledBadge = styled.span(
+const StyledBadge = styled.span<{
+  alignment: BadgeProps['alignment'];
+  color: BadgeProps['color'];
+  hasChildren: boolean;
+}>(
   ({
     alignment,
     color,
@@ -63,11 +67,29 @@ const StyledBadge = styled.span(
   `,
 );
 
-const Badge = ({ children, color, theme, content, alignment }) => (
+interface BadgeProps {
+  children?: React.ReactNode;
+  color:
+    | 'primary'
+    | 'secondary'
+    | 'info'
+    | 'success'
+    | 'warning'
+    | 'danger'
+    | 'neutral';
+  content: number;
+  alignment: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+}
+
+const Badge = ({
+  children,
+  color,
+  content,
+  alignment,
+}: BadgeProps): JSX.Element => (
   <Root>
     {children}
     <StyledBadge
-      theme={theme}
       color={color}
       role="status"
       aria-live="polite"
