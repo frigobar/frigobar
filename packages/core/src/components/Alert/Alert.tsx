@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { useFade } from '@frigobar/animation';
 
 import CloseIcon from '../../assets/close.svg';
 
-const CloseButton = styled.button`
+const CloseButton = styled.button<{ withText: boolean }>`
   align-items: center;
   background-color: transparent;
   border: 0;
@@ -29,22 +28,23 @@ const CloseButton = styled.button`
     theme: {
       colors: { neutral },
     },
-  }) =>
+  }): string | false =>
     withText &&
     `
-    border-radius: none;
-    color: ${neutral[700]};
-    padding: 0;
-    top: 12px;
+      border-radius: none;
+      color: ${neutral[700]};
+      padding: 0;
+      top: 12px;
 
-    &:hover, &:focus {
-      background-color: transparent;
-      color: ${neutral[900]};
-    }
-  `}
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        color: ${neutral[900]};
+      }
+    `}
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ type: AlertProps['type'] }>`
   border-radius: 4px;
   font-size: 0.875rem;
   position: relative;
@@ -60,7 +60,7 @@ const Wrapper = styled.div`
       },
     },
     type,
-  }) => `
+  }): string => `
     background-color: ${backgroundColor[type]};
     border: ${width}px solid ${borderColor[type]};
     color: ${colors.black};
@@ -68,13 +68,23 @@ const Wrapper = styled.div`
   `}
 `;
 
-const Close = ({ onClick, text, theme, ariaLabel, ...props }) => (
+interface CloseProps {
+  onClick: (event: React.MouseEvent<HTMLElement>) => void;
+  text?: string;
+  ariaLabel?: string;
+}
+
+const Close = ({
+  onClick,
+  text,
+  ariaLabel,
+  ...props
+}: CloseProps): JSX.Element => (
   <CloseButton
     {...props}
     onClick={onClick}
-    withText={text}
+    withText={Boolean(text)}
     aria-label={text ? undefined : ariaLabel}
-    theme={theme}
   >
     {!text ? (
       <CloseIcon width="10" height="10" aria-hidden="true" />
@@ -84,28 +94,38 @@ const Close = ({ onClick, text, theme, ariaLabel, ...props }) => (
   </CloseButton>
 );
 
-Close.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  text: PropTypes.string,
-  ariaLabel: PropTypes.string,
-};
-
 Close.defaultProps = {
   text: undefined,
   ariaLabel: 'close',
 };
 
+interface AlertProps {
+  /** content to be displayed inside alert */
+  children: React.ReactNode;
+  /** change the colors of the wrapper */
+  type?: 'success' | 'info' | 'danger' | 'warning' | 'neutral';
+  /** display close button */
+  closable?: boolean;
+  /** function when close button is clicked */
+  onClose?: (event: React.MouseEvent<HTMLElement>) => void;
+  /** if you want to display a text instead of the "X" button */
+  closeText?: string;
+  /** aria-label to be in close button */
+  closeIconAriaLabel?: string;
+  /** shows alert if true */
+  show?: boolean;
+}
+
 const Alert = ({
   children,
   type,
   closable,
-  theme,
   onClose,
   closeText,
   closeIconAriaLabel,
   show,
   ...props
-}) => {
+}: AlertProps): JSX.Element | null => {
   const [{ animation, state }, toggle] = useFade({ startOnRender: show });
 
   useEffect(() => {
@@ -115,7 +135,6 @@ const Alert = ({
   return state ? (
     <Wrapper
       {...props}
-      theme={theme}
       type={type}
       role="alert"
       css={`
@@ -125,10 +144,9 @@ const Alert = ({
       {closable && (
         <Close
           text={closeText}
-          theme={theme}
           ariaLabel={closeIconAriaLabel}
-          onClick={e => {
-            onClose(e);
+          onClick={(e): void => {
+            onClose && onClose(e);
           }}
         />
       )}
@@ -137,27 +155,10 @@ const Alert = ({
   ) : null;
 };
 
-Alert.propTypes = {
-  /** content to be displayed inside alert */
-  children: PropTypes.node.isRequired,
-  /** change the colors of the wrapper */
-  type: PropTypes.oneOf(['success', 'info', 'danger', 'warning', 'neutral']),
-  /** display close button */
-  closable: PropTypes.bool,
-  /** function when close button is clicked */
-  onClose: PropTypes.func,
-  /** if you want to display a text instead of the "X" button */
-  closeText: PropTypes.string,
-  /** aria-label to be in close button */
-  closeIconAriaLabel: PropTypes.string,
-  /** shows alert if true */
-  show: PropTypes.bool,
-};
-
 Alert.defaultProps = {
   type: 'neutral',
   closable: undefined,
-  onClose: () => {},
+  onClose: undefined,
   closeText: undefined,
   closeIconAriaLabel: undefined,
   show: undefined,

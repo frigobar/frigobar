@@ -7,19 +7,19 @@ describe('<Alert />', () => {
   describe('Snapshots', () => {
     it('should match snapshot with all types', () => {
       const alerts = [
-        <Alert show type="neutral">
+        <Alert show type="neutral" key="neutral">
           Alert
         </Alert>,
-        <Alert show type="info">
+        <Alert show type="info" key="info">
           Alert
         </Alert>,
-        <Alert show type="warning">
+        <Alert show type="warning" key="warning">
           Alert
         </Alert>,
-        <Alert show type="danger">
+        <Alert show type="danger" key="danger">
           Alert
         </Alert>,
-        <Alert show type="success">
+        <Alert show type="success" key="success">
           Alert
         </Alert>,
       ];
