@@ -1,8 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Btn = styled.button`
+interface ButtonProps {
+  children: React.ReactNode;
+  /** Change background-color */
+  skin?: 'primary' | 'info' | 'success' | 'danger' | 'warning' | 'neutral';
+  /** change the width, height and font-size values */
+  size?: 'small' | 'medium' | 'large' | undefined;
+  /** Change disabled state of the button */
+  disabled?: boolean;
+  /** 100% width */
+  full?: boolean;
+  /** add border-radius circle */
+  rounded?: boolean;
+  /** large button */
+  large?: boolean;
+}
+
+const Button = styled.button<ButtonProps>`
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -59,37 +74,6 @@ const Btn = styled.button`
     ${rounded ? `border-radius: ${radius[3]}px` : ''}
   `}
 `;
-
-const Button = React.forwardRef(
-  ({ children, theme, size, full, ...props }, ref) => (
-    <Btn theme={theme} size={size} full={full} ref={ref} {...props}>
-      {children}
-    </Btn>
-  ),
-);
-
-Button.propTypes = {
-  children: PropTypes.node.isRequired,
-  /** change background-color */
-  skin: PropTypes.oneOf([
-    'primary',
-    'info',
-    'success',
-    'danger',
-    'warning',
-    'neutral',
-  ]),
-  /** disabled state of the button */
-  disabled: PropTypes.bool,
-  /** change the width, height and font-size values */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  /** 100% width */
-  full: PropTypes.bool,
-  /** add border-radius circle */
-  rounded: PropTypes.bool,
-  /** large button */
-  large: PropTypes.bool,
-};
 
 Button.defaultProps = {
   skin: 'neutral',
