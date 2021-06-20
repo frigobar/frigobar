@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.div(
@@ -15,6 +14,7 @@ const Wrapper = styled.div(
   position: relative;
 `,
 );
+
 const Image = styled.img`
   position: absolute;
   top: 50%;
@@ -22,16 +22,16 @@ const Image = styled.img`
   width: 100%;
 `;
 
-const Media = ({ src, ...props }) => (
+export interface MediaProps {
+  /** an image url to display the media */
+  src: string;
+}
+
+const Media = ({ src, ...props }: MediaProps): JSX.Element => (
   <Wrapper {...props}>
     <Image src={src} />
   </Wrapper>
 );
-
-Media.propTypes = {
-  /** an image url to display the media */
-  src: PropTypes.string.isRequired,
-};
 
 Media.displayName = 'Card.Media';
 

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 const alignDictionary = {
   left: 'flex-start',
@@ -8,7 +7,9 @@ const alignDictionary = {
   'space-around': 'space-around',
 };
 
-const Footer = styled.footer(
+const Footer = styled.footer<{
+  align: 'left' | 'right' | 'space-between' | 'space-around';
+}>(
   ({
     align,
     theme: {
@@ -27,10 +28,6 @@ const Footer = styled.footer(
 );
 
 Footer.displayName = 'Card.Footer';
-
-Footer.propTypes = {
-  align: PropTypes.oneOf(['left', 'right', 'space-between', 'space-around']),
-};
 
 Footer.defaultProps = {
   align: 'left',

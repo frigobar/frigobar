@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import styled, { withTheme } from 'styled-components';
+import styled, { withTheme, DefaultTheme } from 'styled-components';
 
 import Avatar from './Avatar';
 
@@ -20,11 +19,20 @@ const Wrapper = styled.header(
 `,
 );
 
-const ChildrenWrapper = styled.div(
+const ChildrenWrapper = styled.div<{ hasAvatar: boolean }>(
   ({ hasAvatar, theme: { spacings } }) => `
   ${hasAvatar && `margin-left: ${spacings.small}px;`}
 `,
 );
+
+export interface HeaderProps {
+  children: React.ReactNode;
+  /** an image url to be displayed as an avatar */
+  avatar?: string;
+  /** change border-radius to 9999 */
+  avatarRounded?: boolean;
+  theme: DefaultTheme;
+}
 
 const Header = ({
   children,
@@ -34,7 +42,7 @@ const Header = ({
     components: { card },
   },
   ...props
-}) => (
+}: HeaderProps) => (
   <Wrapper {...props}>
     {avatar && (
       <Avatar
@@ -44,17 +52,9 @@ const Header = ({
         height={card.avatar.size}
       />
     )}
-    <ChildrenWrapper hasAvatar={avatar}>{children}</ChildrenWrapper>
+    <ChildrenWrapper hasAvatar={Boolean(avatar)}>{children}</ChildrenWrapper>
   </Wrapper>
 );
-
-Header.propTypes = {
-  children: PropTypes.node.isRequired,
-  /** an image url to be displayed as an avatar */
-  avatar: PropTypes.string,
-  /** change border-radius to 9999 */
-  avatarRounded: PropTypes.bool,
-};
 
 Header.defaultProps = {
   avatar: undefined,

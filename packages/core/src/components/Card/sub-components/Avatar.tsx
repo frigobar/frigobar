@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-const Avatar = styled.img(
+const Avatar = styled.img<{
+  rounded?: boolean;
+}>(
   ({
     rounded,
     theme: {
