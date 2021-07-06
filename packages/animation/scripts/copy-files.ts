@@ -1,8 +1,8 @@
-const path = require('path');
-const fs = require('fs');
-const pkg = require('../package.json');
+import path from 'path';
+import fs from 'fs';
+import pkg from '../package.json';
 
-const copyFile = file => {
+const copyFile = (file: string) => {
   const buildPath = path.resolve(__dirname, '../dist/', path.basename(file));
   fs.copyFile(
     file,
@@ -12,15 +12,7 @@ const copyFile = file => {
 };
 
 const createPackageJson = () => {
-  const {
-    scripts,
-    devDependencies,
-    'lint-staged': lintStaged,
-    jest,
-    config,
-    release,
-    ...packageDataOther
-  } = pkg;
+  const { scripts, devDependencies, ...packageDataOther } = pkg;
 
   const newPackageData = {
     ...packageDataOther,
