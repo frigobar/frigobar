@@ -8,7 +8,11 @@
     "test": "lerna run test --stream",
     "test:update": "lerna run test:update --stream",
     "dev": "lerna run dev --scope=@frigobar/documentation --stream",
-    "lint": "eslint ./packages --ext .js,.jsx,.ts,.tsx",
+    "lint": "yarn lint:animation && yarn lint:babel-plugin && yarn lint:core && yarn lint:documentation",
+    "lint:animation": "eslint ./packages/animation --ext .js,.jsx,.ts,.tsx",
+    "lint:babel-plugin": "eslint ./packages/babel-plugin --ext .js,.jsx",
+    "lint:core": "eslint ./packages/core --ext .js,.jsx,.ts,.tsx",
+    "lint:documentation": "eslint ./packages/documentation --ext .js,.jsx,.ts,.tsx",
     "commitizen": "git-cz",
     "new": "node ./packages/core/scripts/cli/index.js"
   },
@@ -51,7 +55,7 @@
     "react-dom": "^16.9.0",
     "react-svg-loader": "^3.0.3",
     "svg-react-loader": "^0.4.6",
-    "typescript": "^4.3.4",
+    "typescript": "4.2.2",
     "url-loader": "^2.2.0"
   },
   "config": {
