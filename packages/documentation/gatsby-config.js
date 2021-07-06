@@ -1,5 +1,3 @@
-const styledResolver = require('react-docgen-styled-component-resolver');
-
 module.exports = {
   siteMetadata: {
     title: `Frigobar`,
@@ -14,12 +12,6 @@ module.exports = {
     'gatsby-plugin-typescript',
     'gatsby-plugin-cname',
     'gatsby-plugin-styled-components',
-    {
-      resolve: 'gatsby-transformer-react-docgen',
-      options: {
-        resolver: styledResolver,
-      },
-    },
     {
       resolve: `gatsby-plugin-react-svg`,
       options: {
