@@ -1,5 +1,21 @@
 import { useState, useCallback } from 'react';
-import { keyframes, css } from 'styled-components';
+import { keyframes, css, FlattenSimpleInterpolation } from 'styled-components';
+
+interface IFade {
+  fadeIn?: boolean;
+  fadeOut?: boolean;
+  duration?: number;
+  startOnRender?: boolean;
+}
+
+type ReturnedAnimation = [
+  {
+    animation: FlattenSimpleInterpolation;
+    state: boolean;
+    instantState: boolean;
+  },
+  (state: any) => void,
+];
 
 const fadeInAnimation = keyframes`
   0% {
@@ -19,7 +35,12 @@ const fadeOutAnimation = keyframes`
   }
 `;
 
-const generateAnimation = ({ fadeIn, fadeOut, duration, start }) => {
+const generateAnimation = ({
+  fadeIn,
+  fadeOut,
+  duration,
+  start,
+}: Omit<IFade, 'startOnRender'> & { start: boolean }) => {
   if (fadeIn && fadeOut) {
     return {
       animationName: start ? fadeInAnimation : fadeOutAnimation,
@@ -48,7 +69,7 @@ function useFade({
   fadeOut = true,
   duration = 300,
   startOnRender = true,
-} = {}) {
+}: IFade & {} = {}): ReturnedAnimation {
   const [start, setStart] = useState(Boolean(startOnRender));
   const [animationState, setAnimationState] = useState(Boolean(startOnRender));
 
@@ -80,7 +101,7 @@ function useFade({
 
   if (!animation) {
     return [
-      { animation: '', state: start, instantState: animationState },
+      { animation: css`none`, state: start, instantState: animationState },
       toggle,
     ];
   }

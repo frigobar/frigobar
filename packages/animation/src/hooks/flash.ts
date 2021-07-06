@@ -1,5 +1,20 @@
 import { useEffect, useState } from 'react';
-import { keyframes, css } from 'styled-components';
+import { keyframes, css, FlattenSimpleInterpolation } from 'styled-components';
+
+interface IFlash {
+  duration: number;
+  start: boolean;
+  infinity: boolean;
+  times: number;
+}
+
+type ReturnedAnimation = [
+  {
+    animation: FlattenSimpleInterpolation;
+    state: boolean;
+  },
+  (state: any) => void,
+];
 
 const animation = keyframes`
   from {
@@ -11,7 +26,12 @@ const animation = keyframes`
   }
 `;
 
-function useFlash({ duration = 300, start = false, infinity, times = 2 }) {
+function useFlash({
+  duration = 300,
+  start = false,
+  infinity = false,
+  times = 2,
+}: IFlash): ReturnedAnimation {
   const [animationStart, setAnimationStart] = useState(start);
 
   useEffect(() => {
@@ -34,7 +54,7 @@ function useFlash({ duration = 300, start = false, infinity, times = 2 }) {
         },
         setAnimationStart,
       ]
-    : [{ animation: '', state: animationStart }, setAnimationStart];
+    : [{ animation: css`none`, state: animationStart }, setAnimationStart];
 }
 
 export default useFlash;
