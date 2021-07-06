@@ -6,7 +6,7 @@ import Button from '../Button';
 
 describe('<Card />', () => {
   describe('Snapshots', () => {
-    const Component = ({ rounded }) => (
+    const Component = ({ rounded }: { rounded?: boolean }) => (
       <Card maxWidth="400px">
         <Card.Header
           avatarRounded={rounded}

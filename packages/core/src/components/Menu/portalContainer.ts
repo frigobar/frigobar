@@ -1,8 +1,7 @@
 /**
  * Creates DOM element to be used as React root.
- * @returns {HTMLElement}
  */
-function createRootElement(id) {
+function createRootElement(id: string) {
   const rootContainer = document.createElement('div');
   rootContainer.setAttribute('id', id);
 
@@ -11,17 +10,15 @@ function createRootElement(id) {
 
 /**
  * Appends element as last child of body.
- * @param {HTMLElement} rootElem
  */
-function addRootElement(rootElem) {
+function addRootElement(rootElem: HTMLElement) {
   document.body.appendChild(rootElem);
 }
 
 /**
  * Creates or return the current container DOM element to be the portal root.
- * @param {String} id
  */
-const portalContainer = id => {
+const portalContainer = (id: string): HTMLDivElement => {
   const rootElement = createRootElement(id);
 
   const parent = document.querySelector(`#${id}`);

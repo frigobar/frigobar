@@ -48,23 +48,11 @@ const Wrapper = styled.div<{ type: AlertProps['type'] }>`
   border-radius: 4px;
   font-size: 0.875rem;
   position: relative;
-  ${({
-    theme: {
-      colors,
-      components: {
-        alert: {
-          backgroundColor,
-          border: { width, color: borderColor },
-          padding: { top, right, bottom, left },
-        },
-      },
-    },
-    type,
-  }): string => `
-    background-color: ${backgroundColor[type]};
-    border: ${width}px solid ${borderColor[type]};
+  ${({ theme: { colors, borders, spacings }, type = 'neutral' }): string => `
+    background-color: ${colors[type][50]};
+    border: ${borders.tiny}px solid ${colors[type][200]};
     color: ${colors.black};
-    padding: ${top}px ${right}px ${bottom}px ${left}px;
+    padding: ${spacings.small}px;
   `}
 `;
 
@@ -113,17 +101,17 @@ interface AlertProps {
   /** aria-label to be in close button */
   closeIconAriaLabel?: string;
   /** shows alert if true */
-  show?: boolean;
+  show: boolean;
 }
 
 const Alert = ({
   children,
-  type,
+  type = 'neutral',
   closable,
   onClose,
   closeText,
   closeIconAriaLabel,
-  show,
+  show = false,
   ...props
 }: AlertProps): JSX.Element | null => {
   const [{ animation, state }, toggle] = useFade({ startOnRender: show });
@@ -153,15 +141,6 @@ const Alert = ({
       {children}
     </Wrapper>
   ) : null;
-};
-
-Alert.defaultProps = {
-  type: 'neutral',
-  closable: undefined,
-  onClose: undefined,
-  closeText: undefined,
-  closeIconAriaLabel: undefined,
-  show: undefined,
 };
 
 export default Alert;

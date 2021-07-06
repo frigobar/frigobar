@@ -38,23 +38,20 @@ const StyledBadge = styled.span<{
     alignment,
     color,
     hasChildren,
-    theme: {
-      colors,
-      components: { badge },
-    },
+    theme: { colors, spacings, radius, baseFontSize },
   }) => `
     display: flex;
     align-items: center;
     justify-content: center;
 
-    padding: ${badge.padding}px;
+    padding: ${spacings.xxsmall}px;
 
-    border-radius: ${badge.border.radius}px;
+    border-radius: ${radius[1]}px;
     background-color: ${(colors[color] && colors[color][500]) || color};
 
     color: ${colors.white};
-    font-size: ${badge.font.size}px;
-    line-height: ${badge.font.size}px;
+    font-size: ${baseFontSize * 0.75}px;
+    line-height: ${baseFontSize * 0.75}px;
     ${
       hasChildren
         ? `

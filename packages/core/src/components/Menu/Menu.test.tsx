@@ -6,7 +6,7 @@ import theme from '../../theme';
 
 import Menu from '.';
 
-const Component = ({ openned }) => {
+const Component = ({ openned }: { openned?: boolean }) => {
   const [open, setOpen] = useState(openned);
   const buttonRef = useRef(null);
 
@@ -28,16 +28,10 @@ const Component = ({ openned }) => {
 describe('<Menu />', () => {
   describe('snapshots', () => {
     it('should match', () => {
-      const { console } = global;
-      global.console = { error: jest.fn() };
-
-      const { container, unmount } = render(<Component openned />, {
+      const { container } = render(<Component openned />, {
         container: document.body,
       });
       expect(container).toMatchSnapshot();
-
-      unmount();
-      global.console = console;
     });
   });
 });

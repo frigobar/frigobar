@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { useFade } from '@frigobar/animation';
 
@@ -8,14 +7,8 @@ import portalContainer from './portalContainer';
 
 const PORTAL_CONTAINER_NAME = 'frigobar-menu';
 
-const List = styled.ul(
-  ({
-    top,
-    left,
-    theme: {
-      components: { menu },
-    },
-  }) => `
+const List = styled.ul<{ top: number; left: number }>(
+  ({ top, left, theme: { colors, radius } }) => `
     position: absolute;
     top: ${top}px;
     left: ${left}px;
@@ -24,8 +17,8 @@ const List = styled.ul(
     margin: 0;
     padding: 0;
 
-    background-color: ${menu.backgroundColor};
-    border-radius: ${menu.radius}px;
+    background-color: ${colors.white};
+    border-radius: ${radius[1]}px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 
     list-style: none;
@@ -39,39 +32,46 @@ const List = styled.ul(
 );
 
 const Item = styled.a(
-  ({
-    theme: {
-      components: { menu },
-    },
-  }) => `
-  display: block;
-  padding:
-    ${menu.item.padding.top}px
-    ${menu.item.padding.right}px
-    ${menu.item.padding.bottom}px
-    ${menu.item.padding.left}px;
+  ({ theme: { spacings, colors } }) => `
+    display: block;
+    padding: ${spacings.xsmall}px;
+      
+    color: inherit;
 
-  color: inherit;
+    cursor: pointer;
+    text-decoration: none;
 
-  cursor: pointer;
-  text-decoration: none;
-
-  &:hover {
-    background-color: ${menu.item.hoverColor};
-  }
-`,
+    &:hover {
+      background-color: ${colors.primary[200]};
+    }
+  `,
 );
+
+interface MenuProps {
+  children: React.ReactNode;
+  /** a react component ref to be the anchor of the menu items */
+  anchorElement: React.RefObject<HTMLElement>;
+  /** whether the menu is visible or not */
+  open: boolean;
+  /** function called when user clicks outside the menu */
+  handleClickAway?: (event: MouseEvent) => void;
+  /** duration of the fade in/out animation */
+  fadeDuration?: number;
+}
 
 const Menu = ({
   children,
   anchorElement,
   open,
-  handleClickAway,
+  handleClickAway = () => null,
   fadeDuration,
   ...props
-}) => {
+}: MenuProps): JSX.Element | null => {
   const [mounted, setMounted] = useState(false);
-  const [anchorPosition, setAnchorPosition] = useState({});
+  const [anchorPosition, setAnchorPosition] = useState<{
+    top: number;
+    left: number;
+  }>({ top: 0, left: 0 });
   const [{ animation, state }, toggleFade] = useFade({
     duration: fadeDuration,
   });
@@ -80,12 +80,13 @@ const Menu = ({
     handleClickAway,
   ]);
 
-  const menuRef = useRef(null);
+  const menuRef = useRef<HTMLUListElement>(null);
 
   const clickAway = useCallback(
     event => {
       if (
         !menuRef.current?.contains(event.target) &&
+        anchorElement.current &&
         !anchorElement.current.contains(event.target)
       ) {
         safeHandleClickAway(event);
@@ -115,13 +116,15 @@ const Menu = ({
   }, [clickAway, open]);
 
   useEffect(() => {
-    const {
-      top,
-      left,
-      height,
-    } = anchorElement.current?.getBoundingClientRect();
+    if (anchorElement.current) {
+      const {
+        top,
+        left,
+        height,
+      } = anchorElement.current?.getBoundingClientRect();
 
-    setAnchorPosition({ top: top + height - 3, left: left + 3 });
+      setAnchorPosition({ top: top + height - 3, left: left + 3 });
+    }
   }, [anchorElement]);
 
   if (mounted) {
@@ -145,7 +148,8 @@ const Menu = ({
             ))}
           </List>
         ) : null,
-        document.querySelector('#frigobar-menu'),
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        document.querySelector('#frigobar-menu')!,
       )
     : null;
 };
@@ -155,24 +159,8 @@ Item.displayName = 'Menu.Item';
 
 Menu.Item = Item;
 
-Menu.propTypes = {
-  /** a react component ref to be the anchor of the menu items */
-  anchorElement: PropTypes.shape({
-    current: PropTypes.instanceOf(
-      typeof Element === 'undefined' ? Object : Element,
-    ),
-  }).isRequired,
-  /** duration of the fade in/out animation */
-  fadeDuration: PropTypes.number,
-  /** function called when user clicks outside the menu */
-  handleClickAway: PropTypes.func,
-  /** whether the menu is visible or not */
-  open: PropTypes.bool,
-};
-
 Menu.defaultProps = {
   fadeDuration: 300,
-  handleClickAway: () => {},
   open: false,
 };
 
