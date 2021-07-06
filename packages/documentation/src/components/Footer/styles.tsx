@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.footer(
+const Wrapper = styled.footer<{ home?: boolean }>(
   ({ home, theme: { spacings } }) => `
     grid-area: footer;
 

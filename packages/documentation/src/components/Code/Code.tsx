@@ -1,11 +1,10 @@
 /* eslint-disable global-require */
 import React, { useState, useRef } from 'react';
 import styled, { css } from 'styled-components';
-import PropTypes from 'prop-types';
-import Highlight, { defaultProps } from 'prism-react-renderer';
+import Highlight, { defaultProps, Language } from 'prism-react-renderer';
 import dracula from 'prism-react-renderer/themes/nightOwl';
-import { transform } from '@babel/core';
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
+import { transform } from '@babel/standalone';
+import { LiveProvider, LiveEditor, LivePreview } from 'react-live';
 import { MDXContext } from '@mdx-js/react';
 
 import { useComponent } from '../../contexts/component';
@@ -18,14 +17,23 @@ import {
   HighlightBackground,
 } from './styles';
 
+interface CodeProps {
+  codeString: string;
+  language: Language;
+  'react-live'?: string;
+  noInline?: boolean;
+  height?: string;
+  fileName?: string;
+}
+
 const Code = ({
-  codeString,
-  language,
+  codeString = '',
+  language = 'jsx',
   'react-live': reactLive,
   noInline,
-  height,
-  fileName,
-}) => {
+  height = '500',
+  fileName = '',
+}: CodeProps): JSX.Element => {
   const { name } = useComponent();
 
   if (reactLive) {
@@ -75,7 +83,7 @@ const Code = ({
                   return code;
                 }
 
-                return undefined;
+                return code;
               }}
             >
               <EditorBackground>
@@ -88,9 +96,7 @@ const Code = ({
               <ComponentBackground>
                 <LivePreview />
               </ComponentBackground>
-              <Error>
-                <LiveError />
-              </Error>
+              <Error />
             </LiveProvider>
           )}
         </MDXContext.Consumer>
@@ -108,9 +114,9 @@ const Code = ({
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={className} style={style}>
             {tokens.map((line, i) => (
-              <div {...getLineProps({ line, key: i })}>
+              <div key={i} {...getLineProps({ line, key: i })}>
                 {line.map((token, key) => (
-                  <span {...getTokenProps({ token, key })} />
+                  <span key={key} {...getTokenProps({ token, key })} />
                 ))}
               </div>
             ))}
@@ -119,24 +125,6 @@ const Code = ({
       </Highlight>
     </HighlightBackground>
   );
-};
-
-Code.propTypes = {
-  codeString: PropTypes.string,
-  language: PropTypes.string,
-  'react-live': PropTypes.string,
-  noInline: PropTypes.bool,
-  height: PropTypes.string,
-  fileName: PropTypes.string,
-};
-
-Code.defaultProps = {
-  codeString: '',
-  language: '',
-  'react-live': undefined,
-  noInline: false,
-  height: '500',
-  fileName: undefined,
 };
 
 export default Code;

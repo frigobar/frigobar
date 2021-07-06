@@ -1,13 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link as GatsbyLink } from 'gatsby';
 import { Link } from '@frigobar/core';
 
 import { Wrapper, Brand, Links } from './styles';
 
-function Header({ home, ...props }) {
+interface HeaderProps {
+  home?: boolean;
+  show?: boolean;
+}
+function Header({ home, show, ...props }: HeaderProps): JSX.Element {
   return (
-    <Wrapper home={home} {...props}>
+    <Wrapper home={home} show={show} {...props}>
       <Brand as={GatsbyLink} to="/">
         Frigobar
       </Brand>
@@ -27,10 +30,6 @@ function Header({ home, ...props }) {
     </Wrapper>
   );
 }
-
-Header.propTypes = {
-  home: PropTypes.bool,
-};
 
 Header.defaultProps = {
   home: false,

@@ -53,7 +53,7 @@ const Logo = styled.img`
   }
 `;
 
-const Title = styled.h2(
+const Title = styled.h2<{ bordered?: boolean }>(
   ({ bordered }) => `
     position: relative;
 
@@ -102,7 +102,7 @@ const Title = styled.h2(
   `,
 );
 
-const Description = styled.p(
+const Description = styled.p<{ big?: boolean }>(
   ({ big }) => `
     margin: 0;
 

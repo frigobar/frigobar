@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from '@frigobar/core';
 
-const Wrapper = styled.header`
+const Wrapper = styled.header<{ show?: boolean; home?: boolean }>`
   position: relative;
   z-index: 3;
 

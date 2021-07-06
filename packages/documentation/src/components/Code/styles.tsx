@@ -3,7 +3,7 @@ import { Alert } from '@frigobar/core';
 import styled, { css } from 'styled-components';
 import { LiveContext } from 'react-live';
 
-const Container = styled.div(
+const Container = styled.div<{ height: string }>(
   ({ height, theme: { spacings } }) => `
     display: flex;
     position: relative;
@@ -143,7 +143,7 @@ const ErrorWrapper = styled(Alert)`
   }
 `;
 
-const Error = () => {
+const Error = (): JSX.Element => {
   const [errorString, setErrorString] = useState('');
   const { error } = useContext(LiveContext);
 

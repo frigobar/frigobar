@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
-const Wrapper = styled.div(
+const Wrapper = styled.div<{ height?: string }>(
   ({ height }) => `
     display: flex;
     flex-direction: column;
@@ -16,10 +15,6 @@ const Wrapper = styled.div(
     }
   `,
 );
-
-Wrapper.propTypes = {
-  height: PropTypes.string,
-};
 
 Wrapper.defaultProps = {
   height: 'auto',

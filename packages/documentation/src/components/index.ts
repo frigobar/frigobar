@@ -3,8 +3,13 @@ import Footer from './Footer';
 import Header from './Header';
 import GlobalStyle from './GlobalStyle';
 import Navigation from './Navigation';
-import PropsTable from './PropsTable';
-import SEO from './Seo';
+import {
+  PropsTableProvider,
+  usePropsTable,
+  setCurrent,
+  PropsTable,
+} from './PropsTable';
+import Seo from './Seo';
 import InlineCode from './InlineCode';
 import Blockquote from './Blockquote';
 import Wrapper from './Wrapper';
@@ -15,8 +20,11 @@ export {
   Header,
   GlobalStyle,
   Navigation,
+  PropsTableProvider,
+  usePropsTable,
+  setCurrent,
   PropsTable,
-  SEO,
+  Seo,
   InlineCode,
   Blockquote,
   Wrapper,

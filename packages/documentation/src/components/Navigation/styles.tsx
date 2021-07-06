@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link as GatsbyLink } from 'gatsby';
 
-const Aside = styled.aside(
+const Aside = styled.aside<{ show?: boolean }>(
   ({ show, theme: { borders, colors } }) => `
     grid-area: navigation;
     height: 100%;
@@ -47,7 +47,7 @@ const Aside = styled.aside(
     }
   `,
 );
-const Nav = styled.nav(
+const Nav = styled.nav<{ show: boolean }>(
   ({ show, theme: { spacings, colors } }) => `
     height: 100%;
 
