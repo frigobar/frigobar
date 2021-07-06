@@ -1,16 +1,16 @@
 import { DefaultTheme } from 'styled-components';
 import colors from './colors';
 import spacings from './spacings';
-import components from './components';
 import borders from './borders';
 import radius from './radius';
+import baseFontSize from './fontSize';
 
 const theme: DefaultTheme = {
   colors,
   spacings,
-  components,
-  borders,
+  borders: borders,
   radius,
+  baseFontSize,
 };
 
 export default theme;
