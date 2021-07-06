@@ -5,22 +5,6 @@ exports[`<Card /> Snapshots should match snapshot 1`] = `
   border-radius: 4px;
 }
 
-.c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 16px 16px 8px 16px;
-}
-
-.c3 {
-  margin-left: 12px;
-}
-
 .c8 {
   padding: 8px 16px 8px 16px;
 }
@@ -35,6 +19,16 @@ exports[`<Card /> Snapshots should match snapshot 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
+}
+
+.c5 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.c4 {
+  font-size: 1.5rem;
+  margin: 0;
 }
 
 .c6 {
@@ -54,14 +48,20 @@ exports[`<Card /> Snapshots should match snapshot 1`] = `
   width: 100%;
 }
 
-.c4 {
-  font-size: 1.5rem;
-  margin: 0;
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 16px 16px 8px 16px;
 }
 
-.c5 {
-  font-size: 1rem;
-  margin: 0;
+.c3 {
+  margin-left: 12px;
 }
 
 .c0 {
@@ -157,22 +157,6 @@ exports[`<Card /> Snapshots should match snapshot with rounded avatar 1`] = `
   border-radius: 9999px;
 }
 
-.c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 16px 16px 8px 16px;
-}
-
-.c3 {
-  margin-left: 12px;
-}
-
 .c8 {
   padding: 8px 16px 8px 16px;
 }
@@ -187,6 +171,16 @@ exports[`<Card /> Snapshots should match snapshot with rounded avatar 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
+}
+
+.c5 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.c4 {
+  font-size: 1.5rem;
+  margin: 0;
 }
 
 .c6 {
@@ -206,14 +200,20 @@ exports[`<Card /> Snapshots should match snapshot with rounded avatar 1`] = `
   width: 100%;
 }
 
-.c4 {
-  font-size: 1.5rem;
-  margin: 0;
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 16px 16px 8px 16px;
 }
 
-.c5 {
-  font-size: 1rem;
-  margin: 0;
+.c3 {
+  margin-left: 12px;
 }
 
 .c0 {

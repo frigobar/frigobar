@@ -21,6 +21,7 @@ const Component = ({ openned }: { openned?: boolean }) => {
           <Menu.Item>Item 2</Menu.Item>
         </Menu>
       </div>
+      <div id="frigobar-menu"></div>
     </ThemeProvider>
   );
 };
@@ -28,9 +29,7 @@ const Component = ({ openned }: { openned?: boolean }) => {
 describe('<Menu />', () => {
   describe('snapshots', () => {
     it('should match', () => {
-      const { container } = render(<Component openned />, {
-        container: document.body,
-      });
+      const { container } = render(<Component openned />);
       expect(container).toMatchSnapshot();
     });
   });

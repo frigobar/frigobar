@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Menu /> snapshots should match 1`] = `
+<div
+  id="frigobar-menu"
+>
+  <div>
+    <button
+      type="button"
+    >
+      trigger
+    </button>
+  </div>
+</div>
+`;
