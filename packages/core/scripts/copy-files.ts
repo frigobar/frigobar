@@ -1,9 +1,14 @@
-const path = require('path');
-const fs = require('fs');
-const pkg = require('../package.json');
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import path from 'path';
+import fs from 'fs';
+import pkg from '../package.json';
 
-const copyFile = file => {
-  const buildPath = path.resolve(__dirname, '../dist/', path.basename(file));
+const copyFile = (file: string, destinationPath?: string) => {
+  const buildPath = path.resolve(
+    __dirname,
+    `../dist/${destinationPath}`,
+    path.basename(file),
+  );
   fs.copyFile(
     file,
     buildPath,
@@ -12,15 +17,7 @@ const copyFile = file => {
 };
 
 const createPackageJson = () => {
-  const {
-    scripts,
-    devDependencies,
-    'lint-staged': lintStaged,
-    jest,
-    config,
-    release,
-    ...packageDataOther
-  } = pkg;
+  const { scripts, devDependencies, ...packageDataOther } = pkg;
 
   const newPackageData = {
     ...packageDataOther,
@@ -39,7 +36,10 @@ const createPackageJson = () => {
 };
 
 const run = () => {
-  ['LICENSE', 'README.md'].map(copyFile);
+  ['LICENSE', 'README.md'].map(file => copyFile(file));
+  ['types/global.d.ts', 'types/theme.d.ts'].map(file =>
+    copyFile(file, '@types/'),
+  );
   createPackageJson();
 };
 
