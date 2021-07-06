@@ -21,7 +21,7 @@ const Grid = styled.main(
 `,
 );
 
-const Button = styled.button(
+const Button = styled.button<{ show?: boolean }>(
   ({ show, theme }) => `
   position: fixed;
   top: 40px;

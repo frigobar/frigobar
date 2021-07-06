@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
 import { Button } from '@frigobar/core';
 import { useFade } from '@frigobar/animation';
 
-import { Header, Footer, SEO } from '../components';
+import { Header, Footer, Seo } from '../components';
 import {
   Wrapper,
   Main,
@@ -18,12 +17,12 @@ import {
   StudyMobile,
 } from '../components/Home/styles';
 
-const Index = () => {
+const Index = (): JSX.Element => {
   const [{ animation: fadeAnimation }] = useFade();
 
   return (
     <Wrapper animation={fadeAnimation}>
-      <SEO
+      <Seo
         title="Frigobar - A simple set of UI tools for your react application."
         titleTemplate=""
       />
@@ -100,14 +99,6 @@ const Index = () => {
       </Footer>
     </Wrapper>
   );
-};
-
-Index.propTypes = {
-  data: PropTypes.shape({
-    allMdx: PropTypes.shape({
-      edges: PropTypes.arrayOf(PropTypes.shape({})),
-    }),
-  }).isRequired,
 };
 
 export default Index;
