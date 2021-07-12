@@ -14,7 +14,8 @@
     "lint:core": "eslint ./packages/core --ext .js,.jsx,.ts,.tsx",
     "lint:documentation": "eslint ./packages/documentation --ext .js,.jsx,.ts,.tsx",
     "commitizen": "git-cz",
-    "new": "node ./packages/core/scripts/cli/index.js"
+    "clean": "lerna run clean",
+    "build": "lerna run build --parallel --ignore @frigobar/documentation"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.2",

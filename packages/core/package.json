@@ -4,7 +4,7 @@
   "description": "A component library",
   "main": "./src/index.ts",
   "scripts": {
-    "clean:build": "rm -rf ./dist",
+    "clean": "rm -rf ./dist",
     "copy-files": "ts-node --project ./node.tsconfig.json ./scripts/copy-files.ts",
     "test": "jest --env=jest-environment-jsdom-sixteen",
     "test:update": "jest -u",
@@ -12,8 +12,8 @@
     "build:cjs": "cross-env NODE_ENV=cjs babel ./src --extensions '.ts,.tsx,.snap' --out-dir ./dist/cjs --copy-files --no-copy-ignored",
     "build:esm": "cross-env NODE_ENV=esm babel ./src --extensions '.ts,.tsx,.snap' --out-dir ./dist/esm --copy-files --no-copy-ignored",
     "build:types": "cross-env NODE_ENV=production tsc -p ./tsconfig.json",
-    "prebuild": "npm run clean:build",
-    "postbuild": "cross-env NODE_ENV=production npm run copy-files",
+    "prebuild": "yarn clean",
+    "postbuild": "cross-env NODE_ENV=production yarn copy-files",
     "semantic-release": "semantic-release",
     "prepublishOnly": "yarn build"
   },

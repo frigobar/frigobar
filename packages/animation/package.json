@@ -17,13 +17,13 @@
     "url": "git+https://github.com/frigobar/frigobar.git"
   },
   "scripts": {
-    "clean:build": "rm -rf ./dist",
+    "clean": "rm -rf ./dist",
     "copy-files": "ts-node --project ./node.tsconfig.json ./scripts/copy-files.ts",
     "build": "yarn build:cjs && yarn build:esm && yarn build:types",
     "build:cjs": "cross-env NODE_ENV=cjs babel ./src --extensions '.ts' --out-dir ./dist/cjs --copy-files --no-copy-ignored",
     "build:esm": "cross-env NODE_ENV=esm babel ./src --extensions '.ts' --out-dir ./dist/esm --copy-files --no-copy-ignored",
     "build:types": "cross-env NODE_ENV=production tsc -p ./tsconfig.json",
-    "prebuild": "yarn run clean:build",
+    "prebuild": "yarn run clean",
     "postbuild": "cross-env NODE_ENV=production yarn run copy-files",
     "prepublishOnly": "yarn build"
   },
