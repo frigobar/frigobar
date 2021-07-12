@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { Wrapper, Table, Thead, Tbody, Th, Tr, Td } from './styles';
 import { usePropsTable } from './PropsTableContext';
