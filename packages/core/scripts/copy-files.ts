@@ -37,9 +37,6 @@ const createPackageJson = () => {
 
 const run = () => {
   ['LICENSE', 'README.md'].map(file => copyFile(file));
-  ['types/global.d.ts', 'types/theme.d.ts'].map(file =>
-    copyFile(file, '@types/'),
-  );
   createPackageJson();
 };
 
