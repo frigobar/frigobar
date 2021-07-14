@@ -1,7 +1,7 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import { preToCodeBlock } from 'mdx-utils';
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import * as frigobar from '@frigobar/core';
 import * as animations from '@frigobar/animation';
 
@@ -45,6 +45,7 @@ const components = {
   ...frigobar,
   ...animations,
   css,
+  styled,
 };
 
 const wrapRootElement = ({
