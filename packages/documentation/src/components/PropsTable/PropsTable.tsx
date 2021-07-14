@@ -1,10 +1,12 @@
 import React from 'react';
 
-import { Wrapper, Table, Thead, Tbody, Th, Tr, Td } from './styles';
+import { Wrapper, Table, Thead, Tbody, Th, Tr, Td, Paragraph } from './styles';
 import { usePropsTable } from './PropsTableContext';
 
 function Props({ name, properties }) {
-  const propKeys = Object.keys(properties);
+  const propKeys = Object.keys(properties).filter(
+    key => key !== 'animation' && key !== 'css',
+  );
 
   return (
     <div>
@@ -34,7 +36,7 @@ function Props({ name, properties }) {
             </Tbody>
           </Table>
         ) : (
-          <p>No props for this component</p>
+          <Paragraph>No props for this component</Paragraph>
         )}
       </Wrapper>
     </div>
@@ -43,7 +45,7 @@ function Props({ name, properties }) {
 
 function PropsTable(): JSX.Element {
   const [{ current, subComponents }] = usePropsTable();
-  const { displayName: parentName, props: parentPops } = current;
+  const { displayName: parentName, props: parentProps } = current;
 
   const sortedSubComponents =
     (Boolean(subComponents.length) &&
@@ -54,7 +56,7 @@ function PropsTable(): JSX.Element {
 
   return (
     <div>
-      <Props name={parentName} properties={parentPops} />
+      <Props name={parentName} properties={parentProps} />
       {Boolean(sortedSubComponents) &&
         sortedSubComponents.map(
           ({ displayName: childName, props: childProps }) => (

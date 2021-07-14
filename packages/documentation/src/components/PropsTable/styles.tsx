@@ -18,6 +18,7 @@ const Table = styled.table`
 const Thead = styled.thead`
   font-family: 'Noto Sans JP', sans-serif;
 `;
+
 const Th = styled.th(
   ({ theme: { colors, spacings } }) => `
   padding: ${spacings.small}px ${spacings.small}px ${spacings.small}px;
@@ -30,9 +31,11 @@ const Th = styled.th(
   text-align: left;
 `,
 );
+
 const Tr = styled.tr`
   transition: background-color 0.3s ease;
 `;
+
 const Tbody = styled.tbody(
   ({ theme: { colors } }) => `
   ${Tr}:hover {
@@ -40,6 +43,7 @@ const Tbody = styled.tbody(
   }
 `,
 );
+
 const Td = styled.td(
   ({ theme: { colors } }) => `
     border: none;
@@ -63,4 +67,8 @@ const List = styled.ul`
   }
 `;
 
-export { Wrapper, Table, Thead, Tbody, Th, Tr, Td, List };
+const Paragraph = styled.p`
+  padding: 0 12px;
+`;
+
+export { Wrapper, Table, Thead, Tbody, Th, Tr, Td, List, Paragraph };
