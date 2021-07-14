@@ -46,10 +46,9 @@ function useFlash({
     ? [
         {
           animation: css`
-            ${animation} ${duration}ms ${
-            infinity ? 'infinite' : times * 2
-          } alternate-reverse
-    `,
+          ${animation} ${duration}ms
+          ${infinity ? 'infinite' : times * 2} alternate-reverse
+        `,
           state: animationStart,
         },
         setAnimationStart,
