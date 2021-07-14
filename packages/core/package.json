@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf ./dist",
     "copy-files": "ts-node --project ./node.tsconfig.json ./scripts/copy-files.ts",
-    "test": "jest --env=jest-environment-jsdom-sixteen",
+    "test": "jest",
     "test:update": "jest -u",
     "build": "yarn build:cjs && yarn build:esm && yarn build:types",
     "build:cjs": "cross-env NODE_ENV=cjs babel ./src --extensions '.ts,.tsx,.snap' --out-dir ./dist/cjs --copy-files --no-copy-ignored",
@@ -35,10 +35,10 @@
   },
   "homepage": "https://github.com/allyssonsantos/frigobar#readme",
   "peerDependencies": {
-    "@frigobar/animation": "^2.0.0",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0",
-    "styled-components": "^5.2.3"
+    "@frigobar/animation": ">= 2.0.0",
+    "react": ">= 16.8.0",
+    "react-dom": ">= 16.8.0",
+    "styled-components": ">= 5.1"
   },
   "publishConfig": {
     "access": "public",
