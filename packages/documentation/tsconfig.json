@@ -10,9 +10,11 @@
     "noImplicitAny": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "emitDeclarationOnly": false,
+    "noEmit": true,
     "plugins": [
       {
-         "name": "typescript-styled-plugin"
+        "name": "typescript-styled-plugin"
       }
     ],
     "target": "es2015"
