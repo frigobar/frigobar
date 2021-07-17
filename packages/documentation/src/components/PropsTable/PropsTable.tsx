@@ -4,6 +4,10 @@ import { Wrapper, Table, Thead, Tbody, Th, Tr, Td, Paragraph } from './styles';
 import { usePropsTable } from './PropsTableContext';
 
 function Props({ name, properties }) {
+  if (!name) {
+    return null;
+  }
+
   const propKeys = Object.keys(properties).filter(
     key => key !== 'animation' && key !== 'css',
   );
