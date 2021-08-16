@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/frigobar/frigobar/compare/@frigobar/documentation@0.6.0...@frigobar/documentation@0.7.0) (2021-08-16)
+
+
+### Bug Fixes
+
+* **documentation:** noEmit declaration files on type-check ([ecc48a7](https://github.com/frigobar/frigobar/commit/ecc48a76fc72bf5bff6cb6d7185d1d893e9cc6cf))
+* **documentation:** remove animation and css props from propstable ([7ce12a5](https://github.com/frigobar/frigobar/commit/7ce12a54b6a3512a6ec032cb7bf5acfa461af4a4))
+* **documentation:** return null when it's not a component ([b4b39fc](https://github.com/frigobar/frigobar/commit/b4b39fc0aab4dcb27c252a2ef34a0928e9926168))
+
+
+### Features
+
+* **documentation:** add styled to mdx context ([1a4408d](https://github.com/frigobar/frigobar/commit/1a4408de646d944df6839aa5bba6ad5d40edb3e8))
+* **documentation:** add ts and eslint configuration, refactor wrap-root-element to ts ([234f43a](https://github.com/frigobar/frigobar/commit/234f43abe68ff5553c3c8e12a22305b0fb0c5f2d))
+* **documentation:** add tsconfig.json ([b68fde4](https://github.com/frigobar/frigobar/commit/b68fde413dbda6cd9c3d25089b14a2e22ddea1e1))
+* **documentation:** apply docgen manually ([ced99e6](https://github.com/frigobar/frigobar/commit/ced99e6639101fbae2685c5ac7f842fa87897846))
+* **documentation:** refactor components to ts ([2250c72](https://github.com/frigobar/frigobar/commit/2250c724bb31cb5fe88567c2b7fcab092f6e03d3))
+* **documentation:** refactor contexts, pages and templates to TS ([61b7a5a](https://github.com/frigobar/frigobar/commit/61b7a5a3921a2ef7fac2e1f0591a6818e73cd0e3))
+* **documentation:** refactor PropsTable component and get info from context ([e1b83b0](https://github.com/frigobar/frigobar/commit/e1b83b0a1a1539588bcfef910b03401142500568))
+* **documentation:** update gatsby dependencies and add typescript configurations ([ce3696c](https://github.com/frigobar/frigobar/commit/ce3696caeb3908776aa6f28a2dcc7dd6e1ade26b))
+* **packages:** add clean npm script ([f742f99](https://github.com/frigobar/frigobar/commit/f742f99cd5b497add6ccb083c2ff39c75674b6bd))
+
+
+
+
+
 # [0.6.0](https://github.com/frigobar/frigobar/compare/@frigobar/documentation@0.5.0...@frigobar/documentation@0.6.0) (2021-06-14)
 
 

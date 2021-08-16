@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/frigobar/frigobar/compare/@frigobar/animation@2.0.3...@frigobar/animation@2.1.0) (2021-08-16)
+
+
+### Bug Fixes
+
+* **animation:** fix peerDependencies ([5cb862b](https://github.com/frigobar/frigobar/commit/5cb862b4d32a15154c7c253153a676f073f947d6))
+
+
+### Features
+
+* **animation:** add ts and eslint configuration ([4b3d026](https://github.com/frigobar/frigobar/commit/4b3d026be49ef63a265a74e03e18fc2e2b9c643e))
+* **animation:** refactor copy-files to typescript ([46dd364](https://github.com/frigobar/frigobar/commit/46dd364884ce4e85cac475d767dedf572aabe8a1))
+* **animation:** refactor useFade and useFlash to ts ([bba13e6](https://github.com/frigobar/frigobar/commit/bba13e6a824a1e1e5c054ab42dd560d13bf9e86d))
+* **packages:** add clean npm script ([f742f99](https://github.com/frigobar/frigobar/commit/f742f99cd5b497add6ccb083c2ff39c75674b6bd))
+* **typescript:** add npm scripts to generate .d.ts and update build scripts ([e6fbe29](https://github.com/frigobar/frigobar/commit/e6fbe29be26cdcecc5324e240084250e934b848d))
+
+
+
+
+
 ## [2.0.3](https://github.com/frigobar/frigobar/compare/@frigobar/animation@2.0.2...@frigobar/animation@2.0.3) (2021-06-11)
 
 **Note:** Version bump only for package @frigobar/animation

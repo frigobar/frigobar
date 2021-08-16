@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.8.1...@frigobar/core@0.9.0) (2021-08-16)
+
+
+### Bug Fixes
+
+* **core:** calculate element position when open menu ([3e4a0ce](https://github.com/allyssonsantos/frigobar/commit/3e4a0ce578ce3f689cfa54ba994e976f0e0901ad))
+* **core:** fix copy-files destinationPath ([a1074f9](https://github.com/allyssonsantos/frigobar/commit/a1074f9e9220d7493b28aac2bd4e332d89ed9e42))
+* **core:** fix peerDependencies ([296cd99](https://github.com/allyssonsantos/frigobar/commit/296cd99e10c21e4a502880345e7605083cd6ab7c))
+
+
+### Features
+
+* **core:** add styled-components typescript theme definitions ([ab3f58b](https://github.com/allyssonsantos/frigobar/commit/ab3f58b944e0beb00d3eb6dbc4c81a413ea95b10))
+* **core:** add ThemeProvider component ([2d0d67a](https://github.com/allyssonsantos/frigobar/commit/2d0d67a36fb757f9e31da432fccf9e211d2cb471))
+* **core:** edit eslint and add ts config ([3191607](https://github.com/allyssonsantos/frigobar/commit/31916070631ef9ef39b84f49a56eddc75674e717))
+* **core:** refactor all components to typescript ([8be0689](https://github.com/allyssonsantos/frigobar/commit/8be0689a63de1857f4f32dffbe30abf4a8116954))
+* **core:** refactor copy-files to typescript ([a2b8cef](https://github.com/allyssonsantos/frigobar/commit/a2b8cef357965f4b8ced6bb37ae9dff553fadcfc))
+* **core:** refactor theme ([7bf6c4b](https://github.com/allyssonsantos/frigobar/commit/7bf6c4b1e36d22ab103660373c7ed91480a259cd))
+* **packages:** add clean npm script ([f742f99](https://github.com/allyssonsantos/frigobar/commit/f742f99cd5b497add6ccb083c2ff39c75674b6bd))
+* **typescript:** add npm scripts to generate .d.ts and update build scripts ([e6fbe29](https://github.com/allyssonsantos/frigobar/commit/e6fbe29be26cdcecc5324e240084250e934b848d))
+
+
+
+
+
 ## [0.8.1](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.8.0...@frigobar/core@0.8.1) (2021-06-11)
 
 **Note:** Version bump only for package @frigobar/core
