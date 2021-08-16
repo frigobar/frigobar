@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { keyframes, css, FlattenSimpleInterpolation } from 'styled-components';
 
 interface IFlash {
-  duration: number;
-  start: boolean;
-  infinity: boolean;
-  times: number;
+  duration?: number;
+  start?: boolean;
+  infinity?: boolean;
+  times?: number;
 }
 
 type ReturnedAnimation = [
@@ -31,7 +31,7 @@ function useFlash({
   start = false,
   infinity = false,
   times = 2,
-}: IFlash): ReturnedAnimation {
+}: IFlash = {}): ReturnedAnimation {
   const [animationStart, setAnimationStart] = useState(start);
 
   useEffect(() => {
