@@ -117,15 +117,17 @@ const Menu = ({
 
   useEffect(() => {
     if (anchorElement.current) {
-      const {
-        top,
-        left,
-        height,
-      } = anchorElement.current?.getBoundingClientRect();
+      if (open) {
+        const {
+          top,
+          left,
+          height,
+        } = anchorElement.current?.getBoundingClientRect();
 
-      setAnchorPosition({ top: top + height - 3, left: left + 3 });
+        setAnchorPosition({ top: top + height - 3, left: left + 3 });
+      }
     }
-  }, [anchorElement]);
+  }, [anchorElement, open]);
 
   if (mounted) {
     portalContainer(PORTAL_CONTAINER_NAME);
