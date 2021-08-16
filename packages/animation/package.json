@@ -11,18 +11,19 @@
   "author": "Allysson Santos <aallysson0@gmail.com>",
   "homepage": "https://frigobar.github.io/frigobar/",
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/frigobar/frigobar.git"
   },
   "scripts": {
-    "clean:build": "rm -rf ./dist",
-    "copy-files": "babel-node ./scripts/copy-files.js",
-    "build": "yarn build:cjs && yarn build:esm",
-    "build:cjs": "cross-env NODE_ENV=cjs babel ./src --extensions '.js,.jsx' --out-dir ./dist/cjs --copy-files",
-    "build:esm": "cross-env NODE_ENV=esm babel ./src --extensions '.js,.jsx' --out-dir ./dist/esm --copy-files",
-    "prebuild": "yarn run clean:build",
+    "clean": "rm -rf ./dist",
+    "copy-files": "ts-node --project ./node.tsconfig.json ./scripts/copy-files.ts",
+    "build": "yarn build:cjs && yarn build:esm && yarn build:types",
+    "build:cjs": "cross-env NODE_ENV=cjs babel ./src --extensions '.ts' --out-dir ./dist/cjs --copy-files --no-copy-ignored",
+    "build:esm": "cross-env NODE_ENV=esm babel ./src --extensions '.ts' --out-dir ./dist/esm --copy-files --no-copy-ignored",
+    "build:types": "cross-env NODE_ENV=production tsc -p ./tsconfig.json",
+    "prebuild": "yarn run clean",
     "postbuild": "cross-env NODE_ENV=production yarn run copy-files",
     "prepublishOnly": "yarn build"
   },
@@ -35,9 +36,9 @@
     "directory": "dist"
   },
   "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0",
-    "styled-components": "^5.2.3"
+    "react": ">= 16.8.0",
+    "react-dom": ">= 16.8.0",
+    "styled-components": ">= 5.1"
   },
   "devDependencies": {
     "prop-types": "^15.7.2",

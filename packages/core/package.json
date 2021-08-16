@@ -2,17 +2,18 @@
   "name": "@frigobar/core",
   "version": "0.8.1",
   "description": "A component library",
-  "main": "./src/index.js",
+  "main": "./src/index.ts",
   "scripts": {
-    "clean:build": "rm -rf ./dist",
-    "copy-files": "babel-node ./scripts/copy-files.js",
-    "test": "jest --env=jest-environment-jsdom-sixteen",
+    "clean": "rm -rf ./dist",
+    "copy-files": "ts-node --project ./node.tsconfig.json ./scripts/copy-files.ts",
+    "test": "jest",
     "test:update": "jest -u",
-    "build": "yarn build:cjs && yarn build:esm",
-    "build:cjs": "cross-env NODE_ENV=cjs babel ./src --extensions '.js,.jsx' --out-dir ./dist/cjs --copy-files",
-    "build:esm": "cross-env NODE_ENV=esm babel ./src --extensions '.js,.jsx' --out-dir ./dist/esm --copy-files",
-    "prebuild": "npm run clean:build",
-    "postbuild": "cross-env NODE_ENV=production npm run copy-files",
+    "build": "yarn build:cjs && yarn build:esm && yarn build:types",
+    "build:cjs": "cross-env NODE_ENV=cjs babel ./src --extensions '.ts,.tsx,.snap' --out-dir ./dist/cjs --copy-files --no-copy-ignored",
+    "build:esm": "cross-env NODE_ENV=esm babel ./src --extensions '.ts,.tsx,.snap' --out-dir ./dist/esm --copy-files --no-copy-ignored",
+    "build:types": "cross-env NODE_ENV=production tsc -p ./tsconfig.json",
+    "prebuild": "yarn clean",
+    "postbuild": "cross-env NODE_ENV=production yarn copy-files",
     "semantic-release": "semantic-release",
     "prepublishOnly": "yarn build"
   },
@@ -34,16 +35,17 @@
   },
   "homepage": "https://github.com/allyssonsantos/frigobar#readme",
   "peerDependencies": {
-    "@frigobar/animation": "^2.0.0",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0",
-    "styled-components": "^5.2.3"
+    "@frigobar/animation": ">= 2.0.0",
+    "react": ">= 16.8.0",
+    "react-dom": ">= 16.8.0",
+    "styled-components": ">= 5.1"
   },
   "publishConfig": {
     "access": "public",
     "directory": "dist"
   },
   "devDependencies": {
+    "@types/styled-components": "^5.1.10",
     "babel-plugin-styled-components": "^1.12.0",
     "prop-types": "^15.7.2",
     "styled-components": "^5.2.3"

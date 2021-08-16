@@ -1,5 +1,3 @@
-const styledResolver = require('react-docgen-styled-component-resolver');
-
 module.exports = {
   siteMetadata: {
     title: `Frigobar`,
@@ -11,15 +9,9 @@ module.exports = {
     },
   },
   plugins: [
+    'gatsby-plugin-typescript',
     'gatsby-plugin-cname',
     'gatsby-plugin-styled-components',
-    {
-      resolve: 'gatsby-transformer-react-docgen',
-      options: {
-        resolver: styledResolver,
-        babelrcRoots: ['../../'],
-      },
-    },
     {
       resolve: `gatsby-plugin-react-svg`,
       options: {
@@ -72,12 +64,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        // trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {

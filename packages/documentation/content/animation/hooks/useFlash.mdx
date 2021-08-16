@@ -20,6 +20,13 @@ useFlash receives an object for custom configurations, like:
 Example:
 
 ```jsx react-live=true noInline fileName=flash.jsx
+const Div = styled.div`
+  padding: 5px;
+  margin-bottom: 5px;
+  background: orange;
+  border-radius: 8px;
+`;
+
 function App() {
   const [{ animation, state }, toggle] = useFlash({
     start: true,
@@ -29,17 +36,9 @@ function App() {
 
   return (
     <Wrapper>
-      <div
-        animation={animation}
-        css={`
-          padding: 5px;
-          margin-bottom: 5px;
-          background: orange;
-          border-radius: 8px;
-        `}
-      >
+      <Div animation={animation}>
         Attention!
-      </div>
+      </Div>
       <Button
         onClick={() => toggle(!state)}
         skin={state ? 'danger' : 'success'}

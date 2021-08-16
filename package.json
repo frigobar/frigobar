@@ -8,9 +8,15 @@
     "test": "lerna run test --stream",
     "test:update": "lerna run test:update --stream",
     "dev": "lerna run dev --scope=@frigobar/documentation --stream",
-    "lint": "eslint ./packages --ext .js,.jsx",
+    "lint": "yarn lint:animation && yarn lint:babel-plugin && yarn lint:core && yarn lint:documentation",
+    "lint:animation": "eslint ./packages/animation --ext .js,.jsx,.ts,.tsx",
+    "lint:babel-plugin": "eslint ./packages/babel-plugin --ext .js,.jsx",
+    "lint:core": "eslint ./packages/core --ext .js,.jsx,.ts,.tsx",
+    "lint:documentation": "eslint ./packages/documentation --ext .js,.jsx,.ts,.tsx",
     "commitizen": "git-cz",
-    "new": "node ./packages/core/scripts/cli/index.js"
+    "clean": "lerna run clean",
+    "build": "lerna run build --parallel --ignore @frigobar/documentation",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.2",
@@ -23,6 +29,9 @@
     "@semantic-release/exec": "^3.3.6",
     "@semantic-release/npm": "^5.1.15",
     "@testing-library/react": "^10.0.1",
+    "@types/jest": "^26.0.23",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
@@ -38,16 +47,18 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "husky": "^3.0.5",
+    "husky": ">=6",
     "jest": "^25.1.0",
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "jest-styled-components": "^7.0.4",
     "lerna": "^3.17.0",
+    "lint-staged": ">=10",
     "prettier": "^1.18.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-svg-loader": "^3.0.3",
     "svg-react-loader": "^0.4.6",
+    "typescript": "4.2.2",
     "url-loader": "^2.2.0"
   },
   "config": {
@@ -55,10 +66,7 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint",
-      "pre-push": "yarn test"
-    }
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mdx}": "eslint --cache --fix"
   }
 }

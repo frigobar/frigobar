@@ -1,10 +1,14 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
+const docgen = require('react-docgen-typescript');
+const webpack = require('webpack');
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const component = path.resolve(`./src/templates/component.jsx`);
+  const component = path.resolve(`./src/templates/component.tsx`);
   return graphql(
     `
       {
@@ -26,6 +30,13 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+        allFile(filter: { absolutePath: { regex: "/^.*core.*.tsx$/" } }) {
+          edges {
+            node {
+              absolutePath
+            }
+          }
+        }
       }
     `,
   ).then(result => {
@@ -35,6 +46,30 @@ exports.createPages = ({ graphql, actions }) => {
 
     // Create components pages.
     const components = result.data.allMdx.edges;
+    const componentFiles = result.data.allFile.edges;
+
+    const componentPaths = componentFiles.map(
+      ({ node: { absolutePath } }) => absolutePath,
+    );
+
+    const options = {
+      propFilter: prop => {
+        if (prop.declarations !== undefined && prop.declarations.length > 0) {
+          const hasPropAdditionalDescription = prop.declarations.find(
+            declaration => {
+              return !declaration.fileName.includes('node_modules');
+            },
+          );
+
+          return Boolean(hasPropAdditionalDescription);
+        }
+
+        return true;
+      },
+    };
+
+    const componentsDoc = docgen.parse(componentPaths, options);
+
     const categories = components.map(item => {
       const category = item.node.frontmatter.menu;
       return category;
@@ -63,6 +98,7 @@ exports.createPages = ({ graphql, actions }) => {
           name: post.node.frontmatter.title,
           categories: uniqueCategories,
           navigation: navigationMenu,
+          docs: componentsDoc,
         },
       });
     });
@@ -87,10 +123,27 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-exports.onCreateWebpackConfig = ({ actions }) => {
+exports.onCreateWebpackConfig = ({ actions, stage, plugins }) => {
+  if (stage === 'build-javascript' || stage === 'develop') {
+    actions.setWebpackConfig({
+      plugins: [
+        plugins.provide({ process: 'process/browser' }),
+        new webpack.ProvidePlugin({
+          Buffer: [require.resolve('buffer/'), 'Buffer'],
+        }),
+        new NodePolyfillPlugin(),
+      ],
+    });
+  }
+
   actions.setWebpackConfig({
-    node: {
-      fs: 'empty',
+    resolve: {
+      alias: {
+        path: require.resolve('path-browserify'),
+      },
+      fallback: {
+        fs: false,
+      },
     },
   });
 };

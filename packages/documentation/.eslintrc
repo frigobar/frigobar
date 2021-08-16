@@ -14,18 +14,17 @@
   "extends": [
     "plugin:prettier/recommended"
   ],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "prettier"
+  ],
   "rules": {
-    "prettier/prettier": "error",
-    "import/no-extraneous-dependencies": 0
+    "prettier/prettier": "error"
   },
   "overrides": [
     {
       "files": ["**/*.test.jsx", "**/*.test.js"]
     }
-  ],
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  }
+  ]
 }
