@@ -3,7 +3,7 @@ import path from 'path';
 import fs from 'fs';
 import pkg from '../package.json';
 
-const copyFile = (file: string, destinationPath?: string) => {
+const copyFile = (file: string, destinationPath = '') => {
   const buildPath = path.resolve(
     __dirname,
     `../dist/${destinationPath}`,
