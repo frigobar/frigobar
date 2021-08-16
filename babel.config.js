@@ -7,27 +7,16 @@ module.exports = {
   plugins: ['inline-react-svg'],
   env: {
     production: {
-      ignore: ['./**/*.test.js', './**/*.test.jsx'],
-      presets: [
-        '@babel/preset-react',
-        '@babel/preset-env',
-        '@babel/preset-typescript',
-      ],
+      ignore: ['**/*.test.js', '**/*.test.tsx'],
       plugins: ['inline-react-svg'],
     },
     cjs: {
-      ignore: ['./**/*.test.js', './**/*.test.jsx'],
-      presets: [
-        '@babel/preset-react',
-        '@babel/preset-env',
-        '@babel/preset-typescript',
-      ],
+      ignore: ['**/*.test.js', '**/*.test.tsx'],
       plugins: ['inline-react-svg'],
     },
     esm: {
-      ignore: ['./**/*.test.js', './**/*.test.jsx'],
+      ignore: ['**/*.test.js', '**/*.test.tsx'],
       presets: [
-        '@babel/preset-react',
         '@babel/preset-typescript',
         [
           '@babel/preset-env',
@@ -39,7 +28,6 @@ module.exports = {
       plugins: ['inline-react-svg'],
     },
     test: {
-      presets: ['@babel/preset-react', ['@babel/preset-env']],
       plugins: [
         'babel-plugin-styled-components',
         [
