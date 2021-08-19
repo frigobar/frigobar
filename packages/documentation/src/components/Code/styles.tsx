@@ -6,6 +6,7 @@ import { LiveContext } from 'react-live';
 const Container = styled.div<{ height: string }>(
   ({ height, theme: { spacings } }) => `
     display: flex;
+    flex-wrap: wrap;
     position: relative;
     margin-top: ${spacings.xxlarge}px;
     width: 100%;
@@ -143,6 +144,12 @@ const ErrorWrapper = styled(Alert)`
   }
 `;
 
+const ActiveButton = styled.button`
+  position: absolute;
+  right: 52%;
+  top: 16px;
+`;
+
 const Error = (): JSX.Element => {
   const [errorString, setErrorString] = useState('');
   const { error } = useContext(LiveContext);
@@ -167,4 +174,5 @@ export {
   Tab,
   Error,
   HighlightBackground,
+  ActiveButton,
 };
