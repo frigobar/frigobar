@@ -1,4 +1,5 @@
 import React from 'react';
+import { Alert } from '@frigobar/core';
 
 import { Wrapper, Table, Thead, Tbody, Th, Tr, Td, Paragraph } from './styles';
 import { usePropsTable } from './PropsTableContext';
@@ -40,7 +41,9 @@ function Props({ name, properties }) {
             </Tbody>
           </Table>
         ) : (
-          <Paragraph>No props for this component</Paragraph>
+          <Alert show type="warning">
+            No props for this component
+          </Alert>
         )}
       </Wrapper>
     </div>
