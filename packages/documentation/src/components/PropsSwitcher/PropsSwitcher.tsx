@@ -94,7 +94,7 @@ const getType = (type: string) => {
 
 const changeProp = ({ code, prop, type, newValue }) => {
   if (type === 'boolean') {
-    const addRegex = new RegExp(`(<(?!\/).*?)>`);
+    const addRegex = new RegExp(`(<(?!\/).*?(?!>).*)>`);
     return newValue
       ? code.replace(addRegex, `$1 ${prop}>`)
       : code.replaceAll(` ${prop}`, '');
@@ -106,13 +106,13 @@ const changeProp = ({ code, prop, type, newValue }) => {
   const closingChar = propTypeCharMap.closing[propType];
 
   if (codeAlreadyHasProp) {
-    const regex = new RegExp(`(${prop}=${openingChar})(.*)(${closingChar})`);
+    const regex = new RegExp(`(${prop}=${openingChar})(.*?)(${closingChar}+)`);
     const newCode = code.replace(regex, `$1${newValue}$3`);
 
     return newCode;
   }
 
-  const regex = new RegExp(`(<(?!\/).*?)>`);
+  const regex = new RegExp(`(<(?!\/).*?(?!>).*)>`);
   const newCode = code.replace(
     regex,
     `$1 ${prop}=${openingChar}${newValue}${closingChar}>`,
