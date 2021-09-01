@@ -1,18 +1,5 @@
 import React from 'react';
-
-export enum typesEnum {
-  List = 'list',
-  Boolean = 'boolean',
-  String = 'string',
-  Number = 'number',
-  Function = 'function',
-}
-
-export interface INewCode {
-  prop: string;
-  type: typesEnum;
-  newValue?: any;
-}
+import { INewCode, typesEnum } from './PropsSwitcher';
 
 interface IComponentProps {
   propName: string;
@@ -50,7 +37,7 @@ function Table({
           ({ name, Component, items, type, defaultValue }) => {
             if (!Component) {
               return (
-                <tr>
+                <tr key={name}>
                   <td>{name}</td>
                   <td>unsuported type</td>
                 </tr>
@@ -96,7 +83,10 @@ function Table({
                       handlePropChange({
                         prop: name,
                         type,
-                        newValue: event.target.checked || event.target.value,
+                        newValue:
+                          type === typesEnum.Boolean
+                            ? event.target.checked
+                            : event.target.value,
                       })
                     }
                   />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useComponent } from '../../contexts/component';
 
-import Table, { IPropertiesList, INewCode, typesEnum } from './Table';
+import Table, { IPropertiesList } from './Table';
 import {
   Wrapper,
   Input,
@@ -10,6 +10,20 @@ import {
   TextArea,
   Select,
 } from './styles';
+
+export enum typesEnum {
+  List = 'list',
+  Boolean = 'boolean',
+  String = 'string',
+  Number = 'number',
+  Function = 'function',
+}
+
+export interface INewCode {
+  prop: string;
+  type: typesEnum;
+  newValue?: any;
+}
 
 interface IChangeProps extends INewCode {
   code: string;
@@ -103,7 +117,6 @@ const PropsSwitcher = ({
   ...rest
 }: IPropsSwitcherProps) => {
   const {
-    //@ts-ignore
     props: { animation, css, ...props },
   } = useComponent();
 
