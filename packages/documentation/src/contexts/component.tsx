@@ -1,6 +1,18 @@
 import React, { createContext, useContext } from 'react';
 
-const ComponentContext = createContext({ name: '', props: [] });
+interface IProps {
+  [key: string]: any;
+}
+
+interface IComponentContext {
+  name: string;
+  props: IProps;
+}
+
+const ComponentContext = createContext<IComponentContext>({
+  name: '',
+  props: {},
+});
 const ComponentProvider = props => <ComponentContext.Provider {...props} />;
 
 const useComponent = () => {
