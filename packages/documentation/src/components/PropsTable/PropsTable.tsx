@@ -1,7 +1,7 @@
 import React from 'react';
 import { Alert } from '@frigobar/core';
 
-import { Wrapper, Table, Thead, Tbody, Th, Tr, Td, Paragraph } from './styles';
+import { Wrapper, Table, Thead, Tbody, Th, Tr, Td } from './styles';
 import { usePropsTable } from './PropsTableContext';
 
 function Props({ name, properties }) {

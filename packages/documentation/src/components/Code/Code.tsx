@@ -1,6 +1,6 @@
 /* eslint-disable global-require */
 import React, { useState, useRef } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import Highlight, { defaultProps, Language } from 'prism-react-renderer';
 import dracula from 'prism-react-renderer/themes/nightOwl';
 import { transform } from '@babel/standalone';
