@@ -1,55 +1,24 @@
 import React from 'react';
 import { useComponent } from '../../contexts/component';
 
-import { Wrapper } from './styles';
+import Table, { IPropertiesList, INewCode, typesEnum } from './Table';
+import {
+  Wrapper,
+  Input,
+  InputNumber,
+  Checkbox,
+  TextArea,
+  Select,
+} from './styles';
 
-interface IPropertiesList {
-  name: string;
+interface IChangeProps extends INewCode {
+  code: string;
 }
 
-const Checkbox = ({ propName, onPropChange, type, ...props }) => (
-  <input
-    onChange={event => {
-      onPropChange({ prop: propName, newValue: event.target.checked, type });
-    }}
-    type="checkbox"
-    {...props}
-  />
-);
-const Input = ({ propName, onPropChange, type, ...props }) => (
-  <input
-    onChange={event => {
-      onPropChange({ prop: propName, newValue: event.target.value, type });
-    }}
-    type="text"
-    {...props}
-  />
-);
-const InputNumber = ({ propName, onPropChange, type, ...props }) => (
-  <input
-    onChange={event => {
-      onPropChange({ prop: propName, newValue: event.target.value, type });
-    }}
-    type="number"
-    {...props}
-  />
-);
-const TextArea = ({ propName, onPropChange, type, ...props }) => (
-  <textarea
-    onChange={event => {
-      onPropChange({ prop: propName, newValue: event.target.value, type });
-    }}
-    {...props}
-  />
-);
-const Select = ({ propName, onPropChange, type, ...props }) => (
-  <select
-    onChange={event => {
-      onPropChange({ prop: propName, newValue: event.target.value, type });
-    }}
-    {...props}
-  />
-);
+interface IPropsSwitcherProps {
+  currentCode: string;
+  onPropChange: (newCode: string) => void;
+}
 
 const componentMap = {
   boolean: Checkbox,
@@ -59,7 +28,7 @@ const componentMap = {
   number: InputNumber,
 };
 
-const reactPropTypeMap = {
+const propTypeMap = {
   list: 'string',
   string: 'string',
   number: 'bracket',
@@ -77,44 +46,52 @@ const propTypeCharMap = {
   },
 };
 
-const getType = (type: string) => {
+const getType = (
+  type: IPropertiesList['type'],
+): {
+  type: IPropertiesList['type'];
+  items?: IPropertiesList['items'];
+} => {
   if (type.includes('|')) {
     return {
-      type: 'list',
+      type: typesEnum.List,
       items: type.split('|').map(t => t.replace(/"|\s/g, '')),
     };
   }
 
   if (type.includes('=>')) {
-    return { type: 'function' };
+    return { type: typesEnum.Function };
   }
 
   return { type };
 };
 
-const changeProp = ({ code, prop, type, newValue }) => {
-  if (type === 'boolean') {
-    const addRegex = new RegExp(`(<(?!\/).*?)>`);
+const changeProp = ({ code, prop, type, newValue }: IChangeProps) => {
+  const addRegex = new RegExp(`(<(?!\/).*?)>`, 'm');
+  if (type === typesEnum.Boolean) {
     return newValue
       ? code.replace(addRegex, `$1 ${prop}>`)
       : code.replaceAll(` ${prop}`, '');
   }
-
+  const currentPropertyType = propTypeMap[type];
+  const openingChar = propTypeCharMap.opening[currentPropertyType];
+  const closingChar = propTypeCharMap.closing[currentPropertyType];
   const codeAlreadyHasProp = code.includes(`${prop}=`);
-  const propType = reactPropTypeMap[type];
-  const openingChar = propTypeCharMap.opening[propType];
-  const closingChar = propTypeCharMap.closing[propType];
 
   if (codeAlreadyHasProp) {
-    const regex = new RegExp(`(${prop}=${openingChar})(.*)(${closingChar})`);
-    const newCode = code.replace(regex, `$1${newValue}$3`);
+    const replaceRegex = new RegExp(
+      `(\\s*?${prop}=${openingChar})(.*?)(${closingChar})`,
+    );
+    const newCode = code.replace(
+      replaceRegex,
+      newValue ? `$1${newValue}$3` : '',
+    );
 
     return newCode;
   }
 
-  const regex = new RegExp(`(<(?!\/).*?)>`);
   const newCode = code.replace(
-    regex,
+    addRegex,
     `$1 ${prop}=${openingChar}${newValue}${closingChar}>`,
   );
   return newCode;
@@ -124,14 +101,13 @@ const PropsSwitcher = ({
   currentCode,
   onPropChange,
   ...rest
-}: {
-  currentCode: string;
-}) => {
+}: IPropsSwitcherProps) => {
   const {
+    //@ts-ignore
     props: { animation, css, ...props },
   } = useComponent();
 
-  const handlePropChange = ({ prop, type, newValue }) => {
+  const handlePropChange = ({ prop, type, newValue }: INewCode) => {
     const newCode = changeProp({ code: currentCode, prop, type, newValue });
     onPropChange(newCode);
   };
@@ -139,69 +115,24 @@ const PropsSwitcher = ({
   const propertiesList = Object.keys(props).reduce<IPropertiesList[]>(
     (previous, current) => {
       const { type, items } = getType(props[current].type.name);
-      const obj = {
+      const propertyObj = {
         name: current,
         Component: componentMap[type],
         defaultValue: props[current].defaultValue?.value,
         type,
         items,
       };
-      previous.push(obj);
+      previous.push(propertyObj);
       return previous;
     },
     [],
   );
   return (
     <Wrapper {...rest}>
-      <table>
-        <thead>
-          <tr>
-            <th>Prop</th>
-            <th>Control</th>
-          </tr>
-        </thead>
-        <tbody>
-          {propertiesList.map(
-            ({ name, Component, items, type, defaultValue }) => {
-              if (items && Boolean(items.length)) {
-                return (
-                  <tr>
-                    <td>{name}</td>
-                    <td>
-                      <Component
-                        propName={name}
-                        type={type}
-                        onPropChange={handlePropChange}
-                      >
-                        <option disabled selected>
-                          default value: {defaultValue}
-                        </option>
-                        {items.map(option => (
-                          <option value={option}>{option}</option>
-                        ))}
-                      </Component>
-                    </td>
-                  </tr>
-                );
-              }
-              if (Component) {
-                return (
-                  <tr>
-                    <td>{name}</td>
-                    <td>
-                      <Component
-                        propName={name}
-                        type={type}
-                        onPropChange={handlePropChange}
-                      />
-                    </td>
-                  </tr>
-                );
-              }
-            },
-          )}
-        </tbody>
-      </table>
+      <Table
+        propertiesList={propertiesList}
+        handlePropChange={handlePropChange}
+      />
     </Wrapper>
   );
 };

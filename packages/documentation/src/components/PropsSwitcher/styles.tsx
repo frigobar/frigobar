@@ -23,4 +23,10 @@ const Wrapper = styled.div(
   `,
 );
 
-export { Wrapper };
+const Input = styled.input.attrs({ type: 'text' })``;
+const InputNumber = styled.input.attrs({ type: 'number' })``;
+const Checkbox = styled.input.attrs({ type: 'checkbox' })``;
+const TextArea = styled.textarea``;
+const Select = styled.select``;
+
+export { Wrapper, Input, InputNumber, Checkbox, TextArea, Select };
