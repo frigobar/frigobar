@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/frigobar/frigobar/compare/@frigobar/documentation@0.7.0...@frigobar/documentation@0.8.0) (2021-09-04)
+
+
+### Bug Fixes
+
+* **documentation:** remove unused imports ([392b0e2](https://github.com/frigobar/frigobar/commit/392b0e25802f7455d729e97dda325f0ebfe9d6c9))
+
+
+### Features
+
+* **documentation:** add some styles to propswitcher button and popover ([f975d9e](https://github.com/frigobar/frigobar/commit/f975d9e040f6e665163c6631df1c2c3819903838))
+* **documentation:** create initial propswitcher component version ([5945b84](https://github.com/frigobar/frigobar/commit/5945b845e492b103ae99a0db044d2e04844704ae))
+
+
+
+
+
 # [0.7.0](https://github.com/frigobar/frigobar/compare/@frigobar/documentation@0.6.0...@frigobar/documentation@0.7.0) (2021-08-16)
 
 

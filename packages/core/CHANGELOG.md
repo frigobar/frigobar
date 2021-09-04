@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.1](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.9.0...@frigobar/core@0.9.1) (2021-09-04)
+
+
+### Bug Fixes
+
+* **core:** fix Menu initial animation render ([2c0e02d](https://github.com/allyssonsantos/frigobar/commit/2c0e02d5e92ff4fc4eb8ee90a37f64ed42f5e941))
+
+
+
+
+
 # [0.9.0](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.8.1...@frigobar/core@0.9.0) (2021-08-16)
 
 
