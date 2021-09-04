@@ -55,6 +55,10 @@ const Td = styled.td(
       font-family: 'Fira Code', monospace;
       color: ${colors.primary[500]};
     }
+
+    @media (max-width: 830px) {
+      white-space: nowrap;
+    }
   `,
 );
 
