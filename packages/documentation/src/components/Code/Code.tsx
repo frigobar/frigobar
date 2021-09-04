@@ -1,11 +1,12 @@
 /* eslint-disable global-require */
 import React, { useState, useRef } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import Highlight, { defaultProps, Language } from 'prism-react-renderer';
 import dracula from 'prism-react-renderer/themes/nightOwl';
 import { transform } from '@babel/standalone';
 import { LiveProvider, LiveEditor, LivePreview } from 'react-live';
 import { MDXContext } from '@mdx-js/react';
+import { useFade } from '@frigobar/animation';
 
 import { useComponent } from '../../contexts/component';
 import {
@@ -15,7 +16,10 @@ import {
   EditorBackground,
   Error,
   HighlightBackground,
+  PropSwitcherButton,
+  BottomBar,
 } from './styles';
+import PropsSwitcher from '../PropsSwitcher';
 
 interface CodeProps {
   codeString: string;
@@ -34,7 +38,24 @@ const Code = ({
   height = '500',
   fileName = '',
 }: CodeProps): JSX.Element => {
-  const { name } = useComponent();
+  const {
+    name,
+    props: { css, animation, ...props },
+  } = useComponent();
+  const hasProps = Boolean(Object.keys(props).length);
+
+  const [editedCode, setEditedCode] = useState(codeString);
+  const [
+    {
+      animation: fadeAnimation,
+      state: fadeState,
+      instantState: instantFadeState,
+    },
+    togglePropsSwitcher,
+  ] = useFade({
+    startOnRender: false,
+    duration: 50,
+  });
 
   if (reactLive) {
     return (
@@ -50,7 +71,7 @@ const Code = ({
                 _styled: styled,
                 css,
               }}
-              code={codeString}
+              code={editedCode}
               language={language}
               noInline={noInline}
               theme={dracula}
@@ -90,8 +111,26 @@ const Code = ({
                 <Tab>{fileName || `${name}.jsx`}</Tab>
                 <LiveEditor
                   style={{ height: '100%', fontSize: 14 }}
+                  onChange={newCode => setEditedCode(newCode)}
                   className="live-editor"
                 />
+                {!noInline && hasProps && (
+                  <BottomBar>
+                    <PropSwitcherButton
+                      onClick={() => togglePropsSwitcher(!fadeState)}
+                      opened={instantFadeState}
+                    >
+                      Open props switcher
+                    </PropSwitcherButton>
+                  </BottomBar>
+                )}
+                {fadeState && (
+                  <PropsSwitcher
+                    animation={fadeAnimation}
+                    currentCode={editedCode}
+                    onPropChange={newCode => setEditedCode(newCode)}
+                  />
+                )}
               </EditorBackground>
               <ComponentBackground>
                 <LivePreview />

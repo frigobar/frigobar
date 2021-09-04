@@ -13,6 +13,7 @@ import Seo from './Seo';
 import InlineCode from './InlineCode';
 import Blockquote from './Blockquote';
 import Wrapper from './Wrapper';
+import PropsSwitcher from './PropsSwitcher';
 
 export {
   Code,
@@ -28,4 +29,5 @@ export {
   InlineCode,
   Blockquote,
   Wrapper,
+  PropsSwitcher,
 };

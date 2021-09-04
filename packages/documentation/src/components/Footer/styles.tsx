@@ -12,7 +12,6 @@ const Wrapper = styled.footer<{ home?: boolean }>(
     text-align: center;
 
     @media (max-width: 768px) {
-      text-align: left;
       font-size: 0.875rem;
     }
 
