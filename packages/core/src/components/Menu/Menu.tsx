@@ -73,6 +73,7 @@ const Menu = ({
     left: number;
   }>({ top: 0, left: 0 });
   const [{ animation, state }, toggleFade] = useFade({
+    startOnRender: false,
     duration: fadeDuration,
   });
 
