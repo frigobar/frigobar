@@ -28,8 +28,10 @@ function Table({
     <table>
       <thead>
         <tr>
-          <th>Prop</th>
-          <th>Control</th>
+          <th>
+            <abbr title="component property">prop</abbr>
+          </th>
+          <th>control</th>
         </tr>
       </thead>
       <tbody>

@@ -71,7 +71,7 @@ const ComponentBackground = styled.div(
 );
 
 const EditorBackground = styled.div(
-  ({ theme: { spacings } }) => `
+  ({ theme: { spacings, radius } }) => `
     position: relative;
     ${sharedStyle}
 
@@ -81,10 +81,15 @@ const EditorBackground = styled.div(
 
     .live-editor {
       border-bottom-left-radius: 8px;
+
+      @media (max-width: 830px) {
+        border-bottom-left-radius: 0;
+        border-top-right-radius: ${radius[2]}px;
+      }
     }
     
     textarea, pre {
-      padding: ${spacings.medium}px !important;
+      padding: ${spacings.medium}px ${spacings.medium}px ${spacings.xxxlarge}px ${spacings.medium}px !important;
     }
   `,
 );
@@ -144,11 +149,39 @@ const ErrorWrapper = styled(Alert)`
   }
 `;
 
-const ActiveButton = styled.button`
+const BottomBar = styled.nav`
   position: absolute;
-  right: 52%;
-  top: 16px;
+  bottom: 0;
+  border-top: 1px solid #69bffd;
+  height: 40px;
+  width: 100%;
 `;
+
+type PropSwitcherButtonProps = {
+  opened: boolean;
+};
+
+const PropSwitcherButton = styled.button<PropSwitcherButtonProps>(
+  ({ theme, opened }) => `
+    width: 40px;
+    height: 100%;
+
+    cursor: pointer;
+    border: none;
+
+    background-color: ${
+      opened ? theme.colors.secondary[500] : theme.colors.neutral[600]
+    };
+
+    mask-image: url('/icons/property.svg');
+    mask-size: 25px;
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    text-indent: -9999px;
+    overflow: hidden;
+  `,
+);
 
 const Error = (): JSX.Element => {
   const [errorString, setErrorString] = useState('');
@@ -174,5 +207,6 @@ export {
   Tab,
   Error,
   HighlightBackground,
-  ActiveButton,
+  PropSwitcherButton,
+  BottomBar,
 };

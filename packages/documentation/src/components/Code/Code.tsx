@@ -16,7 +16,8 @@ import {
   EditorBackground,
   Error,
   HighlightBackground,
-  ActiveButton,
+  PropSwitcherButton,
+  BottomBar,
 } from './styles';
 import PropsSwitcher from '../PropsSwitcher';
 
@@ -45,10 +46,15 @@ const Code = ({
 
   const [editedCode, setEditedCode] = useState(codeString);
   const [
-    { animation: fadeAnimation, state: fadeState },
+    {
+      animation: fadeAnimation,
+      state: fadeState,
+      instantState: instantFadeState,
+    },
     togglePropsSwitcher,
   ] = useFade({
     startOnRender: false,
+    duration: 50,
   });
 
   if (reactLive) {
@@ -108,25 +114,28 @@ const Code = ({
                   onChange={newCode => setEditedCode(newCode)}
                   className="live-editor"
                 />
+                {!noInline && hasProps && (
+                  <BottomBar>
+                    <PropSwitcherButton
+                      onClick={() => togglePropsSwitcher(!fadeState)}
+                      opened={instantFadeState}
+                    >
+                      Open props switcher
+                    </PropSwitcherButton>
+                  </BottomBar>
+                )}
+                {fadeState && (
+                  <PropsSwitcher
+                    animation={fadeAnimation}
+                    currentCode={editedCode}
+                    onPropChange={newCode => setEditedCode(newCode)}
+                  />
+                )}
               </EditorBackground>
               <ComponentBackground>
                 <LivePreview />
               </ComponentBackground>
               <Error />
-              {!noInline && hasProps && (
-                <div>
-                  <ActiveButton onClick={() => togglePropsSwitcher(!fadeState)}>
-                    Open props switcher
-                  </ActiveButton>
-                  {fadeState && (
-                    <PropsSwitcher
-                      animation={fadeAnimation}
-                      currentCode={editedCode}
-                      onPropChange={newCode => setEditedCode(newCode)}
-                    />
-                  )}
-                </div>
-              )}
             </LiveProvider>
           )}
         </MDXContext.Consumer>
