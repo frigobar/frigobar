@@ -24,6 +24,7 @@
   },
   "scripts": {
     "clean": "rm -rf ./dist",
+    "lint": "eslint ./src --ext .js",
     "test": "jest",
     "prebuild": "yarn clean",
     "build": "babel src -d dist --copy-files",
