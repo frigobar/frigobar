@@ -1,6 +1,6 @@
 {
   "name": "@frigobar/babel-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A recommended babel plugin for frigobar animation package",
   "keywords": [
     "animation",
