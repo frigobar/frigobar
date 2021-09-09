@@ -1,32 +1,37 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const badgeAlignment = {
-  'top-left': `
+  'top-left': css`
     top: 0;
     left: 0;
+
     transform: translate(-50%, -50%);
   `,
-  'top-right': `
+  'top-right': css`
     top: 0;
     right: 0;
+
     transform: translate(50%, -50%);
   `,
-  'bottom-left': `
+  'bottom-left': css`
     bottom: 0;
     left: 0;
+
     transform: translate(-50%, 50%);
   `,
-  'bottom-right': `
-    bottom: 0;
+  'bottom-right': css`
     right: 0;
+    bottom: 0;
+
     transform: translate(50%, 50%);
   `,
 };
 
 const Root = styled.span`
-  display: inline-flex;
   position: relative;
+
+  display: inline-flex;
 `;
 
 const StyledBadge = styled.span<{
@@ -39,27 +44,26 @@ const StyledBadge = styled.span<{
     color,
     hasChildren,
     theme: { colors, spacings, radius, baseFontSize },
-  }) => `
+  }) => css`
+    font-size: ${baseFontSize * 0.75}px;
+    line-height: ${baseFontSize * 0.75}px;
+
     display: flex;
     align-items: center;
     justify-content: center;
 
     padding: ${spacings.xxsmall}px;
 
+    color: ${colors.white};
     border-radius: ${radius[1]}px;
     background-color: ${(colors[color] && colors[color][500]) || color};
 
-    color: ${colors.white};
-    font-size: ${baseFontSize * 0.75}px;
-    line-height: ${baseFontSize * 0.75}px;
-    ${
-      hasChildren
-        ? `
-            position: absolute;
-            ${badgeAlignment[alignment]}
-          `
-        : ''
-    }
+    ${hasChildren
+      ? css`
+          position: absolute;
+          ${badgeAlignment[alignment]}
+        `
+      : ''}
   `,
 );
 
