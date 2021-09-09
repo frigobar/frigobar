@@ -92,7 +92,8 @@
     "serve": "gatsby serve",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d public",
-    "lint": "eslint . --ext ts --ext tsx",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:css": "stylelint './src/**/*.tsx'",
     "test": "yarn run type-check && yarn run lint",
     "type-check": "tsc --pretty"
   }

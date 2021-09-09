@@ -4,15 +4,17 @@ import styled, { css } from 'styled-components';
 import { LiveContext } from 'react-live';
 
 const Container = styled.div<{ height: string }>(
-  ({ height, theme: { spacings } }) => `
+  ({ height, theme: { spacings } }) => css`
+    position: relative;
+
     display: flex;
     flex-wrap: wrap;
-    position: relative;
-    margin-top: ${spacings.xxlarge}px;
+
     width: 100%;
     min-height: ${height}px;
 
-    box-shadow: 0px 0px 20px rgb(0 0 0 / 30%);
+    margin-top: ${spacings.xxlarge}px;
+
     border-radius: 8px;
 
     @media (max-width: 830px) {
@@ -26,15 +28,14 @@ const sharedStyle = css`
   flex-shrink: 0;
 
   @media (max-width: 830px) {
-    min-height: 250px;
     height: 100%;
+    min-height: 250px;
   }
 `;
 
 const HighlightBackground = styled.div`
   font-size: 0.75rem !important;
 
-  box-shadow: 0px 0px 20px rgb(0 0 0 / 30%);
   border-radius: 8px;
 
   .prism-code {
@@ -43,35 +44,37 @@ const HighlightBackground = styled.div`
 `;
 
 const ComponentBackground = styled.div(
-  ({ theme: { spacings } }) => `
+  ({ theme: { spacings } }) => css`
     ${sharedStyle}
+
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     padding: ${spacings.medium}px;
+
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 
     background-image: linear-gradient(45deg, #eff2f6 25%, transparent 25%),
       linear-gradient(-45deg, #eff2f6 25%, transparent 25%),
       linear-gradient(45deg, transparent 75%, #eff2f6 75%),
       linear-gradient(-45deg, transparent 75%, #eff2f6 75%);
-    background-size: 20px 20px;
     background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+    background-size: 20px 20px;
 
     > div {
-      width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
+
+      width: 100%;
     }
   `,
 );
 
 const EditorBackground = styled.div(
-  ({ theme: { spacings, radius } }) => `
+  ({ theme: { spacings, radius } }) => css`
     position: relative;
     ${sharedStyle}
 
@@ -83,23 +86,27 @@ const EditorBackground = styled.div(
       border-bottom-left-radius: 8px;
 
       @media (max-width: 830px) {
-        border-bottom-left-radius: 0;
         border-top-right-radius: ${radius[2]}px;
+        border-bottom-left-radius: 0;
       }
     }
-    
-    textarea, pre {
-      padding: ${spacings.medium}px ${spacings.medium}px ${spacings.xxxlarge}px ${spacings.medium}px !important;
+
+    textarea,
+    pre {
+      padding: ${spacings.medium}px ${spacings.medium}px ${spacings.xxxlarge}px
+        ${spacings.medium}px !important;
     }
   `,
 );
 
 const Tab = styled.div(
-  ({ theme: { spacings, radius } }) => `
+  ({ theme: { spacings, radius } }) => css`
+    font-size: 0.75rem;
+
     position: absolute;
-    left: 0;
-    top: -${spacings.xlarge}px;
     z-index: 1;
+    top: -${spacings.xlarge}px;
+    left: 0;
 
     display: flex;
     align-items: center;
@@ -111,10 +118,9 @@ const Tab = styled.div(
     padding-right: ${spacings.medium}px;
 
     color: white;
-    font-size: 0.75rem;
 
-    border-top-right-radius: ${radius[2]}px;
     border-top-left-radius: ${radius[2]}px;
+    border-top-right-radius: ${radius[2]}px;
 
     background-color: #011627;
 
@@ -123,11 +129,12 @@ const Tab = styled.div(
     }
 
     &:before {
-      content: '';
       width: 18px;
       height: 18px;
 
       margin-right: ${spacings.xsmall}px;
+
+      content: '';
 
       background-image: url('/react.svg');
       background-size: 100%;
@@ -137,14 +144,17 @@ const Tab = styled.div(
 
 const ErrorWrapper = styled(Alert)`
   position: absolute;
-  width: 48%;
   right: 2%;
   bottom: 20px;
+
+  width: 48%;
+
   transform: translateX(2%);
 
   pre {
     margin: 0;
     padding: 0;
+
     color: red;
   }
 `;
@@ -152,9 +162,11 @@ const ErrorWrapper = styled(Alert)`
 const BottomBar = styled.nav`
   position: absolute;
   bottom: 0;
-  border-top: 1px solid #69bffd;
-  height: 40px;
+
   width: 100%;
+  height: 40px;
+
+  border-top: 1px solid #69bffd;
 `;
 
 type PropSwitcherButtonProps = {
@@ -162,24 +174,26 @@ type PropSwitcherButtonProps = {
 };
 
 const PropSwitcherButton = styled.button<PropSwitcherButtonProps>(
-  ({ theme, opened }) => `
+  ({ theme, opened }) => css`
+    overflow: hidden;
+
     width: 40px;
     height: 100%;
 
     cursor: pointer;
+
+    text-indent: -9999px;
+
     border: none;
 
-    background-color: ${
-      opened ? theme.colors.secondary[500] : theme.colors.neutral[600]
-    };
+    background-color: ${opened
+      ? theme.colors.secondary[500]
+      : theme.colors.neutral[600]};
 
     mask-image: url('/icons/property.svg');
     mask-size: 25px;
     mask-repeat: no-repeat;
     mask-position: center;
-
-    text-indent: -9999px;
-    overflow: hidden;
   `,
 );
 
