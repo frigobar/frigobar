@@ -1,18 +1,21 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Wrapper = styled.div(
-  ({ theme: { colors, borders, radius } }) => `
-    border: ${borders.small}px solid ${colors.neutral[100]};
-    border-radius: ${radius[1]}px;
+  ({ theme: { colors, borders, radius } }) => css`
     overflow-x: auto;
 
     margin-top: 20px;
+
+    border: ${borders.small}px solid ${colors.neutral[100]};
+    border-radius: ${radius[1]}px;
   `,
 );
 const Table = styled.table`
-  border-collapse: collapse;
-  margin: 0px 0;
   width: 100%;
+
+  margin: 0px 0;
+
+  border-collapse: collapse;
 `;
 
 const Thead = styled.thead`
@@ -20,16 +23,17 @@ const Thead = styled.thead`
 `;
 
 const Th = styled.th(
-  ({ theme: { colors, spacings } }) => `
-  padding: ${spacings.small}px ${spacings.small}px ${spacings.small}px;
+  ({ theme: { colors, spacings } }) => css`
+    font-size: 1rem;
+    font-weight: 500;
 
-  background-color: ${colors.neutral[50]};
-  border: none;
+    padding: ${spacings.small}px ${spacings.small}px ${spacings.small}px;
 
-  font-size: 1rem;
-  font-weight: 500;
-  text-align: left;
-`,
+    text-align: left;
+
+    border: none;
+    background-color: ${colors.neutral[50]};
+  `,
 );
 
 const Tr = styled.tr`
@@ -37,22 +41,25 @@ const Tr = styled.tr`
 `;
 
 const Tbody = styled.tbody(
-  ({ theme: { colors } }) => `
-  ${Tr}:hover {
-    background-color: ${colors.neutral[100]};
-  }
-`,
+  ({ theme: { colors } }) => css`
+    ${Tr}:hover {
+      background-color: ${colors.neutral[100]};
+    }
+  `,
 );
 
 const Td = styled.td(
-  ({ theme: { colors } }) => `
-    border: none;
-    border-top: 1px solid ${colors.neutral[100]};
-    padding: 14px 12px 12px;
+  ({ theme: { colors } }) => css`
     font-size: 14px;
 
-    &:nth-child(n+3) {
+    padding: 14px 12px 12px;
+
+    border: none;
+    border-top: 1px solid ${colors.neutral[100]};
+
+    &:nth-child(n + 3) {
       font-family: 'Fira Code', monospace;
+
       color: ${colors.primary[500]};
     }
 
@@ -63,8 +70,8 @@ const Td = styled.td(
 );
 
 const List = styled.ul`
-  padding: 0;
   margin-left: 20px;
+  padding: 0;
 
   li {
     line-height: 20px;

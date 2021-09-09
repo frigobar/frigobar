@@ -19,9 +19,10 @@ import { fallbackState } from '../components/PropsTable/PropsTableContext';
 const Content = styled.div`
   grid-area: content;
 
+  width: 100%;
+
   margin: 0 auto;
 
-  width: 100%;
   padding-right: 20px;
   padding-left: 20px;
 `;

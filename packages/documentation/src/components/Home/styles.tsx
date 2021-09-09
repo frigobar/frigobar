@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Wrapper = styled.div`
   display: grid;
@@ -7,12 +7,14 @@ const Wrapper = styled.div`
     'content'
     'footer';
   grid-template-rows: min-content auto min-content;
+
   height: 100%;
 `;
 
 const Main = styled.main`
-  grid-area: content;
   display: flex;
+  grid-area: content;
+
   flex-wrap: wrap;
 
   max-width: 1440px;
@@ -21,13 +23,14 @@ const Main = styled.main`
   padding: 40px;
 
   @media (max-width: 768px) {
-    padding: 24px;
     margin: 0 auto 10px;
+    padding: 24px;
   }
 `;
 
 const Section = styled.div`
   display: flex;
+
   width: 100%;
 
   > div:first-child {
@@ -54,27 +57,20 @@ const Logo = styled.img`
 `;
 
 const Title = styled.h2<{ bordered?: boolean }>(
-  ({ bordered }) => `
+  ({ bordered }) => css`
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+
     position: relative;
 
     margin: 0;
     margin-bottom: 8px;
 
     color: #363636;
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1.5rem;
 
-    @media (max-width: 768px) {
-      font-size: 1.125rem;
-      padding-top: 0;
-      margin-bottom: 4px;
-      line-height: 1.125rem;
-    }
-
-    ${
-      bordered
-        ? `
+    ${bordered
+      ? css`
           margin-top: 15px;
 
           @media (max-width: 768px) {
@@ -86,54 +82,61 @@ const Title = styled.h2<{ bordered?: boolean }>(
 
             position: absolute;
             top: -20px;
-            
+
             width: 60px;
             height: 8px;
 
-            background-color: #E47171;
+            background-color: #e47171;
 
             @media (max-width: 768px) {
               top: -5px;
             }
           }
         `
-        : ''
+      : ''}
+
+    @media (max-width: 768px) {
+      font-size: 1.125rem;
+      line-height: 1.125rem;
+
+      margin-bottom: 4px;
+      padding-top: 0;
     }
   `,
 );
 
 const Description = styled.p<{ big?: boolean }>(
-  ({ big }) => `
+  ({ big }) => css`
+    font-size: 1.125rem;
+    line-height: 26px;
+
     margin: 0;
 
     color: #5a5a5a;
-    font-size: 1.125rem;
-    line-height: 26px;
+
+    ${big
+      ? css`
+          font-size: 1.5rem;
+          line-height: 40px;
+
+          margin-bottom: 40px;
+
+          @media (max-width: 768px) {
+            font-size: 1.25rem;
+            line-height: 30px;
+          }
+        `
+      : ''}
 
     @media (max-width: 768px) {
       font-size: 1rem;
     }
-
-    ${
-      big
-        ? `
-        font-size: 1.5rem;
-        line-height: 40px;
-
-        margin-bottom: 40px;
-
-        @media (max-width: 768px) {
-          font-size: 1.25rem;
-          line-height: 30px;
-        }
-      `
-        : ''
-    }
-`,
+  `,
 );
 
 const Card = styled.div`
   display: flex;
+
   padding-left: 80px;
 
   ${Description} {
@@ -146,14 +149,14 @@ const Card = styled.div`
 `;
 
 const Icon = styled.img`
-  margin-right: 38px;
   width: 70px;
   height: 70px;
+  margin-right: 38px;
 
   @media (max-width: 768px) {
-    margin-right: 24px;
     width: 50px;
     height: 50px;
+    margin-right: 24px;
   }
 `;
 
@@ -165,10 +168,12 @@ const StudyDesktop = styled.div`
 
 const StudyMobile = styled.div`
   display: none;
+
   margin-bottom: 24px;
 
   ${Title} {
     font-size: 1rem;
+
     margin-bottom: 0;
 
     @media (max-width: 768px) {

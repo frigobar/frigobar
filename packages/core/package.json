@@ -15,7 +15,9 @@
     "prebuild": "yarn clean",
     "postbuild": "cross-env NODE_ENV=production yarn copy-files",
     "semantic-release": "semantic-release",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build",
+    "lint": "eslint ./src --ext .ts,.tsx",
+    "lint:css": "stylelint './src/**/*.tsx'"
   },
   "repository": {
     "type": "git",

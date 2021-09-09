@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useFade } from '@frigobar/animation';
 
 const CloseIcon = ({ ...props }) => (
@@ -22,57 +22,77 @@ const CloseIcon = ({ ...props }) => (
   </svg>
 );
 
-const CloseButton = styled.button<{ withText: boolean }>`
-  align-items: center;
-  background-color: transparent;
-  border: 0;
-  border-radius: 50%;
-  cursor: pointer;
-  display: inline-flex;
-  justify-content: center;
-  padding: 5px;
-  position: absolute;
-  right: 10px;
-  transition: background-color 0.2s ease-in-out;
-  top: 10px;
-
-  &:hover,
-  &:focus {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
-
-  ${({
+const CloseButton = styled.button<{ withText: boolean }>(
+  ({
     withText,
     theme: {
       colors: { neutral },
     },
-  }): string | false =>
-    withText &&
-    `
-      border-radius: none;
-      color: ${neutral[700]};
-      padding: 0;
-      top: 12px;
+  }) => `
+    position: absolute;
+    top: 12px;
+    right: 12px;
 
-      &:hover,
-      &:focus {
-        background-color: transparent;
-        color: ${neutral[900]};
-      }
-    `}
-`;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-const Wrapper = styled.div<{ type: AlertProps['type'] }>`
-  border-radius: 4px;
-  font-size: 0.875rem;
-  position: relative;
-  ${({ theme: { colors, borders, spacings }, type = 'neutral' }): string => `
-    background-color: ${colors[type][50]};
-    border: ${borders.tiny}px solid ${colors[type][200]};
-    color: ${colors.black};
+    box-sizing: border-box;
+
+    padding: 5px;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    border: 0;
+    border-radius: 50%;
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+  ${
+    withText
+      ? css`
+          top: 12px;
+
+          padding: 0;
+
+          color: ${neutral[700]};
+
+          border-radius: none;
+
+          &:hover,
+          &:focus {
+            color: ${neutral[900]};
+            background-color: transparent;
+          }
+        `
+      : ''
+  }
+  `,
+);
+
+const Wrapper = styled.div<{
+  type: AlertProps['type'];
+  closable: AlertProps['closable'];
+}>(
+  ({ theme: { colors, borders, spacings }, type = 'neutral', closable }) => css`
+    font-size: 0.875rem;
+
+    position: relative;
+
     padding: ${spacings.small}px;
-  `}
-`;
+    padding-right: ${closable ? spacings.xxlarge : spacings.small}px;
+
+    color: ${colors.black};
+    border: ${borders.tiny}px solid ${colors[type][200]};
+    border-radius: 4px;
+    background-color: ${colors[type][50]};
+  `,
+);
 
 interface CloseProps {
   onClick: (event: React.MouseEvent<HTMLElement>) => void;
@@ -139,9 +159,8 @@ const Alert = ({
       {...props}
       type={type}
       role="alert"
-      css={`
-        animation: ${animation};
-      `}
+      animation={animation}
+      closable={closable}
     >
       {closable && (
         <Close

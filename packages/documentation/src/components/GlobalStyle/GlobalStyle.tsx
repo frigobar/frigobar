@@ -6,10 +6,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html, body, #___gatsby, #gatsby-focus-wrapper {
-    padding: 0;
-    margin: 0;
-    height: 100%;
     overflow-x: hidden;
+    
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
   }
 
   html, body, button {
@@ -23,8 +25,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   pre {
-    padding: 8px;
     overflow: auto;
+
+    padding: 8px;
   }
 
   pre, textarea, code {
