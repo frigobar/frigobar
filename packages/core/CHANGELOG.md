@@ -3,17 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [0.10.0-alpha.0](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.9.2...@frigobar/core@0.10.0-alpha.0) (2021-10-22)
-
-
-### Features
-
-* **test:** testing alert ([b64c054](https://github.com/allyssonsantos/frigobar/commit/b64c054aee9635d330cf4bdcd11fbe0ec4ab836f))
-
-
-
-
-
 ## [0.9.2](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.9.1...@frigobar/core@0.9.2) (2021-09-09)
 
 **Note:** Version bump only for package @frigobar/core
