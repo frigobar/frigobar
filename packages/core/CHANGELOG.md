@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.3-alpha.0](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.10.0-alpha.0...@frigobar/core@0.9.3-alpha.0) (2021-10-22)
+
+
+### Reverts
+
+* Revert "chore(release): publish 🚀" ([f5d7ed3](https://github.com/allyssonsantos/frigobar/commit/f5d7ed361e95487fb8b0a40641e494d6deef5926))
+
+
+
+
+
 ## [0.9.2](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.9.1...@frigobar/core@0.9.2) (2021-09-09)
 
 **Note:** Version bump only for package @frigobar/core
