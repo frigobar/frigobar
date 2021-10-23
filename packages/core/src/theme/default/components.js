@@ -32,44 +32,12 @@ const components = {
   },
   input: {
     backgroundColor: {
-      primary: colors.primary[500],
-      danger: colors.danger[500],
+      primary: colors.white,
+      danger: colors.danger[800],
     },
     textColor: {
-      enabled: colors.neutral[50],
-      disabled: colors.neutral[400],
-    },
-    sizes: {
-      small: {
-        font: 0.875,
-        icon: 1,
-        padding: {
-          top: spacings.xxsmall,
-          right: spacings.small,
-          bottom: spacings.xxsmall,
-          left: spacings.small,
-        },
-      },
-      medium: {
-        font: 1,
-        icon: 1.275,
-        padding: {
-          top: spacings.xsmall,
-          right: spacings.medium,
-          bottom: spacings.xsmall,
-          left: spacings.medium,
-        },
-      },
-      large: {
-        font: 1.275,
-        icon: 1.5,
-        padding: {
-          top: spacings.small,
-          right: spacings.large,
-          bottom: spacings.small,
-          left: spacings.large,
-        },
-      },
+      enabled: colors.black,
+      // disabled: colors.neutral[400],
     },
   },
   button: {

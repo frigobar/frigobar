@@ -1,6 +1,7 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Visibility, VisibilityOff } from '@material-ui/icons';
 
 const InputContainer = styled.div`
   position: relative;
@@ -20,7 +21,7 @@ const InputContainer = styled.div`
 const InputComponent = styled.input`
   height: 35px;
   font-size: 14px;
-  padding: ${({ icon }) => (icon ? '0px 1em 0px 3.35em' : '0px 1em 0px 1em')};
+  padding: 0px 1em 0px 3.35em;
   border-radius: 5px;
   border: 1px solid #000;
 
@@ -54,26 +55,61 @@ const InputComponent = styled.input`
   `};
 `;
 
-const Input = forwardRef(
+const InputPassword = forwardRef(
   ({ type, full, theme, disabled, icon, ...props }, ref) => {
+    const [showPassword, toggleShowPassword] = useState(false);
+    const inputRef = useRef(null);
+
+    useEffect(() => {
+      const { current: element } = inputRef;
+
+      if (element.value.length) {
+        element.setSelectionRange(element.value.length, element.value.length);
+      }
+    }, [showPassword]);
+
+    const togglePassword = e => {
+      if (e.type === 'click') {
+        inputRef.current.focus();
+      }
+
+      e.preventDefault();
+      toggleShowPassword(!showPassword);
+    };
+
     return (
       <InputContainer>
-        {icon}
         <InputComponent
           theme={theme}
           full={full}
           disabled={disabled}
-          type={type || 'text'}
-          ref={ref}
+          type={showPassword ? 'text' : 'password'}
+          ref={inputRef || ref}
           icon={icon}
           {...props}
         />
+
+        {showPassword ? (
+          <Visibility
+            width={20}
+            height={20}
+            onClick={togglePassword}
+            role="button"
+          />
+        ) : (
+          <VisibilityOff
+            width={20}
+            height={20}
+            onClick={togglePassword}
+            role="button"
+          />
+        )}
       </InputContainer>
     );
   },
 );
 
-Input.propTypes = {
+InputPassword.propTypes = {
   type: PropTypes.string,
   icon: PropTypes.string,
   full: PropTypes.bool,
@@ -81,7 +117,7 @@ Input.propTypes = {
   skin: PropTypes.oneOf(['primary', 'neutral']),
 };
 
-Input.defaultProps = {
+InputPassword.defaultProps = {
   type: 'text',
   full: false,
   disabled: false,
@@ -89,4 +125,4 @@ Input.defaultProps = {
   skin: 'primary',
 };
 
-export default Input;
+export default InputPassword;
