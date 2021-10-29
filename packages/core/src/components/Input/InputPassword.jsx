@@ -24,6 +24,9 @@ const InputComponent = styled.input`
   padding: 0px 1em 0px 3.35em;
   border-radius: 5px;
   border: 1px solid #000;
+  outline: none;
+  display: flex;
+  flex-direction: row-reverse;
 
   ${({
     theme: {
@@ -44,11 +47,7 @@ const InputComponent = styled.input`
       color: ${textColor.disabled};
       cursor: not-allowed;
     `
-        : `
-        &:hover {
-          box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.4);
-        }
-        `
+        : ``
     }
 
     ${full ? 'width: 100%;' : ''}
