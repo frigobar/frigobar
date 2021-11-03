@@ -4,5 +4,6 @@ import Link from './Link';
 import Alert from './Alert';
 import Badge from './Badge';
 import Menu from './Menu';
+import Modal from './Modal';
 
-export { Button, Card, Link, Alert, Badge, Menu };
+export { Button, Card, Link, Alert, Badge, Menu, Modal };
