@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`< /> Snapshots should match snapshot 1`] = `
+exports[`<Modal /> Snapshots should match snapshot 1`] = `
 .c2 {
   padding: 8px 16px 8px 16px;
   font-family: Arial,Helvetica,sans-serif;

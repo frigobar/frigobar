@@ -4,7 +4,7 @@ import { render } from '../../../testUtils';
 import Modal from './Modal';
 import Button from '../Button';
 
-describe('< />', () => {
+describe('<Modal />', () => {
   describe('Snapshots', () => {
     const Component = () => (
       <Modal maxWidth="450px">
