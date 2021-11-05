@@ -1,2 +1,9 @@
 dist/**/*
 **/dist/**/*
+/packages/documentation/.cache/*
+/packages/documentation/public/*
+/packages/documentation/node_modules/*
+/packages/core/node_modules/*
+/packages/animation/node_modules/*
+/packages/babel-plugin/tests/fixtures/*
+/packages/babel-plugin/node_modules/*

@@ -1,0 +1,261 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Alert /> Snapshots should match snapshot with all types 1`] = `
+.c0 {
+  font-size: 0.875rem;
+  position: relative;
+  padding: 12px;
+  padding-right: 12px;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fdfdfd;
+}
+
+<div>
+  <div
+    class="c0"
+    role="alert"
+    type="neutral"
+  >
+    Alert
+  </div>
+</div>
+`;
+
+exports[`<Alert /> Snapshots should match snapshot with all types 2`] = `
+.c0 {
+  font-size: 0.875rem;
+  position: relative;
+  padding: 12px;
+  padding-right: 12px;
+  color: #000;
+  border: 1px solid #929cbf;
+  border-radius: 4px;
+  background-color: #e5e7f0;
+}
+
+<div>
+  <div
+    class="c0"
+    role="alert"
+    type="info"
+  >
+    Alert
+  </div>
+</div>
+`;
+
+exports[`<Alert /> Snapshots should match snapshot with all types 3`] = `
+.c0 {
+  font-size: 0.875rem;
+  position: relative;
+  padding: 12px;
+  padding-right: 12px;
+  color: #000;
+  border: 1px solid #e6caa3;
+  border-radius: 4px;
+  background-color: #f9f2e9;
+}
+
+<div>
+  <div
+    class="c0"
+    role="alert"
+    type="warning"
+  >
+    Alert
+  </div>
+</div>
+`;
+
+exports[`<Alert /> Snapshots should match snapshot with all types 4`] = `
+.c0 {
+  font-size: 0.875rem;
+  position: relative;
+  padding: 12px;
+  padding-right: 12px;
+  color: #000;
+  border: 1px solid #faa19b;
+  border-radius: 4px;
+  background-color: #fee8e7;
+}
+
+<div>
+  <div
+    class="c0"
+    role="alert"
+    type="danger"
+  >
+    Alert
+  </div>
+</div>
+`;
+
+exports[`<Alert /> Snapshots should match snapshot with all types 5`] = `
+.c0 {
+  font-size: 0.875rem;
+  position: relative;
+  padding: 12px;
+  padding-right: 12px;
+  color: #000;
+  border: 1px solid #a8d2bf;
+  border-radius: 4px;
+  background-color: #eaf4f0;
+}
+
+<div>
+  <div
+    class="c0"
+    role="alert"
+    type="success"
+  >
+    Alert
+  </div>
+</div>
+`;
+
+exports[`<Alert /> Snapshots should match snapshot with closable 1`] = `
+.c1 {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  border: 0;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.c1:hover,
+.c1:focus {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.c0 {
+  font-size: 0.875rem;
+  position: relative;
+  padding: 12px;
+  padding-right: 40px;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fdfdfd;
+}
+
+<div>
+  <div
+    class="c0"
+    role="alert"
+    type="neutral"
+  >
+    <button
+      aria-label="close"
+      class="c1"
+    >
+      <svg
+        height="10"
+        version="1.1"
+        viewBox="0 0 47.971 47.971"
+        width="10"
+        x="0px"
+        xmlns="http://www.w3.org/2000/svg"
+        y="0px"
+      >
+        <g>
+          <path
+            d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88 c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242 C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879 s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"
+          />
+        </g>
+      </svg>
+    </button>
+    Alert
+  </div>
+</div>
+`;
+
+exports[`<Alert /> Snapshots should match snapshot with closable and closeText 1`] = `
+.c1 {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  border: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  top: 12px;
+  padding: 0;
+  color: ,#666,;
+  border-radius: none;
+}
+
+.c1:hover,
+.c1:focus {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.c1:hover,
+.c1:focus {
+  color: ,#111,;
+  background-color: transparent;
+}
+
+.c0 {
+  font-size: 0.875rem;
+  position: relative;
+  padding: 12px;
+  padding-right: 40px;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fdfdfd;
+}
+
+<div>
+  <div
+    class="c0"
+    role="alert"
+    type="neutral"
+  >
+    <button
+      class="c1"
+    >
+      <span>
+        Close Now
+      </span>
+    </button>
+    Alert
+  </div>
+</div>
+`;

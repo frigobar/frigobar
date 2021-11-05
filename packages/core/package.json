@@ -1,21 +1,23 @@
 {
   "name": "@frigobar/core",
-  "version": "0.6.1",
+  "version": "0.10.0",
   "description": "A component library",
+  "main": "./src/index.ts",
   "scripts": {
-    "clean:build": "rm -rf ./dist",
-    "copy-files": "babel-node ./scripts/copy-files.js",
-    "test": "jest --env=jest-environment-jsdom-sixteen",
+    "clean": "rm -rf ./dist",
+    "copy-files": "ts-node --project ./node.tsconfig.json ./scripts/copy-files.ts",
+    "test": "jest",
     "test:update": "jest -u",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "build": "cross-env NODE_ENV=production babel ./src --extensions '.js,.jsx' --out-dir ./dist/esm --copy-files",
-    "prebuild": "npm run clean:build",
-    "postbuild": "cross-env NODE_ENV=production npm run copy-files",
+    "build": "yarn build:cjs && yarn build:esm && yarn build:types",
+    "build:cjs": "cross-env NODE_ENV=cjs babel ./src --extensions '.ts,.tsx,.snap' --out-dir ./dist/cjs --copy-files --no-copy-ignored",
+    "build:esm": "cross-env NODE_ENV=esm babel ./src --extensions '.ts,.tsx,.snap' --out-dir ./dist/esm --copy-files --no-copy-ignored",
+    "build:types": "cross-env NODE_ENV=production tsc -p ./tsconfig.json",
+    "prebuild": "yarn clean",
+    "postbuild": "cross-env NODE_ENV=production yarn copy-files",
     "semantic-release": "semantic-release",
     "prepublishOnly": "yarn build",
-    "postpublish": "yarn deploy-storybook --ci",
-    "deploy-storybook": "storybook-to-ghpages"
+    "lint": "eslint ./src --ext .ts,.tsx",
+    "lint:css": "stylelint './src/**/*.tsx'"
   },
   "repository": {
     "type": "git",
@@ -34,22 +36,20 @@
     "url": "https://github.com/allyssonsantos/frigobar/issues"
   },
   "homepage": "https://github.com/allyssonsantos/frigobar#readme",
-  "dependencies": {
-    "@frigobar/animation": "^1.0.0",
-    "@material-ui/core": "^4.5.0",
-    "@material-ui/icons": "^4.4.3",
-    "prop-types": "^15.7.2"
-  },
   "peerDependencies": {
-    "react": "16.x",
-    "react-dom": "16.x",
-    "styled-components": "4.x"
+    "@frigobar/animation": ">= 2.0.0",
+    "react": ">= 16.8.0",
+    "react-dom": ">= 16.8.0",
+    "styled-components": ">= 5.1"
   },
   "publishConfig": {
     "access": "public",
     "directory": "dist"
   },
   "devDependencies": {
-    "styled-components": "4.4.1"
+    "@types/styled-components": "^5.1.10",
+    "babel-plugin-styled-components": "^1.12.0",
+    "prop-types": "^15.7.2",
+    "styled-components": "^5.2.3"
   }
 }

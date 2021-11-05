@@ -1,35 +1,31 @@
 {
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
   "env": {
     "browser": true,
     "es6": true,
     "jest": true
   },
-  "extends": ["airbnb", "prettier"],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
-  },
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 2018,
-    "sourceType": "module"
-  },
-  "parser": "babel-eslint",
-  "plugins": ["react", "prettier"],
+  "extends": [
+    "plugin:prettier/recommended"
+  ],
   "rules": {
-    "prettier/prettier": ["error"],
-    "import/no-extraneous-dependencies": 0,
-    "react/jsx-props-no-spreading": 0,
-    "react/prop-types": [2, { "ignore": ["theme"] }]
+    "prettier/prettier": "error",
+    "import/no-extraneous-dependencies": 0
   },
   "overrides": [
     {
-      "files": ["**/*.test.jsx", "**/*.test.js"],
-      "rules": {
-        "react/prop-types": "off"
-      }
+      "files": ["**/*.test.jsx", "**/*.test.js"]
     }
-  ]
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

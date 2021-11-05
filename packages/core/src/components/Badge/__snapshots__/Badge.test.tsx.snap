@@ -1,0 +1,341 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Badge /> Snapshots alignments should match snapshot with bottom-left alignment 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c1 {
+  font-size: 12px;
+  line-height: 12px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 4px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #008d96;
+}
+
+<div>
+  <span
+    class="c0"
+  >
+    <span
+      aria-atomic="true"
+      aria-live="polite"
+      class="c1"
+      color="primary"
+      role="status"
+    >
+      10
+    </span>
+  </span>
+</div>
+`;
+
+exports[`<Badge /> Snapshots alignments should match snapshot with bottom-right alignment 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c1 {
+  font-size: 12px;
+  line-height: 12px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 4px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #008d96;
+}
+
+<div>
+  <span
+    class="c0"
+  >
+    <span
+      aria-atomic="true"
+      aria-live="polite"
+      class="c1"
+      color="primary"
+      role="status"
+    >
+      10
+    </span>
+  </span>
+</div>
+`;
+
+exports[`<Badge /> Snapshots alignments should match snapshot with top-left alignment 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c1 {
+  font-size: 12px;
+  line-height: 12px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 4px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #008d96;
+}
+
+<div>
+  <span
+    class="c0"
+  >
+    <span
+      aria-atomic="true"
+      aria-live="polite"
+      class="c1"
+      color="primary"
+      role="status"
+    >
+      10
+    </span>
+  </span>
+</div>
+`;
+
+exports[`<Badge /> Snapshots alignments should match snapshot with top-right alignment 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c1 {
+  font-size: 12px;
+  line-height: 12px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 4px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #008d96;
+}
+
+<div>
+  <span
+    class="c0"
+  >
+    <span
+      aria-atomic="true"
+      aria-live="polite"
+      class="c1"
+      color="primary"
+      role="status"
+    >
+      10
+    </span>
+  </span>
+</div>
+`;
+
+exports[`<Badge /> Snapshots should match snapshot with children 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c1 {
+  font-size: 12px;
+  line-height: 12px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 4px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #008d96;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-transform: translate(50%,-50%);
+  -ms-transform: translate(50%,-50%);
+  transform: translate(50%,-50%);
+}
+
+<div>
+  <span
+    class="c0"
+  >
+    <button
+      type="button"
+    >
+      badge
+    </button>
+    <span
+      aria-atomic="true"
+      aria-live="polite"
+      class="c1"
+      color="primary"
+      role="status"
+    >
+      10
+    </span>
+  </span>
+</div>
+`;
+
+exports[`<Badge /> Snapshots should match snapshot with default badge 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c1 {
+  font-size: 12px;
+  line-height: 12px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 4px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #008d96;
+}
+
+<div>
+  <span
+    class="c0"
+  >
+    <span
+      aria-atomic="true"
+      aria-live="polite"
+      class="c1"
+      color="primary"
+      role="status"
+    >
+      10
+    </span>
+  </span>
+</div>
+`;
+
+exports[`<Badge /> Snapshots should match snapshot with different color 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c1 {
+  font-size: 12px;
+  line-height: 12px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 4px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #50a47f;
+}
+
+<div>
+  <span
+    class="c0"
+  >
+    <span
+      aria-atomic="true"
+      aria-live="polite"
+      class="c1"
+      color="success"
+      role="status"
+    >
+      10
+    </span>
+  </span>
+</div>
+`;

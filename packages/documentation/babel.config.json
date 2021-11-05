@@ -1,0 +1,4 @@
+{
+  "plugins": ["@frigobar/babel-plugin"],
+  "presets": ["babel-preset-gatsby"]
+}

@@ -1,0 +1,53 @@
+---
+title: useFlash
+menu: Hooks
+---
+
+This animation perform a flashing to the component.
+
+#### Options object:
+
+useFlash receives an object for custom configurations, like:
+
+<!-- prettier-ignore -->
+| **prop** | **description** | **type** | **default value** |
+| ------------- | --------------- | ----------------- | ---- |
+| duration | the duration of every single flash, it is a `ms` value | `number` | `300` |
+| start | if `true` will start the flashing | `bool` | `true` |
+| times | specify how many times it will flash | `number` | `2` |
+| infinity | make the flashing never stop! | `bool` | `false` |
+
+Example:
+
+```jsx react-live=true noInline fileName=flash.jsx
+const Div = styled.div`
+  padding: 5px;
+  margin-bottom: 5px;
+  background: orange;
+  border-radius: 8px;
+`;
+
+function App() {
+  const [{ animation, state }, toggle] = useFlash({
+    start: true,
+    infinity: true,
+    duration: 600,
+  });
+
+  return (
+    <Wrapper>
+      <Div animation={animation}>
+        Attention!
+      </Div>
+      <Button
+        onClick={() => toggle(!state)}
+        skin={state ? 'danger' : 'success'}
+      >
+        {state ? 'Stop' : 'Start'} flashing
+      </Button>
+    </Wrapper>
+  );
+}
+
+render(App);
+```

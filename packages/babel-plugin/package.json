@@ -1,0 +1,48 @@
+{
+  "name": "@frigobar/babel-plugin",
+  "version": "0.2.0",
+  "description": "A recommended babel plugin for frigobar animation package",
+  "keywords": [
+    "animation",
+    "react",
+    "styled-components",
+    "css",
+    "css-in-js",
+    "keyframes"
+  ],
+  "author": "Allysson Santos <aallysson0@gmail.com>",
+  "homepage": "https://frigobar.io/",
+  "license": "MIT",
+  "main": "src/index.js",
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frigobar/frigobar.git"
+  },
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "lint": "eslint ./src --ext .js",
+    "test": "jest",
+    "prebuild": "yarn clean",
+    "build": "babel src -d dist --copy-files",
+    "prepublishOnly": "yarn build",
+    "postbuild": "babel-node ./scripts/copy-files.js"
+  },
+  "bugs": {
+    "url": "https://github.com/frigobar/frigobar/issues"
+  },
+  "dependencies": {
+    "@babel/plugin-syntax-jsx": "^7.14.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.5",
+    "babel-plugin-tester": "^10.1.0"
+  },
+  "peerDependencies": {
+    "styled-components": ">= 5"
+  }
+}

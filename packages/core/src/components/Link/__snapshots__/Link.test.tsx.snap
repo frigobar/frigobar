@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Link /> Snapshots should match snapshot 1`] = `
+.c0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #269ea6;
+}
+
+.c0:hover {
+  color: #80c6cb;
+}
+
+<div>
+  <a
+    class="c0"
+    href="test.html"
+  >
+    Simple Link 
+  </a>
+</div>
+`;

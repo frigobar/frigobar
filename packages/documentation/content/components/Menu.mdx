@@ -1,0 +1,31 @@
+---
+title: Menu
+menu: components
+---
+
+Menu component
+
+```jsx react-live=true noInline
+render(() => {
+  const buttonRef = useRef(null);
+  const [open, toggleOpen] = useState(false);
+
+  return (
+    <div>
+      <Menu
+        anchorElement={buttonRef}
+        open={open}
+        handleClickAway={() => {
+          toggleOpen(false);
+        }}
+      >
+        <Menu.Item>Item 1</Menu.Item>
+        <Menu.Item>Item 2</Menu.Item>
+      </Menu>
+      <Button ref={buttonRef} onClick={() => toggleOpen(true)}>
+        Open menu
+      </Button>
+    </div>
+  );
+});
+```

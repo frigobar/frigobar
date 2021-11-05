@@ -10,7 +10,7 @@ Follow the instructions to set up the project.
 2. Clone the project in the directory of your choice
 
 ```sh
- $ git clone ${repository link}
+ $ git clone git@github.com:frigobar/frigobar.git
 ```
 
 4. Install the required dependencies
@@ -25,24 +25,30 @@ Follow the instructions to set up the project.
   $ yarn dev
 ```
 
-Access http://localhost:6006 to see the storybook running
+Access http://localhost:4000 to see the documentation website running
 
-### Directories
+From now, you can start developing and see the changes directly on the
+documentation.
 
-You need to follow a simple structure pattern:
+When you finish your work, you'll need to commit with messages following
+[conventional commit](https://www.conventionalcommits.org/en/v1.0.0/#summary)
+pattern. The easiest way to do this is running:
 
-- Every new component need to have it's specific folder, this folder need to be named as the component name;
+```
+yarn commitizen
+```
 
-- The component folder need the component file itself and an `index.js` file that export that component;
+### Packages
 
-- You need to import and export that component on `index.js` that are on components folder;
+Right now, we have four packages on this repository:
 
-- Every new component need to have its own story file;
+- animation: `@frigobar/animation` package - Where you can find some hooks to
+  add simple animations on your react components.
+- babel-plugin: `@frigobar/babel-plugin` package - Add `animation` prop support
+  for every component.
+- core: `@frigobar/core` package - Where you can find some components to build
+  your UI.
+- documentation: frigobar's website.
 
-- When you finish your work, you'll need to commit with messages following [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) pattern. The easiest way to do this is running
-
-- To make the commits I also leave a suggestion of [semantic commits](https://github.com/fteem/git-semantic-commits)
-
-# Awesome Project
-
-If you have an awesome project built with Frigobar, you could open a pull request changing the README.md root file, adding your project at the bottom of the projects list, under Awesome projects.
+Feel free to open any kind of pull requests, typos, grammar errors, bugs,
+enhancements, new features, etc.
