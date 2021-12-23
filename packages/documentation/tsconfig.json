@@ -5,7 +5,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "jsx": "react",
-    "lib": ["dom", "esnext", "es2015", "es2016", "es2017"],
+    "lib": ["dom", "esnext", "es2015", "es2016", "es2017", "DOM.Iterable"],
     "moduleResolution": "node",
     "noImplicitAny": false,
     "noUnusedLocals": true,
