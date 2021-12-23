@@ -1,0 +1,23 @@
+---
+title: Modal
+menu: components
+---
+
+Modal component
+
+```jsx react-live=true noInline
+render(() => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      <Button onClick={() => setIsOpen(true)}>Open modal</Button>
+      <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+        <a href="#">link</a>
+        <button>button</button>
+        <input />
+      </Modal>
+    </>
+  );
+});
+```
