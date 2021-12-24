@@ -35,21 +35,21 @@ const Dialog = styled.section(
 const CloseButton = styled.button(
   ({ theme }) => css`
     position: absolute;
-    top: ${theme.spacings.zero}px;
-    right: ${theme.spacings.zero}px;
+    top: ${theme.spacings.xsmall}px;
+    right: ${theme.spacings.xsmall}px;
+    background-color: ${theme.colors.white};
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    width: 48px;
-    height: 48px;
+    width: 24px;
+    height: 24px;
 
     margin: 0;
     padding: 0;
 
     border: none;
-    background: none;
 
     cursor: pointer;
   `,

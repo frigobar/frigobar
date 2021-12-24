@@ -13,10 +13,12 @@ const PORTAL_CONTAINER_NAME = 'frigobar-modal';
 function Modal({
   children,
   onClose,
+  onClickOutside,
   open,
 }: {
   children: React.ReactNode;
   onClose: () => void;
+  onClickOutside: () => void;
   open: boolean;
 }): JSX.Element | null {
   const [{ animation, state }, toggleFade] = useFade({ startOnRender: open });
@@ -25,8 +27,11 @@ function Modal({
 
   const handleKeyDown = useFocusTrap(dialogRef, [state]);
 
-  function handleClickOutside() {
-    console.log('clicked');
+  function handleClickOutside(event: MouseEvent) {
+    if (!dialogRef.current?.contains(event.target as Node)) {
+      onClose && onClose();
+      onClickOutside && onClickOutside();
+    }
   }
 
   useEffect(() => {
@@ -43,10 +48,14 @@ function Modal({
 
   return state
     ? createPortal(
-        <Backdrop animation={animation} onKeyDown={handleKeyDown}>
+        <Backdrop
+          animation={animation}
+          onKeyDown={handleKeyDown}
+          onAnimationEnd={() => console.log('end')}
+        >
           <Dialog ref={dialogRef}>
             <CloseButton onClick={onClose}>
-              <X />
+              <X width={24} height={24} />
             </CloseButton>
             {children}
           </Dialog>
