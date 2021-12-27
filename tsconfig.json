@@ -9,7 +9,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "jsx": "react",
-    "lib": ["dom"],
+    "lib": ["dom", "dom.Iterable"],
     "strict": true,
     "resolveJsonModule": true
   },

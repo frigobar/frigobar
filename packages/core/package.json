@@ -14,7 +14,6 @@
     "build:types": "cross-env NODE_ENV=production tsc -p ./tsconfig.json",
     "prebuild": "yarn clean",
     "postbuild": "cross-env NODE_ENV=production yarn copy-files",
-    "semantic-release": "semantic-release",
     "prepublishOnly": "yarn build",
     "lint": "eslint ./src --ext .ts,.tsx",
     "lint:css": "stylelint './src/**/*.tsx'"
@@ -51,5 +50,8 @@
     "babel-plugin-styled-components": "^1.12.0",
     "prop-types": "^15.7.2",
     "styled-components": "^5.2.3"
+  },
+  "dependencies": {
+    "react-feather": "^2.0.9"
   }
 }
