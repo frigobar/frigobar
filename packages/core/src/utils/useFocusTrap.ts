@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 function useFocusTrap(
   elementRef: React.RefObject<HTMLElement>,
-  dependencies: Array<any>,
+  dependencies: Array<any> = [],
 ): (e: React.KeyboardEvent) => void {
   const [focusableElements, setFocusableElements] = useState<
     NodeListOf<Element>

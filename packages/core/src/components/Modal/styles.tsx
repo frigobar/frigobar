@@ -6,6 +6,7 @@ const Backdrop = styled.div(
   ({ theme }) => css`
     position: fixed;
     inset: 0;
+
     z-index: 999;
 
     display: flex;
@@ -37,21 +38,27 @@ const CloseButton = styled.button(
     position: absolute;
     top: ${theme.spacings.xsmall}px;
     right: ${theme.spacings.xsmall}px;
-    background-color: ${theme.colors.white};
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
 
     margin: 0;
     padding: 0;
 
-    border: none;
-
     cursor: pointer;
+
+    border: none;
+    border-radius: ${theme.radius[3]}px;
+
+    background-color: ${theme.colors.neutral[50]};
+
+    &:hover {
+      background-color: ${theme.colors.neutral[200]};
+    }
   `,
 );
 

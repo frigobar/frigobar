@@ -14,7 +14,6 @@
     "build:types": "cross-env NODE_ENV=production tsc -p ./tsconfig.json",
     "prebuild": "yarn clean",
     "postbuild": "cross-env NODE_ENV=production yarn copy-files",
-    "semantic-release": "semantic-release",
     "prepublishOnly": "yarn build",
     "lint": "eslint ./src --ext .ts,.tsx",
     "lint:css": "stylelint './src/**/*.tsx'"

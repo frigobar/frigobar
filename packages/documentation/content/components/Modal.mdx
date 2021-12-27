@@ -7,16 +7,22 @@ Modal component
 
 ```jsx react-live=true noInline
 render(() => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [{ animation, state }, toggleFade] = useFade({ startOnRender: false });
 
   return (
     <>
-      <Button onClick={() => setIsOpen(true)}>Open modal</Button>
-      <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-        <a href="#">link</a>
-        <button>button</button>
-        <input />
-      </Modal>
+      <Button onClick={() => toggleFade(true)}>Open modal</Button>
+      {state && (
+        <Modal
+          animation={animation}
+          onClose={() => toggleFade(false)}
+          closeOnClickOutside={false}
+        >
+          <a href="#">link</a>
+          <button>button</button>
+          <input />
+        </Modal>
+      )}
     </>
   );
 });
