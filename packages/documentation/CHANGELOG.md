@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/frigobar/frigobar/compare/@frigobar/documentation@0.8.1...@frigobar/documentation@0.9.0) (2021-12-27)
+
+
+### Features
+
+* **core:** init development of new Modal component ([eef5f76](https://github.com/frigobar/frigobar/commit/eef5f764889e95fbf9c0932393c5c0a2435592ce))
+* **Modal:** remove fade, add closeOnClickOutside prop ([1a0b6ea](https://github.com/frigobar/frigobar/commit/1a0b6ea393512830dd90a20b1de4f9068d1f2332))
+
+
+
+
+
 ## [0.8.1](https://github.com/frigobar/frigobar/compare/@frigobar/documentation@0.8.0...@frigobar/documentation@0.8.1) (2021-09-09)
 
 **Note:** Version bump only for package @frigobar/documentation

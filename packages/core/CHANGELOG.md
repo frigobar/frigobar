@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.9.2...@frigobar/core@0.10.0) (2021-12-27)
+
+
+### Features
+
+* **core:** create clickOutside listener ([6dbce48](https://github.com/allyssonsantos/frigobar/commit/6dbce4818e6b1ac7c2ea49ce18c3813fff9f502b))
+* **core:** create new hexToRgb helper function ([bb68e53](https://github.com/allyssonsantos/frigobar/commit/bb68e53edaee472eac4fa25ed41312cc4d14a62c))
+* **core:** create useFocusTrap custom hook ([c1e549e](https://github.com/allyssonsantos/frigobar/commit/c1e549e9f443a4d150a0d6ffaa7311ec9a051f2b))
+* **core:** export Modal component ([b9c7f4c](https://github.com/allyssonsantos/frigobar/commit/b9c7f4cba418d45bc4d56e8f47bdc06db307736d))
+* **core:** focus on previous active element when close modal ([02cfb2b](https://github.com/allyssonsantos/frigobar/commit/02cfb2bf90762697d0e7fd0290c6fb7ee1bb7199)), closes [#36](https://github.com/allyssonsantos/frigobar/issues/36)
+* **core:** init development of new Modal component ([eef5f76](https://github.com/allyssonsantos/frigobar/commit/eef5f764889e95fbf9c0932393c5c0a2435592ce))
+* **Modal:** remove fade, add closeOnClickOutside prop ([1a0b6ea](https://github.com/allyssonsantos/frigobar/commit/1a0b6ea393512830dd90a20b1de4f9068d1f2332))
+
+
+
+
+
 ## [0.9.2](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.9.1...@frigobar/core@0.9.2) (2021-09-09)
 
 **Note:** Version bump only for package @frigobar/core
