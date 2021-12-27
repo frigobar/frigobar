@@ -22,9 +22,14 @@ function Modal({
   closeOnClickOutside: boolean;
 }): JSX.Element | null {
   const dialogRef = useRef<HTMLElement>(null);
+  const previousActiveElementRef = useRef<Element | null>(null);
+  const handleKeyDown = useFocusTrap(dialogRef);
+
   portalContainer(PORTAL_CONTAINER_NAME);
 
-  const handleKeyDown = useFocusTrap(dialogRef);
+  if (typeof window !== 'undefined' && !previousActiveElementRef.current) {
+    previousActiveElementRef.current = document.activeElement;
+  }
 
   function handleClickOutside(event: MouseEvent) {
     if (!dialogRef.current?.contains(event.target as Node)) {
@@ -36,7 +41,10 @@ function Modal({
   useEffect(() => {
     window.addEventListener('click', handleClickOutside);
 
-    return () => window.removeEventListener('click', handleClickOutside);
+    return () => {
+      (previousActiveElementRef.current as HTMLElement)?.focus();
+      window.removeEventListener('click', handleClickOutside);
+    };
   }, []);
 
   return createPortal(

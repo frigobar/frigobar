@@ -13,7 +13,7 @@ const Backdrop = styled.div(
     align-items: center;
     justify-content: center;
 
-    background-color: ${hexToRgb(theme.colors.neutral[900], 0.6)};
+    background-color: ${hexToRgb(theme.colors.black, 0.6)};
   `,
 );
 
