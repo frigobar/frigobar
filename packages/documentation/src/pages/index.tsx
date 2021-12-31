@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { graphql, Link } from 'gatsby';
 import { Button } from '@frigobar/core';
-import { useFade } from '@frigobar/animation';
+import {
+  useFade,
+  useFadeAnimation,
+  useColorAnimation,
+} from '@frigobar/animation';
 
 import { Header, Footer, Seo } from '../components';
 import {
@@ -18,10 +22,32 @@ import {
 } from '../components/Home/styles';
 
 const Index = (): JSX.Element => {
-  const [{ animation: fadeAnimation }] = useFade();
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const [
+    fadeAnimation,
+    animationState,
+    instantState,
+    toggle,
+  ] = useFadeAnimation({
+    startOnRender: true,
+    duration: 1000,
+    onAnimationEnd: e => console.log(e),
+  });
+
+  console.log(animationState);
+
+  const [colorAnimation, colorState, _, toggleColor] = useColorAnimation({
+    onAnimationEnd: e => console.log(e),
+  });
+
+  useEffect(() => {
+    if (buttonRef.current) {
+      console.log(buttonRef.current);
+    }
+  }, [buttonRef.current]);
 
   return (
-    <Wrapper animation={fadeAnimation}>
+    <Wrapper>
       <Seo
         title="Frigobar - A simple set of UI tools for your react application."
         titleTemplate=""
@@ -58,6 +84,20 @@ const Index = (): JSX.Element => {
             </div>
           </Card>
         </Section>
+        <Button
+          onClick={() => {
+            toggle(!animationState);
+            toggleColor(!animationState);
+          }}
+        >
+          Test
+        </Button>
+        {animationState && (
+          <Button animation={[colorAnimation, fadeAnimation]}>
+            fadded button
+          </Button>
+        )}
+
         <Section>
           <StudyDesktop>
             <Title bordered>Study project</Title>

@@ -13,15 +13,5 @@ pluginTester({
       fixture: 'fixtures/singleVariable/code.js',
       outputFixture: 'fixtures/singleVariable/output.js',
     },
-    {
-      title: 'with an array with a single item',
-      fixture: 'fixtures/arraySingle/code.js',
-      outputFixture: 'fixtures/arraySingle/output.js',
-    },
-    {
-      title: 'with an array with a multiple items',
-      fixture: 'fixtures/arrayMultiple/code.js',
-      outputFixture: 'fixtures/arrayMultiple/output.js',
-    },
   ],
 });
