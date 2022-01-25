@@ -137,11 +137,7 @@ const Menu = ({
   return mounted
     ? createPortal(
         state ? (
-          <div
-            css={`
-              background-color: yellow;
-            `}
-          >
+          <div>
             <List
               animation={animation}
               ref={menuRef}

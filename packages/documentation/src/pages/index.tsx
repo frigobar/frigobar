@@ -45,6 +45,7 @@ const Index = (): JSX.Element => {
                   Animation Hooks to bring some fancy effects for your
                   components
                 </Description>
+                {/* @ts-ignore */}
                 <Button
                   skin="primary"
                   rounded
@@ -74,6 +75,7 @@ const Index = (): JSX.Element => {
                 <Description>
                   A collection of simple UI components made with React
                 </Description>
+                {/* @ts-ignore */}
                 <Button
                   skin="primary"
                   rounded

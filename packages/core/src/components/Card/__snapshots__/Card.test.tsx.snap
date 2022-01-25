@@ -83,9 +83,9 @@ exports[`<Card /> Snapshots should match snapshot 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #fdfdfd;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 4px;
-  background-color: #008d96;
+  background-color: #007079;
 }
 
 .c10:hover {
@@ -235,9 +235,9 @@ exports[`<Card /> Snapshots should match snapshot with rounded avatar 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #fdfdfd;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 4px;
-  background-color: #008d96;
+  background-color: #007079;
 }
 
 .c10:hover {

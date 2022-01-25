@@ -6,15 +6,20 @@ exports[`<Alert /> Snapshots should match snapshot with all types 1`] = `
   position: relative;
   padding: 12px;
   padding-right: 12px;
-  color: #000;
+  color: #111;
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: #fdfdfd;
 }
 
+.c1 {
+  -webkit-animation: lbWRkT 300ms forwards;
+  animation: lbWRkT 300ms forwards;
+}
+
 <div>
   <div
-    class="c0"
+    class="c0 c1"
     role="alert"
     type="neutral"
   >
@@ -29,15 +34,20 @@ exports[`<Alert /> Snapshots should match snapshot with all types 2`] = `
   position: relative;
   padding: 12px;
   padding-right: 12px;
-  color: #000;
+  color: #111;
   border: 1px solid #929cbf;
   border-radius: 4px;
   background-color: #e5e7f0;
 }
 
+.c1 {
+  -webkit-animation: lbWRkT 300ms forwards;
+  animation: lbWRkT 300ms forwards;
+}
+
 <div>
   <div
-    class="c0"
+    class="c0 c1"
     role="alert"
     type="info"
   >
@@ -52,15 +62,20 @@ exports[`<Alert /> Snapshots should match snapshot with all types 3`] = `
   position: relative;
   padding: 12px;
   padding-right: 12px;
-  color: #000;
+  color: #111;
   border: 1px solid #e6caa3;
   border-radius: 4px;
   background-color: #f9f2e9;
 }
 
+.c1 {
+  -webkit-animation: lbWRkT 300ms forwards;
+  animation: lbWRkT 300ms forwards;
+}
+
 <div>
   <div
-    class="c0"
+    class="c0 c1"
     role="alert"
     type="warning"
   >
@@ -75,15 +90,20 @@ exports[`<Alert /> Snapshots should match snapshot with all types 4`] = `
   position: relative;
   padding: 12px;
   padding-right: 12px;
-  color: #000;
+  color: #111;
   border: 1px solid #faa19b;
   border-radius: 4px;
   background-color: #fee8e7;
 }
 
+.c1 {
+  -webkit-animation: lbWRkT 300ms forwards;
+  animation: lbWRkT 300ms forwards;
+}
+
 <div>
   <div
-    class="c0"
+    class="c0 c1"
     role="alert"
     type="danger"
   >
@@ -98,15 +118,20 @@ exports[`<Alert /> Snapshots should match snapshot with all types 5`] = `
   position: relative;
   padding: 12px;
   padding-right: 12px;
-  color: #000;
+  color: #111;
   border: 1px solid #a8d2bf;
   border-radius: 4px;
   background-color: #eaf4f0;
 }
 
+.c1 {
+  -webkit-animation: lbWRkT 300ms forwards;
+  animation: lbWRkT 300ms forwards;
+}
+
 <div>
   <div
-    class="c0"
+    class="c0 c1"
     role="alert"
     type="success"
   >
@@ -116,7 +141,7 @@ exports[`<Alert /> Snapshots should match snapshot with all types 5`] = `
 `;
 
 exports[`<Alert /> Snapshots should match snapshot with closable 1`] = `
-.c1 {
+.c2 {
   position: absolute;
   top: 12px;
   right: 12px;
@@ -142,8 +167,8 @@ exports[`<Alert /> Snapshots should match snapshot with closable 1`] = `
   background-color: transparent;
 }
 
-.c1:hover,
-.c1:focus {
+.c2:hover,
+.c2:focus {
   background-color: rgba(0,0,0,0.1);
 }
 
@@ -152,21 +177,26 @@ exports[`<Alert /> Snapshots should match snapshot with closable 1`] = `
   position: relative;
   padding: 12px;
   padding-right: 40px;
-  color: #000;
+  color: #111;
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: #fdfdfd;
 }
 
+.c1 {
+  -webkit-animation: lbWRkT 300ms forwards;
+  animation: lbWRkT 300ms forwards;
+}
+
 <div>
   <div
-    class="c0"
+    class="c0 c1"
     role="alert"
     type="neutral"
   >
     <button
       aria-label="close"
-      class="c1"
+      class="c2"
     >
       <svg
         height="10"
@@ -190,7 +220,7 @@ exports[`<Alert /> Snapshots should match snapshot with closable 1`] = `
 `;
 
 exports[`<Alert /> Snapshots should match snapshot with closable and closeText 1`] = `
-.c1 {
+.c2 {
   position: absolute;
   top: 12px;
   right: 12px;
@@ -216,18 +246,18 @@ exports[`<Alert /> Snapshots should match snapshot with closable and closeText 1
   background-color: transparent;
   top: 12px;
   padding: 0;
-  color: ,#666,;
+  color: #666;
   border-radius: none;
 }
 
-.c1:hover,
-.c1:focus {
+.c2:hover,
+.c2:focus {
   background-color: rgba(0,0,0,0.1);
 }
 
-.c1:hover,
-.c1:focus {
-  color: ,#111,;
+.c2:hover,
+.c2:focus {
+  color: #111;
   background-color: transparent;
 }
 
@@ -236,20 +266,25 @@ exports[`<Alert /> Snapshots should match snapshot with closable and closeText 1
   position: relative;
   padding: 12px;
   padding-right: 40px;
-  color: #000;
+  color: #111;
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: #fdfdfd;
 }
 
+.c1 {
+  -webkit-animation: lbWRkT 300ms forwards;
+  animation: lbWRkT 300ms forwards;
+}
+
 <div>
   <div
-    class="c0"
+    class="c0 c1"
     role="alert"
     type="neutral"
   >
     <button
-      class="c1"
+      class="c2"
     >
       <span>
         Close Now

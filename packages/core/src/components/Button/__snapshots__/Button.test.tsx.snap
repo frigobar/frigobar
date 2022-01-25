@@ -11,9 +11,9 @@ exports[`<Button /> Snapshots should match snapshot with all skins 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #fdfdfd;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 4px;
-  background-color: #999;
+  background-color: #333;
 }
 
 .c0:hover {
@@ -40,9 +40,9 @@ exports[`<Button /> Snapshots should match snapshot with all skins 2`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #fdfdfd;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 4px;
-  background-color: #999;
+  background-color: #333;
 }
 
 .c0:hover {
@@ -69,9 +69,9 @@ exports[`<Button /> Snapshots should match snapshot with all skins 3`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #fdfdfd;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 4px;
-  background-color: #999;
+  background-color: #333;
 }
 
 .c0:hover {
@@ -98,9 +98,9 @@ exports[`<Button /> Snapshots should match snapshot with all skins 4`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #fdfdfd;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 4px;
-  background-color: #999;
+  background-color: #333;
 }
 
 .c0:hover {
@@ -127,9 +127,9 @@ exports[`<Button /> Snapshots should match snapshot with all skins 5`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #fdfdfd;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 4px;
-  background-color: #999;
+  background-color: #333;
   width: 100%;
 }
 
@@ -157,9 +157,9 @@ exports[`<Button /> Snapshots should match snapshot with all skins 6`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #fdfdfd;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 4px;
-  background-color: #008d96;
+  background-color: #007079;
 }
 
 .c0:hover {
@@ -186,9 +186,9 @@ exports[`<Button /> Snapshots should match snapshot with all skins 7`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #fdfdfd;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 4px;
-  background-color: #25387f;
+  background-color: #162462;
 }
 
 .c0:hover {
@@ -215,9 +215,9 @@ exports[`<Button /> Snapshots should match snapshot with all skins 8`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #fdfdfd;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 4px;
-  background-color: #50a47f;
+  background-color: #378962;
 }
 
 .c0:hover {
@@ -244,9 +244,9 @@ exports[`<Button /> Snapshots should match snapshot with all skins 9`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #fdfdfd;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 4px;
-  background-color: #cd9447;
+  background-color: #ba772f;
 }
 
 .c0:hover {
@@ -273,9 +273,9 @@ exports[`<Button /> Snapshots should match snapshot with all skins 10`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #fdfdfd;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 4px;
-  background-color: #f44336;
+  background-color: #ef2c22;
 }
 
 .c0:hover {
@@ -302,12 +302,13 @@ exports[`<Button /> Snapshots should match snapshot with all skins 11`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #fdfdfd;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 4px;
-  background-color: #999;
+  background-color: #333;
   cursor: not-allowed;
   color: #a8a8a8;
   background-color: #f2f2f2;
+  border-color: transparent;
 }
 
 <div>
