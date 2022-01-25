@@ -14,12 +14,14 @@ function Modal({
   onClose,
   onClickOutside,
   closeOnClickOutside = true,
+  minHeight = '200px',
   ...rest
 }: {
   children: React.ReactNode;
   onClose: () => void;
   onClickOutside: () => void;
   closeOnClickOutside: boolean;
+  minHeight?: string;
 }): JSX.Element | null {
   const dialogRef = useRef<HTMLElement>(null);
   const previousActiveElementRef = useRef<Element | null>(null);
@@ -49,7 +51,7 @@ function Modal({
 
   return createPortal(
     <Backdrop onKeyDown={handleKeyDown} {...rest}>
-      <Dialog ref={dialogRef}>
+      <Dialog ref={dialogRef} minHeight={minHeight}>
         <CloseButton onClick={onClose}>
           <X width={24} height={24} />
         </CloseButton>

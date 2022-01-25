@@ -14,22 +14,36 @@ const Backdrop = styled.div(
     justify-content: center;
 
     background-color: ${hexToRgb(theme.colors.black, 0.6)};
+
+    @media (max-width: 768px) {
+      align-items: flex-end;
+    }
   `,
 );
 
-const Dialog = styled.section(
-  ({ theme }) => css`
+interface IDialog {
+  minHeight: string;
+}
+
+const Dialog = styled.section<IDialog>(
+  ({ theme, minHeight }) => css`
     position: relative;
 
     min-width: 200px;
-    min-height: 200px;
+    min-height: ${minHeight};
 
     padding: ${theme.spacings.medium}px;
 
-    border: ${theme.borders.tiny}px solid ${theme.colors.neutral[300]};
     border-radius: ${theme.radius[2]}px;
 
     background-color: ${theme.colors.neutral[50]};
+
+    @media (max-width: 768px) {
+      width: 100%;
+
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
   `,
 );
 
@@ -55,6 +69,10 @@ const CloseButton = styled.button(
     border-radius: ${theme.radius[3]}px;
 
     background-color: ${theme.colors.neutral[50]};
+
+    svg {
+      stroke: ${theme.colors.neutral[900]};
+    }
 
     &:hover {
       background-color: ${theme.colors.neutral[200]};
