@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.1](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.11.0...@frigobar/core@0.11.1) (2022-01-25)
+
+
+### Bug Fixes
+
+* **core:** fix Menu background-color ([9a63b4b](https://github.com/allyssonsantos/frigobar/commit/9a63b4b184f02093c92f985ea2a23c710d468d83))
+
+
+
+
+
 # [0.11.0](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.10.0...@frigobar/core@0.11.0) (2022-01-25)
 
 
