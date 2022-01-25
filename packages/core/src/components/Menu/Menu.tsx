@@ -10,19 +10,20 @@ const PORTAL_CONTAINER_NAME = 'frigobar-menu';
 const List = styled.ul<{ top: number; left: number }>(
   ({ top, left, theme: { colors, radius } }) => css`
     position: fixed;
+    z-index: 999;
     top: ${top}px;
     left: ${left}px;
-    z-index: 999;
+
+    overflow: hidden;
 
     margin: 0;
     padding: 0;
 
-    background-color: ${colors.white};
-    border-radius: ${radius[1]}px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-
     list-style: none;
-    overflow: hidden;
+
+    border-radius: ${radius[1]}px;
+    background-color: ${colors.white};
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 
     li {
       margin: 0;
@@ -34,12 +35,14 @@ const List = styled.ul<{ top: number; left: number }>(
 const Item = styled.a(
   ({ theme: { spacings, colors } }) => css`
     display: block;
+
     padding: ${spacings.xsmall}px;
 
-    color: ${colors.neutral[900]};
-
     cursor: pointer;
+
     text-decoration: none;
+
+    color: ${colors.neutral[900]};
 
     &:hover {
       background-color: ${colors.primary[100]};

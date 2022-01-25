@@ -41,8 +41,8 @@ const Dialog = styled.section<IDialog>(
     @media (max-width: 768px) {
       width: 100%;
 
-      border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
     }
   `,
 );

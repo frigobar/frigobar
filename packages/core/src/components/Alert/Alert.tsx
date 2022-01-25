@@ -48,11 +48,6 @@ const CloseButton = styled.button<{ withText: boolean }>(
     border-radius: 50%;
     background-color: transparent;
 
-    &:hover,
-    &:focus {
-      background-color: rgba(0, 0, 0, 0.1);
-    }
-
     ${withText
       ? css`
           top: 12px;
@@ -70,6 +65,11 @@ const CloseButton = styled.button<{ withText: boolean }>(
           }
         `
       : ''}
+
+    &:hover,
+    &:focus {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
   `,
 );
 
