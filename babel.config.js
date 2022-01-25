@@ -8,11 +8,19 @@ module.exports = {
   env: {
     production: {
       ignore: ['**/*.test.js', '**/*.test.tsx'],
-      plugins: ['inline-react-svg'],
+      plugins: [
+        'inline-react-svg',
+        '@frigobar/babel-plugin',
+        'babel-plugin-styled-components',
+      ],
     },
     cjs: {
       ignore: ['**/*.test.js', '**/*.test.tsx'],
-      plugins: ['inline-react-svg'],
+      plugins: [
+        'inline-react-svg',
+        '@frigobar/babel-plugin',
+        'babel-plugin-styled-components',
+      ],
     },
     esm: {
       ignore: ['**/*.test.js', '**/*.test.tsx'],
@@ -25,10 +33,15 @@ module.exports = {
           },
         ],
       ],
-      plugins: ['inline-react-svg'],
+      plugins: [
+        'inline-react-svg',
+        '@frigobar/babel-plugin',
+        'babel-plugin-styled-components',
+      ],
     },
     test: {
       plugins: [
+        '@frigobar/babel-plugin',
         'babel-plugin-styled-components',
         [
           '@babel/plugin-transform-runtime',
