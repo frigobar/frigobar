@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.10.0...@frigobar/core@0.11.0) (2022-01-25)
+
+
+### Bug Fixes
+
+* **core:** fix Menu position and change color and background-color rules ([7b05115](https://github.com/allyssonsantos/frigobar/commit/7b0511591814cfb67039c4a04885fef2eeb160a5))
+
+
+### Features
+
+* **core:** add mobile styles to Modal component ([a9160e8](https://github.com/allyssonsantos/frigobar/commit/a9160e8c937029c0972e654a3420000bbb23e298))
+* **core:** add outline prop to Button component ([5bef9f5](https://github.com/allyssonsantos/frigobar/commit/5bef9f5bc07660550e241b1051a8f1449f84196b))
+
+
+
+
+
 # [0.10.0](https://github.com/allyssonsantos/frigobar/compare/@frigobar/core@0.9.2...@frigobar/core@0.10.0) (2021-12-27)
 
 
