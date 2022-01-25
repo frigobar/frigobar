@@ -28,7 +28,7 @@ const CloseButton = styled.button<{ withText: boolean }>(
     theme: {
       colors: { neutral },
     },
-  }) => `
+  }) => css`
     position: absolute;
     top: 12px;
     right: 12px;
@@ -53,8 +53,7 @@ const CloseButton = styled.button<{ withText: boolean }>(
       background-color: rgba(0, 0, 0, 0.1);
     }
 
-  ${
-    withText
+    ${withText
       ? css`
           top: 12px;
 
@@ -70,8 +69,7 @@ const CloseButton = styled.button<{ withText: boolean }>(
             background-color: transparent;
           }
         `
-      : ''
-  }
+      : ''}
   `,
 );
 
@@ -87,7 +85,7 @@ const Wrapper = styled.div<{
     padding: ${spacings.small}px;
     padding-right: ${closable ? spacings.xxlarge : spacings.small}px;
 
-    color: ${colors.black};
+    color: ${colors.neutral[900]};
     border: ${borders.tiny}px solid ${colors[type][200]};
     border-radius: 4px;
     background-color: ${colors[type][50]};
