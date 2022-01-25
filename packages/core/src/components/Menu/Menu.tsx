@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useFade } from '@frigobar/animation';
 
 import portalContainer from './portalContainer';
@@ -8,8 +8,8 @@ import portalContainer from './portalContainer';
 const PORTAL_CONTAINER_NAME = 'frigobar-menu';
 
 const List = styled.ul<{ top: number; left: number }>(
-  ({ top, left, theme: { colors, radius } }) => `
-    position: absolute;
+  ({ top, left, theme: { colors, radius } }) => css`
+    position: fixed;
     top: ${top}px;
     left: ${left}px;
     z-index: 999;
@@ -32,17 +32,17 @@ const List = styled.ul<{ top: number; left: number }>(
 );
 
 const Item = styled.a(
-  ({ theme: { spacings, colors } }) => `
+  ({ theme: { spacings, colors } }) => css`
     display: block;
     padding: ${spacings.xsmall}px;
-      
-    color: inherit;
+
+    color: ${colors.neutral[900]};
 
     cursor: pointer;
     text-decoration: none;
 
     &:hover {
-      background-color: ${colors.primary[200]};
+      background-color: ${colors.primary[100]};
     }
   `,
 );
@@ -137,19 +137,23 @@ const Menu = ({
   return mounted
     ? createPortal(
         state ? (
-          <List
+          <div
             css={`
-              animation: ${animation};
+              background-color: yellow;
             `}
-            ref={menuRef}
-            top={anchorPosition.top}
-            left={anchorPosition.left}
-            {...props}
           >
-            {React.Children.map(children, child => (
-              <li>{child}</li>
-            ))}
-          </List>
+            <List
+              animation={animation}
+              ref={menuRef}
+              top={anchorPosition.top}
+              left={anchorPosition.left}
+              {...props}
+            >
+              {React.Children.map(children, child => (
+                <li>{child}</li>
+              ))}
+            </List>
+          </div>
         ) : null,
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         document.querySelector('#frigobar-menu')!,
