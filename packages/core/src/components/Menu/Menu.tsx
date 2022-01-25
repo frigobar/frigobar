@@ -22,7 +22,7 @@ const List = styled.ul<{ top: number; left: number }>(
     list-style: none;
 
     border-radius: ${radius[1]}px;
-    background-color: ${colors.white};
+    background-color: ${colors.neutral[50]};
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 
     li {

@@ -11,7 +11,7 @@ exports[`<Menu /> snapshots should match 1`] = `
   padding: 0;
   list-style: none;
   border-radius: 4px;
-  background-color: #fff;
+  background-color: #fdfdfd;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
