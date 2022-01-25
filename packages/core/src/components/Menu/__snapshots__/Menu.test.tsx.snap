@@ -3,16 +3,16 @@
 exports[`<Menu /> snapshots should match 1`] = `
 .c0 {
   position: fixed;
+  z-index: 999;
   top: -3px;
   left: 3px;
-  z-index: 999;
+  overflow: hidden;
   margin: 0;
   padding: 0;
-  background-color: #fff;
-  border-radius: 4px;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
   list-style: none;
-  overflow: hidden;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
 .c0 li {
@@ -28,10 +28,10 @@ exports[`<Menu /> snapshots should match 1`] = `
 .c2 {
   display: block;
   padding: 8px;
-  color: #111;
   cursor: pointer;
   -webkit-text-decoration: none;
   text-decoration: none;
+  color: #111;
 }
 
 .c2:hover {

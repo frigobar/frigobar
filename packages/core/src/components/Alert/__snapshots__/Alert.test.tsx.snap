@@ -252,13 +252,13 @@ exports[`<Alert /> Snapshots should match snapshot with closable and closeText 1
 
 .c2:hover,
 .c2:focus {
-  background-color: rgba(0,0,0,0.1);
+  color: #111;
+  background-color: transparent;
 }
 
 .c2:hover,
 .c2:focus {
-  color: #111;
-  background-color: transparent;
+  background-color: rgba(0,0,0,0.1);
 }
 
 .c0 {
