@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/frigobar/frigobar/compare/@frigobar/animation@2.1.1...@frigobar/animation@2.2.0) (2022-01-26)
+
+
+### Features
+
+* **animation:** add useSlide animation ([9a343bf](https://github.com/frigobar/frigobar/commit/9a343bf2a544d4d2478e08a4fb475152f14de3b7))
+
+
+
+
+
 ## [2.1.1](https://github.com/frigobar/frigobar/compare/@frigobar/animation@2.1.0...@frigobar/animation@2.1.1) (2021-09-09)
 
 **Note:** Version bump only for package @frigobar/animation
