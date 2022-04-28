@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.4](https://github.com/frigobar/frigobar/compare/@frigobar/documentation@0.9.3...@frigobar/documentation@0.9.4) (2022-04-28)
+
+**Note:** Version bump only for package @frigobar/documentation
+
+
+
+
+
 ## [0.9.3](https://github.com/frigobar/frigobar/compare/@frigobar/documentation@0.9.2...@frigobar/documentation@0.9.3) (2022-01-26)
 
 **Note:** Version bump only for package @frigobar/documentation
