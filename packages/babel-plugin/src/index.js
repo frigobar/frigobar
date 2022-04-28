@@ -57,7 +57,9 @@ function plugin(babel) {
                 );
 
                 const newAttributes = path.node.attributes.filter(
-                  node => node.name && node.name.name !== ANIMATION_PROP,
+                  node =>
+                    !node.name ||
+                    (node.name && node.name.name !== ANIMATION_PROP),
                 );
 
                 newAttributes.push(newProp);
