@@ -23,20 +23,23 @@ const Backdrop = styled.div(
 
 interface IDialog {
   minHeight: string;
+  minWidth: string;
 }
 
 const Dialog = styled.section<IDialog>(
-  ({ theme, minHeight }) => css`
+  ({ theme, minHeight, minWidth }) => css`
     position: relative;
 
     min-width: 200px;
     min-height: ${minHeight};
-
-    padding: ${theme.spacings.medium}px;
+    max-height: 80vh;
+    min-width: ${minWidth};
 
     border-radius: ${theme.radius[2]}px;
 
     background-color: ${theme.colors.neutral[50]};
+
+    overflow: auto;
 
     @media (max-width: 768px) {
       width: 100%;
@@ -47,11 +50,49 @@ const Dialog = styled.section<IDialog>(
   `,
 );
 
+interface IHeaderProps {
+  sticked: boolean;
+}
+
+const Header = styled.div<IHeaderProps>(
+  ({ sticked, theme }) => css`
+    position: sticky;
+    top: -1px;
+    left: 0;
+
+    padding: ${theme.spacings.medium}px;
+
+    background-color: ${theme.colors.neutral[50]};
+
+    ${sticked &&
+      css`
+        padding-top: ${theme.spacings.medium + 1}px;
+
+        box-shadow: 0px -2px 5px #000;
+
+        ${CloseButton} {
+          top: ${theme.spacings.small + 1}px;
+        }
+      `}
+  `,
+);
+
+const Body = styled.div(
+  ({ theme }) => css`
+    padding: ${theme.spacings.medium}px;
+  `,
+);
+
+const Title = styled.h3`
+  font-size: 1.125rem;
+  margin: 0;
+`;
+
 const CloseButton = styled.button(
   ({ theme }) => css`
     position: absolute;
-    top: ${theme.spacings.xsmall}px;
-    right: ${theme.spacings.xsmall}px;
+    top: ${theme.spacings.small}px;
+    right: ${theme.spacings.small}px;
 
     display: flex;
     align-items: center;
@@ -80,4 +121,4 @@ const CloseButton = styled.button(
   `,
 );
 
-export { Backdrop, Dialog, CloseButton };
+export { Backdrop, Dialog, Header, Body, Title, CloseButton };
