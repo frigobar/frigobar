@@ -30,16 +30,15 @@ const Dialog = styled.section<IDialog>(
   ({ theme, minHeight, minWidth }) => css`
     position: relative;
 
-    min-width: 200px;
+    overflow: auto;
+
+    min-width: ${minWidth};
     min-height: ${minHeight};
     max-height: 80vh;
-    min-width: ${minWidth};
 
     border-radius: ${theme.radius[2]}px;
 
     background-color: ${theme.colors.neutral[50]};
-
-    overflow: auto;
 
     @media (max-width: 768px) {
       width: 100%;
@@ -85,6 +84,7 @@ const Body = styled.div(
 
 const Title = styled.h3`
   font-size: 1.125rem;
+
   margin: 0;
 `;
 
