@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/frigobar/frigobar/compare/@frigobar/documentation@0.9.4...@frigobar/documentation@0.10.0) (2022-04-28)
+
+
+### Features
+
+* **core:** add title prop to modal component ([9904ebe](https://github.com/frigobar/frigobar/commit/9904ebe41357ab776421e9bb7f3777958a51bab7))
+
+
+
+
+
 ## [0.9.4](https://github.com/frigobar/frigobar/compare/@frigobar/documentation@0.9.3...@frigobar/documentation@0.9.4) (2022-04-28)
 
 **Note:** Version bump only for package @frigobar/documentation
