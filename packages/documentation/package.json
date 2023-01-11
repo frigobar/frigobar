@@ -42,7 +42,7 @@
     "gatsby-source-filesystem": "^3.7.1",
     "gatsby-transformer-react-docgen": "^6.7.1",
     "gatsby-transformer-react-docgen-typescript": "^0.2.7",
-    "gatsby-transformer-remark": "^4.4.1",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^3.7.1",
     "mdx-utils": "^0.2.0",
     "node-polyfill-webpack-plugin": "^1.1.3",
